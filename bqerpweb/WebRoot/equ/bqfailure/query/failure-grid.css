@@ -1,0 +1,14 @@
+/*   
+ * Gavin Lee   
+ * http://www.javaos.com.cn   
+ */ 
+/*******************************************/   
+.blue-row .x-grid3-cell-inner{   
+    color:blue;   
+}   
+.red-row .x-grid3-cell-inner{   
+    color:red;   
+}   
+.black-row .x-grid3-cell-inner{   
+    color:black;   
+} 

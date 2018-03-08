@@ -1,0 +1,2621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.2.r232_20090202 Build &lt;2.3.2.v20090218-0730></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="dutytime" id="459">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="dutyshift" id="460">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="408">
+            <property name="odaDriverClass">oracle.jdbc.driver.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@10.10.100.21:1521:bqdb1</property>
+            <property name="odaUser">power</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cG93ZXI=</encrypted-property>
+            <property name="odaJndiName">java:powererpDS</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="runway" id="413">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">RUNNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">EQUNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">RUNNAME</property>
+                    <property name="nativeName">RUNNAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">EQUNAME</property>
+                    <property name="nativeName">EQUNAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select runname,equname from (select distinct(way.run_way_name) runname,str_list(sequ.run_key_id,?,?,'dqzy','备用') equname from RUN_C_SHIFT_EQU sequ,run_c_run_way way where sequ.speciality_code = 'dqzy' and way.run_key_id = sequ.run_key_id ) tempt
+where tempt.runname in ('发电机','主变压器','110KV母线','6KV母线','其他')</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>RUNNAME</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>RUNNAME</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>RUNNAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>EQUNAME</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>4000</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>EQUNAME</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>EQUNAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>4000</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="runway2" id="461">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">RUNNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">EQUNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">RUNNAME</property>
+                    <property name="nativeName">RUNNAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">EQUNAME</property>
+                    <property name="nativeName">EQUNAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select runname,equname from (select distinct(way.run_way_name) runname,str_list(sequ.run_key_id,?,?,'dqzy','备用') equname from RUN_C_SHIFT_EQU sequ,run_c_run_way way where sequ.speciality_code = 'dqzy' and way.run_key_id = sequ.run_key_id ) tempt
+where tempt.runname in ('110KV出线','110KV中性点','厂用变压器','直流方式','供热机组') </property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ycxx" id="478">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ROWNUM</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">RECORD_CONTENT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ROWNUM</property>
+                    <property name="nativeName">ROWNUM</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">RECORD_CONTENT</property>
+                    <property name="nativeName">RECORD_CONTENT</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select rownum,re.record_content from RUN_J_SHIFT_RECORD re 
+where re.main_item_code = '02' and re.run_log_id = (select b.run_logid from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='dqzy' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?))</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="czxm" id="495">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ROWNUM</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">OP_TIME</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">OPTICKET_CODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">OP_CONTENT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ROWNUM</property>
+                    <property name="nativeName">ROWNUM</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">OP_TIME</property>
+                    <property name="nativeName">OP_TIME</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">OPTICKET_CODE</property>
+                    <property name="nativeName">OPTICKET_CODE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">OP_CONTENT</property>
+                    <property name="nativeName">OP_CONTENT</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select rownum,oi.op_time,oi.opticket_code,oi.op_content from run_j_operation_item oi where oi.shift_record_id in
+ (select sr.shift_record_id from RUN_J_SHIFT_RECORD sr where sr.run_log_id =( select b.run_logid from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='dqzy' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?)))</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="jxsb" id="524">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ROWNUM</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">RECORD_CONTENT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ROWNUM</property>
+                    <property name="nativeName">ROWNUM</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">RECORD_CONTENT</property>
+                    <property name="nativeName">RECORD_CONTENT</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select rownum,re.record_content from RUN_J_SHIFT_RECORD re 
+where re.main_item_code = '06' and re.run_log_id = (select b.run_logid from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='300MWZZ' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?))</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="jdx" id="541">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">EARTH_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">INSTALL_PLACE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">EARTH_NAME</property>
+                    <property name="nativeName">EARTH_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">INSTALL_PLACE</property>
+                    <property name="nativeName">INSTALL_PLACE</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select cear.earth_name,ear.install_place from RUN_J_EARTHTAR ear,run_c_earthtar cear
+where ear.earth_id = cear.earth_id and 
+ear.install_logid = (select b.run_logid from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='300MWZZ' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?))</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="jb11" id="558">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ITEM_NUMBER_VALUE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ITEM_NUMBER_VALUE</property>
+                    <property name="nativeName">ITEM_NUMBER_VALUE</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select parm.item_number_value from RUN_J_SHIFT_PARM  parm 
+where parm.runlog_parm_id = 14 and parm.run_logid = (
+select b.run_logid from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='dqzy' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?))</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="jb12" id="560">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ITEM_NUMBER_VALUE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ITEM_NUMBER_VALUE</property>
+                    <property name="nativeName">ITEM_NUMBER_VALUE</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select parm.item_number_value from RUN_J_SHIFT_PARM  parm 
+where parm.runlog_parm_id = 15 and parm.run_logid = (
+select b.run_logid from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='dqzy' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?))</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="cgb1" id="562">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ITEM_NUMBER_VALUE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ITEM_NUMBER_VALUE</property>
+                    <property name="nativeName">ITEM_NUMBER_VALUE</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select parm.item_number_value from RUN_J_SHIFT_PARM  parm 
+where parm.runlog_parm_id = 16 and parm.run_logid = (
+select b.run_logid from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='dqzy' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?))</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="cgb2" id="563">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ITEM_NUMBER_VALUE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ITEM_NUMBER_VALUE</property>
+                    <property name="nativeName">ITEM_NUMBER_VALUE</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select parm.item_number_value from RUN_J_SHIFT_PARM  parm 
+where parm.runlog_parm_id = 17 and parm.run_logid = (
+select b.run_logid from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='dqzy' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?))</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="qbb0" id="566">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ITEM_NUMBER_VALUE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ITEM_NUMBER_VALUE</property>
+                    <property name="nativeName">ITEM_NUMBER_VALUE</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select parm.item_number_value from RUN_J_SHIFT_PARM  parm 
+where parm.runlog_parm_id = 18 and parm.run_logid = (
+select b.run_logid from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='dqzy' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?))</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="jsgzp" id="568">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ITEM_NUMBER_VALUE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ITEM_NUMBER_VALUE</property>
+                    <property name="nativeName">ITEM_NUMBER_VALUE</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select parm.item_number_value from RUN_J_SHIFT_PARM  parm 
+where parm.runlog_parm_id = 67 and parm.run_logid = (
+select b.run_logid from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='dqzy' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?))</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="kggzp" id="570">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ITEM_NUMBER_VALUE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ITEM_NUMBER_VALUE</property>
+                    <property name="nativeName">ITEM_NUMBER_VALUE</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select parm.item_number_value from RUN_J_SHIFT_PARM  parm 
+where parm.runlog_parm_id = 68 and parm.run_logid = (
+select b.run_logid from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='dqzy' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?))</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="wkggzp" id="572">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ITEM_NUMBER_VALUE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ITEM_NUMBER_VALUE</property>
+                    <property name="nativeName">ITEM_NUMBER_VALUE</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select parm.item_number_value from RUN_J_SHIFT_PARM  parm 
+where parm.runlog_parm_id = 69 and parm.run_logid = (
+select b.run_logid from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='dqzy' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?))</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="jshugzp" id="574">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ITEM_NUMBER_VALUE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ITEM_NUMBER_VALUE</property>
+                    <property name="nativeName">ITEM_NUMBER_VALUE</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select parm.item_number_value from RUN_J_SHIFT_PARM  parm 
+where parm.runlog_parm_id = 70 and parm.run_logid = (
+select b.run_logid from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='dqzy' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?))</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="jbsx" id="576">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">RECORD_CONTENT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">RECORD_CONTENT</property>
+                    <property name="nativeName">RECORD_CONTENT</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select re.record_content from RUN_J_SHIFT_RECORD re 
+where re.main_item_code = '08' and re.run_log_id = (select b.run_logid from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='dqzy' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?))</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="tz" id="594">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">RECORD_CONTENT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">RECORD_CONTENT</property>
+                    <property name="nativeName">RECORD_CONTENT</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select re.record_content from RUN_J_SHIFT_RECORD re 
+where re.main_item_code = '09' and re.run_log_id = (select b.run_logid from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='dqzy' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?))</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="jbsj" id="638">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">AWAY_CLASS_TIME</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">AWAY_CLASS_TIME</property>
+                    <property name="nativeName">AWAY_CLASS_TIME</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select b.away_class_time from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='dqzy' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?)</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="jiaobsj" id="640">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TAKE_CLASS_TIME</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TAKE_CLASS_TIME</property>
+                    <property name="nativeName">TAKE_CLASS_TIME</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select b.take_class_time from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='dqzy' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?)</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="jiebbz" id="642">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CHS_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CHS_NAME</property>
+                    <property name="nativeName">CHS_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText"> select i.chs_name from hr_j_emp_info i where i.emp_code = (  select b.take_class_leader from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='dqzy' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?))</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="jiaobbz" id="643">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CHS_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CHS_NAME</property>
+                    <property name="nativeName">CHS_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText"> select i.chs_name from hr_j_emp_info i where i.emp_code = (  select b.away_class_leader from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='hxbz' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?))</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="zz" id="648">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CHS_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CHS_NAME</property>
+                    <property name="nativeName">CHS_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select i.chs_name from hr_j_emp_info i where i.station_id = 8 and i.emp_code in
+(select t.booked_employee from run_j_runlog_worker t where t.run_logid = 
+(select b.run_logid from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='300MWZZ' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?)))</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="bz" id="650">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CHS_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dutytime</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dutyshift</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CHS_NAME</property>
+                    <property name="nativeName">CHS_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select i.chs_name from hr_j_emp_info i where i.station_id = 13 and i.emp_code in
+(select t.booked_employee from run_j_runlog_worker t where t.run_logid = 
+(select b.run_logid from run_j_runlog_main b 
+where to_char(b.take_class_time,'YYYY-MM-DD') = ? and b.speciality_code='dqzy' and  b.shift_time_id in
+ ( select a.shift_time_id from RUN_C_SHIFT_TIME a where a.shift_time_name = ?)))</property>
+            <xml-property name="designerValues"><![CDATA[]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">"Verdana"</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="topMargin">0.25in</property>
+            <property name="leftMargin">0.25in</property>
+            <property name="bottomMargin">0.25in</property>
+            <property name="rightMargin">0.25in</property>
+            <page-header>
+                <grid id="318">
+                    <property name="width">100%</property>
+                    <column id="319"/>
+                    <row id="320">
+                        <cell id="321">
+                            <label id="324">
+                                <property name="fontSize">24pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text"> 电气班长运行日志</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                    <row id="322">
+                        <cell id="323"/>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="7">
+            <property name="borderBottomColor">#000000</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">#000000</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">#000000</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">#000000</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="width">100%</property>
+            <column id="8">
+                <property name="width">0.8229166666666666in</property>
+            </column>
+            <column id="9"/>
+            <column id="10"/>
+            <column id="11"/>
+            <column id="12">
+                <property name="width">0.875in</property>
+            </column>
+            <column id="13">
+                <property name="width">1.0416666666666667in</property>
+            </column>
+            <column id="14">
+                <property name="width">1.0104166666666667in</property>
+            </column>
+            <column id="15"/>
+            <column id="16"/>
+            <row id="326">
+                <cell id="327">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="366">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">值长</text-property>
+                    </label>
+                </cell>
+                <cell id="328">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="367">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">班长</text-property>
+                    </label>
+                </cell>
+                <cell id="329">
+                    <property name="colSpan">7</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="369">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">值班人员</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="346">
+                <cell id="347">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="649">
+                        <property name="textAlign">center</property>
+                        <property name="dataSet">zz</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">CHS_NAME</property>
+                                <property name="displayName">CHS_NAME</property>
+                                <expression name="expression">dataSetRow["CHS_NAME"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">CHS_NAME</property>
+                    </data>
+                </cell>
+                <cell id="348">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="651">
+                        <property name="textAlign">center</property>
+                        <property name="dataSet">bz</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">CHS_NAME</property>
+                                <property name="displayName">CHS_NAME</property>
+                                <expression name="expression">dataSetRow["CHS_NAME"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">CHS_NAME</property>
+                    </data>
+                </cell>
+                <cell id="349">
+                    <property name="colSpan">7</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                </cell>
+            </row>
+            <row id="356">
+                <cell id="357">
+                    <property name="colSpan">9</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="370">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">当前操作项目</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="371">
+                <cell id="372">
+                    <property name="colSpan">9</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <table id="496">
+                        <property name="textAlign">center</property>
+                        <property name="width">100%</property>
+                        <property name="dataSet">czxm</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ROWNUM</property>
+                                <property name="displayName">ROWNUM</property>
+                                <expression name="expression">dataSetRow["ROWNUM"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">OP_TIME</property>
+                                <property name="displayName">OP_TIME</property>
+                                <expression name="expression">dataSetRow["OP_TIME"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">OPTICKET_CODE</property>
+                                <property name="displayName">OPTICKET_CODE</property>
+                                <expression name="expression">dataSetRow["OPTICKET_CODE"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">OP_CONTENT</property>
+                                <property name="displayName">OP_CONTENT</property>
+                                <expression name="expression">dataSetRow["OP_CONTENT"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <column id="520"/>
+                        <column id="521"/>
+                        <column id="522"/>
+                        <column id="523"/>
+                        <header>
+                            <row id="497">
+                                <cell id="498">
+                                    <label id="499">
+                                        <text-property name="text">序号</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="500">
+                                    <label id="501">
+                                        <text-property name="text">操作时间</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="502">
+                                    <label id="503">
+                                        <text-property name="text">操作票号</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="504">
+                                    <label id="505">
+                                        <text-property name="text">操作内容</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="506">
+                                <cell id="507">
+                                    <data id="508">
+                                        <property name="resultSetColumn">ROWNUM</property>
+                                    </data>
+                                </cell>
+                                <cell id="509">
+                                    <data id="510">
+                                        <property name="resultSetColumn">OP_TIME</property>
+                                    </data>
+                                </cell>
+                                <cell id="511">
+                                    <data id="512">
+                                        <property name="resultSetColumn">OPTICKET_CODE</property>
+                                    </data>
+                                </cell>
+                                <cell id="513">
+                                    <data id="514">
+                                        <property name="resultSetColumn">OP_CONTENT</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="515">
+                                <cell id="516"/>
+                                <cell id="517"/>
+                                <cell id="518"/>
+                                <cell id="519"/>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="381">
+                <cell id="382">
+                    <property name="colSpan">9</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <grid id="422">
+                        <property name="width">100%</property>
+                        <column id="423"/>
+                        <column id="424"/>
+                        <column id="425"/>
+                        <column id="426"/>
+                        <row id="427">
+                            <cell id="428">
+                                <property name="colSpan">2</property>
+                                <property name="rowSpan">1</property>
+                                <table id="442">
+                                    <property name="width">100%</property>
+                                    <property name="dataSet">runway</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">RUNNAME</property>
+                                            <property name="displayName">RUNNAME</property>
+                                            <expression name="expression">dataSetRow["RUNNAME"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">EQUNAME</property>
+                                            <property name="displayName">EQUNAME</property>
+                                            <expression name="expression">dataSetRow["EQUNAME"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <column id="456"/>
+                                    <column id="457"/>
+                                    <header>
+                                        <row id="443">
+                                            <cell id="444">
+                                                <property name="borderRightColor">#000000</property>
+                                                <property name="borderRightStyle">solid</property>
+                                                <property name="borderRightWidth">1px</property>
+                                                <property name="textAlign">center</property>
+                                                <label id="445">
+                                                    <text-property name="text">运行方式</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="446">
+                                                <property name="borderRightColor">#000000</property>
+                                                <property name="borderRightStyle">solid</property>
+                                                <property name="borderRightWidth">1px</property>
+                                                <property name="textAlign">center</property>
+                                                <label id="447">
+                                                    <text-property name="text">设备名</text-property>
+                                                </label>
+                                            </cell>
+                                        </row>
+                                    </header>
+                                    <detail>
+                                        <row id="448">
+                                            <cell id="449">
+                                                <property name="borderRightColor">#000000</property>
+                                                <property name="borderRightStyle">solid</property>
+                                                <property name="borderRightWidth">1px</property>
+                                                <property name="textAlign">center</property>
+                                                <data id="450">
+                                                    <property name="borderBottomColor">#000000</property>
+                                                    <property name="borderBottomStyle">solid</property>
+                                                    <property name="borderBottomWidth">1px</property>
+                                                    <property name="resultSetColumn">RUNNAME</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="451">
+                                                <property name="borderRightColor">#000000</property>
+                                                <property name="borderRightStyle">solid</property>
+                                                <property name="borderRightWidth">1px</property>
+                                                <property name="textAlign">center</property>
+                                                <data id="452">
+                                                    <property name="borderBottomColor">#000000</property>
+                                                    <property name="borderBottomStyle">solid</property>
+                                                    <property name="borderBottomWidth">1px</property>
+                                                    <property name="resultSetColumn">EQUNAME</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </detail>
+                                    <footer>
+                                        <row id="453">
+                                            <cell id="454">
+                                                <property name="textAlign">center</property>
+                                                <label id="646"/>
+                                            </cell>
+                                            <cell id="455">
+                                                <property name="textAlign">center</property>
+                                            </cell>
+                                        </row>
+                                    </footer>
+                                </table>
+                            </cell>
+                            <cell id="430">
+                                <property name="colSpan">2</property>
+                                <property name="rowSpan">1</property>
+                                <table id="462">
+                                    <property name="textAlign">center</property>
+                                    <property name="width">100%</property>
+                                    <property name="dataSet">runway2</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">RUNNAME</property>
+                                            <property name="displayName">RUNNAME</property>
+                                            <expression name="expression">dataSetRow["RUNNAME"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">EQUNAME</property>
+                                            <property name="displayName">EQUNAME</property>
+                                            <expression name="expression">dataSetRow["EQUNAME"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <column id="476"/>
+                                    <column id="477"/>
+                                    <header>
+                                        <row id="463">
+                                            <cell id="464">
+                                                <property name="borderRightColor">#000000</property>
+                                                <property name="borderRightStyle">solid</property>
+                                                <property name="borderRightWidth">1px</property>
+                                                <label id="465">
+                                                    <text-property name="text">运行方式</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="466">
+                                                <label id="467">
+                                                    <text-property name="text">设备名</text-property>
+                                                </label>
+                                            </cell>
+                                        </row>
+                                    </header>
+                                    <detail>
+                                        <row id="468">
+                                            <cell id="469">
+                                                <property name="borderRightColor">#000000</property>
+                                                <property name="borderRightStyle">solid</property>
+                                                <property name="borderRightWidth">1px</property>
+                                                <data id="470">
+                                                    <property name="borderBottomColor">#000000</property>
+                                                    <property name="borderBottomStyle">solid</property>
+                                                    <property name="borderBottomWidth">1px</property>
+                                                    <property name="resultSetColumn">RUNNAME</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="471">
+                                                <data id="472">
+                                                    <property name="borderBottomColor">#000000</property>
+                                                    <property name="borderBottomStyle">solid</property>
+                                                    <property name="borderBottomWidth">1px</property>
+                                                    <property name="resultSetColumn">EQUNAME</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </detail>
+                                    <footer>
+                                        <row id="473">
+                                            <cell id="474">
+                                                <label id="647"/>
+                                            </cell>
+                                            <cell id="475"/>
+                                        </row>
+                                    </footer>
+                                </table>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="395">
+                <cell id="396">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="405">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">序号</text-property>
+                    </label>
+                </cell>
+                <cell id="397">
+                    <property name="colSpan">8</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="406">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">设备操作与运行中发生的异常现象</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="336">
+                <cell id="337">
+                    <property name="colSpan">9</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <table id="479">
+                        <property name="width">100%</property>
+                        <property name="dataSet">ycxx</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ROWNUM</property>
+                                <property name="displayName">ROWNUM</property>
+                                <expression name="expression">dataSetRow["ROWNUM"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">RECORD_CONTENT</property>
+                                <property name="displayName">RECORD_CONTENT</property>
+                                <expression name="expression">dataSetRow["RECORD_CONTENT"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <column id="493">
+                            <property name="width">1.09375in</property>
+                        </column>
+                        <column id="494"/>
+                        <header>
+                            <row id="480">
+                                <cell id="481">
+                                    <property name="textAlign">center</property>
+                                </cell>
+                                <cell id="483">
+                                    <property name="textAlign">center</property>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="485">
+                                <cell id="486">
+                                    <property name="textAlign">center</property>
+                                    <data id="487">
+                                        <property name="resultSetColumn">ROWNUM</property>
+                                    </data>
+                                </cell>
+                                <cell id="488">
+                                    <property name="textAlign">center</property>
+                                    <data id="489">
+                                        <property name="resultSetColumn">RECORD_CONTENT</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="490">
+                                <cell id="491">
+                                    <property name="textAlign">center</property>
+                                </cell>
+                                <cell id="492">
+                                    <property name="textAlign">center</property>
+                                    <label id="653"/>
+                                </cell>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="77">
+                <cell id="78">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="231">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">检修设备</text-property>
+                    </label>
+                </cell>
+                <cell id="79">
+                    <property name="colSpan">8</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <table id="525">
+                        <property name="textAlign">center</property>
+                        <property name="width">100%</property>
+                        <property name="dataSet">jxsb</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ROWNUM</property>
+                                <property name="displayName">ROWNUM</property>
+                                <expression name="expression">dataSetRow["ROWNUM"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">RECORD_CONTENT</property>
+                                <property name="displayName">RECORD_CONTENT</property>
+                                <expression name="expression">dataSetRow["RECORD_CONTENT"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <column id="539"/>
+                        <column id="540"/>
+                        <header>
+                            <row id="526">
+                                <cell id="527"/>
+                                <cell id="529"/>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="531">
+                                <cell id="532">
+                                    <data id="533">
+                                        <property name="resultSetColumn">ROWNUM</property>
+                                    </data>
+                                </cell>
+                                <cell id="534">
+                                    <data id="535">
+                                        <property name="resultSetColumn">RECORD_CONTENT</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="536">
+                                <cell id="537"/>
+                                <cell id="538"/>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="87">
+                <cell id="88">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="232">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">接地线</text-property>
+                    </label>
+                </cell>
+                <cell id="89">
+                    <property name="colSpan">8</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <table id="542">
+                        <property name="width">100%</property>
+                        <property name="dataSet">jdx</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">EARTH_NAME</property>
+                                <property name="displayName">EARTH_NAME</property>
+                                <expression name="expression">dataSetRow["EARTH_NAME"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">INSTALL_PLACE</property>
+                                <property name="displayName">INSTALL_PLACE</property>
+                                <expression name="expression">dataSetRow["INSTALL_PLACE"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <column id="556"/>
+                        <column id="557"/>
+                        <header>
+                            <row id="543">
+                                <cell id="544">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <label id="545">
+                                        <text-property name="text">号数</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="546">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <label id="547">
+                                        <text-property name="text">接地点</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="548">
+                                <cell id="549">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <data id="550">
+                                        <property name="resultSetColumn">EARTH_NAME</property>
+                                    </data>
+                                </cell>
+                                <cell id="551">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <data id="552">
+                                        <property name="resultSetColumn">INSTALL_PLACE</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="553">
+                                <cell id="554">
+                                    <property name="textAlign">center</property>
+                                    <label id="654"/>
+                                </cell>
+                                <cell id="555">
+                                    <property name="textAlign">center</property>
+                                </cell>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="107">
+                <cell id="108">
+                    <property name="colSpan">9</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="242">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">发电机、主变压器连续运行小时累计</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="117">
+                <cell id="118">
+                    <property name="colSpan">9</property>
+                    <property name="rowSpan">1</property>
+                    <grid id="285">
+                        <property name="width">100%</property>
+                        <column id="286"/>
+                        <column id="287"/>
+                        <column id="288"/>
+                        <column id="289"/>
+                        <column id="290"/>
+                        <row id="291">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <cell id="292">
+                                <property name="borderRightColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                                <label id="303">
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">#11机变</text-property>
+                                </label>
+                            </cell>
+                            <cell id="293">
+                                <property name="borderLeftColor">#000000</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">1px</property>
+                                <property name="borderRightColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                                <label id="304">
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">#12机变</text-property>
+                                </label>
+                            </cell>
+                            <cell id="294">
+                                <property name="borderLeftColor">#000000</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">1px</property>
+                                <property name="borderRightColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                                <label id="305">
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">#1厂高变</text-property>
+                                </label>
+                            </cell>
+                            <cell id="295">
+                                <property name="borderLeftColor">#000000</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">1px</property>
+                                <property name="borderRightColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                                <label id="306">
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">#2厂高变</text-property>
+                                </label>
+                            </cell>
+                            <cell id="296">
+                                <property name="borderLeftColor">#000000</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">1px</property>
+                                <label id="307">
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">#0启/备变</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="297">
+                            <cell id="298">
+                                <property name="borderRightColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                                <data id="559">
+                                    <property name="textAlign">center</property>
+                                    <property name="dataSet">jb11</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">ITEM_NUMBER_VALUE</property>
+                                            <property name="displayName">ITEM_NUMBER_VALUE</property>
+                                            <expression name="expression">dataSetRow["ITEM_NUMBER_VALUE"]</expression>
+                                            <property name="dataType">decimal</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">ITEM_NUMBER_VALUE</property>
+                                </data>
+                            </cell>
+                            <cell id="299">
+                                <property name="borderLeftColor">#000000</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">1px</property>
+                                <property name="borderRightColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                                <data id="561">
+                                    <property name="textAlign">center</property>
+                                    <property name="dataSet">jb12</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">ITEM_NUMBER_VALUE</property>
+                                            <property name="displayName">ITEM_NUMBER_VALUE</property>
+                                            <expression name="expression">dataSetRow["ITEM_NUMBER_VALUE"]</expression>
+                                            <property name="dataType">decimal</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">ITEM_NUMBER_VALUE</property>
+                                </data>
+                            </cell>
+                            <cell id="300">
+                                <property name="borderLeftColor">#000000</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">1px</property>
+                                <property name="borderRightColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                                <data id="564">
+                                    <property name="textAlign">center</property>
+                                    <property name="dataSet">cgb1</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">ITEM_NUMBER_VALUE</property>
+                                            <property name="displayName">ITEM_NUMBER_VALUE</property>
+                                            <expression name="expression">dataSetRow["ITEM_NUMBER_VALUE"]</expression>
+                                            <property name="dataType">decimal</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">ITEM_NUMBER_VALUE</property>
+                                </data>
+                            </cell>
+                            <cell id="301">
+                                <property name="borderLeftColor">#000000</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">1px</property>
+                                <property name="borderRightColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                                <data id="565">
+                                    <property name="textAlign">center</property>
+                                    <property name="dataSet">cgb2</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">ITEM_NUMBER_VALUE</property>
+                                            <property name="displayName">ITEM_NUMBER_VALUE</property>
+                                            <expression name="expression">dataSetRow["ITEM_NUMBER_VALUE"]</expression>
+                                            <property name="dataType">decimal</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">ITEM_NUMBER_VALUE</property>
+                                </data>
+                            </cell>
+                            <cell id="302">
+                                <property name="borderLeftColor">#000000</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">1px</property>
+                                <data id="567">
+                                    <property name="textAlign">center</property>
+                                    <property name="dataSet">qbb0</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">ITEM_NUMBER_VALUE</property>
+                                            <property name="displayName">ITEM_NUMBER_VALUE</property>
+                                            <expression name="expression">dataSetRow["ITEM_NUMBER_VALUE"]</expression>
+                                            <property name="dataType">decimal</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">ITEM_NUMBER_VALUE</property>
+                                </data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="127">
+                <cell id="128">
+                    <property name="colSpan">9</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="308">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">工作票开工、结束、接收统计</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="137">
+                <cell id="138">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="309">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">开工</text-property>
+                    </label>
+                </cell>
+                <cell id="139">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="571">
+                        <property name="dataSet">kggzp</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ITEM_NUMBER_VALUE</property>
+                                <property name="displayName">ITEM_NUMBER_VALUE</property>
+                                <expression name="expression">dataSetRow["ITEM_NUMBER_VALUE"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ITEM_NUMBER_VALUE</property>
+                    </data>
+                </cell>
+                <cell id="140">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="310">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">结束</text-property>
+                    </label>
+                </cell>
+                <cell id="141">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="575">
+                        <property name="dataSet">jshugzp</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ITEM_NUMBER_VALUE</property>
+                                <property name="displayName">ITEM_NUMBER_VALUE</property>
+                                <expression name="expression">dataSetRow["ITEM_NUMBER_VALUE"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ITEM_NUMBER_VALUE</property>
+                    </data>
+                </cell>
+                <cell id="142">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="311">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">接收</text-property>
+                    </label>
+                </cell>
+                <cell id="143">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="569">
+                        <property name="dataSet">jsgzp</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ITEM_NUMBER_VALUE</property>
+                                <property name="displayName">ITEM_NUMBER_VALUE</property>
+                                <expression name="expression">dataSetRow["ITEM_NUMBER_VALUE"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ITEM_NUMBER_VALUE</property>
+                    </data>
+                </cell>
+                <cell id="144">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="312">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">未开工</text-property>
+                    </label>
+                </cell>
+                <cell id="145">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="573">
+                        <property name="dataSet">wkggzp</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ITEM_NUMBER_VALUE</property>
+                                <property name="displayName">ITEM_NUMBER_VALUE</property>
+                                <expression name="expression">dataSetRow["ITEM_NUMBER_VALUE"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ITEM_NUMBER_VALUE</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="147">
+                <cell id="148">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="313">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">交班事项</text-property>
+                    </label>
+                </cell>
+                <cell id="149">
+                    <property name="colSpan">8</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="593">
+                        <property name="dataSet">jbsx</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">RECORD_CONTENT</property>
+                                <property name="displayName">RECORD_CONTENT</property>
+                                <expression name="expression">dataSetRow["RECORD_CONTENT"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">RECORD_CONTENT</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="157">
+                <cell id="158">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="314">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">通知</text-property>
+                    </label>
+                </cell>
+                <cell id="159">
+                    <property name="colSpan">8</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                </cell>
+            </row>
+            <row id="595">
+                <cell id="596">
+                    <property name="colSpan">9</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <grid id="617">
+                        <property name="width">100%</property>
+                        <column id="618"/>
+                        <column id="619"/>
+                        <column id="620"/>
+                        <column id="621"/>
+                        <column id="622"/>
+                        <column id="623"/>
+                        <column id="624"/>
+                        <column id="625"/>
+                        <row id="626">
+                            <cell id="627">
+                                <property name="borderRightColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                                <label id="635">
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">交班时间</text-property>
+                                </label>
+                            </cell>
+                            <cell id="628">
+                                <property name="borderRightColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                                <data id="639">
+                                    <property name="dataSet">jbsj</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">AWAY_CLASS_TIME</property>
+                                            <property name="displayName">AWAY_CLASS_TIME</property>
+                                            <expression name="expression">dataSetRow["AWAY_CLASS_TIME"]</expression>
+                                            <property name="dataType">date-time</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">AWAY_CLASS_TIME</property>
+                                </data>
+                            </cell>
+                            <cell id="629">
+                                <property name="borderRightColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                                <label id="615">
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">交班班长</text-property>
+                                </label>
+                            </cell>
+                            <cell id="630">
+                                <property name="borderRightColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                                <data id="644">
+                                    <property name="dataSet">jiaobbz</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">CHS_NAME</property>
+                                            <property name="displayName">CHS_NAME</property>
+                                            <expression name="expression">dataSetRow["CHS_NAME"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">CHS_NAME</property>
+                                </data>
+                            </cell>
+                            <cell id="631">
+                                <property name="borderRightColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                                <label id="636">
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">接班时间</text-property>
+                                </label>
+                            </cell>
+                            <cell id="632">
+                                <property name="borderRightColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                                <data id="641">
+                                    <property name="dataSet">jiaobsj</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">TAKE_CLASS_TIME</property>
+                                            <property name="displayName">TAKE_CLASS_TIME</property>
+                                            <expression name="expression">dataSetRow["TAKE_CLASS_TIME"]</expression>
+                                            <property name="dataType">date-time</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">TAKE_CLASS_TIME</property>
+                                </data>
+                            </cell>
+                            <cell id="633">
+                                <property name="borderRightColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                                <label id="637">
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">接班班长</text-property>
+                                </label>
+                            </cell>
+                            <cell id="634">
+                                <data id="645">
+                                    <property name="textAlign">center</property>
+                                    <property name="dataSet">jiebbz</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">CHS_NAME</property>
+                                            <property name="displayName">CHS_NAME</property>
+                                            <expression name="expression">dataSetRow["CHS_NAME"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">CHS_NAME</property>
+                                </data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>   
+	<include file="struts-validation.xml" />
+	<package name="equplan" namespace="/equplan" extends="jfreechart-default"> 
+	   <!--计划类型维护-->
+		<action name="addEquPlanType" class="power.web.equ.planrepair.action.EquPlanTypeAction" method="addEquPlanType"></action> 
+		<action name="updateEquPlanType" class="power.web.equ.planrepair.action.EquPlanTypeAction" method="updateEquPlanType"></action> 
+		<action name="deleteEquPlanType" class="power.web.equ.planrepair.action.EquPlanTypeAction" method="deleteEquPlanType"></action> 
+		<action name="findEquPlanTypeList" class="power.web.equ.planrepair.action.EquPlanTypeAction" method="findEquPlanTypeList"></action> 
+		
+	  <!--检修项目内容维护-->
+		<action name="addPlanContent" class="power.web.equ.planrepair.action.EquPlanContentAction" method="addPlanContent"></action> 
+		<action name="updatePlanContent" class="power.web.equ.planrepair.action.EquPlanContentAction" method="updatePlanContent"></action> 
+		<action name="deletePlanContent" class="power.web.equ.planrepair.action.EquPlanContentAction" method="deletePlanContent"></action> 
+		<action name="findPlanContentList" class="power.web.equ.planrepair.action.EquPlanContentAction" method="findPlanContentList"></action> 
+	<!-- 检修登记 -->
+		<action name="savePlanRepair" class="power.web.equ.planrepair.action.EquPlanRegisterAction" method="savePlanRepair"></action>
+		<action name="updatePlanRepair" class="power.web.equ.planrepair.action.EquPlanRegisterAction" method="updatePlanRepair"></action>
+		<action name="delPlanRepair" class="power.web.equ.planrepair.action.EquPlanRegisterAction" method="delPlanRepair"></action>
+		<action name="updatePlanStatus" class="power.web.equ.planrepair.action.EquPlanRegisterAction" method="updatePlanStatus"></action>
+		<action name="getPlanRepairList" class="power.web.equ.planrepair.action.EquPlanRegisterAction" method="getPlanRepairList"></action>
+		<!-- 综合查询 -->
+		<action name="getAllPlanRepairList" class="power.web.equ.planrepair.action.EquPlanRegisterAction" method="getAllPlanRepairList"></action>
+		<!-- 计划检修上报 -->
+		<action name="planRepairReport" class="power.web.equ.planrepair.action.EquPlanRegisterAction" method="planRepairReport"></action>
+	<!-- 计划检修明细 -->
+		<action name="saveDetailPlan" class="power.web.equ.planrepair.action.EquDetailPlanAction" method="saveDetailPlan"></action>
+		<action name="updateDetailPlan" class="power.web.equ.planrepair.action.EquDetailPlanAction" method="updateDetailPlan"></action>
+		<action name="delDetailPlan" class="power.web.equ.planrepair.action.EquDetailPlanAction" method="delDetailPlan"></action>
+		<action name="getDetailPlanList" class="power.web.equ.planrepair.action.EquDetailPlanAction" method="getDetailPlanList"></action>
+		<!-- 计划检修审批 -->
+		<action name="findPlanRepairApproveList" class="power.web.equ.planrepair.action.EquPlanRepairApproveAction" method="findPlanRepairApproveList"></action>
+		<action name="planRepairApproveSign" class="power.web.equ.planrepair.action.EquPlanRepairApproveAction" method="planRepairApproveSign"></action>
+	</package> 
+</struts>

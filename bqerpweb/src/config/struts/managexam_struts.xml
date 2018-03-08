@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-validation.xml" />
+	<package name="managexam" namespace="/managexam"
+		extends="jfreechart-default">
+		<!-- 操作TOPIC数据 
+		<action name="getExamTopicList"
+			class="power.web.manage.examine.action.TopicEditAction"
+			method="getExamTopicList">
+		</action>
+		<action name="saveExamTopicList"
+			class="power.web.manage.examine.action.TopicEditAction"
+			method="saveExamTopicList">
+		</action>
+		-->
+		<!-- 操作RELATION数据 
+		<action name="saveExamTopicRelation"
+			class="power.web.manage.examine.action.TopicEditAction"
+			method="saveExamTopicRelation">
+		</action>
+		-->
+		<!-- 操作ITEM数据 -->
+		<action name="getExamItemList"
+			class="power.web.manage.examine.action.TopicEditAction"
+			method="getExamItemList">
+		</action>
+		<action name="findItemTree"
+			class="power.web.manage.examine.action.TopicEditAction"
+			method="findItemTree">
+		</action>
+		<action name="findItemInfo"
+			class="power.web.manage.examine.action.TopicEditAction"
+			method="findItemInfo">
+		</action>
+		<action name="findItemList"
+			class="power.web.manage.examine.action.TopicEditAction"
+			method="findItemList">
+		</action>
+		<action name="saveExamItem"
+			class="power.web.manage.examine.action.TopicEditAction"
+			method="saveExamItem">
+		</action>
+		<action name="deleteExamItem"
+			class="power.web.manage.examine.action.TopicEditAction"
+			method="deleteExamItem">
+		</action>
+		<action name="findAllItemList"
+			class="power.web.manage.examine.action.TopicEditAction"
+			method="findAllItemList">
+		</action>
+		<!-- 操作Affiliate数据 -->
+		<action name="getStandardList"
+			class="power.web.manage.examine.action.TopicEditAction"
+			method="getStandardList">
+		</action>
+		<action name="getStandardInfo"
+			class="power.web.manage.examine.action.TopicEditAction"
+			method="getStandardInfo">
+		</action>
+		<action name="saveStandard"
+			class="power.web.manage.examine.action.TopicEditAction"
+			method="saveStandard">
+		</action>
+		<action name="deleteStandard"
+			class="power.web.manage.examine.action.TopicEditAction"
+			method="deleteStandard">
+		</action>
+		<!-- 操作Execution数据 -->
+		<action name="getExecutionTable"
+			class="power.web.manage.examine.action.TopicEditAction"
+			method="getExecutionTable">
+		</action>
+		<action name="saveExecutionTable"
+			class="power.web.manage.examine.action.TopicEditAction"
+			method="saveExecutionTable">
+		</action>
+		<action name="issueExecutionTable"
+			class="power.web.manage.examine.action.TopicEditAction"
+			method="issueExecutionTable">
+		</action>
+		<action name="getYearExecutionTable"
+			class="power.web.manage.examine.action.TopicEditAction"
+			method="getYearExecutionTable">
+		</action>
+		<action name="getYearExecutionTableByItemId"
+			class="power.web.manage.examine.action.TopicEditAction"
+			method="getYearExecutionTableByItemId">
+		</action>
+		<action name="saveYearExecutionTable"
+			class="power.web.manage.examine.action.TopicEditAction"
+			method="saveYearExecutionTable">
+		</action>
+		<!-- 操作Dep和head数据 -->
+		<action name="getDeptList"
+			class="power.web.manage.examine.action.OverHeadAction"
+			method="getDeptList">
+		</action>
+		<action name="saveDeptList"
+			class="power.web.manage.examine.action.OverHeadAction"
+			method="saveDeptList">
+		</action>
+		<action name="getOverheadList"
+			class="power.web.manage.examine.action.OverHeadAction"
+			method="getOverheadList">
+		</action>
+		<action name="saveOverheadList"
+			class="power.web.manage.examine.action.OverHeadAction"
+			method="saveOverheadList">
+		</action>
+		 <action name="getOverInputList"
+			class="power.web.manage.examine.action.OverHeadAction"
+			method="getOverInputList">
+		</action>
+		<action name="saveOverInputList"
+			class="power.web.manage.examine.action.OverHeadAction"
+			method="saveOverInputList">
+		</action>
+		<!--奖金申报数据操作-->
+		<action name="getBonusApplyList"
+			class="power.web.manage.examine.action.BonusManager"
+			method="getBonusApplyList">
+		</action>
+		<action name="saveBonusApplyList"
+			class="power.web.manage.examine.action.BonusManager"
+			method="saveBonusApplyList">
+		</action>
+		
+		<!--奖金 -->
+		<action name="getAwardList"
+			class="power.web.manage.examine.action.AwardMainAction"
+			method="getAwardList">
+		</action>
+		<action name="saveAward"
+			class="power.web.manage.examine.action.AwardMainAction"
+			method="saveawardMainTable">
+		</action>
+		<action name="getAdvanceCashRegiter"
+			class="power.web.manage.examine.action.AwardMainAction"
+			method="getAdvanceCashRegiter">
+		</action>
+		<!--奖金申报审批 -->
+		<action name="findAwardMainApproveList"
+			class="power.web.manage.examine.action.AwardMainAction"
+			method="findAwardMainApproveList">
+		</action>
+		<action name="awardReport"
+			class="power.web.manage.examine.action.AwardMainAction"
+			method="awardReport">
+		</action>
+		<action name="awardApproveSign"
+			class="power.web.manage.examine.action.AwardMainAction"
+			method="awardApproveSign">
+		</action>
+		<!-- add by liuyi 091207 新增主题维护 -->
+		<action name="findAllTopic"
+			class="power.web.manage.examine.action.TopicMaintAction"
+			method="findAllTopic">
+		</action>
+		<action name="saveModifiedTopicRec"
+			class="power.web.manage.examine.action.TopicMaintAction"
+			method="saveModifiedTopicRec">
+		</action>
+		
+	<!-- add by liuyi 20100121 报表，机组，指标，主题综合维护 -->
+		<action name="findAllReportRec"
+			class="power.web.manage.reportitem.action.ReportItemAction"
+			method="findAllReportRec">
+		</action>
+		<action name="saveModiReportEntity"
+			class="power.web.manage.reportitem.action.ReportItemAction"
+			method="saveModiReportEntity">
+		</action>
+		<action name="saveReportItemModi"
+			class="power.web.manage.reportitem.action.ReportItemAction"
+			method="saveReportItemModi">
+		</action>
+		<action name="getAllReportItemList"
+			class="power.web.manage.reportitem.action.ReportItemAction"
+			method="getAllReportItemList">
+		</action>
+		<action name="getReportBlockList"
+			class="power.web.manage.reportitem.action.ReportItemAction"
+			method="getReportBlockList">
+		</action>
+		<action name="saveReportBlockModi"
+			class="power.web.manage.reportitem.action.ReportItemAction"
+			method="saveReportBlockModi">
+		</action>
+		<action name="getReportItemInputValue"
+			class="power.web.manage.reportitem.action.ReportItemAction"
+			method="getReportItemInputValue">
+		</action>
+		<action name="judgeAddOrUpdate"
+			class="power.web.manage.reportitem.action.ReportItemAction"
+			method="judgeAddOrUpdate">
+		</action>
+		<action name="clearReportItemInput"
+			class="power.web.manage.reportitem.action.ReportItemAction"
+			method="clearReportItemInput">
+		</action>
+		<action name="saveReportItemInput"
+			class="power.web.manage.reportitem.action.ReportItemAction"
+			method="saveReportItemInput">
+		</action>
+	</package>
+</struts>

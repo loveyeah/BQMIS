@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-validation.xml" />
+	<package name="message" namespace="/message"
+		extends="jfreechart-default">
+		<!-- 客户公司维护管理 -->
+		<action name="getCustomerCompanyList"
+			class="power.web.message.action.CustomerCompanyAction"
+			method="getCustomerCompanyList">
+		</action>
+		<action name="addCusCompany"
+			class="power.web.message.action.CustomerCompanyAction"
+			method="addCusCompany">
+		</action>
+		<action name="updateCusCompany"
+			class="power.web.message.action.CustomerCompanyAction"
+			method="updateCusCompany">
+		</action>
+		<action name="getCusCompany"
+			class="power.web.message.action.CustomerCompanyAction"
+			method="getCusCompany">
+		</action>
+		<action name="deleteCusCompany"
+			class="power.web.message.action.CustomerCompanyAction"
+			method="deleteCusCompany">
+		</action>
+
+		<!-- 客户公司对应联系人维护管理 -->
+		<action name="findByFuzzy"
+			class="power.web.message.action.CustomerContactAction"
+			method="findByFuzzy">
+		</action>
+		<action name="deleteContacter"
+			class="power.web.message.action.CustomerContactAction"
+			method="deleteContacter">
+		</action>
+		<action name="findContacterByCode"
+			class="power.web.message.action.CustomerContactAction"
+			method="findContacterByCode">
+		</action>
+		<action name="addContacterInCustomersList"
+			class="power.web.message.action.CustomerContactAction"
+			method="addContacterInCustomer">
+		</action>
+
+		<!--文档类型维护管理-->
+		<action name="getWordTypeList"
+			class="power.web.message.action.WordTypeAction"
+			method="getWordTypeList">
+		</action>
+		<action name="addWordType"
+			class="power.web.message.action.WordTypeAction"
+			method="addWordType">
+		</action>
+		<action name="updateWordType"
+			class="power.web.message.action.WordTypeAction"
+			method="updateWordType">
+		</action>
+		<action name="deleteWordType"
+			class="power.web.message.action.WordTypeAction"
+			method="deleteWordType">
+		</action>
+
+		<!--消息管理-->
+		<action name="getMessageList"
+			class="power.web.message.action.MessageAdminAction"
+			method="getMessageList">
+		</action>
+		<action name="saveMessage"
+			class="power.web.message.action.MessageAdminAction"
+			method="saveMessage">
+			<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">
+					application/x-zip-compressed,application/octet-stream,application/msword,text/plain,application/vnd.ms-excel,application/vnd.visio
+				</param>
+				<param name="maximumSize">200000000</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />
+		</action>
+		<action name="sendMessage"
+			class="power.web.message.action.MessageAdminAction"
+			method="sendMessage">
+		</action>
+		<action name="downloadFile"
+			class="power.web.message.action.MessageAdminAction"
+			method="downloadFile">
+		</action>
+		<action name="updateMessage"
+			class="power.web.message.action.MessageAdminAction"
+			method="updateMessage">
+		</action>
+		<action name="watchMessage"
+			class="power.web.message.action.MessageAdminAction"
+			method="watchMessage">
+		</action>
+		<action name="getReceiveMessageList"
+			class="power.web.message.action.MessageAdminAction"
+			method="getReceiveMessageList">
+		</action>
+		<action name="watchMessage"
+			class="power.web.message.action.MessageAdminAction"
+			method="watchMessage">
+		</action>
+		<action name="deleteMessage"
+			class="power.web.message.action.MessageAdminAction"
+			method="deleteMessage">
+		</action>
+
+	</package>
+</struts>

@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-validation.xml" />
+	<package name="managebudget" namespace="/managebudget"
+		extends="jfreechart-default">
+		<!-- 预算报表维护 -->
+		<action name="getBusinessItemList"
+			class="power.web.manage.budget.action.BudgetBusinessItemAction"
+			method="getBusinessItemList">
+		</action>
+		<action name="saveOrUpdateBusinessItem"
+			class="power.web.manage.budget.action.BudgetBusinessItemAction"
+			method="saveOrUpdateBusinessItem">
+		</action>
+		<!-- 预算报表维护 -->
+		<action name="findReportTreeList"
+			class="power.web.manage.budget.action.BudgetReportItemAction"
+			method="findReportTreeList">
+		</action>
+		<action name="saveOrupdateReportItem"
+			class="power.web.manage.budget.action.BudgetReportItemAction"
+			method="saveOrupdateReportItem">
+		</action>
+		<action name="getReportItemInfo"
+			class="power.web.manage.budget.action.BudgetReportItemAction"
+			method="getReportItemInfo">
+		</action>
+		<action name="delReportItem"
+			class="power.web.manage.budget.action.BudgetReportItemAction"
+			method="delReportItem">
+		</action>
+		<!-- 预算主题维护 -->
+		<action name="saveDependThemeInput"
+			class="power.web.manage.budget.action.ThemeAction"
+			method="saveDependThemeInput">
+		</action>
+		<action name="getThemeList"
+			class="power.web.manage.budget.action.ThemeAction"
+			method="getThemeList">
+		</action>
+
+		<!-- 预算部门维护 -->
+		<action name="addBudgetDept"
+			class="power.web.manage.budget.action.BudgetDeptAction"
+			method="addBudgetDept">
+		</action>
+		<action name="updateBudgetDept"
+			class="power.web.manage.budget.action.BudgetDeptAction"
+			method="updateBudgetDept">
+		</action>
+		<action name="deleteBudgetDept"
+			class="power.web.manage.budget.action.BudgetDeptAction"
+			method="deleteBudgetDept">
+		</action>
+		<action name="findBudgetDeptList"
+			class="power.web.manage.budget.action.BudgetDeptAction"
+			method="findBudgetDeptList">
+		</action>
+		<action name="findDeptDutyList"
+			class="power.web.manage.budget.action.BudgetDeptAction"
+			method="findDeptDutyList">
+		</action>
+		<!-- 预算部门维护 成本中心编码查询 add by ltong 20100429-->
+		<action name="findBudgetCostCodeList"
+			class="power.web.manage.budget.action.BudgetCostCodeAction"
+			method="findBudgetCostCodeList">
+		</action>
+		<!-- 部门预算主题维护 -->
+		<action name="addAndUpdateDeptTopic"
+			class="power.web.manage.budget.action.BudgetDeptTopicAction"
+			method="addAndUpdateDeptTopic">
+		</action>
+		<action name="findDeptTopicByCode"
+			class="power.web.manage.budget.action.BudgetDeptTopicAction"
+			method="findDeptTopicByCode">
+		</action>
+		<action name="findDeptTopicInMaint"
+			class="power.web.manage.budget.action.BudgetDeptTopicAction"
+			method="findDeptTopicInMaint">
+		</action>
+
+		<!-- 部门控制指标维护 -->
+		<action name="getDeptConList"
+			class="power.web.manage.budget.action.DeptControlAction"
+			method="getDeptConList">
+		</action>
+		<action name="saveDeptControlInput"
+			class="power.web.manage.budget.action.DeptControlAction"
+			method="saveDeptControlInput">
+		</action>
+
+		<!-- 预算指标维护 -->
+		<action name="getCbmCItemFormulaList"
+			class="power.web.manage.budget.action.BudgetFormulaAction"
+			method="getCbmCItemFormulaList">
+		</action>
+		<action name="saveCbmCItemFormula"
+			class="power.web.manage.budget.action.BudgetFormulaAction"
+			method="saveCbmCItemFormula">
+		</action>
+		<action name="getAllStatItemList"
+			class="power.web.manage.budget.action.BudgetFormulaAction"
+			method="getAllStatItemList">
+		</action>
+		<action name="getCbmCFactFormulaList"
+			class="power.web.manage.budget.action.FactFormulaAction"
+			method="getCbmCFactFormulaList">
+		</action>
+		<action name="saveCbmCFactFormula"
+			class="power.web.manage.budget.action.FactFormulaAction"
+			method="saveCbmCFactFormula">
+		</action>
+		<!-- 预算指标维护xubj -->
+		<action name="saveOrupdateBudgetItem"
+			class="power.web.manage.budget.action.budgetItemAction"
+			method="saveOrupdateBudgetItem">
+		</action>
+		<action name="findBudgetTree"
+			class="power.web.manage.budget.action.budgetItemAction"
+			method="findBudgetTree">
+		</action>
+		<action name="getBudgetItemtxInfo"
+			class="power.web.manage.budget.action.budgetItemAction"
+			method="getBudgetItemtxInfo">
+		</action>
+		<action name="getbudgetItemInfo"
+			class="power.web.manage.budget.action.budgetItemAction"
+			method="getbudgetItemInfo">
+		</action>
+		<action name="deleteBudgetItem"
+			class="power.web.manage.budget.action.budgetItemAction"
+			method="deleteBudgetItem">
+		</action>
+		<action name="geAccountorFactOrder"
+			class="power.web.manage.budget.action.budgetItemAction"
+			method="geAccountorFactOrder">
+		</action>
+		<!-- 预算部门指标维护 -->
+		<action name="findDeptTopicItemList"
+			class="power.web.manage.budget.action.DeptTopicItemAction"
+			method="findDeptTopicItemList">
+		</action>
+		<action name="saveDeptTopicItem"
+			class="power.web.manage.budget.action.DeptTopicItemAction"
+			method="saveDeptTopicItem">
+		</action>
+		<action name="judgeDeptItem"
+			class="power.web.manage.budget.action.DeptTopicItemAction"
+			method="judgeDeptItem">
+		</action>
+		<!-- add by ypan 20100903 -->
+		<action name="queryCenterUse"
+			class="power.web.manage.budget.action.DeptTopicItemAction"
+			method="queryCenterUse">
+		</action>
+		<action name="saveCenterUse"
+			class="power.web.manage.budget.action.DeptTopicItemAction"
+			method="saveCenterUse">
+		</action>
+		<action name="deleteCenterUse"
+			class="power.web.manage.budget.action.DeptTopicItemAction"
+			method="deleteCenterUse">
+		</action>
+
+		<!-- 预算执行控制 -->
+		<action name="getControlFeeList"
+			class="power.web.manage.budget.action.ExeControlFeeAction"
+			method="getControlFeeList">
+		</action>
+		<action name="saveControlFeeModified"
+			class="power.web.manage.budget.action.ExeControlFeeAction"
+			method="saveControlFeeModified">
+		</action>
+		<action name="getDeptBudetDetails"
+			class="power.web.manage.budget.action.ExeControlFeeAction"
+			method="getDeptBudetDetails">
+		</action>
+
+		<action name="exeControlReportTo"
+			class="power.web.manage.budget.action.ExeControlFeeAction"
+			method="exeControlReportTo">
+		</action>
+		<action name="masterItemCommSign"
+			class="power.web.manage.budget.action.ExeControlFeeAction"
+			method="masterItemCommSign">
+		</action>
+		<action name="masterItemApproveQuery"
+			class="power.web.manage.budget.action.ExeControlFeeAction"
+			method="masterItemApproveQuery">
+		</action>
+		<!-- 财务发生值填写 -->
+		<action name="saveFinancialModified"
+			class="power.web.manage.budget.action.FinancialInputAction"
+			method="saveFinancialModified">
+		</action>
+		<!-- 财务科目维护 -->
+		<action name="findFinanceTree"
+			class="power.web.manage.budget.action.FinanceItemAction"
+			method="findFinanceTree">
+		</action>
+		<action name="findNodeInfo"
+			class="power.web.manage.budget.action.FinanceItemAction"
+			method="findNodeInfo">
+		</action>
+		<action name="deleteNode"
+			class="power.web.manage.budget.action.FinanceItemAction"
+			method="deleteNode">
+		</action>
+		<action name="saveNode"
+			class="power.web.manage.budget.action.FinanceItemAction"
+			method="saveNode">
+		</action>
+		<action name="updateNode"
+			class="power.web.manage.budget.action.FinanceItemAction"
+			method="updateNode">
+		</action>
+		<!-- 部门预算指标查询 -->
+		<action name="findDeptTopicBusinessList"
+			class="power.web.manage.budget.action.BudgetMakeAction"
+			method="findDeptTopicBusinessList">
+		</action>
+		<!-- 预算编制单 -->
+		<action name="findBudgetMakeList"
+			class="power.web.manage.budget.action.BudgetMakeAction"
+			method="findBudgetMakeList">
+		</action>
+		<action name="saveBudgetMake"
+			class="power.web.manage.budget.action.BudgetMakeAction"
+			method="saveBudgetMake">
+		</action>
+		<action name="sendBudgetMake"
+			class="power.web.manage.budget.action.BudgetMakeAction"
+			method="sendBudgetMake">
+		</action>
+		<action name="upcommitBudgetMake"
+			class="power.web.manage.budget.action.BudgetMakeAction"
+			method="upcommitBudgetMake">
+		</action>
+		<action name="findMakeApproveList"
+			class="power.web.manage.budget.action.BudgetMakeAction"
+			method="findMakeApproveList">
+		</action>
+		<action name="findMakeItemListByMakeId"
+			class="power.web.manage.budget.action.BudgetMakeAction"
+			method="findMakeItemListByMakeId">
+		</action>
+		<action name="budgetMakeCommSign"
+			class="power.web.manage.budget.action.BudgetMakeAction"
+			method="budgetMakeCommSign">
+		</action>
+		
+		<action name="findBudgetBasisList"
+			class="power.web.manage.budget.action.BudgetMakeAction"
+			method="findBudgetBasisList">
+		</action>
+		
+		<action name="findBasisListById"
+			class="power.web.manage.budget.action.BudgetMakeAction"
+			method="findBasisListById">
+		</action>
+		<action name="editBasisRecord"
+			class="power.web.manage.budget.action.BudgetMakeAction"
+			method="editBasisRecord">
+		</action>
+		
+		
+		<!-- 部门预算分析 -->
+		<action name="deleteMonthAnlysis"
+			class="power.web.manage.budget.action.MonthAnalysisAction"
+			method="deleteMonthAnlysis">
+		</action>
+		<action name="getMonthAnlysisList"
+			class="power.web.manage.budget.action.MonthAnalysisAction"
+			method="getMonthAnlysisList">
+		</action>
+		<action name="saveMonthModified"
+			class="power.web.manage.budget.action.MonthAnalysisAction"
+			method="saveMonthModified">
+		</action>
+		<action name="getYearAnalysisList"
+			class="power.web.manage.budget.action.YearAnalysisAction"
+			method="getYearAnalysisList">
+		</action>
+		<action name="deleteYearAnalysis"
+			class="power.web.manage.budget.action.YearAnalysisAction"
+			method="deleteYearAnalysis">
+		</action>
+		<action name="saveYearAnalysisModified"
+			class="power.web.manage.budget.action.YearAnalysisAction"
+			method="saveYearAnalysisModified">
+		</action>
+		<!-- 折旧费预算明细 -->
+		<action name="saveDepreciationRecord"
+			class="power.web.manage.budget.action.DepreciationDetailAction"
+			method="saveDepreciationRecord">
+		</action>
+		<action name="findDepreciationList"
+			class="power.web.manage.budget.action.DepreciationDetailAction"
+			method="findDepreciationList">
+		</action>
+	
+
+		
+		<!-- 财务预算明细 -->
+		<action name="getFinanceDetailList"
+			class="power.web.manage.budget.action.BudgetFinanceDetailAction"
+			method="getFinanceDetailList">
+		</action>
+		<action name="saveFinanceDetailModified"
+			class="power.web.manage.budget.action.BudgetFinanceDetailAction"
+			method="saveFinanceDetailModified">
+		</action>
+		<!-- 折旧费预算审批 -->
+		<action name="depreciationReportTo"
+			class="power.web.manage.budget.action.DepreciationAction"
+			method="depreciationReportTo">
+		</action>
+		<action name="depreciationCommSign"
+			class="power.web.manage.budget.action.DepreciationAction"
+			method="depreciationCommSign">
+		</action>
+		<action name="depreciationApproveQuery"
+			class="power.web.manage.budget.action.DepreciationAction"
+			method="depreciationApproveQuery">
+		</action>
+		<!-- 财务预算审批 -->
+		<action name="financeReportTo"
+			class="power.web.manage.budget.action.BudgetFinanceDetailAction"
+			method="financeReportTo">
+		</action>
+		<action name="financeCommSign"
+			class="power.web.manage.budget.action.BudgetFinanceDetailAction"
+			method="financeCommSign">
+		</action>
+		<action name="financeApproveQuery"
+			class="power.web.manage.budget.action.BudgetFinanceDetailAction"
+			method="financeApproveQuery">
+		</action>
+		<!-- 资本性支出预算明细 -->
+		<action name="getCapitalDetailList"
+			class="power.web.manage.budget.action.BudgetCapitalDetailAction"
+			method="getCapitalDetailList">
+		</action>
+		<action name="saveCapitalDetailMod"
+			class="power.web.manage.budget.action.BudgetCapitalDetailAction"
+			method="saveCapitalDetailMod">
+		</action>
+		<action name="capitalReportTo"
+			class="power.web.manage.budget.action.BudgetCapitalDetailAction"
+			method="capitalReportTo">
+		</action>
+		<action name="capitalCommSign"
+			class="power.web.manage.budget.action.BudgetCapitalDetailAction"
+			method="capitalCommSign">
+		</action>
+		<action name="capitalApproveQuery"
+			class="power.web.manage.budget.action.BudgetCapitalDetailAction"
+			method="capitalApproveQuery">
+		</action>
+
+		<!-- 量本利模型维护 -->
+		<action name="findModelTreeList"
+			class="power.web.manage.budget.action.ProfitModelAction"
+			method="findModelTreeList">
+		</action>
+		<action name="saveOrupdateModelItem"
+			class="power.web.manage.budget.action.ProfitModelAction"
+			method="saveOrupdateModelItem">
+		</action>
+		<action name="getModelItemInfo"
+			class="power.web.manage.budget.action.ProfitModelAction"
+			method="getModelItemInfo">
+		</action>
+		<action name="delModelItem"
+			class="power.web.manage.budget.action.ProfitModelAction"
+			method="delModelItem">
+		</action>
+		<!-- 量本利模型公式设置 -->
+		<action name="getAllmodelItemList"
+			class="power.web.manage.budget.action.ProfitModelAction"
+			method="getAllmodelItemList">
+		</action>
+		<action name="getModelFormulaList"
+			class="power.web.manage.budget.action.ModelFormulaAction"
+			method="getModelFormulaList">
+		</action>
+		<action name="saveOrupdateModelFormula"
+			class="power.web.manage.budget.action.ModelFormulaAction"
+			method="saveOrupdateModelFormula">
+		</action>
+		<!-- 量本利模型预测数据 -->
+		<action name="getForcastRec"
+			class="power.web.manage.budget.action.ForecastModeAction"
+			method="getForcastRec">
+		</action>
+		<action name="saveForecastItemMod"
+			class="power.web.manage.budget.action.ForecastModeAction"
+			method="saveForecastItemMod">
+		</action>
+		<action name="getForcastModelRecords"
+			class="power.web.manage.budget.action.ForecastModeAction"
+			method="getForcastModelRecords">
+		</action>
+		<!-- 部门预算综合查询 -->
+		<action name="getComplexBudgetList"
+			class="power.web.manage.budget.action.ComplexBudgetQueryAction"
+			method="getComplexBudgetList">
+		</action>
+		<!-- 预算统计查询 -->
+		<action name="findBudgetCount"
+			class="power.web.manage.budget.action.budgetItemAction"
+			method="findBudgetCount">
+		</action>
+		<action name="findFeeDetail"
+			class="power.web.manage.budget.action.budgetItemAction"
+			method="findFeeDetail">
+		</action>
+		<!-- 成本分析 -->
+		<action name="costItemSaveorUpdate"
+			class="power.web.manage.budget.action.CostItemAction"
+			method="costItemSaveorUpdate">
+		</action>
+		<action name="costItemDelete"
+			class="power.web.manage.budget.action.CostItemAction"
+			method="costItemDelete">
+		</action>
+		<action name="getCostItemTree"
+			class="power.web.manage.budget.action.CostItemAction"
+			method="getCostItemTree">
+		</action>
+		<action name="getCostItemInfo"
+			class="power.web.manage.budget.action.CostItemAction"
+			method="getCostItemInfo">
+		</action>
+		<action name="getCostAnalysisList"
+			class="power.web.manage.budget.action.CoseAnalysisAction"
+			method="getCostAnalysisList">
+		</action>
+		<action name="saveAllCostMod"
+			class="power.web.manage.budget.action.CoseAnalysisAction"
+			method="saveAllCostMod">
+		</action>
+		<!-- 成本分析计算等级 -->
+		<action name="geAccountCostOrder"
+			class="power.web.manage.budget.action.CostItemAction"
+			method="geAccountCostOrder">
+		</action>
+		<!-- 成本公式 -->
+		<action name="saveCbmCostFormula"
+			class="power.web.manage.budget.action.CostFormulaAction"
+			method="saveCbmCostFormula">
+		</action>
+		<action name="getAllCostItemList"
+			class="power.web.manage.budget.action.CostFormulaAction"
+			method="getAllCostItemList">
+		</action>
+		<action name="getCbmCostFormulaList"
+			class="power.web.manage.budget.action.CostFormulaAction"
+			method="getCbmCostFormulaList">
+		</action>
+
+		<!-- 物资用到的指标 -->
+		<action name="findBudgetTreeForWz"
+			class="power.web.manage.budget.action.budgetItemAction"
+			method="findBudgetTreeForWz">
+		</action>
+		<action name="getItemNameByItemCode"
+			class="power.web.manage.budget.action.budgetItemAction"
+			method="getItemNameByItemCode">
+		</action>
+		
+		<!-- 外委申请管理 -->
+		<action name="assignedFillList"
+			class="power.web.manage.budget.action.AssignedFillAction"
+			method="assignedFillList">
+		</action>
+		<action name="assignedFillDelete"
+			class="power.web.manage.budget.action.AssignedFillAction"
+			method="assignedFillDelete">
+		</action>
+		<action name="saveAssignedFill"
+			class="power.web.manage.budget.action.AssignedFillAction"
+			method="saveAssignedFill">
+		</action>
+		<action name="updateAssignedFill"
+			class="power.web.manage.budget.action.AssignedFillAction"
+			method="updateAssignedFill">
+		</action>
+		<action name="reportTo"
+			class="power.web.manage.budget.action.AssignedFillAction"
+			method="reportTo">
+		</action>
+		<action name="assignedFillApproveList"
+			class="power.web.manage.budget.action.AssignedFillAction"
+			method="assignedFillApproveList">
+		</action>
+		<action name="approveSign"
+			class="power.web.manage.budget.action.AssignedFillAction"
+			method="approveSign">
+		</action>
+		<action name="assignedFillListall"
+			class="power.web.manage.budget.action.AssignedFillAction"
+			method="assignedFillListall">
+		</action>
+		<action name="getItemIdTree"
+			class="power.web.manage.budget.action.AssignedFillAction"
+			method="getItemIdTree">
+		</action>
+		<action name="getCurrentItemFinanceLeft"
+			class="power.web.manage.budget.action.AssignedFillAction"
+			method="getCurrentItemFinanceLeft">
+		</action>
+		<!-- 费用报销单审批 add by kzhang 20100908-->
+		<action name="saveOrUpdateExpR"
+			class="power.web.manage.budget.action.CostReportAction"
+			method="saveOrUpdateExpR">
+		</action>
+		<action name="finExpRList"
+			class="power.web.manage.budget.action.CostReportAction"
+			method="finExpRList">
+		</action>
+		<action name="expRApprove"
+			class="power.web.manage.budget.action.CostReportAction"
+			method="expRApprove">
+		</action>
+		<action name="expRReportTo"
+			class="power.web.manage.budget.action.CostReportAction"
+			method="expRReportTo">
+		</action>
+		<!-- 费用报销 add by yfyu 20100910 -->
+		<action name="creportList" 
+			class="power.web.manage.budget.action.CostReportAction"
+			method="creportList">
+		</action>
+			<action name="addCostReport"
+			class="power.web.manage.budget.action.CostReportAction"
+			method="addCostReport">
+		</action>
+			<action name="deleteCostReport"
+		class="power.web.manage.budget.action.CostReportAction"
+			method="deleteCostReport">
+		</action>
+			<action name="updateCostReport"
+			class="power.web.manage.budget.action.CostReportAction"
+			method="updateCostReport">
+		</action>
+	</package>
+</struts>

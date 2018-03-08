@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-validation.xml" />
+	<package name="manageitemplan" namespace="/manageitemplan"
+		extends="jfreechart-default">
+		<action name="getAllTopicRecord"
+			class="power.web.manage.plan.itemplan.action.EcomonicItemPlanAction"
+			method="getAllTopicRecord">
+		</action>
+		<action name="saveModifiedTopic"
+			class="power.web.manage.plan.itemplan.action.EcomonicItemPlanAction"
+			method="saveModifiedTopic">
+		</action>
+		<action name="getItemByTopic"
+			class="power.web.manage.plan.itemplan.action.EcomonicItemPlanAction"
+			method="getItemByTopic">
+		</action>
+		<action name="saveModifiedItem"
+			class="power.web.manage.plan.itemplan.action.EcomonicItemPlanAction"
+			method="saveModifiedItem">
+		</action>
+		<action name="findItemByCondition"
+			class="power.web.manage.plan.itemplan.action.EcomonicItemPlanAction"
+			method="findItemByCondition">
+		</action>
+		<action name="saveWholeItemPlanAndActual"
+			class="power.web.manage.plan.itemplan.action.EcomonicItemPlanAction"
+			method="saveWholeItemPlanAndActual">
+		</action>
+		<action name="savePartItemPlanAndActual"
+			class="power.web.manage.plan.itemplan.action.EcomonicItemPlanAction"
+			method="savePartItemPlanAndActual">
+		</action>
+		<!-- 经济指标审批权限判断 -->
+		<action name="judgeApproveDept"
+			class="power.web.manage.plan.itemplan.action.EcomonicItemPlanAction"
+			method="judgeApproveDept">
+		</action>
+		<action name="judgeApprovePlant"
+			class="power.web.manage.plan.itemplan.action.EcomonicItemPlanAction"
+			method="judgeApprovePlant">
+		</action>
+		<!--月度全厂技术指标-->
+		<action name="saveOrUpdateTecItem"
+			class="power.web.manage.plan.itemplan.action.TecItemPlanAction"
+			method="saveOrUpdateTecItem">
+		</action>
+		<action name="saveOrUpdateTecDept"
+			class="power.web.manage.plan.itemplan.action.TecItemPlanAction"
+			method="saveOrUpdateTecDept">
+		</action>
+		<action name="getTecItemList"
+			class="power.web.manage.plan.itemplan.action.TecItemPlanAction"
+			method="getTecItemList">
+		</action>
+		<action name="getTecDeptList"
+			class="power.web.manage.plan.itemplan.action.TecItemPlanAction"
+			method="getTecDeptList">
+		</action>
+		<action name="saveOrUpdateTecDetail"
+			class="power.web.manage.plan.itemplan.action.TecItemPlanAction"
+			method="saveOrUpdateTecDetail">
+		</action>
+		<action name="getTecDeptItemList"
+			class="power.web.manage.plan.itemplan.action.TecItemPlanAction"
+			method="getTecDeptItemList">
+		</action>
+		<!-- 指标计划上报、审批 -->
+		<action name="wholeItemPlanReport"
+			class="power.web.manage.plan.itemplan.action.ItemPlanSignAction"
+			method="wholeItemPlanReport">
+		</action>
+		<action name="wholeItemPlanApprove"
+			class="power.web.manage.plan.itemplan.action.ItemPlanSignAction"
+			method="wholeItemPlanApprove">
+		</action>
+		<action name="partItemPlanReport"
+			class="power.web.manage.plan.itemplan.action.ItemPlanSignAction"
+			method="partItemPlanReport">
+		</action>
+		<action name="partItemPlanApprove"
+			class="power.web.manage.plan.itemplan.action.ItemPlanSignAction"
+			method="partItemPlanApprove">
+		</action>
+		<action name="wholeItemFactReport"
+			class="power.web.manage.plan.itemplan.action.ItemPlanSignAction"
+			method="wholeItemFactReport">
+		</action>
+		<action name="wholeItemFactApprove"
+			class="power.web.manage.plan.itemplan.action.ItemPlanSignAction"
+			method="wholeItemFactApprove">
+		</action>
+		<action name="partItemFactReport"
+			class="power.web.manage.plan.itemplan.action.ItemPlanSignAction"
+			method="partItemFactReport">
+		</action>
+		<action name="partItemFactApprove"
+			class="power.web.manage.plan.itemplan.action.ItemPlanSignAction"
+			method="partItemFactApprove">
+		</action>
+		<!-- 月度技术指标审批 -->
+		<action name="fillTecItemReport"
+			class="power.web.manage.plan.itemplan.action.ItemPlanSignAction"
+			method="fillTecItemReport">
+		</action>
+		
+		<action name="fillTecItemApprove"
+			class="power.web.manage.plan.itemplan.action.ItemPlanSignAction"
+			method="fillTecItemApprove">
+		</action>
+		
+		<action name="TecItemFinishReport"
+			class="power.web.manage.plan.itemplan.action.ItemPlanSignAction"
+			method="TecItemFinishReport">
+		</action>
+		
+		<action name="TecItemFinishApprove"
+			class="power.web.manage.plan.itemplan.action.ItemPlanSignAction"
+			method="TecItemFinishApprove">
+		</action>
+
+	</package>
+</struts>

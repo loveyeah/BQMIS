@@ -1,0 +1,3 @@
+standOperateticket.jsp 操作票填写时选择标准工作票
+standOpQuery.jsp       标准操作票查询页面
+operationticketQuery.jsp  操作票查询页面

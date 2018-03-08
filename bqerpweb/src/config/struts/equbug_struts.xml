@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>   
+	<include file="struts-validation.xml" />
+	<package name="equbug" namespace="/equbug" extends="jfreechart-default"> 
+	  	 	<!--故障类别树-->
+		<action name="getBugTreeList" class="power.web.equ.base.action.EquBugAction" method="getBugTreeList"></action> 
+		<action name="getBugTreeByCode" class="power.web.equ.base.action.EquBugAction" method="getBugTreeByCode"></action> 
+		<action name="saveBugInfo" class="power.web.equ.base.action.EquBugAction" method="addOrUpdateBugInfo"></action> 
+		<action name="findBugById" class="power.web.equ.base.action.EquBugAction" method="findBugById"></action> 
+		<action name="deleteBugInfo" class="power.web.equ.base.action.EquBugAction" method="deleteBugInfo"></action> 
+		<action name="findBugByCode" class="power.web.equ.base.action.EquBugAction" method="findBugByCode"></action> 
+	    <!--故障原因-->
+		<action name="findBugReasonList" class="power.web.equ.base.action.EquBugReasonAction" method="findBugReasonList"></action> 
+		<action name="addBugReason" class="power.web.equ.base.action.EquBugReasonAction" method="addBugReason"></action> 
+		<action name="updateBugReason" class="power.web.equ.base.action.EquBugReasonAction" method="updateBugReason"></action> 
+		<action name="deleteBugReason" class="power.web.equ.base.action.EquBugReasonAction" method="deleteBugReason"></action> 
+	    <action name="findBugReaListByCode" class="power.web.equ.base.action.EquBugReasonAction" method="findBugReaListByCode"></action> 
+	    <action name="getReasonStringByCode" class="power.web.equ.base.action.EquBugReasonAction" method="getReasonStringByCode"></action> 
+	     <!--故障解决方案-->
+	     <action name="findBugSolutionList" class="power.web.equ.base.action.EquBugSolutionAction" method="findBugSolutionList"></action> 
+	    <action name="addSolution" class="power.web.equ.base.action.EquBugSolutionAction" method="addSolution"></action>
+	    <action name="updateSolution" class="power.web.equ.base.action.EquBugSolutionAction" method="updateSolution"></action>
+	    <action name="deleteSolution" class="power.web.equ.base.action.EquBugSolutionAction" method="deleteSolution"></action>
+	    
+	    <!--故障对应设备-->
+	     <action name="findEquRBugList" class="power.web.equ.base.action.EquRBugAction" method="findEquRBugList"></action>
+	      <action name="addEquRBug" class="power.web.equ.base.action.EquRBugAction" method="addEquRBug"></action>
+	       <action name="deleteEquRBug" class="power.web.equ.base.action.EquRBugAction" method="deleteEquRBug"></action>
+	    <!--故障列表-->
+	    <action name="findBugListByName" class="power.web.equ.base.action.EquBugAction" method="findBugListByName"></action> 
+	</package> 
+</struts>

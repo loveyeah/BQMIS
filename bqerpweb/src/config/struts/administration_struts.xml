@@ -1,0 +1,1014 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-validation.xml" />
+	<package name="administration" namespace="/administration"
+		extends="jfreechart-default">
+		<!-- 共通开始 -->
+		<!-- 证件类别DRP -->
+		<action name="getPaperInfoList"
+			class="power.web.administration.comm.action.CommAction"
+			method="getPaperInfoList">
+		</action>
+		<!-- 工作类别取得 -->
+		<action name="getWorkTypeInfoList"
+			class="power.web.administration.comm.action.CommAction"
+			method="getWorkTypeInfoList">
+		</action>
+        <!-- 与部门联动的人员DRP -->
+        <action name="getWorkerByDept"
+            class="power.web.administration.comm.action.CommAction"
+            method="getWorkerByDept">
+        </action>
+		<!-- 值别取得 -->
+		<action name="getDutyTypeInfoList"
+			class="power.web.administration.comm.action.CommAction"
+			method="getDutyTypeInfoList">
+		</action>
+		<!-- 司机取得 -->
+		<action name="getDriverInfoList"
+			class="power.web.administration.comm.action.CommAction"
+			method="getDriverInfoList">
+		</action>
+		<!-- 车辆选择 -->
+		<action name="getCarInfoList"
+			class="power.web.administration.comm.action.CommAction"
+			method="getCarInfoList">
+		</action>
+        <!-- 计量单位取得 -->
+        <action name="getUnit"
+            class="power.web.administration.comm.action.CommAction"
+            method="getUnit">
+        </action>
+        <!-- 菜谱类别取得 -->
+        <action name="getAllCMenuType"
+            class="power.web.administration.comm.action.CommAction"
+            method="getAllCMenuType">
+        </action>
+        <!-- 抄送人员取得 -->
+        <action name="getCCUserIDAndName"
+            class="power.web.administration.comm.action.CommAction"
+            method="getCCUserIDAndName">
+        </action>
+        <!-- 共通结束 -->
+
+
+        <!-- 门卫管理开始 -->
+         <!-- 来访人员登记 -->
+        <action name="getVisitInfoList"
+        	class="power.web.administration.visitregister.action.VisitRegisterAction"
+        	method="getVisitInfoList">
+        </action>
+        <action name="addVisitData"
+        	class="power.web.administration.visitregister.action.VisitRegisterAction"
+        	method="addVisitData">
+        </action>
+        <action name="updateVisitData"
+        	class="power.web.administration.visitregister.action.VisitRegisterAction"
+        	method="updateVisitData">
+        </action>
+        <action name="deleteVisitData"
+        	class="power.web.administration.visitregister.action.VisitRegisterAction"
+        	method="deleteVisitData">
+        </action> 
+        <!-- 物资出门查询 -->
+		<action name="getData"
+			class="power.web.administration.materialinquire.action.MaterialInquireAction"
+			method="getData">
+		</action>
+		<action name="materialExportFile"
+			class="power.web.administration.materialinquire.action.MaterialInquireAction"
+			method="materialExportFile">
+		</action>
+		<!-- 来访人员查询 -->
+        <action name="visitorquery"
+            class="power.web.administration.visitorquery.action.VisitorQueryAction"
+            method="visitorQuery">
+        </action>
+        <!-- 来访人员导出 -->
+        <action name="exportVisitorQueryFile"
+            class="power.web.administration.visitorquery.action.VisitorQueryAction"
+            method="exportFile">
+        </action>
+        <!-- 物资出门登记 -->
+		<action name="getInfoList"
+			class="power.web.administration.materialregister.action.InfOutRegisterAction"
+			method="getInfoList">
+		</action>
+		<action name="addData"
+			class="power.web.administration.materialregister.action.InfOutRegisterAction"
+			method="addData">
+		</action>
+		<action name="updateData"
+			class="power.web.administration.materialregister.action.InfOutRegisterAction"
+			method="updateData">
+		</action>
+		<action name="deleteData"
+			class="power.web.administration.materialregister.action.InfOutRegisterAction"
+			method="deleteData">
+		</action>
+		<action name="sendData"
+			class="power.web.administration.materialregister.action.InfOutRegisterAction"
+			method="sendData">
+		</action>
+		<!-- 进出车辆登记画面 -->
+		<action name="searchCar"
+			class="power.web.administration.carpassregister.action.CarPassRegisterAction"
+			method="searchCar">
+		</action>
+		<action name="updateCar"
+			class="power.web.administration.carpassregister.action.CarPassRegisterAction"
+			method="updateCar">
+		</action>
+		<action name="addCar"
+			class="power.web.administration.carpassregister.action.CarPassRegisterAction"
+			method="addCar">
+		</action>
+		<action name="deleteCar"
+			class="power.web.administration.carpassregister.action.CarPassRegisterAction"
+			method="deleteCar">
+		</action>
+		<!-- 证件类别维护画面 -->
+		<action name="searchPaper"
+			class="power.web.administration.papermaintain.action.paperMaintainAction"
+			method="searchPaper">
+		</action>
+		<action name="deletePaper"
+			class="power.web.administration.papermaintain.action.paperMaintainAction"
+			method="deletePaper">
+		</action>
+		<action name="addPaper"
+			class="power.web.administration.papermaintain.action.paperMaintainAction"
+			method="addPaper">
+		</action>
+		<action name="updatePaper"
+			class="power.web.administration.papermaintain.action.paperMaintainAction"
+			method="updatePaper">
+		</action>			
+        <!-- 门卫管理结束 -->
+
+
+        <!-- 签报管理开始 -->
+        <!-- 内部签报申请 -->
+        <action name="reportQuost"
+			class="power.web.administration.outquest.action.OutQuestAction"
+			method="reportQuost">
+		</action>
+		<action name="deleteQuost"
+			class="power.web.administration.outquest.action.OutQuestAction"
+			method="deleteQuost">
+		</action>
+        <action name="getOutQuest"
+			class="power.web.administration.outquest.action.OutQuestAction"
+			method="getOutQuest">
+		</action>
+		<action name="getNewApplyId"
+			class="power.web.administration.outquest.action.OutQuestAction"
+			method="getNewApplyId">
+		</action>
+		<action name="getQuestReader"
+			class="power.web.administration.outquest.action.OutQuestAction"
+			method="getQuestReader">
+		</action>
+		<action name="getOutQuestFile"
+			class="power.web.administration.outquest.action.OutQuestAction"
+			method="getOutQuestFile">
+		</action>
+		<action name="saveQuost"
+			class="power.web.administration.outquest.action.OutQuestAction"
+			method="saveQuost">
+		</action>
+		<action name="uploadQuestFile"
+			class="power.web.administration.outquest.action.OutQuestAction"
+			method="uploadQuestFile">
+		</action>	
+		<action name="deleteQuestFile"
+			class="power.web.administration.outquest.action.OutQuestAction"
+			method="deleteQuestFile">
+		</action>		
+		<action name="getReaderManName"
+			class="power.web.administration.outquest.action.OutQuestAction"
+			method="getReaderManName">
+		</action>		
+		<!-- 内部签报申请 --> 
+		<!-- 董事会签报申请 -->
+        <action name="getDirectorOutQuest"
+            class="power.web.administration.directoroutquest.action.DirectorOutQuestAction"
+            method="getDirectorOutQuest">
+	    </action>
+	    <action name="getDirectorOutNewApplyId"
+	            class="power.web.administration.directoroutquest.action.DirectorOutQuestAction"
+	            method="getDirectorOutNewApplyId">
+	    </action>
+	        <action name="saveDirectorOutQuost"
+	            class="power.web.administration.directoroutquest.action.DirectorOutQuestAction"
+	            method="saveDirectorOutQuost">
+	    </action>
+	    <!-- 董事会签报申请 -->
+		
+		<!-- 签报申请查询 -->
+		<action name="getOutQueryApply" 
+        	class="power.web.administration.outquestquery.action.OutQuestQueryAction" 
+        	method="getOutQueryApply">
+        </action>
+		<action name="getOutQueryFile" 
+			class="power.web.administration.outquestquery.action.OutQuestQueryAction" 
+			method="getOutQueryFile">
+		</action>
+		<action name="downloadOutQueryFile" 
+			class="power.web.administration.outquestquery.action.OutQuestQueryAction" 
+			method="downloadOutQueryFile">
+		</action>
+		<!-- 签报申请查询 -->
+		
+		<!-- 签报信息查阅 -->
+		<action name="getOutInfoRead" 
+			class="power.web.administration.outinforead.action.OutInfoReadAction" 
+			method="getOutInfoRead">
+		</action>
+		<action name="updateOutInfoRead" 
+			class="power.web.administration.outinforead.action.OutInfoReadAction" 
+			method="updateOutInfoRead">
+		</action>
+		<action name="getOutQueryFileRead" 
+			class="power.web.administration.outinforead.action.OutInfoReadAction" 
+			method="getOutQueryFileRead">
+		</action>
+		<!-- 签报信息查阅 -->
+		
+        <!-- 签报管理结束 -->
+        
+        
+        <!-- 餐厅订餐系统开始 -->
+        <!-- 值长审核 -->
+        <action name="getLeaderAuditInfoList"
+            class="power.web.administration.leaderaudit.action.LeaderAuditAction"
+            method="getLeaderAuditInfoList">
+        </action>
+        <action name="exportLeaderAuditInfoFile"
+            class="power.web.administration.leaderaudit.action.LeaderAuditAction"
+            method="exportLeaderAuditInfoFile">
+        </action>
+        <action name="doBackRecord"
+            class="power.web.administration.leaderaudit.action.LeaderAuditAction"
+            method="doBackRecord">
+        </action>
+        <action name="doAuditRecord"
+            class="power.web.administration.leaderaudit.action.LeaderAuditAction"
+            method="doAuditRecord">
+        </action>
+        <!-- 餐厅计划维护 -->
+		<action name="getRestaurantPlan"
+			class="power.web.administration.restaurantplan.action.RestaurantPlanAction"
+			method="getRestaurantPlan">
+		</action>
+
+		<!-- 菜谱维护画面 -->
+		<action name="searchMenu"
+			class="power.web.administration.menumaintain.action.menuMaintainAction"
+			method="searchMenu">
+		</action>
+		<action name="deleteMenu"
+			class="power.web.administration.menumaintain.action.menuMaintainAction"
+			method="deleteMenu">
+		</action>
+		<action name="addMenu"
+			class="power.web.administration.menumaintain.action.menuMaintainAction"
+			method="addMenu">			
+		</action>
+		<action name="updateMenu"
+			class="power.web.administration.menumaintain.action.menuMaintainAction"
+			method="updateMenu">
+		</action>
+		<action name="getAllMenu"
+			class="power.web.administration.restaurantplan.action.RestaurantPlanAction"
+			method="getAllMenu">
+		</action>
+		<action name="dealData"
+			class="power.web.administration.restaurantplan.action.RestaurantPlanAction"
+			method="dealData">
+		</action>
+		<action name="deletePlan"
+			class="power.web.administration.restaurantplan.action.RestaurantPlanAction"
+			method="deletePlan">
+		</action>
+		
+        <action name="getMenuTypeListInfo"
+            class="power.web.administration.menutypemaintain.action.MenuTypeMaintainAction"
+            method="getMenuTypeListInfo">
+        </action>
+        <action name="addMenuTypeInfo"
+            class="power.web.administration.menutypemaintain.action.MenuTypeMaintainAction"
+            method="addMenuTypeInfo">
+        </action>
+        <action name="updateMenuTypeInfo"
+            class="power.web.administration.menutypemaintain.action.MenuTypeMaintainAction"
+            method="updateMenuTypeInfo">
+        </action>
+        <action name="deleteMenuTypeInfo"
+            class="power.web.administration.menutypemaintain.action.MenuTypeMaintainAction"
+            method="deleteMenuTypeInfo">
+        </action>
+        <!--个人订餐-->
+        <action name= "saveUserMenuAndUserSubInfo"
+           class="power.web.administration.individualmenu.action.IndividualMenuAction"
+           method="saveUserMenuAndUserSubInfo">
+         </action>  
+        <action name= "getIndividualMenuListInfo"
+           class="power.web.administration.individualmenu.action.IndividualMenuAction"
+           method="getIndividualMenuListInfo">
+         </action> 
+        <action name= "getIndividualSubMenuInfo"
+           class="power.web.administration.individualmenu.action.IndividualMenuAction"
+           method="getIndividualSubMenuInfo">
+         </action> 
+         <action name= "getMenuUserNameInfo"
+           class="power.web.administration.individualmenu.action.IndividualMenuAction"
+           method="getMenuUserNameInfo">
+         </action> 
+         <action name= "getIndividualMenuChooseInfo"
+           class="power.web.administration.individualmenu.action.IndividualMenuAction"
+           method="getIndividualMenuChooseInfo">
+         </action> 
+         <action name= "deleteIndividualMenuInfo"
+           class="power.web.administration.individualmenu.action.IndividualMenuAction"
+           method="deleteIndividualMenuInfo">
+         </action>
+         <action name= "checkDataRepeat"
+           class="power.web.administration.individualmenu.action.IndividualMenuAction"
+           method="checkDataRepeat">
+         </action> 
+        <action name= "insertUserMenuInfo"
+           class="power.web.administration.individualmenu.action.IndividualMenuAction"
+           method="insertUserMenuInfo">
+         </action>
+         <action name= "insertUserSubMenuInfo"
+           class="power.web.administration.individualmenu.action.IndividualMenuAction"
+           method="insertUserSubMenuInfo">
+         </action> <action name="getMenuSystemInfo"
+            class ="power.web.administration.menusystem.action.MenuSystemAction"
+            method="getMenuSystemInfo">
+        </action>  
+         <action name="getMenuSystemSubInfo"
+            class ="power.web.administration.menusystem.action.MenuSystemAction"
+            method="getMenuSystemSubInfo">
+        </action>
+         <action name="exportMenuSystemFile"
+            class ="power.web.administration.menusystem.action.MenuSystemAction"
+            method="exportFile">
+        </action>    
+        <!-- 餐厅订餐系统结束 -->
+        
+        
+        <!-- 定期工作管理开始 -->        
+		<!-- 定期工作登记 -->
+		<action name="getRegisterList"
+			class="power.web.administration.regularworkregister.action.RegularWorkRegisterAction"
+			method="getRegisterList">
+		</action>
+		<action name="deleteRegisterData"
+			class="power.web.administration.regularworkregister.action.RegularWorkRegisterAction"
+			method="deleteRegisterData">
+		</action>
+		<action name="updateRegisterData"
+			class="power.web.administration.regularworkregister.action.RegularWorkRegisterAction"
+			method="updateRegisterData">
+		</action>
+		<action name="getAllRegularQuery"
+			class="power.web.administration.regularworkregister.action.RegularWorkRegisterAction"
+			method="getAllRegularQuery">
+		</action> 
+	    <action name="cancelRegisterData"
+			class="power.web.administration.regularworkregister.action.RegularWorkRegisterAction"
+			method="cancelRegisterData">
+		</action>  
+		<action name="getUserWorkTypeInfo"
+			class="power.web.administration.regularworkregister.action.RegularWorkRegisterAction"
+			method="getUserWorkTypeInfo">
+		</action> 
+        <!-- 定期工作安排 -->
+        <action name="findRegularWorkInfo"
+            class="power.web.administration.regularworkarrange.action.regularWorkArrangeAction"
+            method="findRegularWorkInfo">
+        </action>
+        <action name="findCycleParInfo"
+            class="power.web.administration.regularworkarrange.action.regularWorkArrangeAction"
+            method="findCycleParInfo">
+        </action>
+        <action name="saveWorkParrange"
+            class="power.web.administration.regularworkarrange.action.regularWorkArrangeAction"
+            method="saveWorkParrange">
+        </action>
+        <action name="delRegularWork"
+            class="power.web.administration.regularworkarrange.action.regularWorkArrangeAction"
+            method="delRegularWork">
+        </action>
+        <!-- 定期工作安排 -->      
+        
+        <!-- 值班日志登记 -->
+		<action name="getRecord"
+			class="power.web.administration.dutyjournal.action.DutyJournalAction"
+			method="getRecord">
+		</action>
+		<action name="deleteRecord"
+			class="power.web.administration.dutyjournal.action.DutyJournalAction"
+			method="deleteRecord">
+		</action>
+		<action name="addRecord"
+			class="power.web.administration.dutyjournal.action.DutyJournalAction"
+			method="addRecord">
+		</action>
+		<action name="updateRecord"
+			class="power.web.administration.dutyjournal.action.DutyJournalAction"
+			method="updateRecord">
+		</action>
+		<action name="getPerson"
+			class="power.web.administration.dutyjournal.action.DutyJournalAction"
+			method="getPerson">
+		</action>
+		<action name="addPersons"
+			class="power.web.administration.dutyjournal.action.DutyJournalAction"
+			method="addPersons">
+		</action>
+		<action name="deletePerson"
+			class="power.web.administration.dutyjournal.action.DutyJournalAction"
+			method="deletePerson">
+		</action>
+		<action name="updatePerson"
+			class="power.web.administration.dutyjournal.action.DutyJournalAction"
+			method="updatePerson">
+		</action>
+		<action name="getDutyUserRight"
+			class="power.web.administration.dutyjournal.action.DutyJournalAction"
+			method="getDutyUserRight">
+		</action>
+		<!-- 定期工作类别维护查询 -->
+        <action name="workType"
+            class="power.web.administration.regularworktypemainten.action.RegularWorkTypeMaintenAction"
+            method="workTypeQuery">
+        </action>
+        <!-- 新增定期工作类别 -->
+        <action name="addWorktype"
+            class="power.web.administration.regularworktypemainten.action.RegularWorkTypeMaintenAction"
+            method="addWorktype">
+        </action>
+        <!-- 修改定期工作类别 -->
+        <action name="modifyWorktype"
+            class="power.web.administration.regularworktypemainten.action.RegularWorkTypeMaintenAction"
+            method="modifyWorktype">
+        </action>
+        <!-- 删除定期工作类别 -->
+        <action name="deleteWorktype"
+            class="power.web.administration.regularworktypemainten.action.RegularWorkTypeMaintenAction"
+            method="deleteWorktype">
+        </action>
+        <!-- 定期工作查询 -->
+        <action name="regularWorkQuery"
+            class="power.web.administration.regularworkquery.action.RegularWorkQueryAction"
+            method="regularWorkQuery">
+        </action>
+        <!-- 用户权限取得 -->
+        <action name="userRight"
+            class="power.web.administration.regularworkquery.action.RegularWorkQueryAction"
+            method="getUserRight">
+        </action>
+        <!-- 定期工作导出 -->
+        <action name="exportRegularWorkFile"
+            class="power.web.administration.regularworkquery.action.RegularWorkQueryAction"
+            method="exportFile">
+        </action>
+        <!-- 值别维护 -->
+        <action name="dutyTypeQuery"
+            class="power.web.administration.dutytypemainten.action.DutyTypeMaintenAction"
+            method="dutyTypeQuery">
+        </action>
+        <!-- 获取用户工作类别名称 -->
+        <action name="userWorktypeName"
+            class="power.web.administration.dutytypemainten.action.DutyTypeMaintenAction"
+            method="getUserWorktypeName">
+        </action>
+        <!-- 新增值别 -->
+        <action name="addDutyType"
+            class="power.web.administration.dutytypemainten.action.DutyTypeMaintenAction"
+            method="addDutyType">
+        </action>
+        <!-- 修改值别 -->
+        <action name="modifyDutyType"
+            class="power.web.administration.dutytypemainten.action.DutyTypeMaintenAction"
+            method="modifyDutyType">
+        </action>
+        <!-- 删除值别 -->
+        <action name="deleteDutyType"
+            class="power.web.administration.dutytypemainten.action.DutyTypeMaintenAction"
+            method="deleteDutyType">
+        </action>
+        <!-- 定期工作权限设置 -->
+        <action name="regularWorkRight"
+            class="power.web.administration.regularworkrightset.action.RegularWorkRightSetAction"
+            method="regularWorkRightQuery">
+        </action>
+        <!-- 定期工作权限检查 -->
+        <action name="checkRegularWorkRight"
+            class="power.web.administration.regularworkrightset.action.RegularWorkRightSetAction"
+            method="checkRegularWorkRight">
+        </action>
+        <!-- 新增定期工作权限 -->
+        <action name="addRegularWorkRight"
+            class="power.web.administration.regularworkrightset.action.RegularWorkRightSetAction"
+            method="addRegularWorkRight">
+        </action>
+        <!-- 删除定期工作权限 -->
+        <action name="deleteRegularWorkRight"
+            class="power.web.administration.regularworkrightset.action.RegularWorkRightSetAction"
+            method="deleteRegularWorkRight">
+        </action>
+        <!--值班记事查询-->
+        <action name="getOnDutyListInfo"
+            class="power.web.administration.dutynotesearch.action.DutyNoteSearchAction"
+            method="getOnDutyListInfo">
+        </action>
+        
+        <!-- 定期工作管理结束 -->
+        
+		<!--进出车辆查询-->
+		<action name="getCarsList"
+			class="power.web.administration.carpasssearch.action.CarPassSearchAction"
+			method="getCarsList">
+		</action>
+		
+        <!-- 值班人员查询 -->
+		 <action name = "getOnDutyManInfo"
+            class = "power.web.administration.dutymansearch.action.DutyManSearchAction"
+            method = "getOnDutyManInfo">
+        </action>	
+	
+	    <!-- 接待审批查询 -->
+        <action name="getReceptionInfoList"
+            class="power.web.administration.receptionquery.action.ReceptionQueryAction"
+            method="getReceptionInfoList">
+        </action>
+        <action name="exportReceptionInfoFile"
+            class="power.web.administration.receptionquery.action.ReceptionQueryAction"
+            method="exportReceptionInfoFile">
+        </action>
+        	
+	    <!-- 会务开始 -->
+	   	<!-- 宾馆房间价格维护 -->
+		<action name="updateRoomPrice"
+            class="power.web.administration.hotelRoomPrice.action.HotelRoomPriceAction"
+            method="updateRoomPrice">
+        </action>
+        <action name="getRoomPrice"
+            class="power.web.administration.hotelRoomPrice.action.HotelRoomPriceAction"
+            method="getRoomPrice">
+        </action>
+       	<!-- 会务审批查询 -->
+       	<action name="getMeetApproveList"
+          	class="power.web.administration.businessapproval.action.BusinessApprovalAction"
+           	method="getMeetApproveList">
+       	</action>
+      		<action name="exportBusinessApprovalFile"
+           	class="power.web.administration.businessapproval.action.BusinessApprovalAction"
+           	method="exportBusinessApprovalFile">
+       	</action>
+       	<!-- 会务申请上报 -->
+        	<!-- 得到上报单列表 -->
+        	<action name="getMeetApplyReportList"
+           		class="power.web.administration.meetapplyreport.action.MeetApplyReportAction"
+            	method="getMeetApplyReportList">
+        	</action>
+        	<!-- 新增上报单 -->
+        	<action name="addMeetApplyReport"
+           		class="power.web.administration.meetapplyreport.action.MeetApplyReportAction"
+            	method="addMeetApplyReport">
+        	</action>
+        	<!-- 修改上报单 -->
+        	<action name="modifyMeetApplyReport"
+           		class="power.web.administration.meetapplyreport.action.MeetApplyReportAction"
+            	method="modifyMeetApplyReport">
+        	</action>
+        	<!-- 删除上报单 -->
+        	<action name="deleteMeetApplyReport"
+           		class="power.web.administration.meetapplyreport.action.MeetApplyReportAction"
+            	method="deleteMeetApplyReport">
+        	</action>
+        	<!-- 上报上报单 -->
+        	<action name="reportMeetApplyReport"
+           		class="power.web.administration.meetapplyreport.action.MeetApplyReportAction"
+            	method="reportMeetApplyReport">
+        	</action>
+        	<!-- 得到会务申请上报单附件 -->
+        	<action name="getMeetApplyReportAffixList"
+           		class="power.web.administration.meetapplyreport.action.MeetApplyReportAction"
+            	method="getMeetApplyReportAffixList">
+        	</action>
+        	<!-- 新增上报单附件 -->
+        	<action name="addMeetApplyReportAffix"
+           		class="power.web.administration.meetapplyreport.action.MeetApplyReportAction"
+            	method="addMeetApplyReportAffix">
+        	</action>
+        	<!-- 下载会务申请上报单附件 -->
+        	<action name="downloadMeetApplyReportAffix"
+           		class="power.web.administration.meetapplyreport.action.MeetApplyReportAction"
+            	method="downloadMeetApplyReportAffix">
+        	</action>
+        	<!-- 删除上报单附件 -->
+        	<action name="deleteMeetApplyReportAffix"
+           		class="power.web.administration.meetapplyreport.action.MeetApplyReportAction"
+            	method="deleteMeetApplyReportAffix">
+        	</action>
+        	
+        	
+		<!-- 会务费用管理 -->
+     	  	<action name="getMeetChargeInfo"
+        	  	class="power.web.administration.meetcharge.action.MeetChargeAction"
+        	   	method="getMeetChargeInfo">
+      	 	</action>
+	 	   <action name="downloadMeetFile"
+        	  	class="power.web.administration.meetcharge.action.MeetChargeAction"
+         	  	method="downloadMeetFile">
+    	   	</action>
+     	  	<action name="getMeetFile"
+      	    	class="power.web.administration.meetcharge.action.MeetChargeAction"
+      	     	method="getMeetFile">
+     	  	</action>
+     	  	<action name="getChargeDetail"
+     	     	class="power.web.administration.meetcharge.action.MeetChargeAction"
+     	      	method="getChargeDetail">
+     	  	</action>
+     	  	<action name="deleteMeetFile"
+        	  	class="power.web.administration.meetcharge.action.MeetChargeAction"
+        	   	method="deleteMeetFile">
+      	 	</action>
+      	 	<action name="saveMeetInfo"
+          		class="power.web.administration.meetcharge.action.MeetChargeAction"
+          	 	method="saveMeetInfo">
+      	 	</action>
+       		<action name="uploadMeetFile"
+         	 	class="power.web.administration.meetcharge.action.MeetChargeAction"
+         	  	method="uploadMeetFile">
+       		</action>
+	    <!-- 会务结束 -->
+	    <!-- 接待费用统计查询 -->
+        <action name="getReceptionExpense"
+        	class="power.web.administration.receptioncoststatistics.action.ReceptionCostStatisticsAction"
+        	method="getReceptionExpense">
+        </action>
+        <!-- 接待费用统计查询导出 -->
+        <action name="exportReceptionCostFile"
+        	class="power.web.administration.receptioncoststatistics.action.ReceptionCostStatisticsAction"
+        	method="exportReceptionCostFile">
+        </action>
+        
+        <!-- 接待开始 -->
+	  		<!-- 接待费用管理 -->
+	  		<action name="getReceptionCharge"
+            	class="power.web.administration.receptioncharge.action.ReceptionChargeAction"
+            	method="getReceptionCharge">
+         	</action>
+         	<action name="updateReceptionCharge"
+            	class="power.web.administration.receptioncharge.action.ReceptionChargeAction"
+            	method="updateReceptionCharge">
+         	</action>
+     	<!-- 接待申请上报 -->
+  		<action name="findRecepAppData"
+           	class="power.web.administration.receptionapply.action.receptionApplyAction"
+           	method="findRecepAppData">
+       	</action>
+  		<action name="deleteReceptionApply"
+           	class="power.web.administration.receptionapply.action.receptionApplyAction"
+           	method="deleteReceptionApply">
+       	</action>
+  		<action name="getSession"
+  			class="power.web.administration.receptionapply.action.receptionApplyAction"
+  			method="getSession">
+  		</action>
+  		<action name="reportReceptionApply"
+  			class="power.web.administration.receptionapply.action.receptionApplyAction"
+  			method="reportReceptionApply">
+  		</action>
+  		<action name="addReceptionApply"
+           	class="power.web.administration.receptionapply.action.receptionApplyAction"
+           	method="addReceptionApply">
+       	</action>
+       	<action name="updateReceptionApply"
+           	class="power.web.administration.receptionapply.action.receptionApplyAction"
+           	method="updateReceptionApply">
+       	</action>
+  		<!-- 接待申请上报结束 -->
+		<!-- 接待结束 -->
+	  
+	  	<!-- 车辆管理开始 -->
+	  	<!-- 车辆维修单位维护 -->
+	  	<action name="getCarRepairUnitQueryList" 
+	        class="power.web.administration.carrepairunitmaintenance.action.CarRepairUnitMaintenanceAction"
+	        method="getCarRepairUnitQueryList">
+        </action>
+        <action name="addCarRepairUnit" 
+	        class="power.web.administration.carrepairunitmaintenance.action.CarRepairUnitMaintenanceAction"
+	        method="addCarRepairUnit">
+        </action>
+        <action name="updateCarRepairUnit" 
+	        class="power.web.administration.carrepairunitmaintenance.action.CarRepairUnitMaintenanceAction"
+	        method="updateCarRepairUnit">
+        </action>
+         <action name="deleteCarRepairUnit" 
+	        class="power.web.administration.carrepairunitmaintenance.action.CarRepairUnitMaintenanceAction"
+	        method="deleteCarRepairUnit">
+        </action>
+	  	<!-- 司机档案查询 -->
+	  	<action name="driverFileQuery"
+	  		class="power.web.administration.driverfilemainten.action.DriverFileMaintenAction"
+	  		method="driverFileQuery">
+	  	</action>
+	  	<!-- 新增司机档案 -->
+	  	<action name="addDriverFile"
+	  		class="power.web.administration.driverfilemainten.action.DriverFileMaintenAction"
+	  		method="addDriverFile">
+	  	</action>
+	  	<!-- 修改司机档案 -->
+	  	<action name="modifyDriverFile"
+	  		class="power.web.administration.driverfilemainten.action.DriverFileMaintenAction"
+	  		method="modifyDriverFile">
+	  	</action>
+	  	<!-- 性别年龄查询 -->
+	  	<action name="driverFileEmployeeQuery"
+	  		class="power.web.administration.driverfilemainten.action.DriverFileMaintenAction"
+	  		method="driverFileEmployeeQuery">
+	  	</action>
+	  	<!-- 删除司机档案  -->
+	  	<action name="deleteDriverFile"
+	  		class="power.web.administration.driverfilemainten.action.DriverFileMaintenAction"
+	  		method="deleteDriverFile">
+	  	</action>
+	  	<!-- 导出司机档案  -->
+	  	<action name="exportDriverFile"
+	  		class="power.web.administration.driverfilemainten.action.DriverFileMaintenAction"
+	  		method="exportDriverFile">
+	  	</action>
+	  	
+	  	<!-- 车辆维修申请 -->
+         <action name="getCarRepairApproveQueryList" 
+        class="power.web.administration.carrepairapprove.action.CarRepairApproveAction"
+        method="getCarRepairApproveQueryList">
+        </action>
+		<action name="getAdCCarmendWhCpCodeList" 
+		class="power.web.administration.carrepairapprove.action.CarRepairApproveAction" 
+		method="getAdCCarmendWhCpCodeList">
+		</action>
+		<action name="getCarwhMxDetailList" 
+		class="power.web.administration.carrepairapprove.action.CarRepairApproveAction" 
+		method="getCarwhMxDetailList">
+		</action>
+		<action name="getRepairProjectList" 
+		class="power.web.administration.carrepairapprove.action.CarRepairApproveAction" 
+		method="getRepairProjectList">
+		</action>
+		<action name="getProjectName" 
+		class="power.web.administration.carrepairapprove.action.CarRepairApproveAction" 
+		method="getProjectName">
+		</action>
+		<action name="getAdJCarwhList" 
+		class="power.web.administration.carrepairapprove.action.CarRepairApproveAction" 
+		method="getAdJCarwhList">
+		</action>
+		<action name="updateCarwhList" 
+		class="power.web.administration.carrepairapprove.action.CarRepairApproveAction" 
+		method="updateCarwhList">
+		</action>
+		<action name="deleteCarRepairApproverDetail" 
+		class="power.web.administration.carrepairapprove.action.CarRepairApproveAction" 
+		method="deleteCarRepairApproverDetail">
+		</action>
+		<action name="reportCarRepairApproverDetail" 
+		class="power.web.administration.carrepairapprove.action.CarRepairApproveAction" 
+		method="reportCarRepairApproverDetail">
+		</action>
+		
+		<!-- 车辆维修管理 -->
+		<action name="getCarRepairApproveQueryManagementList" 
+        class="power.web.administration.carrepairmanagement.action.CarRepairManagementAction"
+        method="getCarRepairApproveQueryList">
+        </action>
+		<action name="getAdCCarmendWhCpCodeManagementList" 
+		class="power.web.administration.carrepairmanagement.action.CarRepairManagementAction" 
+		method="getAdCCarmendWhCpCodeList">
+		</action>
+		<action name="getCarwhMxDetailManagementList" 
+		class="power.web.administration.carrepairmanagement.action.CarRepairManagementAction" 
+		method="getCarwhMxDetailList">
+		</action>
+		<action name="getRepairProjectManagementList" 
+		class="power.web.administration.carrepairmanagement.action.CarRepairManagementAction" 
+		method="getRepairProjectList">
+		</action>
+		<action name="getAdJCarwhManagementList" 
+		class="power.web.administration.carrepairmanagement.action.CarRepairManagementAction" 
+		method="getAdJCarwhList">
+		</action>
+		<action name="updateCarwhManagementList" 
+		class="power.web.administration.carrepairmanagement.action.CarRepairManagementAction" 
+		method="updateCarwhList">
+		</action>
+		<action name="getAdJCarwhInvoiceFile" 
+		class="power.web.administration.carrepairmanagement.action.CarRepairManagementAction" 
+		method="getAdJCarwhInvoiceFile">
+		</action>
+		<action name="uploadAdJCarwhInvoiceFile" 
+		class="power.web.administration.carrepairmanagement.action.CarRepairManagementAction" 
+		method="uploadAdJCarwhInvoiceFile">
+		</action>
+		<action name="deleteAdJCarwhInvoiceFile" 
+		class="power.web.administration.carrepairmanagement.action.CarRepairManagementAction" 
+		method="deleteAdJCarwhInvoiceFile">
+		</action>
+		<action name="downloadAdJCarwhInvoiceFile" 
+		class="power.web.administration.carrepairmanagement.action.CarRepairManagementAction" 
+		method="downloadAdJCarwhInvoiceFile">
+		</action>
+		
+		
+		<!-- 用车申请查询 -->	
+	 	<action name="getApplyCarInfo" 
+		    class="power.web.administration.carapplyquery.action.CarApplyQueryAction" 
+		    method="getApplyCarInfo">
+		</action>
+	 	<action name="exportApplyCarInfoFile" 
+		    class="power.web.administration.carapplyquery.action.CarApplyQueryAction" 
+		    method="exportApplyCarInfoFile">
+		</action>
+		
+		<action name="getUserInfo" 
+		    class="power.web.administration.caruseapply.action.CarUseApplyAction" 
+		    method="getUserInfo">
+		</action>
+	    <action name="searchCarApply" 
+		    class="power.web.administration.caruseapply.action.CarUseApplyAction" 
+		    method="searchCarApply">
+		</action>
+		<action name="addCarApply" 
+		    class="power.web.administration.caruseapply.action.CarUseApplyAction" 
+		    method="addCarApply">
+		</action>
+		<action name="updateCarApply" 
+		    class="power.web.administration.caruseapply.action.CarUseApplyAction" 
+		    method="updateCarApply">
+		</action>
+		<action name="deleteCarApply" 
+		    class="power.web.administration.caruseapply.action.CarUseApplyAction" 
+		    method="deleteCarApply">
+		</action>
+		<action name="reportCarApply" 
+		    class="power.web.administration.caruseapply.action.CarUseApplyAction" 
+		    method="reportCarApply">
+		</action>
+		
+		<!-- 用车管理  -->
+		<action name="getCarApplyBy" 
+		    class="power.web.administration.carusemanagement.action.CarUseManagementAction" 
+		    method="getCarApplyBy">
+		</action>
+		<action name="delCarApp" 
+		    class="power.web.administration.carusemanagement.action.CarUseManagementAction" 
+		    method="delCarApp">
+		</action>
+		<action name="updateCarAppCarFile" 
+		    class="power.web.administration.carusemanagement.action.CarUseManagementAction" 
+		    method="updateCarAppCarFile">
+		</action>
+        
+		
+	 	
+	 	<!-- 车辆档案查询  -->
+	  	<action name="carFileQuery"
+	  		class="power.web.administration.carfilemainten.action.CarFileMaintenAction"
+	  		method="carFileQuery">
+	  	</action>
+	  	<!-- 新增车辆档案  -->
+	  	<action name="addCarFile"
+	  		class="power.web.administration.carfilemainten.action.CarFileMaintenAction"
+	  		method="addCarFile">
+	  	</action>
+	  	<!-- 删除车辆档案  -->
+	  	<action name="deleteCarFile"
+	  		class="power.web.administration.carfilemainten.action.CarFileMaintenAction"
+	  		method="deleteCarFile">
+	  	</action>
+	  	<!-- 修改车辆档案  -->
+	  	<action name="modifyCarFile"
+	  		class="power.web.administration.carfilemainten.action.CarFileMaintenAction"
+	  		method="modifyCarFile">
+	  	</action>
+	  	<!-- 导出车辆档案  -->
+	  	<action name="exportCarFile"
+	  		class="power.web.administration.carfilemainten.action.CarFileMaintenAction"
+	  		method="exportCarFile">
+	  	</action>
+	  	
+	  	<!-- 获取车牌号  -->
+	  	<action name="carRepairCarNoGet"
+	  		class="power.web.administration.carrepairquery.action.CarRepairQueryAction"
+	  		method="carRepairCarNoGet">
+	  	</action>
+	  	<!-- 车辆维修查询  -->
+	  	<action name="carRepairQuery"
+	  		class="power.web.administration.carrepairquery.action.CarRepairQueryAction"
+	  		method="carRepairQuery">
+	  	</action>
+	  	<!-- 车辆维修明细查询  -->
+	  	<action name="carRepairListQuery"
+	  		class="power.web.administration.carrepairquery.action.CarRepairQueryAction"
+	  		method="carRepairListQuery">
+	  	</action>
+	  	<!-- 导出车辆维修信息 -->
+	  	<action name="exportCarRepairInfo"
+	  		class="power.web.administration.carrepairquery.action.CarRepairQueryAction"
+	  		method="exportCarRepairInfo">
+	  	</action>
+	  	
+	 	<!-- 车辆管理结束 -->	
+
+
+		<!-- 会务费用统计查询 -->
+        <action name="getMeetCost"
+        	class="power.web.administration.meetcoststatistics.action.MeetCostStatisticsAction"
+        	method="getMeetCost">
+        </action>
+        <!-- 会务费用统计查询导出 -->
+        <action name="exportMeetCostFile"
+        	class="power.web.administration.meetcoststatistics.action.MeetCostStatisticsAction"
+        	method="exportMeetCostFile">
+        </action>
+        
+        <!-- 个性签名开始 -->
+        <action name="getPersonSignInfo"
+        	class="power.web.administration.signpicture.action.SignPictureMaintAction"
+        	method="getPersonSignInfo">
+        </action>	
+        <action name="addSignPicture"
+        	class="power.web.administration.signpicture.action.SignPictureMaintAction"
+        	method="addSignPicture">
+        </action>
+        <action name="getPersonSignPicture"
+        	class="power.web.administration.signpicture.action.SignPictureMaintAction"
+        	method="getPersonSignPicture">
+        </action>
+        <action name="updateSignPicture"
+        	class="power.web.administration.signpicture.action.SignPictureMaintAction"
+        	method="updateSignPicture">
+        </action>
+        <action name="deleteSignPicture"
+        	class="power.web.administration.signpicture.action.SignPictureMaintAction"
+        	method="deleteSignPicture">
+        </action>
+		<action name="getSignPictureRepeat"
+        	class="power.web.administration.signpicture.action.SignPictureMaintAction"
+        	method="getSignPictureRepeat">
+        </action>
+        <!-- 个性签名结束 -->	
+        <!-- 维修项目维护 -->	
+        <action name="getMaintenanceProjectList"
+            	class="power.web.administration.maintenanceproject.MaintenanceProjectAction"
+            	method="getMaintenanceProjectList">
+        </action>
+	     <action name="deleteMaintenanceProject"
+            	class="power.web.administration.maintenanceproject.MaintenanceProjectAction"
+            	method="deleteMaintenanceProject">
+        </action>  
+    	<action name="addMaintenanceProject"
+            	class="power.web.administration.maintenanceproject.MaintenanceProjectAction"
+            	method="addMaintenanceProject">
+        </action>    
+        <action name="modifyMaintenanceProject"
+            	class="power.web.administration.maintenanceproject.MaintenanceProjectAction"
+            	method="modifyMaintenanceProject">
+        </action>  
+        <action name="getPaySortList"
+            	class="power.web.administration.maintenanceproject.MaintenanceProjectAction"
+            	method="getPaySortList">
+        </action>   
+        <action name="addPaySort"
+            	class="power.web.administration.maintenanceproject.MaintenanceProjectAction"
+            	method="addPaySort">
+        </action>  
+        <action name="modifyPaySort"
+            	class="power.web.administration.maintenanceproject.MaintenanceProjectAction"
+            	method="modifyPaySort">
+        </action>  
+        <action name="deletePaySort"
+            	class="power.web.administration.maintenanceproject.MaintenanceProjectAction"
+            	method="deletePaySort">
+        </action>  
+        <action name="getPaySortCboList"
+            	class="power.web.administration.maintenanceproject.MaintenanceProjectAction"
+            	method="getPaySortCboList">
+        </action>  
+        <action name="getPaySortShowList"
+            	class="power.web.administration.maintenanceproject.MaintenanceProjectAction"
+            	method="getPaySortShowList">
+        </action> 
+        <!-- 维修项目维护 -->	
+	</package>
+</struts>

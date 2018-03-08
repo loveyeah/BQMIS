@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.1.v20080911 Build &lt;2.3.1.v20080922-1151></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/grouped_listing.gif</property>
+    <property name="cheatSheet">org.eclipse.birt.report.designer.ui.cheatsheet.groupedlisting</property>
+    <parameters>
+        <scalar-parameter name="empId" id="572">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">2093</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="advicenoteNo" id="755">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="printDate" id="756">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="newEmpids" id="757">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="600">
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@192.168.32.3:1521:bqdb</property>
+            <property name="odaUser">power</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cG93ZXI=</encrypted-property>
+            <property name="odaJndiName">java:/powererpDS</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="601">
+            <structure name="cachedMetaData"/>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">newEmpids</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">newEmpids</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select a.new_empid,
+       a.emp_id,
+       i.emp_code,
+       i.chs_name,
+       a.advicenote_no,
+       a.new_deptid,
+       (select d.dept_name
+          from Hr_c_dept d
+         where d.dept_id = a.new_deptid
+           and d.is_use = 'U') as dept_name,
+       a.check_station_grade,
+       a.station_id,
+       (select s.station_name
+          from hr_c_station s
+         where s.station_id = a.station_id
+           and s.is_use = 'U') as station_name,
+       a.salary_point,
+       to_char(a.mission_date,'yyyy') as mission_year,
+       to_char(a.mission_date,'mm') as mission_month,
+       to_char(a.mission_date,'dd') as mission_day,
+       to_char(a.startsalary_date,'yyyy') as startsalary_year,
+       to_char(a.startsalary_date,'mm') as startsalary_month,
+       to_char(a.startsalary_date,'dd') as startsalary_day,
+       a.memo,
+       (select l.station_level_name
+          from hr_c_station_level l
+         where l.station_level_id = a.check_station_grade
+           and l.is_use = 'U') as station_level_name, 0
+  from hr_j_newemployee a, hr_j_emp_info i
+ where a.emp_id = i.emp_id
+   and a.is_use = 'Y'
+   and i.is_use = 'Y'
+   and a.enterprise_code = 'hfdc'
+   and i.enterprise_code = 'hfdc'
+   and  instr(?,','||a.new_empid||',')&lt;>0
+union(
+select null,null,'','','',null,'',null,null,'',null,'','','','','','','','',rownum   from  hr_j_emp_info bb   where rownum>0
+and rownum &lt;= (select 5 - count(1)
+                 from hr_j_newemployee a, hr_j_emp_info i
+                where a.emp_id = i.emp_id
+                  and a.is_use = 'Y'
+                  and i.is_use = 'Y'
+                  and a.enterprise_code = 'hfdc'
+                  and i.enterprise_code = 'hfdc'
+                  and  instr(?,','||a.new_empid||',')&lt;>0))</property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="crosstab-cell" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="topMargin">2.5cm</property>
+            <property name="leftMargin">1.75cm</property>
+            <property name="bottomMargin">2.5cm</property>
+            <property name="rightMargin">1.75cm</property>
+            <page-header>
+                <grid id="573">
+                    <property name="width">100%</property>
+                    <column id="691">
+                        <property name="width">10%</property>
+                    </column>
+                    <column id="574">
+                        <property name="width">20%</property>
+                    </column>
+                    <column id="575">
+                        <property name="width">25%</property>
+                    </column>
+                    <column id="576">
+                        <property name="width">20%</property>
+                    </column>
+                    <column id="577">
+                        <property name="width">25%</property>
+                    </column>
+                    <row id="579">
+                        <property name="height">34.5pt</property>
+                        <cell id="689">
+                            <property name="colSpan">5</property>
+                            <property name="rowSpan">1</property>
+                            <property name="verticalAlign">middle</property>
+                            <label id="591">
+                                <property name="style">crosstab-cell</property>
+                                <property name="fontFamily">"华文楷体"</property>
+                                <property name="fontSize">16pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text">大唐陕西发电有限公司灞桥热电厂新进员工通知单</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                    <row id="585">
+                        <property name="height">16.5pt</property>
+                        <property name="verticalAlign">middle</property>
+                        <cell id="690">
+                            <label id="692">
+                                <property name="fontFamily">"楷体_GB2312"</property>
+                                <property name="fontSize">12pt</property>
+                            </label>
+                        </cell>
+                        <cell id="586">
+                            <label id="759">
+                                <property name="fontFamily">"华文楷体"</property>
+                                <property name="fontSize">12pt</property>
+                                <text-property name="text">查照</text-property>
+                            </label>
+                        </cell>
+                        <cell id="587">
+                            <text id="694">
+                                <property name="fontFamily">"华文楷体"</property>
+                                <property name="fontSize">12pt</property>
+                                <property name="textAlign">left</property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[<value-of>((params["printDate"].value==null||params["printDate"].value=="null")?"":params["printDate"].value.substring(0,4))+"年"+(params["printDate"].value ==null?"":params["printDate"].value.substring(5,7))+"月"+(params["printDate"].value==null?"":params["printDate"].value.substring(8,10))+"日";</value-of>
+    					]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="588"/>
+                        <cell id="589">
+                            <text id="754">
+                                <property name="fontFamily">"华文楷体"</property>
+                                <property name="fontSize">12pt</property>
+                                <property name="textAlign">left</property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[<value-of>"人新进("+BirtDateTime.year(new Date()).toString()+")第"+params["advicenoteNo"].value+"号";</value-of>]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="618">
+            <property name="fontFamily">"楷体_GB2312"</property>
+            <property name="fontSize">10pt</property>
+            <property name="borderBottomColor">#000000</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">2px</property>
+            <property name="borderLeftColor">#000000</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">2px</property>
+            <property name="borderRightColor">#000000</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">2px</property>
+            <property name="borderTopColor">#000000</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">2px</property>
+            <property name="marginTop">0pt</property>
+            <property name="verticalAlign">middle</property>
+            <property name="width">100%</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">CHS_NAME</property>
+                    <expression name="expression">dataSetRow["CHS_NAME"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">STATION_NAME</property>
+                    <expression name="expression">dataSetRow["STATION_NAME"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">SALARY_POINT</property>
+                    <expression name="expression">dataSetRow["SALARY_POINT"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">MISSION_YEAR</property>
+                    <expression name="expression">dataSetRow["MISSION_YEAR"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">MISSION_MONTH</property>
+                    <expression name="expression">dataSetRow["MISSION_MONTH"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">MISSION_DAY</property>
+                    <expression name="expression">dataSetRow["MISSION_DAY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">STARTSALARY_YEAR</property>
+                    <expression name="expression">dataSetRow["STARTSALARY_YEAR"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">STARTSALARY_MONTH</property>
+                    <expression name="expression">dataSetRow["STARTSALARY_MONTH"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">STARTSALARY_DAY</property>
+                    <expression name="expression">dataSetRow["STARTSALARY_DAY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">STATION_LEVEL_NAME</property>
+                    <expression name="expression">dataSetRow["STATION_LEVEL_NAME"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DEPT_NAME</property>
+                    <expression name="expression">dataSetRow["DEPT_NAME"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">MEMO</property>
+                    <expression name="expression">dataSetRow["MEMO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="pageBreakInterval">50</property>
+            <column id="655">
+                <property name="width">9%</property>
+            </column>
+            <column id="656">
+                <property name="width">14%</property>
+            </column>
+            <column id="657">
+                <property name="width">7%</property>
+            </column>
+            <column id="658">
+                <property name="width">6%</property>
+            </column>
+            <column id="659">
+                <property name="width">12%</property>
+            </column>
+            <column id="661">
+                <property name="width">7%</property>
+            </column>
+            <column id="662">
+                <property name="width">4%</property>
+            </column>
+            <column id="663">
+                <property name="width">4%</property>
+            </column>
+            <column id="664">
+                <property name="width">7%</property>
+            </column>
+            <column id="702">
+                <property name="width">4%</property>
+            </column>
+            <column id="698">
+                <property name="width">4%</property>
+            </column>
+            <column id="665">
+                <property name="width">24%</property>
+            </column>
+            <header>
+                <row id="666">
+                    <property name="height">34.5pt</property>
+                    <cell id="667">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">2</property>
+                        <property name="fontSize">9pt</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="495">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="fontSize">10pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">姓  名</text-property>
+                        </label>
+                    </cell>
+                    <cell id="668">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">2</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="550">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">职务(岗位)</text-property>
+                        </label>
+                    </cell>
+                    <cell id="731">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">2</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="551">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">岗级</text-property>
+                        </label>
+                    </cell>
+                    <cell id="732">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">2</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="552">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">薪点</text-property>
+                        </label>
+                    </cell>
+                    <cell id="733">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">2</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="708">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <text-property name="text">工作部门</text-property>
+                        </label>
+                    </cell>
+                    <cell id="672">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="549">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">到厂日期</text-property>
+                        </label>
+                    </cell>
+                    <cell id="676">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="704">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">起薪日期</text-property>
+                        </label>
+                    </cell>
+                    <cell id="677">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">2</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="498">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">备    注</text-property>
+                        </label>
+                    </cell>
+                </row>
+                <row id="619">
+                    <property name="height">34.5pt</property>
+                    <property name="verticalAlign">middle</property>
+                    <cell id="625">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <label id="554">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">年</text-property>
+                        </label>
+                    </cell>
+                    <cell id="626">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <label id="555">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">月</text-property>
+                        </label>
+                    </cell>
+                    <cell id="627">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <label id="556">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">日</text-property>
+                        </label>
+                    </cell>
+                    <cell id="628">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <label id="705">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">年</text-property>
+                        </label>
+                    </cell>
+                    <cell id="700">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="706">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">月</text-property>
+                        </label>
+                    </cell>
+                    <cell id="696">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="707">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">日</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="631">
+                    <property name="height">34.5pt</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <cell id="632">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="textAlign">center</property>
+                        <data id="749">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="resultSetColumn">CHS_NAME</property>
+                        </data>
+                    </cell>
+                    <cell id="633">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <data id="735">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="resultSetColumn">STATION_NAME</property>
+                        </data>
+                    </cell>
+                    <cell id="634">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <data id="750">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="resultSetColumn">STATION_LEVEL_NAME</property>
+                        </data>
+                    </cell>
+                    <cell id="635">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <data id="737">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="resultSetColumn">SALARY_POINT</property>
+                        </data>
+                    </cell>
+                    <cell id="636">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <data id="751">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="resultSetColumn">DEPT_NAME</property>
+                        </data>
+                    </cell>
+                    <cell id="638">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <data id="740">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="resultSetColumn">MISSION_YEAR</property>
+                        </data>
+                    </cell>
+                    <cell id="639">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <data id="741">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="resultSetColumn">MISSION_MONTH</property>
+                        </data>
+                    </cell>
+                    <cell id="640">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <data id="742">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="resultSetColumn">MISSION_DAY</property>
+                        </data>
+                    </cell>
+                    <cell id="641">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <data id="743">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="resultSetColumn">STARTSALARY_YEAR</property>
+                        </data>
+                    </cell>
+                    <cell id="701">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <data id="744">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="resultSetColumn">STARTSALARY_MONTH</property>
+                        </data>
+                    </cell>
+                    <cell id="697">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <data id="745">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="resultSetColumn">STARTSALARY_DAY</property>
+                        </data>
+                    </cell>
+                    <cell id="642">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <data id="752">
+                            <property name="fontFamily">"华文楷体"</property>
+                            <property name="resultSetColumn">MEMO</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+        <grid id="356">
+            <property name="width">100%</property>
+            <column id="357">
+                <property name="width">15%</property>
+            </column>
+            <column id="358">
+                <property name="width">15%</property>
+            </column>
+            <column id="359">
+                <property name="width">30%</property>
+            </column>
+            <column id="360">
+                <property name="width">15%</property>
+            </column>
+            <column id="361">
+                <property name="width">15%</property>
+            </column>
+            <column id="362">
+                <property name="width">10%</property>
+            </column>
+            <row id="363">
+                <property name="height">21.75pt</property>
+                <property name="fontSize">large</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="364">
+                    <label id="377">
+                        <property name="fontFamily">"华文楷体"</property>
+                        <property name="fontSize">12pt</property>
+                        <text-property name="text">厂长：</text-property>
+                    </label>
+                </cell>
+                <cell id="365"/>
+                <cell id="366">
+                    <label id="378">
+                        <property name="fontFamily">"华文楷体"</property>
+                        <property name="fontSize">12pt</property>
+                        <text-property name="text">人力资源部主任：</text-property>
+                    </label>
+                </cell>
+                <cell id="367"/>
+                <cell id="368">
+                    <label id="379">
+                        <property name="fontFamily">"华文楷体"</property>
+                        <property name="fontSize">12pt</property>
+                        <text-property name="text">制单：</text-property>
+                    </label>
+                </cell>
+                <cell id="369"/>
+            </row>
+            <row id="593">
+                <cell id="594"/>
+                <cell id="595"/>
+                <cell id="596"/>
+                <cell id="597"/>
+                <cell id="598"/>
+                <cell id="599"/>
+            </row>
+        </grid>
+    </body>
+</report>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_5.xsd">
+  <display-name>bqerp</display-name>
+  <module id="myeclipse.1231577138406">
+    <web>
+      <web-uri>bqerpweb.war</web-uri>
+      <context-root>/power</context-root>
+    </web>
+  </module>
+  <module id="myeclipse.1231578302234">
+    <web>
+      <web-uri>bqerprpt.war</web-uri>
+      <context-root>/powerrpt</context-root>
+    </web>
+  </module>
+  <module id="myeclipse.1231577611484">
+    <ejb>bqerpcomm.jar</ejb>
+  </module>
+  <module id="myeclipse.1231577409218">
+    <ejb>bqerpejb.jar</ejb>
+  </module>
+</application>
+

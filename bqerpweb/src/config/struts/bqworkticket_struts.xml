@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-validation.xml" />
+	<package name="bqworkticket" namespace="/bqworkticket" extends="jfreechart-default">
+		
+		<!-- 审批查询页面 -->
+		<action name="getWorkticketTypeList" class="power.web.workticketbq.approve.action.BqApproveQueryAction" method="getWorkticketTypeList"></action>
+		<action name="getSystemList" class="power.web.workticketbq.approve.action.BqApproveQueryAction" method="getSystemList"></action>
+	   	<action name="getApproveStatusList" class="power.web.workticketbq.approve.action.BqApproveQueryAction" method="getApproveStatusList"></action>
+	    <action name="getApproveList" class="power.web.workticketbq.approve.action.BqApproveQueryAction" method="getApproveList"></action>
+	    <!-- 审批公用安措 -->
+	    <action name="getMarkcardList" class="power.web.workticketbq.approve.action.BqApproveSafetyAction" method="getMarkcardList"></action>
+	    <action name="updateWorkticketSafetyRecord" class="power.web.workticketbq.approve.action.BqApproveSafetyAction" method="updateWorkticketSafetyRecord"></action>
+	   <action name="getSafetyContent" class="power.web.workticketbq.approve.action.BqApproveSafetyAction" method="getSafetyContent"></action>
+	   <action name="printMeasureExeCard" class="power.web.workticketbq.approve.action.BqApproveSafetyAction" method="printMeasureExeCard"></action>
+	    <!-- 公用审批页面-->
+	     <action name="workticketCommApprove" class="power.web.workticketbq.approve.action.BqCommApproveAction" method="workticketCommApprove"></action>
+	       <!-- 获得工作票基本信息-->
+	      <action name="getWorkticketBaseInfoByNo" class="power.web.workticketbq.approve.action.BqCommApproveAction" method="getWorkticketBaseInfoByNo"></action>
+	       <!-- 审批-->
+	      <action name="dutyChargeApprove" class="power.web.workticketbq.approve.action.DutyChargeApproveAction" method="dutyChargeApprove"></action>
+	      <action name="safetyExeApprove" class="power.web.workticketbq.approve.action.SafetyExtApproveAction" method="safetyExeApprove"></action>
+	      <action name="endApprove" class="power.web.workticketbq.approve.action.EndApproveAction" method="endApprove"></action>
+	       <!-- 交回恢复-->
+	      <action name="findReturnBackList" class="power.web.workticketbq.approve.action.EndApproveAction" method="findReturnBackList"></action>
+	      <action name="saveReturnBackInfo" class="power.web.workticketbq.approve.action.EndApproveAction" method="saveReturnBackInfo"></action>
+	      <action name="deleteReturnBackInfo" class="power.web.workticketbq.approve.action.EndApproveAction" method="deleteReturnBackInfo"></action>
+	      
+	       <!-- 动火票审批-->
+	         <action name="safetyFireExeApprove" class="power.web.workticketbq.approve.action.FireSafetyExeApproveAction" method="safetyFireExeApprove"></action>
+	           <action name="pemitStartApprove" class="power.web.workticketbq.approve.action.FirePemitStartApproveAction" method="pemitStartApprove"></action>
+	            <action name="fireEndApprove" class="power.web.workticketbq.approve.action.FireEndApproveAction" method="fireEndApprove"></action>
+	              <!-- 动火工作票打印触发WebService开票方法  add by fyyang 090331-->
+	              <action name="dhCreateTicket" class="power.web.workticketbq.approve.action.FireEndApproveAction" method="createTicket"></action>
+	       <!--动火测量-->
+	        <action name="fireMeasureApprove" class="power.web.workticketbq.approve.action.FireMeasureApproveAction" method="fireMeasureApprove"></action>
+	        <action name="findMeasureList" class="power.web.workticketbq.approve.action.FireMeasureApproveAction" method="findMeasureList"></action>
+	        <action name="saveMeasureInfo" class="power.web.workticketbq.approve.action.FireMeasureApproveAction" method="saveMeasureInfo"></action>
+	        <action name="deleteMeasureInfo" class="power.web.workticketbq.approve.action.FireMeasureApproveAction" method="deleteMeasureInfo"></action>
+	     <!-- 获得工作票对应的操作票号-->
+	      <action name="getRefOpticketNoForWorkticket" class="power.web.workticketbq.approve.action.SafetyExtApproveAction" method="getRefOpticketNoForWorkticket"></action>
+	</package>
+</struts>

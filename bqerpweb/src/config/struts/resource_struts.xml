@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>   
+   <include file="struts-validation.xml" />
+   <package name="resource" namespace="/resource" extends="jfreechart-default">
+        <!-- 仓库基本信息维护 -->
+    <action name="getWarehouseInfoList" class="power.web.resource.warehousebaseinfo.action.WarehouseBaseInfoMaintAction" method="getWarehouseInfoList"></action>
+    <action name="getLocationListByWhsNo" class="power.web.resource.warehousebaseinfo.action.WarehouseBaseInfoMaintAction" method="getLocationListByWhsNo"></action>
+    <action name="deleteWarehouse" class="power.web.resource.warehousebaseinfo.action.WarehouseBaseInfoMaintAction" method="deleteWarehouse"></action>
+    <action name="saveWarehouseAndLocation" class="power.web.resource.warehousebaseinfo.action.WarehouseBaseInfoMaintAction" method="saveWarehouseAndLocation"></action>
+    <action name="isWarehouseCanRemove" class="power.web.resource.warehousebaseinfo.action.WarehouseBaseInfoMaintAction" method="isWarehouseCanRemove"></action>  
+    <action name="getWarehouseInfoByWhsNo" class="power.web.resource.warehousebaseinfo.action.WarehouseBaseInfoMaintAction" method="getWarehouseInfoByWhsNo"></action>
+    <action name="findPersonNameByCode" class="power.web.resource.warehousebaseinfo.action.WarehouseBaseInfoMaintAction" method="findPersonNameByCode"></action>
+    <!-- 汇率维护 -->
+	<action name="getExchangeRateList" class="power.web.resource.exchangerate.action.ExchangeRateAction" method="getExchangeRateList"></action>
+	<action name="getCurrencyNameList" class="power.web.resource.exchangerate.action.ExchangeRateAction" method="getCurrencyNameList"></action>
+	<action name="addExchangeRate" class="power.web.resource.exchangerate.action.ExchangeRateAction" method="addExchangeRate"></action>
+	<action name="updateExchangeRate" class="power.web.resource.exchangerate.action.ExchangeRateAction" method="updateExchangeRate"></action>
+	<action name="deleteExchangeRate" class="power.web.resource.exchangerate.action.ExchangeRateAction" method="deleteExchangeRate"></action>
+	
+	
+     
+    <!-- 采购员维护 -->
+   	<action name="getMaterialClassList" class="power.web.resource.purchaser.action.PurchaserMaintAction" method="getMaterialClassList"></action>
+   	<action name="getPurchaserList" class="power.web.resource.purchaser.action.PurchaserMaintAction" method="getPurchaserList"></action>
+	<action name="getSelectedMaterialList" class="power.web.resource.purchaser.action.PurchaserMaintAction" method="getSelectedMaterialList"></action>
+	<action name="getWaitSelectMaterialList" class="power.web.resource.purchaser.action.PurchaserMaintAction" method="getWaitSelectMaterialList"></action>
+	<action name="saveBuyerRecords" class="power.web.resource.purchaser.action.PurchaserMaintAction" method="saveBuyerRecords"></action>
+	<action name="deletePurchaserByBuyer" class="power.web.resource.purchaser.action.PurchaserMaintAction" method="deletePurchaserByBuyer"></action>
+	<action name="getPersonInfoBuyer" class="power.web.resource.purchaser.action.PurchaserMaintAction" method="getPersonInfoBuyer"></action>
+	  
+	<!-- 计划员维护 -->
+   	<action name="getPlanerList" class="power.web.resource.planer.action.PlanerMaintAction" method="getPlanerList"></action>
+	<action name="getPlanerSelectedMaterialList" class="power.web.resource.planer.action.PlanerMaintAction" method="getPlanerSelectedMaterialList"></action>
+	<action name="savePlanerRecords" class="power.web.resource.planer.action.PlanerMaintAction" method="savePlanerRecords"></action>
+	<action name="deletePlanerByPlaner" class="power.web.resource.planer.action.PlanerMaintAction" method="deletePlanerByPlaner"></action>
+	<action name="getPersonInfoPlaner" class="power.web.resource.planer.action.PlanerMaintAction" method="getPersonInfoPlaner"></action>
+	 
+    <!-- 物料类型维护 --> 
+	<action name="getMaterialTypeList" class="power.web.resource.materialtype.action.LogisticsMaterialTypeAction" method="getMaterialTypeList"></action>
+	<action name="addMaterialType" class="power.web.resource.materialtype.action.LogisticsMaterialTypeAction" method="addMaterialType"></action>
+	<action name="updateMaterialType" class="power.web.resource.materialtype.action.LogisticsMaterialTypeAction" method="updateMaterialType"></action>
+	<action name="deleteMaterialType" class="power.web.resource.materialtype.action.LogisticsMaterialTypeAction" method="deleteMaterialType"></action>
+	
+	<!-- 采购单登记 -->
+    <action name="getRegisterOrderList" class="power.web.resource.orderregister.action.OrderRegisterAction" method="getOrdersByFuzzy"></action>
+   <action name="getPurchaseOrderList" class="power.web.resource.orderregister.action.OrderRegisterAction" method="getOrdersByQuery"></action>
+    <action name="getPurchaseDetailList" class="power.web.resource.orderregister.action.OrderRegisterAction" method="getPurchaseDetailList"></action>
+    <action name="getRegisterOrderDetailsByNo" class="power.web.resource.orderregister.action.OrderRegisterAction" method="getOrderDetailsByNo"></action>
+    <action name="getRegisterMeasureByPurNo" class="power.web.resource.orderregister.action.OrderRegisterAction" method="getMeasureByPurNo"></action>
+    <action name="getRegisterCurrencyList" class="power.web.resource.orderregister.action.OrderRegisterAction" method="getCurrencyList"></action>
+    <action name="getRegisterExchangeRate" class="power.web.resource.orderregister.action.OrderRegisterAction" method="getExchangeRate"></action>
+    <action name="getRegisterCurrencyNameById" class="power.web.resource.orderregister.action.OrderRegisterAction" method="getCurrencyNameById"></action>
+    <action name="getRegisterUnitPrice" class="power.web.resource.orderregister.action.OrderRegisterAction" method="getUnitPrice"></action>
+    <action name="getRegisterCurrentMatCounts" class="power.web.resource.orderregister.action.OrderRegisterAction" method="getCurrentMatCounts"></action>
+    <action name="getRegisterPlans" class="power.web.resource.orderregister.action.OrderRegisterAction" method="getPlans"></action>
+    <action name="getRegisterOtherPlans" class="power.web.resource.orderregister.action.OrderRegisterAction" method="getOtherPlans"></action>
+    <action name="reportRegisterOrder" class="power.web.resource.orderregister.action.OrderRegisterAction" method="reportOrder"></action>
+    <action name="saveRegisterOrderData" class="power.web.resource.orderregister.action.OrderRegisterAction" method="saveOrderData"></action>
+    <action name="getCurrentWorker" class="power.web.resource.orderregister.action.OrderRegisterAction" method="getCurrentWorker"></action>
+    <action name="getRegisterOrderById" class="power.web.resource.orderregister.action.OrderRegisterAction" method="getOrderById"></action>
+   	<action name="findOrdersMaterial" class="power.web.resource.orderregister.action.OrderRegisterAction" method="findOrdersMaterial"></action>
+
+    
+
+       	
+     <!-- 采购入库管理 -->
+    <action name="getRS001PurchaseList" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="getRS001PurchaseList"></action>
+   	<action name="getTransName" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="getTransName"></action>
+   	<action name="getRS001PurchaseDetailList" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="getRS001PurchaseDetailList"></action>
+   	<action name="getWarehouseList" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="getWarehouseList"></action>
+   	<action name="getLocationList" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="getLocationList"></action>
+   	<action name="getWarehouseName" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="getWarehouseName"></action>
+   	<action name="getLocationName" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="getLocationName"></action>
+   	<action name="getWarehouseSaveName" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="getWarehouseSaveName"></action>
+   	<action name="updatePurchaseWarehouse" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="updatePurchaseWarehouse"></action>
+	<action name="getLocationAllListCount" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="getLocationAllListCount"></action>   
+   	<action name="getRS001UnitName" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="getRS001UnitName"></action>
+	<action name="getRS001OperaterByName" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="getRS001OperaterByName"></action>
+	<action name="findPurchasehouseList" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="findPurchasehouseList"></action>
+	<action name="getArrivalCheckList" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="getArrivalCheckList"></action>
+   	<action name="getArrivalCheckDetailList" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="getArrivalCheckDetailListByArrivalNo"></action>
+   	<action name="getArrivalCheckDetailListByMaterial" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="getArrivalCheckDetailListByMaterial"></action>
+  	<action name="getArrivalBillList" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="getArrivalBillList"></action>
+  	<action name="getArrivalBillDetailList" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="getArrivalBillDetailList"></action>
+  	<action name="checkArrivalBillList" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="checkArrivalBillList"></action>
+  	<action name="findCancelPurchasewarehouseList" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="findCancelPurchasewarehouseList"></action>
+    <action name="updatePurchasewarehouseQty" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="updatePurchasewarehouseQty"></action>
+    <action name="findAfterPrintList" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="findAfterPrintList"></action>
+ 
+ <!-- 取消入库审核 add by drdu 091103 -->
+ <action name="cancelCheckArrivalBillList" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="cancelCheckArrivalBillList"></action>
+ 
+  <!-- 退库管理 -->
+    <action name="findByReceiveNo" class="power.web.resource.movebackwarehouse.action.MovebackWarehouseAction" method="findByReceiveNo"></action>
+    <action name="getWareHouse" class="power.web.resource.movebackwarehouse.action.MovebackWarehouseAction" method="getWareHouse"></action>
+    <action name="getMovebackLocationName" class="power.web.resource.movebackwarehouse.action.MovebackWarehouseAction" method="getLocationName"></action>
+   	<action name="updateMovebackWarehouse" class="power.web.resource.movebackwarehouse.action.MovebackWarehouseAction" method="updateMovebackWarehouse"></action>
+   	<action name="getMoveBackReason" class="power.web.resource.movebackwarehouse.action.MovebackWarehouseAction" method="getMoveBackReason"></action>
+   
+   <!-- 移库管理 -->
+   <action name="updateStore" class="power.web.resource.storechange.action.StoreChangeAction" method="updateStore"></action>
+   <action name="getStoreUserName" class="power.web.resource.storechange.action.StoreChangeAction" method="getUserName"></action>
+   
+    <!-- 币种维护画面 -->
+	<action name="searchCurrency" class="power.web.resource.currency.action.CurrencyTypeAction" method="searchMsg"></action>
+	<action name="deleteCurrency" class="power.web.resource.currency.action.CurrencyTypeAction" method="deleteMsg"></action>
+	<action name="updateCurrency" class="power.web.resource.currency.action.CurrencyTypeAction" method="updateMsg"></action>
+	<action name="addCurrency" class="power.web.resource.currency.action.CurrencyTypeAction" method="addMsg"></action>
+   
+   	<!-- 物料状态码维护 --> 
+	<action name="getMaterialStatusList" class="power.web.resource.materialstatus.action.LogisticsMaterialStatusAction" method="getMaterialStatusList"></action>
+	<action name="addMaterialStatus" class="power.web.resource.materialstatus.action.LogisticsMaterialStatusAction" method="addMaterialStatus"></action>
+	<action name="updateMaterialStatus" class="power.web.resource.materialstatus.action.LogisticsMaterialStatusAction" method="updateMaterialStatus"></action>
+	<action name="deleteMaterialStatus" class="power.web.resource.materialstatus.action.LogisticsMaterialStatusAction" method="deleteMaterialStatus"></action>
+   
+   	<!-- 物料需求计划登记 -->
+   	 	<action name="getMaterial" class="power.web.resource.planregister.action.PlanRegisterAction" method="getMaterial"></action>
+   	<action name="getFormInfo" class="power.web.resource.planregister.action.PlanRegisterAction" method="getFormInfo"></action>
+	<action name="addPlanRegister" class="power.web.resource.planregister.action.PlanRegisterAction" method="addPlanRegister"></action>
+	<action name="getPlanOriginalNode" class="power.web.resource.planregister.action.PlanRegisterAction" method="getPlanOriginalNode"></action>
+  	<action name="getOriginalType" class="power.web.resource.planregister.action.PlanRegisterAction" method="getOriginalType"></action>
+  	<action name="getInfo" class="power.web.resource.planregister.action.PlanRegisterAction" method="getInfo"></action>
+  	<action name="getHeadInfo" class="power.web.resource.planregister.action.PlanRegisterAction" method="getHeadInfo"></action>
+  	<action name="getOrigianlName" class="power.web.resource.planregister.action.PlanRegisterAction" method="getOrigianlName"></action>
+  	<action name="getMaterialInfo" class="power.web.resource.planregister.action.PlanRegisterAction" method="getMaterialInfo"></action>  	
+  	<action name="getPlanHeadByFuzzy" class="power.web.resource.planquery.action.PlanQueryAction" method="getPlanHeadByFuzzy"></action>  
+  	<action name="getMaterialDetail" class="power.web.resource.planquery.action.PlanQueryAction" method="getMaterialDetail"></action>   
+  	<action name="getMaterialEdit" class="power.web.resource.planregister.action.PlanRegisterAction" method="getMaterialEdit"></action>   
+  	<action name="getSpeciality" class="power.web.resource.planregister.action.PlanRegisterAction" method="getSpeciality"></action>    	  	    	 
+  	<action name="reportPlan" class="power.web.resource.planregister.action.PlanRegisterAction" method="reportPlan"></action> 	  	  
+  	<action name="updatePlanRegister" class="power.web.resource.planregister.action.PlanRegisterAction" method="updatePlanRegister"></action> 	  	  
+  	<action name="deletePlanRegister" class="power.web.resource.planregister.action.PlanRegisterAction" method="deletePlanRegister"></action> 	  	  
+  	<action name="getMaterialStock" class="power.web.resource.planregister.action.PlanRegisterAction" method="getMaterialStock"></action>
+  	<action name="getOrdersByDetailID" class="power.web.resource.planquery.action.PlanQueryAction" method="getOrdersByDetailID"></action> 	  	  
+  	<action name="getArrivalListByDetailID" class="power.web.resource.planquery.action.PlanQueryAction" method="getArrivalListByDetailID"></action>
+  	<action name="getIssueDetailByDetailID" class="power.web.resource.planquery.action.PlanQueryAction" method="getIssueDetailByDetailID"></action>
+  	<action name="getInquirePriceInfo" class="power.web.resource.planquery.action.PlanQueryAction" method="getInquirePriceInfo"></action>
+  	<action name="findMaterialDetailsByCond" class="power.web.resource.planquery.action.PlanQueryAction" method="findMaterialDetailsByCond"></action>
+  	<action name="getPlanHeadByLogin" class="power.web.resource.planquery.action.PlanQueryAction" method="getPlanHeadByLogin"></action>
+  	<!-- 物料汇总 -->  	
+  	<action name="getMRPMaterialDetail" class="power.web.resource.plangather.action.PlanGatherAction" method="getMRPMaterialDetail"></action>
+  	<action name="addGatherMaterialDetail" class="power.web.resource.plangather.action.PlanGatherAction" method="addGatherMaterialDetail"></action>
+  	<action name="getMaterialGatherDetail" class="power.web.resource.plangather.action.PlanGatherAction" method="getMaterialGatherDetail"></action>
+  	<action name="chooserBuyer" class="power.web.resource.plangather.action.PlanGatherAction" method="chooserBuyer"></action>
+  	<action name="gatherTurnPlan" class="power.web.resource.plangather.action.PlanGatherAction" method="gatherTurnPlan"></action>
+  	<!-- 物料分类维护 -->
+	<action name="getMaterialClass" class="power.web.resource.materialsort.action.MaterialSortAction" method="getMaterialClass"></action>
+	<action name="getFatherCodeName" class="power.web.resource.materialsort.action.MaterialSortAction" method="getFatherCodeName"></action>
+	<action name="checkCode" class="power.web.resource.materialsort.action.MaterialSortAction" method="checkCode"></action>
+	<action name="saveMaterialType" class="power.web.resource.materialsort.action.MaterialSortAction" method="saveMaterialType"></action>
+	<action name="modifyMaterialType" class="power.web.resource.materialsort.action.MaterialSortAction" method="modifyMaterialType"></action>
+  	<action name="deleteMaterialTypeSort" class="power.web.resource.materialsort.action.MaterialSortAction" method="deleteMaterialTypeSort"></action>
+   
+    <!-- 替换物料维护 --> 
+    <action name="getMaterialListForPart" class="power.web.resource.exchangeMaterial.ExchangeMaterialAction" method="getMaterialList"></action>
+    <action name="getAlertMaterialList" class="power.web.resource.exchangeMaterial.ExchangeMaterialAction" method="getAlertMaterialList"></action>
+    <action name="deleteMaterial" class="power.web.resource.exchangeMaterial.ExchangeMaterialAction" method="deleteMaterial"></action>
+    <action name="updateAlertMaterial" class="power.web.resource.exchangeMaterial.ExchangeMaterialAction" method="saveAlertMaterial"></action>
+    
+    <!-- 物料盘点调整 -->
+    <action name="getBookCheckList" class="power.web.resource.bookcheck.action.BookCheckAdjustAction" method="getBookCheckList"></action>
+    <action name="updateBookCheckList" class="power.web.resource.bookcheck.action.BookCheckAdjustAction" method="updateBookCheckList"></action>
+    <action name="findBookNoSelectList" class="power.web.resource.bookcheck.action.BookCheckAdjustAction" method="findBookNoSelectList"></action>
+    
+    <!-- 事务作用及原因维护 -->
+    <action name="getTransList" class="power.web.resource.transReason.TransReasonAction" method="getTransList"></action>
+    <action name="getReasonList" class="power.web.resource.transReason.TransReasonAction" method="getReasonList"></action>
+    <action name="saveTransAndReason" class="power.web.resource.transReason.TransReasonAction" method="saveTransAndReason"></action>
+    <action name="deleteTrans" class="power.web.resource.transReason.TransReasonAction" method="deleteTrans"></action>
+     <action name="getTransIdByTransNo" class="power.web.resource.transReason.TransReasonAction" method="getTransIdByTransNo"></action>
+    
+    
+    <!-- 物料询价管理 -->
+	<action name="getQuotationList" class="power.web.resource.quotation.action.QuotationAction" method="getQuotationList"></action>
+	<action name="getCurrency" class="power.web.resource.quotation.action.QuotationAction" method="getCurrency"></action>
+	<action name="addData" class="power.web.resource.quotation.action.QuotationAction" method="addData"></action>
+	<action name="updateData" class="power.web.resource.quotation.action.QuotationAction" method="updateData"></action>
+	<action name="deleteData" class="power.web.resource.quotation.action.QuotationAction" method="deleteData"></action>
+	
+    <!-- 物料名称查询及选择 -->
+	<action name="getMaterialNameList" class="power.web.resource.materialnamequery.action.MaterialNameQueryAction" method="getMaterialNameList"></action>   
+    <action name="getMaterialMap" class="power.web.resource.materialnamequery.action.MaterialNameQueryAction" method="getMaterialMap"></action>
+         
+    	<!-- 到货登记 -->
+     <action name="getStockDesc" class="power.web.resource.arriveCango.action.ArriveCangoAction" method="getStockDesc"></action>
+    <action name="getMaterialDetails" class="power.web.resource.arriveCango.action.ArriveCangoAction" method="getMaterialDetails"></action>
+    <action name="updateArrival" class="power.web.resource.arriveCango.action.ArriveCangoAction" method="updateArrival"></action>
+   <action name="deleteArrival" class="power.web.resource.arriveCango.action.ArriveCangoAction" method="deleteArrival"></action>
+     <action name="getTableDetails" class="power.web.resource.arriveCango.action.ArriveCangoAction" method="getTableDetails"></action>
+     <action name="setDesc" class="power.web.resource.arriveCango.action.ArriveCangoAction" method="setDesc"></action>
+      <action name="reportArrival" class="power.web.resource.arriveCango.action.ArriveCangoAction" method="reportArrival"></action>
+    <action name="isReimBurse" class="power.web.resource.arriveCango.action.ArriveCangoAction" method="isReimBurse"></action>
+      <action name="getSupplier" class="power.web.resource.arriveCango.action.ArriveCangoAction" method="getSupplier"></action>
+       <action name="getReportArrival" class="power.web.resource.arriveCango.action.ArriveCangoAction" method="getReportArrival"></action>
+     <action name="getArrivalWorkerCode" class="power.web.resource.arriveCango.action.ArriveCangoAction" method="getArrivalWorkerCode"></action>
+     <action name="getRB003UnitName" class="power.web.resource.arriveCango.action.ArriveCangoAction" method="getRB003UnitName"></action>
+
+    <!-- 物料基础资料维护 -->
+    <action name="getMaterialBaseInfoList" class="power.web.resource.materialbaseinfo.action.MaterialBaseInfoAction" method="getMaterialBaseInfoList"></action>
+    <action name="getClassNameList" class="power.web.resource.materialbaseinfo.action.MaterialBaseInfoAction" method="getClassNameList"></action>
+    <action name="getMaterialById" class="power.web.resource.materialbaseinfo.action.MaterialBaseInfoAction" method="getMaterialById"></action>
+    <action name="saveMaterialInfo" class="power.web.resource.materialbaseinfo.action.MaterialBaseInfoAction" method="saveMaterialInfo"></action>
+    <action name="getTypeNameList" class="power.web.resource.materialbaseinfo.action.MaterialBaseInfoAction" method="getTypeNameList"></action>
+    <action name="getStatusNameList" class="power.web.resource.materialbaseinfo.action.MaterialBaseInfoAction" method="getStatusNameList"></action>
+    <action name="getWarehouseNameList" class="power.web.resource.materialbaseinfo.action.MaterialBaseInfoAction" method="getWarehouseNameList"></action>
+    <action name="getLocationNameList" class="power.web.resource.materialbaseinfo.action.MaterialBaseInfoAction" method="getLocationNameList"></action>
+    <action name="deleteMaterialBaseInfo" class="power.web.resource.materialbaseinfo.action.MaterialBaseInfoAction" method="deleteMaterialBaseInfo"></action>
+    <action name="getAllUnitList" class="power.web.resource.materialbaseinfo.action.MaterialBaseInfoAction" method="getAllUnitList"></action>
+    
+   
+	<!-- 库存物料查询及选择 -->
+	<action name="getMaterialQueryAndSelect" class="power.web.resource.materialqueryandselect.action.MaterialQueryAndSelectAction" method="getMaterialQueryAndSelect"></action>   
+    <!-- 某物料的库存查询 add by fyyang 090424 -->
+    <action name="getMaterialQueryByMaterialNo" class="power.web.resource.materialqueryandselect.action.MaterialQueryAndSelectAction" method="getMaterialQueryByMaterialNo"></action> 
+      
+    
+    <!-- 物料盘点表打印 --> 
+  	<action name="getPlaner" class="power.web.resource.materialInventory.action.MaterialInventoryAction" method="getPlaner"></action>
+  	<action name="getLocationListData" class="power.web.resource.materialInventory.action.MaterialInventoryAction" method="getLocationListData"></action>  	
+  	<action name="isMaterialSort" class="power.web.resource.materialInventory.action.MaterialInventoryAction" method="isMaterialSort"></action>
+  	<action name="getMaterialList" class="power.web.resource.materialInventory.action.MaterialInventoryAction" method="getMaterialList"></action>
+  	<action name="saveMaterialPrint" class="power.web.resource.materialInventory.action.MaterialInventoryAction" method="saveMaterialPrint"></action>
+   
+    <!--事务异动明细查询 -->
+    <action name="getTransListForCo" class="power.web.resource.materialMove.MaterialMove" method="getTransListForCo"></action>
+    <action name="getTransMoveList" class="power.web.resource.materialMove.MaterialMove" method="searchMsg"></action>
+    <action name="queryForissuList" class="power.web.resource.materialMove.MaterialMove" method="queryForissuList"></action>
+    <action name="queryForArrivalList" class="power.web.resource.materialMove.MaterialMove" method="queryForArrivalList"></action>
+    
+    <!-- 采购出库管理 -->
+    <action name="getIssueHeadDatas" class="power.web.resource.issue.action.StorageIssueManageAction" method="getIssueHeadDatas"></action>
+    <action name="getLogonWorkerCode" class="power.web.resource.issue.action.StorageIssueManageAction" method="getLogonWorkerCode"></action>
+    <action name="getMaterialDetailDatas" class="power.web.resource.issue.action.StorageIssueManageAction" method="getMaterialDetailDatas"></action>
+    <action name="getLotsByMaterialid" class="power.web.resource.issue.action.StorageIssueManageAction" method="getLotsByMaterialid"></action>
+    <action name="getWhsByLots" class="power.web.resource.issue.action.StorageIssueManageAction" method="getWhsByLots"></action>
+    <action name="getLocationByWhsAndLots" class="power.web.resource.issue.action.StorageIssueManageAction" method="getLocationByWhsAndLots"></action>
+    <action name="isIssueBalanceNow" class="power.web.resource.issue.action.StorageIssueManageAction" method="isIssueBalanceNow"></action>
+    <action name="getStorageMaterialCounts" class="power.web.resource.issue.action.StorageIssueManageAction" method="getStorageMaterialCounts"></action>
+    <action name="getEmergencyDemandCounts" class="power.web.resource.issue.action.StorageIssueManageAction" method="getEmergencyDemandCounts"></action>
+    <action name="getPlanRelateCounts" class="power.web.resource.issue.action.StorageIssueManageAction" method="getPlanRelateCounts"></action>
+    <action name="updateIssueDbTables" class="power.web.resource.issue.action.StorageIssueManageAction" method="updateIssueDbTables"></action>
+    <action name="getIssueSaveMan" class="power.web.resource.issue.action.StorageIssueManageAction" method="getIssueSaveMan"></action>
+    <action name="updateIssueHead" class="power.web.resource.issue.action.StorageIssueManageAction" method="updateIssueHead"></action>
+    <action name="isIssueTypePlan" class="power.web.resource.issue.action.StorageIssueManageAction" method="isIssueTypePlan"></action>
+    <action name="findIssueList" class="power.web.resource.issue.action.StorageIssueManageAction" method="findIssueList"></action>
+    <action name="findCancelIssueList" class="power.web.resource.issue.action.StorageIssueManageAction" method="findCancelIssueList"></action>
+    <action name="updateIssueQty" class="power.web.resource.issue.action.StorageIssueManageAction" method="updateIssueQty"></action>
+     <action name="findAfterPrintIssueList" class="power.web.resource.issue.action.StorageIssueManageAction" method="findAfterPrintIssueList"></action>
+    
+    
+    <!-- 库存月结 -->
+    <action name="getLatestBalance" class="power.web.resource.monthbalance.action.MonthBalanceAction" method="getLatestBalance"></action>
+    <action name="checkYearMonth" class="power.web.resource.monthbalance.action.MonthBalanceAction" method="checkYearMonth"></action>
+    <action name="doBalance" class="power.web.resource.monthbalance.action.MonthBalanceAction" method="doBalance"></action>
+     <!--  领料单登记-->
+    <action name="getIssueHeadRigisterList" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="getIssueHeadRigisterList"></action>
+    <action name="getIssueInfoList" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="getIssueInfoList"></action>
+    <action name="getReceiptByName" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="getReceiptByName"></action>
+    <action name="getReceiptByList" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="getReceiptByList"></action>
+    <action name="getIssueHeadRegisterDetailList" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="getIssueHeadRegisterDetailList"></action>
+    <action name="deleteIssueRecords" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="deleteIssueRecords"></action>
+    <action name="getPlanRequirementHeadDatas" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="getPlanRequirementHeadDatas"></action>
+    <action name="updateIssueHeadAndDetails" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="updateIssueHeadAndDetails"></action>
+    <action name="addIssueHeadAndDetails" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="addIssueHeadAndDetails"></action>
+    <action name="getAllFeeBySpecial" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="getAllFeeBySpecial"></action>
+    <action name="getIssueRegisterUnitName" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="getIssueRegisterUnitName"></action>
+    <action name="reportIssueHeadRecord" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="reportIssueHeadRecord"></action>
+    <action name="getDeptInfoByEmpCode" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="getDeptInfoByEmpCode"></action>
+    <action name="getInitUserCode" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="getInitUserCode"></action> 
+     <action name="getIssueHeadById" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="getIssueHeadById"></action> 
+    <action name="getIssueHeadApproveList" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="getIssueHeadApproveList"></action> 
+   <action name="getIssueOrginalId" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="getIssueOrginalId"></action>
+   <action name="approveIssueHeadRecord" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="approveIssueHeadRecord"></action>
+   <action name="getFeeDeptType" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="getFeeDeptType"></action>
+   <action name="getIssueListByLogin" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="getIssueListByLogin"></action>
+   <action name="getIssueListByLoginJoin" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="getIssueListByLoginJoin"></action>
+   <!-- add by slTang 保存明细 -->
+   <action name="saveDetailIssue" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="saveDetailIssue"></action>
+    
+    <!-- 盘点损益表 -->
+    <action name="checkCheckBalanceNo" class="power.web.resource.checkbalance.action.CheckBalanceAction" method="checkCheckBalanceNo"></action>
+  
+    <!-- 需求计划上报及审批 -->
+     <action name="findPlanBusiStatusForApprove" class="power.web.resource.planapprove.action.PlanApproveAction" method="findPlanBusiStatusForApprove"></action>
+       <action name="findAllPlanBusiStatus" class="power.web.resource.planapprove.action.PlanApproveAction" method="findAllPlanBusiStatus"></action>
+     <action name="planReport" class="power.web.resource.planapprove.action.PlanApproveAction" method="planReport"></action>
+     <action name="planReqCommSign" class="power.web.resource.planapprove.action.PlanApproveAction" method="planReqCommSign"></action>
+     <action name="planApproveQuery" class="power.web.resource.planapprove.action.PlanApproveAction" method="planApproveQuery"></action>
+      <action name="updatePlanDetailForApprove" class="power.web.resource.planapprove.action.PlanApproveAction" method="updatePlanDetail"></action>
+    <action name="getDeptTypeForPlanApprove" class="power.web.resource.planapprove.action.PlanApproveAction" method="getDeptTypeForPlanApprove"></action>
+    <!-- 到货验收 -->
+    <action name="getArrivalListForArrivalCheck" class="power.web.resource.arrivalcheck.action.ArrivalCheckAction" method="getArrivalListForArrivalCheck"></action>
+    <action name="getArrivalDetailListForArrivalCheck" class="power.web.resource.arrivalcheck.action.ArrivalCheckAction" method="getArrivalDetailListForArrivalCheck"></action>
+    
+    <action name="updateForArrivalCheck" class="power.web.resource.arrivalcheck.action.ArrivalCheckAction" method="updateForArrivalCheck"></action>
+    <!-- 物资临时编码维护 -->
+    <action name="findTempMaterialList" class="power.web.resource.tempMaterial.TempMaterialAction" method="findTempMaterialList"></action>
+    <action name="addTempMaterial" class="power.web.resource.tempMaterial.TempMaterialAction" method="addTempMaterial"></action>
+    <action name="updateTempMaterial" class="power.web.resource.tempMaterial.TempMaterialAction" method="updateTempMaterial"></action>
+    <action name="deleteTempMaterial" class="power.web.resource.tempMaterial.TempMaterialAction" method="deleteTempMaterial"></action> 
+     <action name="reportTempMaterial" class="power.web.resource.tempMaterial.TempMaterialAction" method="reportTempMaterial"></action> 
+   <action name="getParentCode" class="power.web.resource.tempMaterial.TempMaterialAction" method="getParentCode"></action> 
+    <!-- 已审核的物资临时编码   -->
+    <action name="findApproveList" class="power.web.resource.tempMaterial.TempMaterialAction" method="findApproveList"></action> 
+    <action name="addForUpdateMaterial" class="power.web.resource.tempMaterial.TempMaterialAction" method="addForUpdateMaterial"></action> 
+    
+    <!-- 物料询价   -->
+     <action name="findPlanInquireListForBill" class="power.web.resource.planinquire.action.PlanInquireAction" method="findPlanInquireListForBill"></action> 
+       <action name="findQuotedPriceList" class="power.web.resource.planinquire.action.PlanInquireAction" method="findQuotedPriceList"></action> 
+       <action name="chooseSupplierForInquire" class="power.web.resource.planinquire.action.PlanInquireAction" method="chooseSupplierForInquire"></action> 
+    <action name="modifyContents" class="power.web.resource.planinquire.action.PlanInquireAction" method="modifyContents"></action> 
+    <!-- add by liuyi 091202 员工id查找员工信息 -->
+    <action name="getWorkerInfoByWorkerId" class="power.web.resource.planinquire.action.PlanInquireAction" method="getWorkerInfoByWorkerId"></action>
+   
+   <!-- add by liuyi 20100409 询价单增加附件需求 -->
+     <action name="addInquireDetailsFile" class="power.web.resource.planinquire.action.PlanInquireAction" method="addInquireDetailsFile"></action>
+     <action name="deleteInquireFile" class="power.web.resource.planinquire.action.PlanInquireAction" method="deleteInquireFile"></action>
+   
+    <!-- 领料单审核 add by fyyang 090619  -->
+     <action name="getIssueHeadListForCheck" class="power.web.resource.issue.action.StorageIssueManageAction" method="getIssueHeadListForCheck"></action>
+     <action name="getMaterialDetailListForCheck" class="power.web.resource.issue.action.StorageIssueManageAction" method="getMaterialDetailListForCheck"></action>
+   <action name="issueCheckOp" class="power.web.resource.issue.action.StorageIssueManageAction" method="issueCheckOp"></action>
+  
+  <!-- 取消领料单审核 add by drdu 091103  -->
+  <action name="issueCheckCancel" class="power.web.resource.issue.action.StorageIssueManageAction" method="issueCheckCancel"></action>
+  
+  <!-- 入库红冲管理 add by ywliu 090708  -->
+     <action name="getPurchasehouseCheckList" class="power.web.resource.purchasewarehouseredbill.action.PurchaseWarehouseRedBillAction" method="getPurchasehouseCheckList"></action>
+      <action name="addPurchaseWarehouseRedBill" class="power.web.resource.purchasewarehouseredbill.action.PurchaseWarehouseRedBillAction" method="addPurchaseWarehouseRedBill"></action>
+  
+    <!-- 出库红单处理 090708 add by fyyang  -->
+    <action name="findIssueDetailCheckListForBack" class="power.web.resource.issue.action.StorageIssueManageAction" method="findIssueDetailCheckListForBack"></action>
+     <action name="IssueMaterialRedBackOp" class="power.web.resource.issue.action.StorageIssueManageAction" method="IssueMaterialRedBackOp"></action>
+  	<!-- 补录发票处理 090708 add by ywliu  -->
+  		<action name="getArrivalListByNoInvoiceNo" class="power.web.resource.invoicenomanager.action.InvoiceNoManagerAction" method="getArrivalListByNoInvoiceNo"></action>
+     	<action name="getArrivalDetailListByNoInvoiceNo" class="power.web.resource.invoicenomanager.action.InvoiceNoManagerAction" method="getArrivalDetailListByNoInvoiceNo"></action>
+  		<action name="updateArrivalHead" class="power.web.resource.invoicenomanager.action.InvoiceNoManagerAction" method="updateArrivalHead"></action>
+  <!-- 领料单删除 090727 add by fyyang  -->
+ <action name="deleteIssueHead" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="deleteIssueHead"></action>
+ <!-- 发料统计查询 -->
+ <action name="getSendMaterialsAccout" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="getSendMaterialsAccout"></action>
+ <!-- 需求计划单删除 090728 add by fyyang  -->
+  <action name="deletePlanRequirement" class="power.web.resource.planquery.action.PlanQueryAction" method="deletePlanRequirement"></action>  
+   <!-- 材料领用费用查询 100511 add by wpzhu  -->
+  <action name="getCostFrom" class="power.web.resource.planquery.action.PlanQueryAction" method="getCostFrom"></action>  
+  
+  
+  <!-- 临时物资编码审核退回   -->
+    <action name="backTempMaterial" class="power.web.resource.tempMaterial.TempMaterialAction" method="backTempMaterial"></action> 
+  	<!-- 物料汇总时计划作废 -->  	
+  	<action name="blankOutPlanMaterial" class="power.web.resource.plangather.action.PlanGatherAction" method="blankOutPlanMaterial"></action>
+    <action name="getBlankOutMaterialDetail" class="power.web.resource.plangather.action.PlanGatherAction" method="getBlankOutMaterialDetail"></action>
+    <action name="CancelBlankOutPlanMaterial" class="power.web.resource.plangather.action.PlanGatherAction" method="CancelBlankOutPlanMaterial"></action>
+   
+   <!-- 查询汇总对应的需求物资 add  by fyyang 091105   -->
+     <action name="findMaterialDetailByGatherId" class="power.web.resource.planinquire.action.PlanInquireAction" method="findMaterialDetailByGatherId"></action> 
+   <!-- 查询用户对应的查询权限 add  by fyyang 091112   -->
+   <action name="getQueryRightByWorkId" class="power.web.resource.materialnamequery.action.MaterialNameQueryAction" method="getQueryRightByWorkId"></action>   
+   <!-- 查询已经审核过的采购单列表 add  by fyyang 091224   -->
+   <action name="queryCheckedPurList" class="power.web.resource.purchasewarehouse.action.PurchaseWarehouseAction" method="queryCheckedPurList"></action>   
+   
+    <!-- 查询已经审核过的领料单列表 add  by fyyang 091224   -->
+   <action name="queryCheckedIssueList" class="power.web.resource.issue.action.StorageIssueManageAction" method="queryCheckedIssueList"></action>   
+    <!-- 查询已经审核过的领料单列表 add  by ywliu 010202   -->
+   <action name="queryCheckedIssueDetailList" class="power.web.resource.issue.action.StorageIssueManageAction" method="queryCheckedIssueDetailList"></action>
+   
+   
+    <action name="getYearIssuePriceByDept" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="getYearIssuePriceByDept"></action>
+    
+    <action name="findMaterialDetailByPurOrIssue" class="power.web.resource.planquery.action.PlanQueryAction" method="findMaterialDetailByPurOrIssue"></action>
+      <!-- 根据需求计划单id查询出已经入库的明细 add  by fyyang 010408  -->
+    <action name="getMaterialDetailForIssueSelect" class="power.web.resource.issueheadregister.action.IssueHeadRegisterAction" method="getMaterialDetailForIssueSelect"></action>
+   </package>
+</struts>

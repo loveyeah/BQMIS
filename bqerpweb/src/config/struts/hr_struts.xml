@@ -1,0 +1,2113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="com" extends="struts-default">
+		<!-- 人力资源信息 -->
+		<action name="getEmpList"
+			class="power.web.hr.emp.EmpManageAction" method="getEmpList">
+		</action>
+		<action name="getDataByCode"
+			class="power.web.hr.emp.EmpManageAction" method="getDataByCode">
+		</action>
+		<action name="showEmpPhoto"
+			class="power.web.hr.emp.EmpManageAction" method="showEmpPhoto">
+		</action>
+		<action name="AddEmpTab1"
+			class="power.web.hr.emp.EmpManageAction" method="AddEmpTab1">
+		</action>
+		<action name="AddEmpTab2"
+			class="power.web.hr.emp.EmpManageAction" method="AddEmpTab2">
+		</action>
+		<action name="AddEmpTab3"
+			class="power.web.hr.emp.EmpManageAction" method="AddEmpTab3">
+		</action>
+		<action name="AddEmpTab4"
+			class="power.web.hr.emp.EmpManageAction" method="AddEmpTab4">
+		</action>
+		<action name="deleteEmp"
+			class="power.web.hr.emp.EmpManageAction" method="deleteEmp">
+		</action>
+		<action name="saveViateAndSociety"
+			class="power.web.hr.emp.EmpManageAction"
+			method="saveViateAndSociety">
+		</action>
+		<action name="showUpdateData"
+			class="power.web.hr.emp.EmpManageAction" method="showUpdateData">
+		</action>
+		<action name="AddEmpTab3"
+			class="power.web.hr.emp.EmpManageAction" method="AddEmpTab3">
+		</action>
+		<action name="empInfoManage"
+			class="power.web.hr.emp.EmpManageAction" method="empManage">
+		</action>
+		<action name="getEmpbyList"
+			class="power.web.hr.emp.EmpManageAction" method="getEmpbyList">
+		</action>
+		<!-- 部门设置 
+			<action name="getDeptTree" class="power.web.hr.dept.DeptManageAction" method="getDeptTree"></action>
+		-->
+
+		<action name="getDeptInfo"
+			class="power.web.hr.dept.DeptManageAction" method="getDeptInfo">
+		</action>
+		<action name="addDept"
+			class="power.web.hr.dept.DeptManageAction" method="addDept">
+		</action>
+		<action name="getSelectedNode"
+			class="power.web.hr.dept.DeptManageAction"
+			method="getSelectedNode">
+		</action>
+		<action name="deleteDept"
+			class="power.web.hr.dept.DeptManageAction" method="deleteDept">
+		</action>
+		<action name="updateDept"
+			class="power.web.hr.dept.DeptManageAction" method="updateDept">
+		</action>
+		<action name="degreeManage"
+			class="power.web.hr.degree.DegreeAction" method="getDegree">
+		</action>
+		<action name="findDeptList"
+			class="power.web.hr.dept.DeptManageAction" method="findDeptList">
+		</action>
+		<action name="findDeptById"
+			class="power.web.hr.dept.DeptManageAction" method="findDeptById">
+		</action>
+		<!-- 学历设置 -->
+		<action name="eduInfoManage"
+			class="power.web.hr.education.EducationAction" method="MyGet">
+		</action>
+		<!-- 员工类别设置 -->
+		<action name="empTypeMaint"
+			class="power.web.hr.emptype.EmpTypeAction" method="empTypeMaint">
+		</action>
+		<action name="empTypeModel"
+			class="power.web.hr.emptype.EmpTypeAction"
+			method="getEmptypeModel">
+		</action>
+		<!-- 岗位设置
+			<action name="getStationList" class="power.web.hr.station.StationAction" method="getStationList"></action> -->
+
+		<action name="stationManage"
+			class="power.web.hr.station.StationAction" method="GetData">
+		</action>
+		<!-- 岗位类别设置 -->
+		<action name="stationTypeManage"
+			class="power.web.hr.station.StationAction" method="getStationList">
+		</action>
+		<!-- 技术职称设置 -->
+		<action name="getALLTechnologyTitlesInfo"
+			class="power.web.hr.technologytitles.TechnologyTitlesAction"
+			method="getALLTechnologyTitlesInfo">
+		</action>
+		<action name="getIsUseOfTL"
+			class="power.web.hr.technologytitles.TechnologyTitlesAction"
+			method="getIsUseOfTL">
+		</action>
+		<!-- 职称类别 -->
+		<action name="getALLTechnologyTypeInfo"
+			class="power.web.hr.technologytype.TechnologyTypeAtion"
+			method="getALLTechnologyTypeInfo">
+		</action>
+		<action name="getIsUseOfTT"
+			class="power.web.hr.technologytype.TechnologyTypeAtion"
+			method="getIsUseOfTT">
+		</action>
+		<!-- 工种设置 -->
+		<action name="getWorkTypetype"
+			class="power.web.hr.worktype.WorkTypeManageAction"
+			method="getWorkTypetype">
+		</action>
+		<action name="getWorkTypeList"
+			class="power.web.hr.worktype.WorkTypeManageAction"
+			method="getWorkTypeList">
+		</action>
+		<action name="getWorkType"
+			class="power.web.hr.worktype.WorkTypeManageAction"
+			method="getWorkType">
+		</action>
+		<action name="addWorkType"
+			class="power.web.hr.worktype.WorkTypeManageAction"
+			method="addWorkType">
+		</action>
+		<action name="updataWorkType"
+			class="power.web.hr.worktype.WorkTypeManageAction"
+			method="updataWorkType">
+		</action>
+		<action name="deleteWorkType"
+			class="power.web.hr.worktype.WorkTypeManageAction"
+			method="deleteWorkType">
+		</action>
+		<action name="getTypeOfWorkList"
+			class="power.web.hr.worktype.WorkTypeManageAction"
+			method="getTypeOfWorkList">
+		</action>
+		<!-- 协理单位 -->
+		<action name="getAssistantUnits"
+			class="power.web.hr.assistantunits.AssistantUnitManageAction"
+			method="getAssistantUnits">
+		</action>
+		<action name="addAssistantUnits"
+			class="power.web.hr.assistantunits.AssistantUnitManageAction"
+			method="addAssistantUnits">
+		</action>
+		<action name="getSelectedUnit"
+			class="power.web.hr.assistantunits.AssistantUnitManageAction"
+			method="getSelectedUnit">
+		</action>
+		<action name="updateAssistantUnits"
+			class="power.web.hr.assistantunits.AssistantUnitManageAction"
+			method="updateAssistantUnits">
+		</action>
+		<action name="deleteAssistantUnits"
+			class="power.web.hr.assistantunits.AssistantUnitManageAction"
+			method="deleteAssistantUnits">
+		</action>
+		<action name="getMaxUnitId"
+			class="power.web.hr.assistantunits.AssistantUnitManageAction"
+			method="getMaxId">
+		</action>
+
+
+
+		<!-- 岗位级别 -->
+		<action name="addStationLevel"
+			class="power.web.hr.stationLevel.StationLevelAction"
+			method="addStationLevel">
+		</action>
+		<action name="updateStationLevel"
+			class="power.web.hr.stationLevel.StationLevelAction"
+			method="updateStationLevel">
+		</action>
+		<action name="deleteStationLevel"
+			class="power.web.hr.stationLevel.StationLevelAction"
+			method="deleteStationLevel">
+		</action>
+		<action name="findStationLevelList"
+			class="power.web.hr.stationLevel.StationLevelAction"
+			method="findStationLevelList">
+		</action>
+		<action name="findAllList"
+			class="power.web.hr.stationLevel.StationLevelAction"
+			method="findAllList">
+		</action>
+
+
+
+
+		<!-- 海外人力资源 -->
+		<!-- 合同有效期维护Action 开始-->
+		<action name="getContractTerm"
+			class="power.web.hr.document.contract.contractterm.action.ContractTermAction"
+			method="getContractTerm">
+		</action>
+		<action name="addContractTerm"
+			class="power.web.hr.document.contract.contractterm.action.ContractTermAction"
+			method="addContractTerm">
+		</action>
+		<action name="updateContractTerm"
+			class="power.web.hr.document.contract.contractterm.action.ContractTermAction"
+			method="updateContractTerm">
+		</action>
+		<action name="deleteContractTerm"
+			class="power.web.hr.document.contract.contractterm.action.ContractTermAction"
+			method="deleteContractTerm">
+		</action>
+		<!-- 合同有效期维护Action 结束-->
+
+		<!-- 新签合同登记Action 开始-->
+		<action name="getContractByEmpId"
+			class="power.web.hr.document.contract.contractregister.action.ContractRegisterAction"
+			method="getContractByEmpId">
+		</action>
+		<action name="saveContract"
+			class="power.web.hr.document.contract.contractregister.action.ContractRegisterAction"
+			method="saveContract">
+		</action>
+		<action name="saveContractBat"
+			class="power.web.hr.document.contract.contractregister.action.ContractRegisterAction"
+			method="saveContractBat">
+		</action>
+		<action name="updateContract"
+			class="power.web.hr.document.contract.contractregister.action.ContractRegisterAction"
+			method="updateContract">
+		</action>
+		<action name="getContractByEmpIds"
+			class="power.web.hr.document.contract.contractregister.action.ContractRegisterAction"
+			method="getContractByEmpIds">
+		</action>
+		<!-- 新签合同登记Action 结束-->
+
+		<!-- 续签合同管理开始-->
+		<action name="continueConstract"
+			class="power.web.hr.document.contract.contractcontinue.action.ContractContinueAction"
+			method="continueConstract">
+		</action>
+		<action name="getDeptAndStation"
+			class="power.web.hr.document.contract.contractcontinue.action.ContractContinueAction"
+			method="getDeptAndStation">
+		</action>
+		<action name="getContractByEId"
+			class="power.web.hr.document.contract.contractcontinue.action.ContractContinueAction"
+			method="getContractByEId">
+		</action>
+		<!-- 续签合同管理结束-->
+		<!-- 奖惩类别维护 开始-->
+		<action name="searchRewards"
+			class="power.web.hr.document.rewards.action.RewardsTypeAction"
+			method="searchRewards">
+		</action>
+		<action name="deleteReward"
+			class="power.web.hr.document.rewards.action.RewardsTypeAction"
+			method="deleteReward">
+		</action>
+		<action name="updateReward"
+			class="power.web.hr.document.rewards.action.RewardsTypeAction"
+			method="updateReward">
+		</action>
+		<action name="addReward"
+			class="power.web.hr.document.rewards.action.RewardsTypeAction"
+			method="addReward">
+		</action>
+		<!-- 奖惩类别维护 结束-->
+
+		<!-- 合同台帐查询 开始-->
+		<action name="getContractTermQuery"
+			class="power.web.hr.document.contract.contractquery.action.ContractQueryAction"
+			method="getContractTermQuery">
+		</action>
+		<action name="getContractQueryEmployee"
+			class="power.web.hr.document.contract.contractquery.action.ContractQueryAction"
+			method="getContractQueryEmployee">
+		</action>
+		<action name="getContractQueryContinue"
+			class="power.web.hr.document.contract.contractquery.action.ContractQueryAction"
+			method="getContractQueryContinue">
+		</action>
+		<action name="getContractQueryChange"
+			class="power.web.hr.document.contract.contractquery.action.ContractQueryAction"
+			method="getContractQueryChange">
+		</action>
+		<action name="getContractQueryStop"
+			class="power.web.hr.document.contract.contractquery.action.ContractQueryAction"
+			method="getContractQueryStop">
+		</action>
+		<action name="getContractQueryDuedate"
+			class="power.web.hr.document.contract.contractquery.action.ContractQueryAction"
+			method="getContractQueryDuedate">
+		</action>
+		<action name="getContractQueryNotsign"
+			class="power.web.hr.document.contract.contractquery.action.ContractQueryAction"
+			method="getContractQueryNotsign">
+		</action>
+		<action name="exportContractExcel"
+			class="power.web.hr.document.contract.contractquery.action.ContractQueryAction"
+			method="exportContractExcel">
+		</action>
+		<!-- 合同台帐查询 开始-->
+
+		<!-- 合同变更管理 开始 -->
+		<action name="getContractChangeInfo"
+			class="power.web.hr.document.contract.contractchangemanage.action.ContractChangeManageAction"
+			method="getContractChangeInfo">
+		</action>
+		<action name="getContractInfoForChange"
+			class="power.web.hr.document.contract.contractchangemanage.action.ContractChangeManageAction"
+			method="getContractInfoForChange">
+		</action>
+		<action name="getContractTermForChange"
+			class="power.web.hr.document.contract.contractchangemanage.action.ContractChangeManageAction"
+			method="getContractTermForChange">
+		</action>
+		<action name="getStationByDeptForChange"
+			class="power.web.hr.document.contract.contractchangemanage.action.ContractChangeManageAction"
+			method="getStationByDeptForChange">
+		</action>
+		<action name="saveContractChange"
+			class="power.web.hr.document.contract.contractchangemanage.action.ContractChangeManageAction"
+			method="saveContractChange">
+		</action>
+		<action name="getBaseInfoForChange"
+			class="power.web.hr.document.contract.contractchangemanage.action.ContractChangeManageAction"
+			method="getBaseInfoForChange">
+		</action>
+		<!-- 合同变更管理 结束 -->
+
+		<!-- 员工奖惩登记-->
+		<action name="getEmpRewardInfo"
+			class="power.web.hr.document.rewards.emprewardregister.action.EmpRewardRegisterAction"
+			method="getEmpRewardInfo">
+		</action>
+		<action name="getEmpRewardsMainInfo"
+			class="power.web.hr.document.rewards.emprewardregister.action.EmpRewardRegisterAction"
+			method="getEmpRewardsMainInfo">
+		</action>
+		<action name="saveEmpRewards"
+			class="power.web.hr.document.rewards.emprewardregister.action.EmpRewardRegisterAction"
+			method="saveEmpRewards">
+		</action>
+		<!-- 04_职工奖惩管理 结束-->
+
+		<!-- 终止合同登记开始-->
+		<action name="findByContractId"
+			class="power.web.hr.employee.contractend.ContractEndAction"
+			method="findByContractId">
+		</action>
+		<action name="endContract"
+			class="power.web.hr.employee.contractend.ContractEndAction"
+			method="endContract">
+		</action>
+		<action name="findByEmpId"
+			class="power.web.hr.employee.contractend.ContractEndAction"
+			method="findByEmpId">
+		</action>
+		<!-- 终止合同登记结束-->
+
+		<!-- 获得部门及部门下面的人员-->
+		<action name="getDeptEmpTreeList"
+			class="power.web.hr.common.HrCommBusinessAction"
+			method="getDeptEmpTreeList">
+		</action>
+		<!--add by liuyi 091231 通过员工编码或姓名过滤人员-->
+		<action name="getEmpListByFilter"
+			class="power.web.hr.common.HrCommBusinessAction"
+			method="getEmpListByFilter">
+		</action>
+
+		<!--  业务共通-->
+		<action name="getCommDrpStoreDatas"
+			class="power.web.hr.common.HrCommBusinessAction"
+			method="getCommDrpStoreDatas">
+		</action>
+		<action name="getDeptsByPid"
+			class="power.basedata.action.BaseDataAction"
+			method="getDeptsByPid">
+		</action>
+		<action name="getContractAppendFileDatas"
+			class="power.web.hr.common.HrCommBusinessAction"
+			method="getContractAppendFileDatas">
+		</action>
+		<action name="uploadContractAppendFile"
+			class="power.web.hr.common.HrCommBusinessAction"
+			method="uploadContractAppendFile">
+		</action>
+		<action name="deleteContractAppendFile"
+			class="power.web.hr.common.HrCommBusinessAction"
+			method="deleteContractAppendFile">
+		</action>
+		<action name="downloadContractAppendFile"
+			class="power.web.hr.common.HrCommBusinessAction"
+			method="downloadContractAppendFile">
+		</action>
+		<action name="getEmpOrderbyList"
+			class="power.web.hr.common.HrCommBusinessAction"
+			method="getEmpOrderbyList">
+		</action>
+		<action name="saveEmpOrderbyMaintenList"
+			class="power.web.hr.common.HrCommBusinessAction"
+			method="saveEmpOrderbyMaintenList">
+		</action>
+		<!-- 班组维护 -->
+		<action name="getBanzuInfo"
+			class="power.web.hr.employee.dutymaintain.action.DutyMaintainAction"
+			method="getBanzuInfo">
+		</action>
+		<action name="updateDeptBanzuData"
+			class="power.web.hr.employee.dutymaintain.action.DutyMaintainAction"
+			method="updateDeptBanzuData">
+		</action>
+		<!-- 班组维护 -->
+
+		<!-- 员工调动管理开始 -->
+		<!-- 协作单位维护 -->
+		<action name="getCooperateUnitList"
+			class="power.web.hr.employee.cooperateunitmaintain.action.CooperateUnitMaintainAction"
+			method="getCooperateUnitList">
+		</action>
+		<action name="saveCooperateUnit"
+			class="power.web.hr.employee.cooperateunitmaintain.action.CooperateUnitMaintainAction"
+			method="saveCooperateUnit">
+		</action>
+		<action name="deleteCooperateUnit"
+			class="power.web.hr.employee.cooperateunitmaintain.action.CooperateUnitMaintainAction"
+			method="deleteCooperateUnit">
+		</action>
+		<!-- 班组员工调动 开始-->
+		<action name="getStationRemoveInfoList"
+			class="power.web.hr.employee.stationremove.action.StationRemoveAction"
+			method="getStationRemoveInfoList">
+		</action>
+		<action name="getEmpNameListByDepId"
+			class="power.web.hr.employee.stationremove.action.StationRemoveAction"
+			method="getEmpNameListByDepId">
+		</action>
+		<action name="addStationRemove"
+			class="power.web.hr.employee.stationremove.action.StationRemoveAction"
+			method="addStationRemove">
+		</action>
+		<action name="updateStationRemove"
+			class="power.web.hr.employee.stationremove.action.StationRemoveAction"
+			method="updateStationRemove">
+		</action>
+		<!-- 班组员工调动 结束-->
+		<!-- 员工调动单申报 -->
+		<action name="getEmpMoveDeclareInfo"
+			class="power.web.hr.employee.empmovedeclare.action.EmpMoveDeclareAction"
+			method="getEmpMoveDeclareInfo">
+		</action>
+		<action name="getStationMoveTypeList"
+			class="power.web.hr.employee.empmovedeclare.action.EmpMoveDeclareAction"
+			method="getStationMoveTypeList">
+		</action>
+		<action name="getDeptStationLevelInfo"
+			class="power.web.hr.employee.empmovedeclare.action.EmpMoveDeclareAction"
+			method="getDeptStationLevelInfo">
+		</action>
+		<action name="getSalaryAdjustInfo"
+			class="power.web.hr.employee.empmovedeclare.action.EmpMoveDeclareAction"
+			method="getSalaryAdjustInfo">
+		</action>
+		<action name="deleteEmpMoveDeclareInfo"
+			class="power.web.hr.employee.empmovedeclare.action.EmpMoveDeclareAction"
+			method="deleteEmpMoveDeclareInfo">
+		</action>
+		<action name="reportEmpMoveDeclareInfo"
+			class="power.web.hr.employee.empmovedeclare.action.EmpMoveDeclareAction"
+			method="reportEmpMoveDeclareInfo">
+		</action>
+		<action name="linkDeptStation"
+			class="power.web.hr.employee.empmovedeclare.action.EmpMoveDeclareAction"
+			method="linkDeptStation">
+		</action>
+		<action name="linkStationLevel"
+			class="power.web.hr.employee.empmovedeclare.action.EmpMoveDeclareAction"
+			method="linkStationLevel">
+		</action>
+		<action name="updateStationRemoveInfo"
+			class="power.web.hr.employee.empmovedeclare.action.EmpMoveDeclareAction"
+			method="updateStationRemove">
+		</action>
+		<action name="addStationRemoveInfo"
+			class="power.web.hr.employee.empmovedeclare.action.EmpMoveDeclareAction"
+			method="addStationRemove">
+		</action>
+		
+		<action name="getMaxRequisitionNo"
+			class="power.web.hr.employee.empmovedeclare.action.EmpMoveDeclareAction"
+			method="getMaxRequisitionNo">
+		</action>
+		
+		<!-- 员工调动登记 部门下班组combox数据源 add by sychen 20100721 -->
+		<action name="getBeforeBanZuList"
+			class="power.web.hr.employee.empmovedeclare.action.EmpMoveDeclareAction"
+			method="getBeforeBanZuList">
+		</action>
+		
+		<!-- 员工调动单申报 -->
+		<!-- 员工借调登记 -->
+		<action name="getEmpBorrowInRegisterInfo"
+			class="power.web.hr.employee.empborrowinregister.action.EmpBorrowInRegisterAction"
+			method="getEmpBorrowInRegisterInfo">
+		</action>
+		<action name="deleteEmpBorrowInRegisterInfo"
+			class="power.web.hr.employee.empborrowinregister.action.EmpBorrowInRegisterAction"
+			method="deleteEmpBorrowInRegisterInfo">
+		</action>
+		<action name="reportEmpBorrowInRegisterInfo"
+			class="power.web.hr.employee.empborrowinregister.action.EmpBorrowInRegisterAction"
+			method="reportEmpBorrowInRegisterInfo">
+		</action>
+		<action name="checkEmpIsBorrowIn"
+			class="power.web.hr.employee.empborrowinregister.action.EmpBorrowInRegisterAction"
+			method="checkEmpIsBorrowIn">
+		</action>
+		<action name="addEmpBorrowInRegister"
+			class="power.web.hr.employee.empborrowinregister.action.EmpBorrowInRegisterAction"
+			method="addEmpBorrowInRegister">
+		</action>
+		<action name="updateEmpBorrowInRegister"
+			class="power.web.hr.employee.empborrowinregister.action.EmpBorrowInRegisterAction"
+			method="updateEmpBorrowInRegister">
+		</action>
+		<action name="batchAddEmpBorrowInRegister"
+			class="power.web.hr.employee.empborrowinregister.action.EmpBorrowInRegisterAction"
+			method="batchAddEmpBorrowInRegister">
+		</action>
+		<action name="getEmpBorrowInRegisterByDeptId"
+			class="power.web.hr.employee.empborrowinregister.action.EmpBorrowInRegisterAction"
+			method="getEmpBorrowInRegisterByDeptId">
+		</action>
+		<action name="batchUpdateEmpBorrowInRegister"
+			class="power.web.hr.employee.empborrowinregister.action.EmpBorrowInRegisterAction"
+			method="batchUpdateEmpBorrowInRegister">
+		</action>
+		<!-- 员工借调登记 -->
+		<!-- 劳务派遣查询 -->
+		<action name="getLabourBy"
+			class="power.web.hr.employee.laboursendsearch.action.LabourSendSearchAction"
+			method="getLabourBy">
+		</action>
+		<action name="getEmpBy"
+			class="power.web.hr.employee.laboursendsearch.action.LabourSendSearchAction"
+			method="getEmpBy">
+		</action>
+		<!-- 劳务派遣登记开始 -->
+
+		<action name="getCooperateUnitIDAndName"
+			class="power.web.hr.employee.laborborrowregister.action.LaborBorrowRegisterAction"
+			method="getCooperateUnitIDAndName">
+		</action>
+		<action name="getLaborBorrowRegisterInfo"
+			class="power.web.hr.employee.laborborrowregister.action.LaborBorrowRegisterAction"
+			method="getLaborBorrowRegisterInfo">
+		</action>
+		<action name="getContractFiles"
+			class="power.web.hr.employee.laborborrowregister.action.LaborBorrowRegisterAction"
+			method="getContractFiles">
+		</action>
+
+		<action name="deleteBorrowContract"
+			class="power.web.hr.employee.laborborrowregister.action.LaborBorrowRegisterAction"
+			method="logicDelete">
+		</action>
+		<action name="repoetBorrowContract"
+			class="power.web.hr.employee.laborborrowregister.action.LaborBorrowRegisterAction"
+			method="repoetBorrowContract">
+		</action>
+		<action name="doSave2OfRegister"
+			class="power.web.hr.employee.laborborrowregister.action.LaborBorrowRegisterAction"
+			method="doSave2OfRegister">
+		</action>
+		<action name="getBorrowEmployeeInfo"
+			class="power.web.hr.employee.laborborrowregister.action.LaborBorrowRegisterAction"
+			method="getBorrowEmployeeInfo">
+		</action>
+		<!-- 劳务派遣登记结束 -->
+		<!-- 薪酬变动单申报 开始 -->
+		<action name="getSalaryChangeList"
+			class="power.web.hr.employee.salaryChange.action.SalaryChangeAction"
+			method="getSalaryChangeList">
+		</action>
+		<action name="searchSalaryByEmployeeQuery"
+			class="power.web.hr.employee.salaryChange.action.SalaryChangeAction"
+			method="searchSalaryByEmployeeQuery">
+		</action>
+		<action name="addSalaryRecord"
+			class="power.web.hr.employee.salaryChange.action.SalaryChangeAction"
+			method="addSalaryRecord">
+		</action>
+		<action name="updateSalaryRecord"
+			class="power.web.hr.employee.salaryChange.action.SalaryChangeAction"
+			method="updateSalaryRecord">
+		</action>
+		<action name="deleteSalaryRecord"
+			class="power.web.hr.employee.salaryChange.action.SalaryChangeAction"
+			method="deleteSalaryRecord">
+		</action>
+		<action name="reportSalaryRecord"
+			class="power.web.hr.employee.salaryChange.action.SalaryChangeAction"
+			method="reportSalaryRecord">
+		</action>
+		<!-- 薪酬变动单申报 结束 -->
+		<!-- 员工调动管理结束 -->
+		<!-- 员工调动查询开始 -->
+		<!-- 取得班组调动信息list -->
+		<action name="getBanZuList"
+			class="power.web.hr.employee.empmovequery.action.EmpMoveQueryAction"
+			method="getBanZuList">
+		</action>
+		<!-- 导出班组调动信息到excel文件 -->
+		<action name="banzuExportFile"
+			class="power.web.hr.employee.empmovequery.action.EmpMoveQueryAction"
+			method="banzuExportFile">
+		</action>
+		<!-- 取得员工调动信息list -->
+		<action name="getEmpMoveList"
+			class="power.web.hr.employee.empmovequery.action.EmpMoveQueryAction"
+			method="getEmpMoveList">
+		</action>
+		<!-- 导出员工调动信息到excel文件 -->
+		<action name="removeExportFile"
+			class="power.web.hr.employee.empmovequery.action.EmpMoveQueryAction"
+			method="removeExportFile">
+		</action>
+		<!-- 取得员工借调信息list -->
+		<action name="getEmpBorrowList"
+			class="power.web.hr.employee.empmovequery.action.EmpMoveQueryAction"
+			method="getEmpBorrowList">
+		</action>
+		<!-- 导出员工借调信息到excel文件 -->
+		<action name="borrowExportFile"
+			class="power.web.hr.employee.empmovequery.action.EmpMoveQueryAction"
+			method="borrowExportFile">
+		</action>
+		<!-- 员工调动查询结束 -->
+		<!-- 组织机构 -->
+		<!-- 部门岗位对应维护 -->
+		<action name="getUnAssignMentPostList"
+			class="power.web.hr.organization.deptpostassignmentmainten.action.DeptPostAssignmentMaintenAction"
+			method="getUnAssignMentPostList">
+		</action>
+		<action name="getAssignMentPostList"
+			class="power.web.hr.organization.deptpostassignmentmainten.action.DeptPostAssignmentMaintenAction"
+			method="getAssignMentPostList">
+		</action>
+		<action name="saveAssignmentStation"
+			class="power.web.hr.organization.deptpostassignmentmainten.action.DeptPostAssignmentMaintenAction"
+			method="saveAssignmentStation">
+		</action>
+		<!-- 部门人员分配 -->
+		<!-- 岗位薪级维护 -->
+		<action name="addSalaryLevel"
+			class="power.web.hr.salary.SalaryLevelAction"
+			method="addSalaryLevel">
+		</action>
+		<action name="updateSalaryLevel"
+			class="power.web.hr.salary.SalaryLevelAction"
+			method="updateSalaryLevel">
+		</action>
+		<action name="deleteSalaryLevel"
+			class="power.web.hr.salary.SalaryLevelAction"
+			method="deleteSalaryLevel">
+		</action>
+		<action name="findSalaryLevelList"
+			class="power.web.hr.salary.SalaryLevelAction"
+			method="findSalaryLevelList">
+		</action>
+		<!-- 运行岗位倾斜政策维护 -->
+		<action name="addPolicy"
+			class="power.web.hr.salary.PolicyAction" method="addPolicy">
+		</action>
+		<action name="updatePolicy"
+			class="power.web.hr.salary.PolicyAction" method="updatePolicy">
+		</action>
+		<action name="deletePolicy"
+			class="power.web.hr.salary.PolicyAction" method="deletePolicy">
+		</action>
+		<action name="findAllPolicy"
+			class="power.web.hr.salary.PolicyAction" method="findAllPolicy">
+		</action>
+		<action name="savePolicy"
+			class="power.web.hr.salary.PolicyAction" method="savePolicy">
+		</action>
+		<!-- 运行津贴维护 -->
+		<action name="saveOperationSalary"
+			class="power.web.hr.salary.OperationSalaryAction"
+			method="saveOperationSalary">
+		</action>
+		<action name="updateOperationSalary"
+			class="power.web.hr.salary.OperationSalaryAction"
+			method="updateOperationSalary">
+		</action>
+		<action name="delOperationSalary"
+			class="power.web.hr.salary.OperationSalaryAction"
+			method="delOperationSalary">
+		</action>
+		<action name="getOperationSalaryList"
+			class="power.web.hr.salary.OperationSalaryAction"
+			method="getOperationSalaryList">
+		</action>
+		<!-- 岗位薪点工资维护 -->
+		<action name="fingAllPointSalary"
+			class="power.web.hr.salary.PointSalaryAction"
+			method="fingAllPointSalary">
+		</action>
+		<action name="savePointSalaryRec"
+			class="power.web.hr.salary.PointSalaryAction"
+			method="savePointSalaryRec">
+		</action>
+
+		<!-- 基础工资维护 -->
+		<action name="addBasisSalary"
+			class="power.web.hr.salary.BasisSalaryAction"
+			method="addBasisSalary">
+		</action>
+		<action name="updateBasisSalary"
+			class="power.web.hr.salary.BasisSalaryAction"
+			method="updateBasisSalary">
+		</action>
+		<action name="deleteBasisSalary"
+			class="power.web.hr.salary.BasisSalaryAction"
+			method="deleteBasisSalary">
+		</action>
+		<action name="findBasisSalaryList"
+			class="power.web.hr.salary.BasisSalaryAction"
+			method="findBasisSalaryList">
+		</action>
+		<!-- 薪点点值维护 -->
+		<action name="saveSalaryPoint"
+			class="power.web.hr.salary.SalaryPointAction"
+			method="saveSalaryPoint">
+		</action>
+		<action name="updateSalaryPoint"
+			class="power.web.hr.salary.SalaryPointAction"
+			method="updateSalaryPoint">
+		</action>
+		<action name="getSalaryPointList"
+			class="power.web.hr.salary.SalaryPointAction"
+			method="getSalaryPointList">
+		</action>
+		<action name="deleteSalaryPoint"
+			class="power.web.hr.salary.SalaryPointAction"
+			method="deleteSalaryPoint">
+		</action>
+		<!-- 工资类别维护 -->
+		<action name="findSalaryTypeList"
+			class="power.web.hr.salary.SalaryTypeAction"
+			method="findSalaryTypeList">
+		</action>
+		<action name="addSalaryTypeInfo"
+			class="power.web.hr.salary.SalaryTypeAction"
+			method="addSalaryTypeInfo">
+		</action>
+		<action name="updateSalaryTypeInfo"
+			class="power.web.hr.salary.SalaryTypeAction"
+			method="updateSalaryTypeInfo">
+		</action>
+		<action name="deleteSalaryTypeInfo"
+			class="power.web.hr.salary.SalaryTypeAction"
+			method="deleteSalaryTypeInfo">
+		</action>
+		<!-- 总工资维护 -->
+		<action name="findEmpSalaryList"
+			class="power.web.hr.salary.SalaryAmountAction"
+			method="findEmpSalaryList">
+		</action>
+		<action name="saveSalaryAmount"
+			class="power.web.hr.salary.SalaryAmountAction"
+			method="saveSalaryAmount">
+		</action>
+
+		<!-- 加班工资维护 add by drdu 20100203 -->
+
+		<action name="addOvertimeSalaryBase"
+			class="power.web.hr.salary.OvertimeSalaryBaseAction"
+			method="addOvertimeSalaryBase">
+		</action>
+		<action name="updateOvertimeSalaryBase"
+			class="power.web.hr.salary.OvertimeSalaryBaseAction"
+			method="updateOvertimeSalaryBase">
+		</action>
+		<action name="deleteOvertimeSalaryBase"
+			class="power.web.hr.salary.OvertimeSalaryBaseAction"
+			method="deleteOvertimeSalaryBase">
+		</action>
+		<action name="findOverTimeSalaryBaseList"
+			class="power.web.hr.salary.OvertimeSalaryBaseAction"
+			method="findOverTimeSalaryBaseList">
+		</action>
+
+		<!-- 加班工资系数维护 add by drdu 20100204 -->
+
+		<action name="saveRecord"
+			class="power.web.hr.salary.OvertimeSalaryScaleAction"
+			method="saveRecord">
+		</action>
+		<action name="resetReocord"
+			class="power.web.hr.salary.OvertimeSalaryScaleAction"
+			method="resetReocord">
+		</action>
+		<action name="findSalaryScaleList"
+			class="power.web.hr.salary.OvertimeSalaryScaleAction"
+			method="findSalaryScaleList">
+		</action>
+
+		<!-- 薪酬个人维护 add by drdu 20100205 -->
+		<!--员工工资查询 add by ypan 20100729 -->
+		<action name="workerSalaryQuery"
+		 class="power.web.hr.salary.WorkerSalaryQueryAction"
+			method="findWorkerSalaryByMonth">
+		</action>
+		<action name="getSalaryByMonth"
+		 class="power.web.hr.salary.WorkerSalaryQueryAction"
+			method="getSalaryByMonth">
+		</action>
+		<action name="empChangeRecord"
+			class="power.web.hr.salary.SalaryPersonalAction"
+			method="empChangeRecord">
+		</action>
+		<action name="runAgeChangeRecord"
+			class="power.web.hr.salary.SalaryPersonalAction"
+			method="runAgeChangeRecord">
+		</action>
+		<action name="updateSalaryPersonalRecord"
+			class="power.web.hr.salary.SalaryPersonalAction"
+			method="updateSalaryPersonalRecord">
+		</action>
+		<action name="findSalaryPersonalList"
+			class="power.web.hr.salary.SalaryPersonalAction"
+			method="findSalaryPersonalList">
+		</action>
+		<action name="getRunStationList"
+			class="power.web.hr.salary.SalaryPersonalAction"
+			method="getRunStationList">
+		</action>
+		
+		<action name="getPorprotion"
+			class="power.web.hr.salary.SalaryPersonalAction"
+			method="getPorprotion">
+		</action>
+		<action name="importSaralyPersonalInf"
+			class="power.web.hr.salary.SalaryPersonalAction"
+			method="importSaralyPersonalInf">
+		</action>
+
+		<!-- 工龄工资维护 -->
+		<action name="addSenioritySalary"
+			class="power.web.hr.salary.SenioritySalaryAction"
+			method="addSenioritySalary">
+		</action>
+		<action name="updateSenioritySalary"
+			class="power.web.hr.salary.SenioritySalaryAction"
+			method="updateSenioritySalary">
+		</action>
+		<action name="findSenioritySalaryList"
+			class="power.web.hr.salary.SenioritySalaryAction"
+			method="findSenioritySalaryList">
+		</action>
+		<action name="deleteSenioritySalary"
+			class="power.web.hr.salary.SenioritySalaryAction"
+			method="deleteSenioritySalary">
+		</action>
+
+		<!--  月出勤天数维护 -->
+		<action name="addAttendanceDays"
+			class="power.web.hr.salary.AttendanceDaysAction"
+			method="addAttendanceDays">
+		</action>
+		<action name="updateAttendanceDays"
+			class="power.web.hr.salary.AttendanceDaysAction"
+			method="updateAttendanceDays">
+		</action>
+		<action name="findAttendanceDaysList"
+			class="power.web.hr.salary.AttendanceDaysAction"
+			method="findAttendanceDaysList">
+		</action>
+		<action name="findByMonth"
+			class="power.web.hr.salary.AttendanceDaysAction"
+			method="findByMonth">
+		</action>
+		<action name="deleteAttendanceDays"
+			class="power.web.hr.salary.AttendanceDaysAction"
+			method="deleteAttendanceDays">
+		</action>
+
+		<!--  病假工资标准维护 -->
+		<action name="addSickSalary"
+			class="power.web.hr.salary.SickSalaryAction"
+			method="addSickSalary">
+		</action>
+		<action name="updateSickSalary"
+			class="power.web.hr.salary.SickSalaryAction"
+			method="updateSickSalary">
+		</action>
+		<action name="findSickSalaryList"
+			class="power.web.hr.salary.SickSalaryAction"
+			method="findSickSalaryList">
+		</action>
+		<action name="deleteSickSalary"
+			class="power.web.hr.salary.SickSalaryAction"
+			method="deleteSickSalary">
+		</action>
+
+		<!-- 大奖维护 add by sychen 2010205-->
+		<action name="saveBigAward"
+			class="power.web.hr.salary.BigAwardAction" method="saveBigAward">
+		</action>
+		<action name="updateBigAward"
+			class="power.web.hr.salary.BigAwardAction" method="updateBigAward">
+		</action>
+		<action name="deleteBigAward"
+			class="power.web.hr.salary.BigAwardAction" method="deleteBigAward">
+		</action>
+		<action name="findBigAwardList"
+			class="power.web.hr.salary.BigAwardAction"
+			method="findBigAwardList">
+		</action>
+
+		<!-- add by liuyi 091123 招聘离职登记开始 -->
+		<!-- 新进员工登记 开始 -->
+		<action name="getNewEmployeeQuery"
+			class="power.web.hr.document.jobmanagement.newemployeeregister.action.NewEmployeeRegisterAction"
+			method="getNewEmployeeQuery">
+		</action>
+		<action name="getEmpInfoNewEmployee"
+			class="power.web.hr.document.jobmanagement.newemployeeregister.action.NewEmployeeRegisterAction"
+			method="getEmpInfoNewEmployee">
+		</action>
+		<action name="getStationByDeptNewEmployee"
+			class="power.web.hr.document.jobmanagement.newemployeeregister.action.NewEmployeeRegisterAction"
+			method="getStationByDeptNewEmployee">
+		</action>
+		<action name="deleteNewEmployee"
+			class="power.web.hr.document.jobmanagement.newemployeeregister.action.NewEmployeeRegisterAction"
+			method="deleteNewEmployee">
+		</action>
+		<action name="saveNewEmployee"
+			class="power.web.hr.document.jobmanagement.newemployeeregister.action.NewEmployeeRegisterAction"
+			method="saveNewEmployee">
+		</action>
+
+		<!-- 新进员工登记（新） add by drdu 20100618 -->
+		<action name="editNewEmployeeRecord"
+			class="power.web.hr.document.jobmanagement.newemployeeregister.action.NewEmployeeAction"
+			method="editNewEmployeeRecord">
+		</action>
+		<action name="deleteNewEmployeeRecord"
+			class="power.web.hr.document.jobmanagement.newemployeeregister.action.NewEmployeeAction"
+			method="deleteNewEmployeeRecord">
+		</action>
+		<action name="findNewEmployeeList"
+			class="power.web.hr.document.jobmanagement.newemployeeregister.action.NewEmployeeAction"
+			method="findNewEmployeeList">
+		</action>
+		<action name="getAdvicenoteNo"
+			class="power.web.hr.document.jobmanagement.newemployeeregister.action.NewEmployeeAction"
+			method="getAdvicenoteNo">
+		</action>
+		<!-- 新进员工登记 结束-->
+		
+		<!-- 离职类别维护 -->
+		<action name="getOutType"
+			class="power.web.hr.employee.separatmaint.SeparatMaint"
+			method="getOutType">
+		</action>
+		<action name="addOutType"
+			class="power.web.hr.employee.separatmaint.SeparatMaint"
+			method="addOutType">
+		</action>
+		<action name="updateOutType"
+			class="power.web.hr.employee.separatmaint.SeparatMaint"
+			method="updateOutType">
+		</action>
+		<action name="deleteOutType"
+			class="power.web.hr.employee.separatmaint.SeparatMaint"
+			method="deleteOutType">
+		</action>
+		<!-- 员工进厂类别维护 -->
+		<action name="getInTypeList"
+			class="power.web.hr.document.jobmanagement.intype.InTypeAction"
+			method="getInTypeList">
+		</action>
+		<action name="addInType"
+			class="power.web.hr.document.jobmanagement.intype.InTypeAction"
+			method="addInType">
+		</action>
+		<action name="updateInType"
+			class="power.web.hr.document.jobmanagement.intype.InTypeAction"
+			method="updateInType">
+		</action>
+		<action name="deleteInType"
+			class="power.web.hr.document.jobmanagement.intype.InTypeAction"
+			method="deleteInType">
+		</action>
+		<!-- 新进离职员工查询开始 -->
+		<action name="getTotalInfo"
+			class="power.web.hr.document.jobmanagement.newanddimissionquery.action.NewAndDimissionQueryAction"
+			method="getTotalInfo">
+		</action>
+		<action name="getNewEmployInfo"
+			class="power.web.hr.document.jobmanagement.newanddimissionquery.action.NewAndDimissionQueryAction"
+			method="getNewEmployInfo">
+		</action>
+		<action name="getDimissionEmployInfo"
+			class="power.web.hr.document.jobmanagement.newanddimissionquery.action.NewAndDimissionQueryAction"
+			method="getDimissionEmployInfo">
+		</action>
+		<action name="exportTotalEmployFile"
+			class="power.web.hr.document.jobmanagement.newanddimissionquery.action.NewAndDimissionQueryAction"
+			method="exportTotalEmployFile">
+		</action>
+		<action name="exportNewEmployFile"
+			class="power.web.hr.document.jobmanagement.newanddimissionquery.action.NewAndDimissionQueryAction"
+			method="exportNewEmployFile">
+		</action>
+		<action name="exportDimisssionEmployFile"
+			class="power.web.hr.document.jobmanagement.newanddimissionquery.action.NewAndDimissionQueryAction"
+			method="exportDimisssionEmployFile">
+		</action>
+		<!-- 新进离职员工查询结束 -->
+		<!-- 员工离职登记 开始-->
+		<action name="getDismissionInfoList"
+			class="power.web.hr.document.jobmanagement.dismissionregister.action.DismissionRegisterAction"
+			method="getDismissionInfoList">
+		</action>
+		<action name="deleteDismissionInfo"
+			class="power.web.hr.document.jobmanagement.dismissionregister.action.DismissionRegisterAction"
+			method="deleteDismissionInfo">
+		</action>
+		<action name="updateDismissionInfo"
+			class="power.web.hr.document.jobmanagement.dismissionregister.action.DismissionRegisterAction"
+			method="updateDismissionInfo">
+		</action>
+		<action name="getEmpInfoByEmpId"
+			class="power.web.hr.document.jobmanagement.dismissionregister.action.DismissionRegisterAction"
+			method="getEmpInfoByEmpId">
+		</action>
+		<action name="getAdvicenoteNoNum"
+			class="power.web.hr.document.jobmanagement.dismissionregister.action.DismissionRegisterAction"
+			method="getAdvicenoteNoNum">
+		</action>
+		
+		<!-- 员工离职登记 结束-->
+		<!-- 工种维护 开始-->
+		<action name="getWortTypeList"
+			class="power.web.hr.document.empdocument.worktype.action.WorkTypeAction"
+			method="getWortTypeList">
+		</action>
+		<action name="addWorkType"
+			class="power.web.hr.document.empdocument.worktype.action.WorkTypeAction"
+			method="addWorkType">
+		</action>
+		<action name="deleteWorkType"
+			class="power.web.hr.document.empdocument.worktype.action.WorkTypeAction"
+			method="deleteWorkType">
+		</action>
+		<action name="updateWorkType"
+			class="power.web.hr.document.empdocument.worktype.action.WorkTypeAction"
+			method="updateWorkType">
+		</action>
+		<!-- 工种维护 结束-->
+		<!-- 员工岗位维护 开始-->
+		<action name="getStationMaintain"
+			class="power.web.hr.document.empdocument.empstationmaintain.action.EmpStationMaintainAction"
+			method="getStationMaintain">
+		</action>
+		<action name="getEmpStationInfo"
+			class="power.web.hr.document.empdocument.empstationmaintain.action.EmpStationMaintainAction"
+			method="getEmpStationInfo">
+		</action>
+		<!-- 员工岗位维护 结束-->
+		<!-- 基础表维护（员工档案）开始 -->
+		<!-- 得到要查询的表的记录列表 -->
+		<action name="getRecordList"
+			class="power.web.hr.document.empdocument.basetablemaint.action.BaseTableMaintAction"
+			method="getRecordList">
+		</action>
+		<!-- 增加基础表的记录 -->
+		<action name="addBaseTableRecord"
+			class="power.web.hr.document.empdocument.basetablemaint.action.BaseTableMaintAction"
+			method="addBaseTableRecord">
+		</action>
+		<!-- 修改基础表的记录 -->
+		<action name="modifyBaseTableRecord"
+			class="power.web.hr.document.empdocument.basetablemaint.action.BaseTableMaintAction"
+			method="modifyBaseTableRecord">
+		</action>
+		<!-- 删除基础表的记录 -->
+		<action name="deleteBaseTableRecord"
+			class="power.web.hr.document.empdocument.basetablemaint.action.BaseTableMaintAction"
+			method="deleteBaseTableRecord">
+		</action>
+		<!-- 基础表维护（员工档案）结束 -->
+		<!-- 员工档案综合查询维护 开始 -->
+		<action name="savePersonnelFileInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="savePersonnelFileInfo">
+		</action>
+		<action name="importPersonnelFilesInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="importPersonnelFilesInfo">
+		</action>
+		<action name="writePersonnelFilesExcel"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="writePersonnelFilesExcel">
+		</action>
+		<action name="getEmpMaintBaseInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="getEmpMaintBaseInfo">
+		</action>
+		
+		<action name="getEmpMaintBaseInfoList"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="getEmpMaintBaseInfoList">
+		</action>
+		
+		<action name="getEmpPhotoInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="getEmpPhotoInfo">
+		</action>
+		<action name="saveEmpMaintBaseInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="saveEmpMaintBaseInfo">
+		</action>
+		<action name="saveHrEmpInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="saveHrEmpInfo">
+		</action>
+		<action name="getEmpWorkresumeInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="getEmpWorkresumeInfo">
+		</action>
+		<action name="saveEmpWorkresumeInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="saveEmpWorkresumeInfo">
+		</action>
+		<action name="deleteEmpWorkresumeInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="deleteEmpWorkresumeInfo">
+		</action>
+		<action name="deleteMutilEmpWorkresumeInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="deleteMutilEmpWorkresumeInfo">
+		</action>
+		<action name="getEmpStudyResumeInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="getEmpStudyResumeInfo">
+		</action>
+		<action name="saveEmpStudyResumeInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="saveEmpStudyResumeInfo">
+		</action>
+		<action name="deleteEmpStudyResumeInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="deleteEmpStudyResumeInfo">
+		</action>
+		<action name="getEmpPoliticsInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="getEmpPoliticsInfo">
+		</action>
+		<action name="saveEmpPoliticsInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="saveEmpPoliticsInfo">
+		</action>
+		<action name="deleteEmpPoliticsInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="deleteEmpPoliticsInfo">
+		</action>
+		<action name="getEmpFamilyInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="getEmpFamilyInfo">
+		</action>
+		<action name="saveEmpFamilyInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="saveEmpFamilyInfo">
+		</action>
+		<action name="deleteEmpFamilyInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="deleteEmpFamilyInfo">
+		</action>
+		<action name="getPositionInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="getPositionInfo">
+		</action>
+		<action name="savePositionInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="savePositionInfo">
+		</action>
+		<action name="deletePositionInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="deletePositionInfo">
+		</action>
+		<action name="getPostInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="getPostInfo">
+		</action>
+		<action name="savePostInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="savePostInfo">
+		</action>
+		<action name="deletePostInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="deletePostInfo">
+		</action>
+		<action name="getPhotoInfo"
+			class="power.web.hr.document.empdocument.empmaint.action.HrEmpBaseInfoMaintAction"
+			method="getPhotoInfo">
+		</action>
+		<!-- 员工档案综合查询维护 结束 -->
+		<!-- 员工工号维护 -->
+		<action name="getEmpInfoList"
+			class="power.web.hr.employee.empinfo.action.EmpInfoAction"
+			method="getEmpInfo">
+		</action>
+		<action name="addEmpInfo"
+			class="power.web.hr.employee.empinfo.action.EmpInfoAction"
+			method="addEmpInfo">
+		</action>
+		<action name="updateEmpInfo"
+			class="power.web.hr.employee.empinfo.action.EmpInfoAction"
+			method="updEmpInfo">
+		</action>
+		<action name="deleteEmpInfo"
+			class="power.web.hr.employee.empinfo.action.EmpInfoAction"
+			method="deleteEmpInfo">
+		</action>
+		<action name="importFileCheck"
+			class="power.web.hr.employee.empinfo.action.EmpInfoAction"
+			method="importFileCheck">
+		</action>
+		<action name="importToDatabase"
+			class="power.web.hr.employee.empinfo.action.EmpInfoAction"
+			method="importToDatabase">
+		</action>
+		<action name="clearEmpInfoSession"
+			class="power.web.hr.employee.empinfo.action.EmpInfoAction"
+			method="clearEmpInfoSession">
+		</action>
+		<!-- add by liuyi 091123 招聘离职登记结束 -->
+
+		<!-- add by drdu 091125 劳保工种维护
+			
+			<action name="addLaborWorkType"
+			class="power.web.hr.laborWorkType.LaborWorkTypeAction"
+			method="addLaborWorkType">
+			</action>	
+			<action name="updateLaborWorkType"
+			class="power.web.hr.laborWorkType.LaborWorkTypeAction"
+			method="updateLaborWorkType">
+			</action>	
+			<action name="deleteLaborWorkType"
+			class="power.web.hr.laborWorkType.LaborWorkTypeAction"
+			method="deleteLaborWorkType">
+			</action>	
+			<action name="findLaborWorkTypeList"
+			class="power.web.hr.laborWorkType.LaborWorkTypeAction"
+			method="findLaborWorkTypeList">
+			</action> -->
+		<!-- add by drdu 091125 劳保工种维护 -->
+
+		<action name="addLaborWorkType"
+			class="power.web.hr.laborWorkType.LaborWorkTypeAction"
+			method="addLaborWorkType">
+		</action>
+		<action name="updateLaborWorkType"
+			class="power.web.hr.laborWorkType.LaborWorkTypeAction"
+			method="updateLaborWorkType">
+		</action>
+		<action name="deleteLaborWorkType"
+			class="power.web.hr.laborWorkType.LaborWorkTypeAction"
+			method="deleteLaborWorkType">
+		</action>
+		<action name="findLaborWorkTypeList"
+			class="power.web.hr.laborWorkType.LaborWorkTypeAction"
+			method="findLaborWorkTypeList">
+		</action>
+
+		<!-- add by fyyang  091218  劳保用品管理 -->
+		<!-- 劳保分类维护 -->
+
+		<action name="saveLaborClassInfo"
+			class="power.web.hr.labor.LaborInfoMaintAction"
+			method="saveLaborClassInfo">
+		</action>
+		<action name="updateLaborClassInfo"
+			class="power.web.hr.labor.LaborInfoMaintAction"
+			method="updateLaborClassInfo">
+		</action>
+		<action name="deleteLaborClassInfo"
+			class="power.web.hr.labor.LaborInfoMaintAction"
+			method="deleteLaborClassInfo">
+		</action>
+		<action name="findLaborClassList"
+			class="power.web.hr.labor.LaborInfoMaintAction"
+			method="findLaborClassList">
+		</action>
+		<!-- 劳保用品维护 -->
+		<action name="saveLaborMaterialInfo"
+			class="power.web.hr.labor.LaborInfoMaintAction"
+			method="saveLaborMaterialInfo">
+		</action>
+		<action name="updateLaborMaterialInfo"
+			class="power.web.hr.labor.LaborInfoMaintAction"
+			method="updateLaborMaterialInfo">
+		</action>
+		<action name="deleteLaborMaterialInfo"
+			class="power.web.hr.labor.LaborInfoMaintAction"
+			method="deleteLaborMaterialInfo">
+		</action>
+		<action name="findLaborMaterialList"
+			class="power.web.hr.labor.LaborInfoMaintAction"
+			method="findLaborMaterialList">
+		</action>
+
+		<!-- 劳保工种变更维护 -->
+		<action name="getAllWorkInfo"
+			class="power.web.hr.labor.LaborChangeStandardAction"
+			method="getAllWorkInfo">
+		</action>
+
+		<action name="saveLaborChangeInfo"
+			class="power.web.hr.labor.LaborChangeStandardAction"
+			method="saveLaborChangeInfo">
+		</action>
+
+		<action name="updateLaborChangeInfo"
+			class="power.web.hr.labor.LaborChangeStandardAction"
+			method="updateLaborChangeInfo">
+		</action>
+
+		<action name="deleteLaborChangeInfo"
+			class="power.web.hr.labor.LaborChangeStandardAction"
+			method="deleteLaborChangeInfo">
+		</action>
+
+		<action name="findLaborChangeList"
+			class="power.web.hr.labor.LaborChangeStandardAction"
+			method="findLaborChangeList">
+		</action>
+		<!-- 劳保工种标准设置 -->
+		<action name="saveLaborStandard"
+			class="power.web.hr.labor.LaborChangeStandardAction"
+			method="saveLaborStandard">
+		</action>
+		<action name="findLaborStandardList"
+			class="power.web.hr.labor.LaborChangeStandardAction"
+			method="findLaborStandardList">
+		</action>
+		<action name="findNoSelectLaborStandardList"
+			class="power.web.hr.labor.LaborChangeStandardAction"
+			method="findNoSelectLaborStandardList">
+		</action>
+		<!-- 部门劳动用品发放登记 -->
+		<action name="getAllRegisterInfo"
+			class="power.web.hr.labor.LaborRegisterAction"
+			method="getAllRegisterInfo">
+		</action>
+		<action name="saveLaborRegisterInfo"
+			class="power.web.hr.labor.LaborRegisterAction"
+			method="saveLaborRegisterInfo">
+		</action>
+		<!-- 退休预警 -->
+		<action name="finRetirementDateQueryList"
+			class="power.web.hr.emp.EmpManageAction"
+			method="finRetirementDateQueryList">
+		</action>
+		<action name="saveEmpRec"
+			class="power.web.hr.emp.EmpManageAction"
+			method="saveEmpRec">
+		</action>
+
+		<!-- add by sychen  091225  职工外出培训管理 -->
+		<!-- 费用类别维护 -->
+		<action name="saveTrainSortInfo"
+			class="power.web.hr.train.TrainSortAction"
+			method="saveTrainSortInfo">
+		</action>
+		<action name="updateTrainSortInfo"
+			class="power.web.hr.train.TrainSortAction"
+			method="updateTrainSortInfo">
+		</action>
+		<action name="deleteTrainSortInfo"
+			class="power.web.hr.train.TrainSortAction"
+			method="deleteTrainSortInfo">
+		</action>
+		<action name="findTrainSortList"
+			class="power.web.hr.train.TrainSortAction"
+			method="findTrainSortList">
+		</action>
+		<!-- 劳保用品登记add by drdu 091225 -->
+		<action name="findLaborRegisterList"
+			class="power.web.hr.labor.LaborRegisterAction"
+			method="findLaborRegisterList">
+		</action>
+		<action name="saveLoborRgister"
+			class="power.web.hr.labor.LaborRegisterAction"
+			method="saveLoborRgister">
+		</action>
+		<!-- 职工外出培训登记 -->
+		<action name="saveOuttrainInfo"
+			class="power.web.hr.train.TrainSortAction"
+			method="saveOuttrainInfo">
+		</action>
+		<action name="updateOuttrainInfo"
+			class="power.web.hr.train.TrainSortAction"
+			method="updateOuttrainInfo">
+		</action>
+		<action name="findOutTrainList"
+			class="power.web.hr.train.TrainSortAction"
+			method="findOutTrainList">
+		</action>
+		<action name="getEmployeeInfo"
+			class="power.web.hr.train.TrainSortAction"
+			method="getEmployeeInfo">
+		</action>
+		<action name="findStationIdList"
+			class="power.web.hr.train.TrainSortAction"
+			method="findStationIdList">
+		</action>
+		<action name="findTechnologyTitlesType"
+			class="power.web.hr.train.TrainSortAction"
+			method="findTechnologyTitlesType">
+		</action>
+		<action name="getOuttrainInfo"
+			class="power.web.hr.train.TrainSortAction"
+			method="getOuttrainInfo">
+		</action>
+
+		<!-- 费用明细 -->
+		<action name="saveOuttrainDetailInfo"
+			class="power.web.hr.train.TrainSortAction"
+			method="saveOuttrainDetailInfo">
+		</action>
+		<action name="findOuttrainDetailList"
+			class="power.web.hr.train.TrainSortAction"
+			method="findOuttrainDetailList">
+		</action>
+		<!-- add by bjxu 证书类别维护 -->
+		<action name="saveCertificate"
+			class="power.web.hr.train.TrainSortAction"
+			method="saveCertificate">
+		</action>
+		<action name="updateCertificate"
+			class="power.web.hr.train.TrainSortAction"
+			method="updateCertificate">
+		</action>
+		<action name="delCertificate"
+			class="power.web.hr.train.TrainSortAction" method="delCertificate">
+		</action>
+		<action name="listCertificate"
+			class="power.web.hr.train.TrainSortAction"
+			method="listCertificate">
+		</action>
+
+
+		<!-- add by ltong 100605 社保管理-->
+
+		<action name="importLaborManageInfo"
+			class="power.web.hr.labor.LaborManageAction"
+			method="importLaborManageInfo">
+		</action>
+
+		<action name="findLaborManageList"
+			class="power.web.hr.labor.LaborManageAction"
+			method="findLaborManageList">
+		</action>
+		<action name="delLaborManageList"
+			class="power.web.hr.labor.LaborManageAction"
+			method="delLaborManageList">
+		</action>
+
+		<action name="addOrUpdateMange"
+			class="power.web.hr.labor.LaborManageAction"
+			method="addOrUpdateMange">
+		</action>
+
+		<action name="delAllLaborManageList"
+			class="power.web.hr.labor.LaborManageAction"
+			method="delAllLaborManageList">
+		</action>
+       	<action name="uploadfile"
+			class="power.web.hr.labor.LaborManageAction"
+			method="uploadfile">
+		</action>
+     	<action name="getAnnexVlaue"
+			class="power.web.hr.labor.LaborManageAction"
+			method="getAnnexVlaue">
+		</action>
+
+		<!-- 薪酬统计 20100208 -->
+		<action name="calculateSalary"
+			class="power.web.hr.salary.SalaryWageAction"
+			method="calculateSalary">
+		</action>
+		<action name="getBasicPrimiumAndAward"
+			class="power.web.hr.salary.SalaryWageAction"
+			method="getBasicPrimiumAndAward">
+		</action>
+		<action name="saveBasicPrimiumAndAward"
+			class="power.web.hr.salary.SalaryWageAction"
+			method="saveBasicPrimiumAndAward">
+		</action>
+		<!-- add by qxjiao 20100806 -->
+		<action name="getWageDetail"
+			class="power.web.hr.salary.SalaryWageAction"
+			method="getWageInfoDetail">
+		</action>
+		
+		<!-- 薪酬统计 判断历史工资不可修改 add by sychen 20100805 -->
+		<action name="checkOldSalaryModify"
+			class="power.web.hr.salary.SalaryWageAction"
+			method="checkOldSalaryModify">
+		</action>
+		<action name="importSalaryFilesInfo"
+			class="power.web.hr.salary.SalaryWageAction"
+			method="importSalaryFilesInfo">
+		</action>
+
+
+		<!-- 社会主要关系 add by drdu 20100610 -->
+		<action name="addAndUpdateRelation"
+			class="power.web.hr.archives.EmpSocialRelationAction"
+			method="addAndUpdateRelation">
+		</action>
+		<action name="deleteRelation"
+			class="power.web.hr.archives.EmpSocialRelationAction"
+			method="deleteRelation">
+		</action>
+		<action name="findEmpSocialRelation"
+			class="power.web.hr.archives.EmpSocialRelationAction"
+			method="findEmpSocialRelation">
+		</action>
+		<action name="importEmpSocialRelationFiles"
+			class="power.web.hr.archives.EmpSocialRelationAction"
+			method="importEmpSocialRelationFiles">
+		</action>
+
+		<!-- 人员特长 add by drdu 20100609 -->
+		<action name="findSpecialtyList"
+			class="power.web.hr.archives.EmpSpecialtyAction"
+			method="findSpecialtyList">
+		</action>
+		<action name="editEmpSpecialtyRecord"
+			class="power.web.hr.archives.EmpSpecialtyAction"
+			method="editEmpSpecialtyRecord">
+		</action>
+		<action name="deleteEmpSpecialtyRecord"
+			class="power.web.hr.archives.EmpSpecialtyAction"
+			method="deleteEmpSpecialtyRecord">
+		</action>
+		<action name="importEmpSpecialtyFile"
+			class="power.web.hr.archives.EmpSpecialtyAction"
+			method="importEmpSpecialtyFile">
+		</action>
+		<!-- 人员奖励情况 -->
+		<action name="getRewardList"
+			class="power.web.hr.archives.EmpRewardAction"
+			method="getRewardList">
+		</action>
+		<action name="delReward"
+			class="power.web.hr.archives.EmpRewardAction" method="delReward">
+		</action>
+		<action name="addOrUpdateReward"
+			class="power.web.hr.archives.EmpRewardAction"
+			method="addOrUpdateReward">
+		</action>
+		<action name="importRewardInf"
+			class="power.web.hr.archives.EmpRewardAction"
+			method="importRewardInf">
+		</action>
+		<!-- 人员惩罚情况 -->
+		<action name="getPunishList"
+			class="power.web.hr.archives.EmpPunishAction"
+			method="getPunishList">
+		</action>
+		<action name="delPunish"
+			class="power.web.hr.archives.EmpPunishAction" method="delPunish">
+		</action>
+		<action name="addOrUpdatePunish"
+			class="power.web.hr.archives.EmpPunishAction"
+			method="addOrUpdatePunish">
+		</action>
+		<action name="importPunishInf"
+			class="power.web.hr.archives.EmpPunishAction"
+			method="importPunishInf">
+		</action>
+		<!-- 联系信息 add by ltong 20100611 -->
+		<action name="saveContactForm"
+			class="power.web.hr.archives.HrCContactAction"
+			method="saveContactForm">
+		</action>
+		<action name="getContactForm"
+			class="power.web.hr.archives.HrCContactAction"
+			method="getContactForm">
+		</action>
+		<action name="deleteContactForm"
+			class="power.web.hr.archives.HrCContactAction"
+			method="deleteContactForm">
+		</action>
+		<action name="importContactForm"
+			class="power.web.hr.archives.HrCContactAction"
+			method="importContactForm">
+		</action>
+		<!-- 工会主席维护信息-->
+		<action name="getChairmanList"
+			class="power.web.hr.reward.HrEmpUnionPersidentAction"
+			method="getChairmanList">
+		</action>
+		<action name="delChairmanList"
+			class="power.web.hr.reward.HrEmpUnionPersidentAction"
+			method="delChairmanList">
+		</action>
+		<action name="saveChairmanList"
+			class="power.web.hr.reward.HrEmpUnionPersidentAction"
+			method="saveChairmanList">
+		</action>
+		<!-- 工会主席标准维护信息-->
+		<action name="findUnionPerStandard"
+			class="power.web.hr.reward.HrEmpUnionPersidentAction"
+			method="findUnionPerStandard">
+		</action>
+		<action name="delUnionPerStandard"
+			class="power.web.hr.reward.HrEmpUnionPersidentAction"
+			method="delUnionPerStandard">
+		</action>
+		<action name="saveUnionPerStandard"
+			class="power.web.hr.reward.HrEmpUnionPersidentAction"
+			method="saveUnionPerStandard">
+		</action>
+		<action name="getMaxEndtime"
+			class="power.web.hr.reward.HrEmpUnionPersidentAction"
+			method="getMaxEndtime">
+		</action>
+
+		<!-- 技师标准维护信息-->
+		<action name="getTechnicianList"
+			class="power.web.hr.reward.HrCTechnicianStandardsAction"
+			method="getTechnicianList">
+		</action>
+		<action name="deleteTechicianList"
+			class="power.web.hr.reward.HrCTechnicianStandardsAction"
+			method="deleteTechicianList">
+		</action>
+		<action name="saveTechicianList"
+			class="power.web.hr.reward.HrCTechnicianStandardsAction"
+			method="saveTechicianList">
+		</action>
+		<!-- 岗位量化比例维护信息-->
+		<action name="getStationQuantity"
+			class="power.web.hr.reward.HrEmpStationQuantityAction"
+			method="getStationQuantity">
+		</action>
+		<action name="delStationQuantity"
+			class="power.web.hr.reward.HrEmpStationQuantityAction"
+			method="delStationQuantity">
+		</action>
+		<action name="saveStationQuantity"
+			class="power.web.hr.reward.HrEmpStationQuantityAction"
+			method="saveStationQuantity">
+		</action>
+		<!-- 部门量化系数维护信息 ltong-->
+		<action name="getDeptQuantifyList"
+			class="power.web.hr.reward.HrCDeptQuantifyCoeffAction"
+			method="getDeptQuantifyList">
+		</action>
+		<action name="deleteDeptQuantifyList"
+			class="power.web.hr.reward.HrCDeptQuantifyCoeffAction"
+			method="deleteDeptQuantifyList">
+		</action>
+		<action name="saveDeptQuantifyList"
+			class="power.web.hr.reward.HrCDeptQuantifyCoeffAction"
+			method="saveDeptQuantifyList">
+		</action>
+		<!-- 大奖发放信息-->
+		<action name="getBigReward"
+			class="power.web.hr.reward.HrJBigRewardAction"
+			method="getBigReward">
+		</action>
+		<action name="saveBigReward"
+			class="power.web.hr.reward.HrJBigRewardAction"
+			method="saveBigReward">
+		</action>
+		<action name="delBigReward"
+			class="power.web.hr.reward.HrJBigRewardAction"
+			method="delBigReward">
+		</action>
+		<action name="bigRewardReport"
+			class="power.web.hr.reward.HrJBigRewardAction"
+			method="bigRewardReport">
+		</action>
+		<action name="getAllawardName"
+			class="power.web.hr.reward.HrJBigRewardAction"
+			method="getAllawardName">
+		</action>
+		<action name="getBigRewardDetail"
+			class="power.web.hr.reward.HrJBigRewardAction"
+			method="getBigRewardDetail">
+		</action>
+		<action name="buildBigRewardDetailData"
+			class="power.web.hr.reward.HrJBigRewardAction"
+			method="buildBigRewardDetailData">
+		</action>
+		<action name="saveBigRewardDetail"
+			class="power.web.hr.reward.HrJBigRewardAction"
+			method="saveBigRewardDetail">
+		</action>
+		<action name="deleteBigRewardDetail"
+			class="power.web.hr.reward.HrJBigRewardAction"
+			method="deleteBigRewardDetail">
+		</action>
+		<action name="bigRewardDetailReport"
+			class="power.web.hr.reward.HrJBigRewardAction"
+			method="bigRewardDetailReport">
+		</action>
+		<action name="bigRewardAdministratorQuery"
+			class="power.web.hr.reward.HrJBigRewardAction"
+			method="bigRewardAdministratorQuery">
+		</action>
+		<action name="bigRewardAdministratorApprove"
+			class="power.web.hr.reward.HrJBigRewardAction"
+			method="bigRewardAdministratorApprove">
+		</action>
+		<action name="queryBigRewardDetailByRewardMonth"
+			class="power.web.hr.reward.HrJBigRewardAction"
+			method="queryBigRewardDetailByRewardMonth">
+		</action>
+		<action name="queryBigRewardByRewardMonth"
+			class="power.web.hr.reward.HrJBigRewardAction"
+			method="queryBigRewardByRewardMonth">
+		</action>
+		<action name="queryDetailBigRewardByDept"
+			class="power.web.hr.reward.HrJBigRewardAction"
+			method="queryDetailBigRewardByDept">
+		</action>
+		<action name="queryRewardDeptList"
+			class="power.web.hr.reward.HrJBigRewardAction"
+			method="queryRewardDeptList">
+		</action>
+      	<!-- 短信通知 add by sychen 20100701-->
+		<action name="saveMessage"
+			class="power.web.hr.message.HrJMessageAction"
+			method="saveMessage">
+		</action>
+		<action name="updateMessage"
+			class="power.web.hr.message.HrJMessageAction"
+			method="updateMessage">
+		</action>
+		<action name="deleteMessage"
+			class="power.web.hr.message.HrJMessageAction"
+			method="deleteMessage">
+		</action>
+		<action name="getHrJMessageList"
+			class="power.web.hr.message.HrJMessageAction"
+			method="getHrJMessageList">
+		</action>
+		<action name="sendMessage"
+			class="power.web.hr.message.HrJMessageAction"
+			method="sendMessage">
+		</action>
+
+		<!-- 奖金发放 -->
+		<action name="saveRewardGrand"
+			class="power.web.hr.reward.RewardGrantAction"
+			method="saveRewardGrand">
+		</action>
+
+		<action name="deleteRewardGrand"
+			class="power.web.hr.reward.RewardGrantAction"
+			method="deleteRewardGrand">
+		</action>
+
+		<action name="updateRewardGrand"
+			class="power.web.hr.reward.RewardGrantAction"
+			method="updateRewardGrand">
+		</action>
+
+		<action name="getRewardGrandList"
+			class="power.web.hr.reward.RewardGrantAction"
+			method="getRewardGrandList">
+		</action>
+
+		<action name="saveOrUpdateRewardDetail"
+			class="power.web.hr.reward.RewardGrantAction"
+			method="saveOrUpdateRewardDetail">
+		</action>
+
+		<action name="getRewardDetailList"
+			class="power.web.hr.reward.RewardGrantAction"
+			method="getRewardDetailList">
+		</action>
+
+		<action name="initRewardGrantDept"
+			class="power.web.hr.reward.RewardGrantAction"
+			method="initRewardGrantDept">
+		</action>
+		
+		<action name="getGroupNameList"
+			class="power.web.hr.reward.RewardGrantAction"
+			method="getGroupNameList">
+		</action>
+		<action name="getRewardMonthAward"
+			class="power.web.hr.reward.RewardGrantAction"
+			method="getRewardMonthAward">
+		</action>
+
+		<!-- 月奖模块 -->
+		<action name="saveOrUpdateMonthReward"
+			class="power.web.hr.reward.HrMonthRewardAction"
+			method="saveOrUpdateMonthReward">
+		</action>
+		<action name="saveOrUpdateMonthRewardDetail"
+			class="power.web.hr.reward.HrMonthRewardAction"
+			method="saveOrUpdateMonthRewardDetail">
+		</action>
+		<action name="delateMonthReward"
+			class="power.web.hr.reward.HrMonthRewardAction"
+			method="delateMonthReward">
+		</action>
+		<action name="delateMonthRewardDetail"
+			class="power.web.hr.reward.HrMonthRewardAction"
+			method="delateMonthRewardDetail">
+		</action>
+		<action name="queryMonthReward"
+			class="power.web.hr.reward.HrMonthRewardAction"
+			method="queryMonthReward">
+		</action>
+		<action name="queryMonthRewardDetail"
+			class="power.web.hr.reward.HrMonthRewardAction"
+			method="queryMonthRewardDetail">
+		</action>
+		<action name="monthRewardReport"
+			class="power.web.hr.reward.HrMonthRewardAction"
+			method="monthRewardReport">
+		</action>
+		<action name="monthRewardApprove"
+			class="power.web.hr.reward.HrMonthRewardAction"
+			method="monthRewardApprove">
+		</action>
+		<action name="monthRewardApproveQuery"
+			class="power.web.hr.reward.HrMonthRewardAction"
+			method="monthRewardApproveQuery">
+		</action>
+		<action name="administratorQuery"
+			class="power.web.hr.reward.HrMonthRewardAction"
+			method="administratorQuery">
+		</action>
+		<action name="administratorApprove"
+			class="power.web.hr.reward.HrMonthRewardAction"
+			method="administratorApprove">
+		</action>
+		<action name="isHasShfit"
+			class="power.web.hr.reward.HrMonthRewardAction"
+			method="isHasShfit">
+		</action>
+		<action name="queryMonthRewardByRewardMonth"
+			class="power.web.hr.reward.HrMonthRewardAction"
+			method="queryMonthRewardByRewardMonth">
+		</action>
+		<action name="queryMonthRewardDetailByRewardMonth"
+			class="power.web.hr.reward.HrMonthRewardAction"
+			method="queryMonthRewardDetailByRewardMonth">
+		</action>
+       <action name="findDetailMonthRewardByDept"
+			class="power.web.hr.reward.HrMonthRewardAction"
+			method="findDetailMonthRewardByDept">
+		</action>
+		 <action name="getRewardDetailDeptList"
+			class="power.web.hr.reward.HrMonthRewardAction"
+			method="getRewardDetailDeptList">
+		</action>
+		 <action name="getMaxMonth"
+			class="power.web.hr.reward.HrMonthRewardAction"
+			method="getMaxMonth">
+		</action>
+		<!-- 月奖发放审批 add by sychen 20100830 -->
+		 <action name="appvoveMonthAward"
+			class="power.web.hr.reward.HrMonthRewardAction"
+			method="appvoveMonthAward">
+		</action>
+       
+       
+		
+		<!-- 全厂高温,中温，低温人员金额统计表 add by sychen 20100703-->
+		<action name="saveLaborTempe"
+			class="power.web.hr.labor.HrJLaborTempeAction"
+			method="saveLaborTempe">
+		</action>
+		<action name="reportHrJLaborTempe"
+			class="power.web.hr.labor.HrJLaborTempeAction"
+			method="reportHrJLaborTempe">
+		</action>
+		<action name="getHrJLaborTempeStatus"
+			class="power.web.hr.labor.HrJLaborTempeAction"
+			method="getHrJLaborTempeStatus">
+		</action>
+		<action name="getHrJLaborTempeList"
+			class="power.web.hr.labor.HrJLaborTempeAction"
+			method="getHrJLaborTempeList">
+		</action>
+		<action name="hrJLaborTempeApprove"
+			class="power.web.hr.labor.HrJLaborTempeAction"
+			method="hrJLaborTempeApprove">
+		</action>
+		<action name="getLaborTempeInfo"
+			class="power.web.hr.labor.HrJLaborTempeAction"
+			method="getLaborTempeInfo">
+		</action>
+		<action name="importLaborTempeInfo"
+			class="power.web.hr.labor.HrJLaborTempeAction"
+			method="importLaborTempeInfo">
+		</action>
+		<action name="getTempeApproveInfo"
+			class="power.web.hr.labor.HrJLaborTempeAction"
+			method="getTempeApproveInfo">
+		</action>
+		
+		<!-- 年度缺勤汇总统计 -->
+		<action name="getAattendanceListByYear"
+			class="power.web.hr.ca.attendance.yearabsence.YearAbsenceStatisticsAction"
+			method="getAattendanceListByYear">
+		</action>
+		<action name="queryYearRest"
+			class="power.web.hr.ca.attendance.yearabsence.YearAbsenceStatisticsAction"
+			method="queryYearRest">
+		</action>
+		
+		
+		<!-- 一次性劳保发卡统计表录入 -->
+		<action name="getSendCardList"
+			class="power.web.hr.labor.LaborSendCardAction"
+			method="getSendCardList">
+		</action>
+
+		<action name="delSendCard"
+			class="power.web.hr.labor.LaborSendCardAction"
+			method="delSendCard">
+		</action>
+
+		<action name="saveSendCard"
+			class="power.web.hr.labor.LaborSendCardAction"
+			method="saveSendCard">
+		</action>
+
+		<action name="importSendCardInf"
+			class="power.web.hr.labor.LaborSendCardAction"
+			method="importSendCardInf">
+		</action>
+		<action name="sendCardReport"
+			class="power.web.hr.labor.LaborSendCardAction"
+			method="sendCardReport">
+		</action>
+		<action name="copyData"       
+			class="power.web.hr.labor.LaborSendCardAction"
+			method="copyData">
+		</action>
+		<action name="sendCardApprove"
+			class="power.web.hr.labor.LaborSendCardAction"
+			method="sendCardApprove">
+		</action>
+		<action name="getTbarStatus"
+			class="power.web.hr.labor.LaborSendCardAction"
+			method="getTbarStatus">
+		</action>
+		<action name="getSendCardApproveInfo"
+			class="power.web.hr.labor.LaborSendCardAction"
+			method="getSendCardApproveInfo">
+		</action>
+		<!-- 大奖上报管理 ltong-->
+		<action name="getMaxGarntMonth"
+			class="power.web.hr.reward.RewardGrantAction"
+			method="getMaxGarntMonth">
+		</action>
+		<action name="getMonthRewardNum"
+			class="power.web.hr.reward.RewardGrantAction"
+			method="getMonthRewardNum">
+		</action>
+		<action name="getApproveGroup"
+			class="power.web.hr.reward.RewardGrantAction"
+			method="getApproveGroup">
+		</action>
+		<action name="getApproveRewardGrandList"
+			class="power.web.hr.reward.RewardGrantAction"
+			method="getApproveRewardGrandList">
+		</action>
+		<action name="approveReward"
+			class="power.web.hr.reward.RewardGrantAction"
+			method="approveReward">
+		</action>
+		<action name="getDeptPeopleNum"
+			class="power.web.hr.reward.RewardGrantAction"
+			method="getDeptPeopleNum">
+		</action>
+		<action name="getAllFirstDept"
+			class="power.web.hr.reward.RewardGrantAction"
+			method="getAllFirstDept">
+		</action>
+		<action name="getRoleIDByWorkerId"
+			class="power.web.hr.reward.RewardGrantAction"
+			method="getRoleIDByWorkerId">
+		</action>
+		<action name="saveBigRewardGrand"
+			class="power.web.hr.reward.HrJBigRewardGrantAction"
+			method="saveBigRewardGrand">
+		</action>
+		<action name="deleteBigRewardGrand"
+			class="power.web.hr.reward.HrJBigRewardGrantAction"
+			method="deleteBigRewardGrand">
+		</action>
+		<action name="updateBigRewardGrand"
+			class="power.web.hr.reward.HrJBigRewardGrantAction"
+			method="updateBigRewardGrand">
+		</action>
+		<action name="getBigRewardGrandList"
+			class="power.web.hr.reward.HrJBigRewardGrantAction"
+			method="getBigRewardGrandList">
+		</action>
+		<action name="saveOrUpdateBigRewardDetail"
+			class="power.web.hr.reward.HrJBigRewardGrantAction"
+			method="saveOrUpdateBigRewardDetail">
+		</action>
+		<action name="getBigRewardDetailList"
+			class="power.web.hr.reward.HrJBigRewardGrantAction"
+			method="getBigRewardDetailList">
+		</action>
+		<action name="initBigRewardGrantDept"
+			class="power.web.hr.reward.HrJBigRewardGrantAction"
+			method="initBigRewardGrantDept">
+		</action>
+		<action name="getBigRewardMonthAward"
+			class="power.web.hr.reward.HrJBigRewardGrantAction"
+			method="getBigRewardMonthAward">
+		</action>
+		<action name="getMaxBigGarntMonth"
+			class="power.web.hr.reward.HrJBigRewardGrantAction"
+			method="getMaxBigGarntMonth">
+		</action>
+		<action name="getBigApproveGroup"
+			class="power.web.hr.reward.HrJBigRewardGrantAction"
+			method="getBigApproveGroup">
+		</action>
+		<action name="getApproveBigRewardGrandList"
+			class="power.web.hr.reward.HrJBigRewardGrantAction"
+			method="getApproveBigRewardGrandList">
+		</action>
+		<action name="approveBigReward"
+			class="power.web.hr.reward.HrJBigRewardGrantAction"
+			method="approveBigReward">
+		</action>
+		<action name="getBigAwareNameList"
+			class="power.web.hr.reward.HrJBigRewardGrantAction"
+			method="getBigAwareNameList">
+		</action>
+		<action name="getBigRewardNum"
+			class="power.web.hr.reward.HrJBigRewardGrantAction"
+			method="getBigRewardNum">
+		</action>
+		<action name="getBigRewardApproveAwareList"
+			class="power.web.hr.reward.HrJBigRewardGrantAction"
+			method="getBigRewardApproveAwareList">
+		</action>
+		
+		<!-- 大奖发放审批 add by sychen 20100830 -->
+		 <action name="appvoveBigAward"
+			class="power.web.hr.reward.HrJBigRewardAction"
+			method="appvoveBigAward">
+		</action>
+		
+		<!-- 退居二线预警 add by kzhang20100809-->
+		<action name="finRetirementByDeptAndName"
+			class="power.web.hr.emp.EmpManageAction"
+			method="finRetirementByDeptAndName">
+		</action>
+		<action name="retirementExport"
+			class="power.web.hr.emp.EmpManageAction"
+			method="retirementExport">
+		</action>
+		
+		<!-- 厂长报表 -->
+		<action name="newWorkerOrder"
+			class="power.web.hr.jxlreport.HrJxlReportAction"
+			method="newWorkerOrder">
+		</action>
+		<action name="linZhiOrder"
+			class="power.web.hr.jxlreport.HrJxlReportAction"
+			method="linZhiOrder">
+		</action>
+		<action name="deptInMoveOrder"
+			class="power.web.hr.jxlreport.HrJxlReportAction"
+			method="deptInMoveOrder">
+		</action>
+		<action name="deptBetMoveOrder"
+			class="power.web.hr.jxlreport.HrJxlReportAction"
+			method="deptBetMoveOrder">
+		</action>
+		<action name="neiBuJieDiaoOrder"
+			class="power.web.hr.jxlreport.HrJxlReportAction"
+			method="neiBuJieDiaoOrder">
+		</action>
+		
+	</package>
+</struts>

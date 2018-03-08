@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-validation.xml" />
+	<package name="manager" namespace="/manager"
+		extends="jfreechart-default">
+		<!-- 经营指标维护 -->
+		<action name="getTreeList"
+			class="power.web.manage.system.action.ItemMaintenanceAction"
+			method="findItemList">
+		</action>
+		<action name="getItemInfo"
+			class="power.web.manage.system.action.ItemMaintenanceAction"
+			method="findItemInfo">
+		</action>
+		<action name="deleteItem"
+			class="power.web.manage.system.action.ItemMaintenanceAction"
+			method="deleteItem">
+		</action>
+		<action name="saveItem"
+			class="power.web.manage.system.action.ItemMaintenanceAction"
+			method="updateItem">
+		</action>
+		<action name="getRetrieveCode"
+			class="power.web.manage.system.action.ItemMaintenanceAction"
+			method="getRetrieveCode">
+		</action>
+
+		<!-- 关系指标 -->
+		<action name="getTreeListforRetrieve"
+			class="power.web.manage.system.action.ItemMaintenanceAction"
+			method="findItemListforRetrieve">
+		</action>
+		<action name="checkforItem"
+			class="power.web.manage.system.action.ItemMaintenanceAction"
+			method="checkforItem">
+		</action>
+		<!-- 计量单位维护 -->
+		<action name="getUnitList"
+			class="power.web.manage.system.action.UnitMaintenanceAction"
+			method="getUnitList">
+		</action>
+		<action name="addUnit"
+			class="power.web.manage.system.action.UnitMaintenanceAction"
+			method="addUnit">
+		</action>
+		<action name="updateUnit"
+			class="power.web.manage.system.action.UnitMaintenanceAction"
+			method="updateUnit">
+		</action>
+		<action name="deleteUnit"
+			class="power.web.manage.system.action.UnitMaintenanceAction"
+			method="deleteUnit">
+		</action>
+		<!-- 统计指标维护 -->
+		<action name="findStatTree"
+			class="power.web.manage.stat.action.StatItemMaintenanceAction"
+			method="findTreeList">
+		</action>
+		<action name="deleteStatItem"
+			class="power.web.manage.stat.action.StatItemMaintenanceAction"
+			method="deleteStatItem">
+		</action>
+		<action name="updateStatItem"
+			class="power.web.manage.stat.action.StatItemMaintenanceAction"
+			method="updateStatItem">
+		</action>
+		<action name="getStatItemInfo"
+			class="power.web.manage.stat.action.StatItemMaintenanceAction"
+			method="getStatItemInfo">
+		</action>
+		<action name="getAccountOrder"
+			class="power.web.manage.stat.action.StatItemMaintenanceAction"
+			method="getAccountOrder">
+		</action>
+		<!-- 倍率维护 -->
+		<action name="saveBpCMetricTable"
+			class="power.web.manage.stat.action.BpCMetricTableAction"
+			method="saveBpCMetricTable">
+		</action>
+		<action name="getBpCMetricTable"
+			class="power.web.manage.stat.action.BpCMetricTableAction"
+			method="getBpCMetricTable">
+		</action>
+
+		<action name="getBpCStatItemList"
+			class="power.web.manage.stat.action.BpCMetricTableAction"
+			method="getBpCStatItemList">
+		</action>
+		<action name="getItemListToUse"
+			class="power.web.manage.stat.action.BpCMetricTableAction"
+			method="getItemListToUse">
+		</action>
+		<!-- 时间类型维护 -->
+		<action name="saveDateType"
+			class="power.web.manage.stat.action.ItemCollectSetupAction"
+			method="saveDateType">
+		</action>
+		<action name="queryDateType"
+			class="power.web.manage.stat.action.ItemCollectSetupAction"
+			method="queryDateType">
+		</action>
+		<!-- 指标编码与节点对应维护 -->
+		<action name="getStatItemList"
+			class="power.web.manage.stat.action.StatItemRealtimeAction"
+			method="getStatItemList">
+		</action>
+		<!-- 
+			<action name="getDcsNodeList"
+			class="power.web.manage.stat.action.StatItemRealtimeAction"
+			method="getDcsNodeList">
+			</action>
+			
+			<action name="getTreeListforRetrieve"
+			class="power.web.manage.system.action.ItemMaintenanceAction"
+			method="findItemListforRetrieve">
+			</action>
+		-->
+		<action name="generateCorrespond"
+			class="power.web.manage.stat.action.StatItemRealtimeAction"
+			method="generateCorrespond">
+		</action>
+		<action name="cancelCorrespond"
+			class="power.web.manage.stat.action.StatItemRealtimeAction"
+			method="cancelCorrespond">
+		</action>
+		<action name="findCorrespondByItem"
+			class="power.web.manage.stat.action.StatItemRealtimeAction"
+			method="findCorrespondByItem">
+		</action>
+		<!-- 实时节点维护 -->
+		<action name="findDcsNode"
+			class="power.web.manage.system.action.DcsNodeAction"
+			method="findDcsNode">
+		</action>
+		<action name="addDcsNode"
+			class="power.web.manage.system.action.DcsNodeAction"
+			method="addDcsNode">
+		</action>
+		<action name="updateDcsNode"
+			class="power.web.manage.system.action.DcsNodeAction"
+			method="updateDcsNode">
+		</action>
+		<action name="deleteDcsNode"
+			class="power.web.manage.system.action.DcsNodeAction"
+			method="deleteDcsNode">
+		</action>
+		<!-- 指标扩展公式维护 -->
+		<action name="getAllStatItemaList"
+			class="power.web.manage.stat.action.BpCExtendFormulaAction"
+			method="getAllStatItemaList">
+		</action>
+		<action name="saveBpCExtendFormula"
+			class="power.web.manage.stat.action.BpCExtendFormulaAction"
+			method="saveBpCExtendFormula">
+		</action>
+		<action name="getBpCExtendFormulaList"
+			class="power.web.manage.stat.action.BpCExtendFormulaAction"
+			method="getBpCExtendFormulaList">
+		</action>
+		<!-- 指标焓值公式维护 -->
+		<action name="deleteBpCEnthalpyFormula"
+			class="power.web.manage.stat.action.BpCEnthalpyFormulaAction"
+			method="deleteBpCEnthalpyFormula">
+		</action>
+		<action name="saveBpCEnthalpyFormula"
+			class="power.web.manage.stat.action.BpCEnthalpyFormulaAction"
+			method="saveBpCEnthalpyFormula">
+		</action>
+		<action name="getBpCEnthalpyFormula"
+			class="power.web.manage.stat.action.BpCEnthalpyFormulaAction"
+			method="getBpCEnthalpyFormula">
+		</action>
+		<!-- 指标时间段公式维护 -->
+		<action name="saveRunFormulaList"
+			class="power.web.manage.stat.action.BpCRunFormulaAction"
+			method="saveRunFormulaList">
+		</action>
+		<action name="getRunFormulaList"
+			class="power.web.manage.stat.action.BpCRunFormulaAction"
+			method="getRunFormulaList">
+		</action>
+		<!-- 指标表值公式维护 -->
+
+		<!-- 台帐名称维护 -->
+		<action name="saveBpCAnalyseAccount"
+			class="power.web.manage.stat.action.BpCAnalyseAccountAction"
+			method="saveBpCAnalyseAccount">
+		</action>
+		<action name="getBpCAnalyseAccountList"
+			class="power.web.manage.stat.action.BpCAnalyseAccountAction"
+			method="getBpCAnalyseAccountList">
+		</action>
+		<!-- 台帐时间点维护 -->
+		<action name="saveAccountDateType"
+			class="power.web.manage.stat.action.BpCAnalyseAccountSetupAction"
+			method="saveAccountDateType">
+		</action>
+		<action name="queryAccountDateType"
+			class="power.web.manage.stat.action.BpCAnalyseAccountSetupAction"
+			method="queryAccountDateType">
+		</action>
+
+
+		<!-- 台帐指标维护 -->
+		<action name="saveBpCAnalyseAccountItem"
+			class="power.web.manage.stat.action.BpCAnalyseAccountItemAction"
+			method="saveBpCAnalyseAccountItem">
+		</action>
+		<action name="getBpCAnalyseAccountItem"
+			class="power.web.manage.stat.action.BpCAnalyseAccountItemAction"
+			method="getBpCAnalyseAccountItem">
+		</action>
+
+		<!-- 录入报表项目维护 -->
+		<action name="addReprotItem"
+			class="power.web.manage.stat.action.BpInputReportItemAction"
+			method="addReprotItem">
+		</action>
+		<action name="findReprotItemList"
+			class="power.web.manage.stat.action.BpInputReportItemAction"
+			method="findReprotItemList">
+		</action>
+		<!-- 录入报表名称维护 -->
+		<action name="saveBpCInputReport"
+			class="power.web.manage.stat.action.BpCInputReportAction"
+			method="saveBpCInputReport">
+		</action>
+		<action name="getBpCInputReportList"
+			class="power.web.manage.stat.action.BpCInputReportAction"
+			method="getBpCInputReportList">
+		</action>
+		
+		<!-- 班组报表录入查询 -->
+		<action name="getGroupReportItem"
+			class="power.web.manage.stat.action.BpCInputReportAction"
+			method="getGroupReportItem">
+		</action>
+		<!-- 班组录入保存 -->
+		<action name="saveGroupReportValue"
+			class="power.web.manage.stat.action.BpCInputReportAction"
+			method="saveGroupReportValue">
+		</action>
+		
+		<!-- 录入报表时间点维护 -->
+		<action name="saveReportDateType"
+			class="power.web.manage.stat.action.BpCInputReportSetupAction"
+			method="saveReportDateType">
+		</action>
+		<action name="queryReportDateType"
+			class="power.web.manage.stat.action.BpCInputReportSetupAction"
+			method="queryReportDateType">
+		</action>
+		<!-- 运行报表录入-->
+		<action name="findReportEntryList"
+			class="power.web.manage.stat.action.BpReportEntryAction"
+			method="findReportEntryList">
+		</action>
+		<action name="saveReportEntryValue"
+			class="power.web.manage.stat.action.BpReportEntryAction"
+			method="saveReportEntryValue">
+		</action>
+		<action name="findReportAddEntryList"
+			class="power.web.manage.stat.action.BpReportEntryAction"
+			method="findReportAddEntryList">
+		</action>
+		<action name="findReportList"
+			class="power.web.manage.stat.action.BpReportEntryAction"
+			method="findReportList">
+		</action>
+		<action name="itemCollectCompute"
+			class="power.web.manage.stat.action.BpReportEntryAction"
+			method="itemCollectCompute">
+		</action>
+		<action name="findRunReportEntryList"
+			class="power.web.manage.stat.action.BpReportEntryAction"
+			method="findRunReportEntryList">
+		</action>
+		<action name="saveEntryValue"
+			class="power.web.manage.stat.action.BpReportEntryAction"
+			method="saveEntryValue">
+		</action>
+		<!-- 统计报表指标采集计算 -->
+		<action name="statItemCollectCopmute"
+			class="power.web.manage.stat.action.BpReportEntryAction"
+			method="statItemCollectCopmute">
+		</action>
+		<!-- 停止计算 -->
+		<action name="stopCompute"
+			class="power.web.manage.stat.action.BpReportEntryAction"
+			method="stopCompute">
+		</action>
+		<action name="findComputeStatItemList"
+			class="power.web.manage.stat.action.BpReportEntryAction"
+			method="findComputeStatItemList">
+		</action>
+		<!-- 统计报表指标维护 -->
+		<action name="saveStatReportItem"
+			class="power.web.manage.stat.action.BpStatReportItemAction"
+			method="saveStatReportItem">
+		</action>
+		<action name="findStatReportItemList"
+			class="power.web.manage.stat.action.BpStatReportItemAction"
+			method="findStatReportItemList">
+		</action>
+		<action name="findStatReportList"
+			class="power.web.manage.stat.action.BpStatReportAction"
+			method="findStatReportList">
+		</action>
+		<action name="modifyRecords"
+			class="power.web.manage.stat.action.BpStatReportAction"
+			method="modifyRecords">
+		</action>
+
+
+		<!-- 指标台帐数据查询 -->
+		<action name="findAccountItemDataList"
+			class="power.web.manage.stat.action.AccountItemDateQueryAction"
+			method="findAccountItemDataList">
+		</action>
+		<!-- 指标台帐综合分析 -->
+		<action name="findItemNameListForReportQuery"
+			class="power.web.manage.stat.action.accountItemReportQueryAction"
+			method="findItemNameListForReportQuery">
+		</action>
+
+
+		<action name="findItemDataListForReportQuery"
+			class="power.web.manage.stat.action.accountItemReportQueryAction"
+			method="findItemDataListForReportQuery">
+		</action>
+
+		<action name="getDailyReport"
+			class="power.web.manage.stat.action.accountItemReportQueryAction"
+			method="getDailyReport">
+		</action>
+
+		<action name="getAccountItemModel"
+			class="power.web.manage.stat.action.accountItemReportQueryAction"
+			method="getAccountItemModel">
+		</action>
+
+		<!-- 小指标 -->
+		<action name="findSmallItemReportList"
+			class="power.web.manage.stat.action.BpSmallItemReportAction"
+			method="findSmallItemReportList">
+		</action>
+		<action name="smallItemReportMaint"
+			class="power.web.manage.stat.action.BpSmallItemReportAction"
+			method="smallItemReportMaint">
+		</action>
+		<action name="findSmallItemReportRowTypeList"
+			class="power.web.manage.stat.action.BpSmallItemReportAction"
+			method="findSmallItemReportRowTypeList">
+		</action>
+		<action name="smallItemReportRowTypeMaint"
+			class="power.web.manage.stat.action.BpSmallItemReportAction"
+			method="smallItemReportRowTypeMaint">
+		</action>
+		<action name="getRelationItems"
+			class="power.web.manage.stat.action.BpSmallItemReportAction"
+			method="getRelationItems">
+		</action>
+		<action name="smallReprtItemsMaint"
+			class="power.web.manage.stat.action.BpSmallItemReportAction"
+			method="smallReprtItemsMaint">
+		</action>
+		<action name="smallItemReportQuery"
+			class="power.web.manage.stat.action.BpSmallItemReportAction"
+			method="smallItemReportQuery">
+		</action>
+
+		<action name="checkFormula"
+			class="power.web.manage.stat.action.BpCExtendFormulaAction"
+			method="checkFormula">
+		</action>
+		<!-- bjxu 灞桥新增指标、报表维护 -->
+		<action name="addReprotItemNew"
+			class="power.web.manage.stat.action.BpItemReportNewAction"
+			method="addReprotItemNew">
+		</action>
+		<action name="findReprotItemNewList"
+			class="power.web.manage.stat.action.BpItemReportNewAction"
+			method="findReprotItemNewList">
+		</action>
+		
+		<action name="saveBpCReportNew"
+			class="power.web.manage.stat.action.BpCReportNewAction"
+			method="saveBpCReportNew">
+		</action>
+		<action name="getBpCReportNewList"
+			class="power.web.manage.stat.action.BpCReportNewAction"
+			method="getBpCReportNewList">
+		</action>
+		<!-- add by wpzhu  20100830 查询报表名称 -->
+		<action name="getReportName"
+			class="power.web.manage.stat.action.BpCReportNewAction"
+			method="getReportName">
+		</action>
+		
+	<!-- add by liuyi 20100521 有效时点公式维护 -->
+		<action name = "addOrUpdateValidFormulaEntity"
+			class = "power.web.manage.stat.action.BpCValidFormulaAction"
+			method = "addOrUpdateValidFormulaEntity">
+		</action>
+		<action name = "deleteValidFormula"
+			class = "power.web.manage.stat.action.BpCValidFormulaAction"
+			method = "deleteValidFormula">
+		</action>
+		<action name = "queryValidFormulaEntity"
+			class = "power.web.manage.stat.action.BpCValidFormulaAction"
+			method = "queryValidFormulaEntity">
+		</action>
+		
+		<!-- add by drdu 20100603 指标报表类型树维护 -->
+		<action name = "addAndUpdateReport"
+			class = "power.web.manage.stat.action.ZbReportAction"
+			method = "addAndUpdateReport">
+		</action>
+		<action name = "deleteReport"
+			class = "power.web.manage.stat.action.ZbReportAction"
+			method = "deleteReport">
+		</action>
+		<action name = "getReportTreeInfo"
+			class = "power.web.manage.stat.action.ZbReportAction"
+			method = "getReportTreeInfo">
+		</action>
+		<action name = "getReportTreeList"
+			class = "power.web.manage.stat.action.ZbReportAction"
+			method = "getReportTreeList">
+		</action>
+		<action name = "queryReportLoadListByReportCode"
+			class = "power.web.manage.stat.action.ZbJReportLoadAction"
+			method = "queryReportLoadListByReportCode">
+		</action>
+		<action name = "saveOrUpdateReportLoad"
+			class = "power.web.manage.stat.action.ZbJReportLoadAction"
+			method = "saveOrUpdateReportLoad">
+		</action>
+		<action name = "delReportLoad"
+			class = "power.web.manage.stat.action.ZbJReportLoadAction"
+			method = "delReportLoad">
+		</action>
+		<!-- 燃料运行班上煤量汇总查询 add by kzhang 20100906 -->
+		<action name = "finReportListByMon"
+			class = "power.web.manage.stat.action.BpCReportNewAction"
+			method = "finReportListByMon">
+		</action>
+		<!-- 燃料运行班上煤量汇总导出 add by kzhang 20100907 -->
+		<action name = "reportExportByMon"
+			class = "power.web.manage.stat.action.BpCReportNewAction"
+			method = "reportExportByMon">
+		</action>
+		<!-- jxls报表 -->
+		<action name = "queryTuoLiuItem"
+			class = "power.web.manage.stat.action.JxlsReportAction"
+			method = "queryTuoLiuItem">
+		</action>
+		<action name = "saveTuoLiuItemTmplate"
+			class = "power.web.manage.stat.action.JxlsReportAction"
+			method = "saveTuoLiuItemTmplate">
+		</action>
+		
+		<action name = "queryTuoLiuRun"
+			class = "power.web.manage.stat.action.JxlsReportAction"
+			method = "queryTuoLiuRun">
+		</action>
+		<action name = "queryTuoLiuWeek"
+			class = "power.web.manage.stat.action.JxlsReportAction"
+			method = "queryTuoLiuWeek">
+		</action>
+	</package>
+</struts>

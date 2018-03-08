@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-validation.xml" />
+	<package name="timework" namespace="/timework"
+		extends="jfreechart-default">
+		<!-- 定期工作维护 -->
+		<action name="addTimework"
+			class="power.web.run.timework.action.TimeworkAction"
+			method="addTimework">
+		</action>
+		<action name="updateTimework"
+			class="power.web.run.timework.action.TimeworkAction"
+			method="updateTimework">
+		</action>
+		<action name="lockTimework"
+			class="power.web.run.timework.action.TimeworkAction"
+			method="lockTimework">
+		</action>
+		<action name="unlockTimework"
+			class="power.web.run.timework.action.TimeworkAction"
+			method="unlockTimework">
+		</action>
+		<action name="deleteTimework"
+			class="power.web.run.timework.action.TimeworkAction"
+			method="deleteTimework">
+		</action>
+		<action name="getlistTimework"
+			class="power.web.run.timework.action.TimeworkAction"
+			method="getlistTimework">
+		</action>
+		<action name="useprolist"
+			class="power.web.run.timework.action.TimeworkAction"
+			method="useprolist">
+		</action>
+		<action name="findShfitTimeBySpecial"
+			class="power.web.run.timework.action.TimeworkAction"
+			method="findShfitTimeBySpecial">
+		</action>
+		<!-- 定期工作维护 (子表) -->
+		<action name="addTimeworkd"
+			class="power.web.run.timework.action.TimeworkdAction"
+			method="addTimeworkd">
+		</action>
+		<action name="updateTimeworkd"
+			class="power.web.run.timework.action.TimeworkdAction"
+			method="updateTimeworkd">
+		</action>
+		<action name="lockTimeworkd"
+			class="power.web.run.timework.action.TimeworkdAction"
+			method="lockTimeworkd">
+		</action>
+		<action name="unlockTimeworkd"
+			class="power.web.run.timework.action.TimeworkdAction"
+			method="unlockTimeworkd">
+		</action>
+		<action name="deleteTimeworkd"
+			class="power.web.run.timework.action.TimeworkdAction"
+			method="deleteTimeworkd">
+		</action>
+		<action name="getlistTimeworkd"
+			class="power.web.run.timework.action.TimeworkdAction"
+			method="getlistTimeworkd">
+		</action>
+		<!-- 定期工作业务流程 -->
+		<!--<action name="addTimeworkj"
+			class="power.web.run.timework.action.TimeworkjAction"
+			method="addTimeworkj">
+			</action>
+			<action name="updateTimeworkj"
+			class="power.web.run.timework.action.TimeworkjAction"
+			method="updateTimeworkj">
+			</action>
+			<action name="lockTimeworkj"
+			class="power.web.run.timework.action.TimeworkjAction"
+			method="lockTimeworkj">
+			</action>
+			<action name="unlockTimeworkj"
+			class="power.web.run.timework.action.TimeworkjAction"
+			method="unlockTimeworkj">
+			</action>
+			<action name="deleteTimeworkj"
+			class="power.web.run.timework.action.TimeworkjAction"
+			method="deleteTimeworkj">
+			</action>
+			<action name="findTimeworkj"
+			class="power.web.run.timework.action.TimeworkjAction"
+			method="findTimeworkj">
+			</action>-->
+		<action name="getlistTimeworkj"
+			class="power.web.run.timework.action.TimeworkjAction"
+			method="getlistTimeworkj">
+		</action>
+		<action name="querylistTimeworkj"
+			class="power.web.run.timework.action.TimeworkjAction"
+			method="querylistTimeworkj">
+		</action>
+		<action name="getlistRun"
+			class="power.web.run.timework.action.TimeworkjAction"
+			method="getlistRun">
+		</action>
+		<action name="handupTimeworkj"
+			class="power.web.run.timework.action.TimeworkjAction"
+			method="handupTimeworkj">
+		</action>
+		<action name="agreeTimeworkj"
+			class="power.web.run.timework.action.TimeworkjAction"
+			method="agreeTimeworkj">
+		</action>
+		<action name="disagreeTimeworkj"
+			class="power.web.run.timework.action.TimeworkjAction"
+			method="disagreeTimeworkj">
+		</action>
+		<action name="askdelayTimeworkj"
+			class="power.web.run.timework.action.TimeworkjAction"
+			method="askdelayTimeworkj">
+		</action>
+		<action name="confirmTimeworkj"
+			class="power.web.run.timework.action.TimeworkjAction"
+			method="confirmTimeworkj">
+		</action>
+		<action name="operateTimeworkj"
+			class="power.web.run.timework.action.TimeworkjAction"
+			method="operateTimeworkj">
+		</action>
+		<action name="agreedelayTimeworkj"
+			class="power.web.run.timework.action.TimeworkjAction"
+			method="agreedelayTimeworkj">
+		</action>
+		<action name="disagreedelayTimeworkj"
+			class="power.web.run.timework.action.TimeworkjAction"
+			method="disagreedelayTimeworkj">
+		</action>
+		<action name="addTempTimework"
+			class="power.web.run.timework.action.TimeworkjAction"
+			method="addTempTimework">
+		</action>
+		<action name="updateTempTimework"
+			class="power.web.run.timework.action.TimeworkjAction"
+			method="updateTempTimework">
+		</action>
+		<!-- 维护工作类型 -->
+		<action name="addTimeworktype"
+			class="power.web.run.timework.action.TimeworktypeAction"
+			method="addTimeworktype">
+		</action>
+		<action name="updateTimeworktype"
+			class="power.web.run.timework.action.TimeworktypeAction"
+			method="updateTimeworktype">
+		</action>
+		<action name="lockTimeworktype"
+			class="power.web.run.timework.action.TimeworktypeAction"
+			method="lockTimeworktype">
+		</action>
+		<action name="unlockTimeworktype"
+			class="power.web.run.timework.action.TimeworktypeAction"
+			method="unlockTimeworktype">
+		</action>
+		<action name="deleteTimeworktype"
+			class="power.web.run.timework.action.TimeworktypeAction"
+			method="deleteTimeworktype">
+		</action>
+		<action name="getlistTimeworktype"
+			class="power.web.run.timework.action.TimeworktypeAction"
+			method="getlistTimeworktype">
+		</action>
+		<action name="uselistTimeworktype"
+			class="power.web.run.timework.action.TimeworktypeAction"
+			method="uselistTimeworktype">
+		</action>
+		<!-- 维护定期工作的执行状态 -->
+		<action name="addTimeworkstatus"
+			class="power.web.run.timework.action.TimeworkstatusAction"
+			method="addTimeworkstatus">
+		</action>
+		<action name="updateTimeworkstatus"
+			class="power.web.run.timework.action.TimeworkstatusAction"
+			method="updateTimeworkstatus">
+		</action>
+		<action name="lockTimeworkstatus"
+			class="power.web.run.timework.action.TimeworkstatusAction"
+			method="lockTimeworkstatus">
+		</action>
+		<action name="unlockTimeworkstatus"
+			class="power.web.run.timework.action.TimeworkstatusAction"
+			method="unlockTimeworkstatus">
+		</action>
+		<action name="deleteTimeworkstatus"
+			class="power.web.run.timework.action.TimeworkstatusAction"
+			method="deleteTimeworkstatus">
+		</action>
+		<action name="getlistTimeworkstatus"
+			class="power.web.run.timework.action.TimeworkstatusAction"
+			method="getlistTimeworkstatus">
+		</action>
+		<!-- 生成定期工作列表 -->
+		<action name="generateTimeworklist"
+			class="power.web.run.timework.action.TimeworkGenerateAction"
+			method="generateTimeworklist">
+		</action>
+	</package>
+</struts>

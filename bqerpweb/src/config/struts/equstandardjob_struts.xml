@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-validation.xml" />
+	<package name="equstandard" namespace="/equstandard"
+		extends="jfreechart-default">
+		<!--标准工作包维护 -->
+		<action name="addStandardjob"
+			class="power.web.equ.standardpackage.action.StandardjobAction"
+			method="addStandardjob">
+		</action>
+		<action name="editStandardjob"
+			class="power.web.equ.standardpackage.action.StandardjobAction"
+			method="editStandardjob">
+		</action>
+		<action name="delStandardjob"
+			class="power.web.equ.standardpackage.action.StandardjobAction"
+			method="delStandardjob">
+		</action>
+		<action name="lockStandardjob"
+			class="power.web.equ.standardpackage.action.StandardjobAction"
+			method="lockStandardjob">
+		</action>
+		<action name="unlockStandardjob"
+			class="power.web.equ.standardpackage.action.StandardjobAction"
+			method="unlockStandardjob">
+		</action>
+		<action name="getStandardjobList"
+			class="power.web.equ.standardpackage.action.StandardjobAction"
+			method="getStandardjobList">
+		</action>
+		<action name="findRunSpecials"
+			class="power.web.equ.standardpackage.action.StandardjobAction"
+			method="findRunSpecials">
+		</action>
+		<action name="findRunSpecialsByCode"
+			class="power.web.equ.standardpackage.action.StandardjobAction"
+			method="findRunSpecialsByCode">
+		</action>
+		<!-- 相关设备 -->
+		<action name="getRealequList"
+			class="power.web.equ.standardpackage.action.RealequAction"
+			method="getRealequList">
+		</action>
+		<action name="addRealequ"
+			class="power.web.equ.standardpackage.action.RealequAction"
+			method="addRealequ">
+		</action>
+		<action name="delRealequ"
+			class="power.web.equ.standardpackage.action.RealequAction"
+			method="delRealequ">
+		</action>
+		<!-- add by liuyi 091116 -->
+		<!-- 标准工作包维护 -->
+		<action name="getEquCStandardWoList"
+			class="power.web.equ.standardpackage.action.EquCStandardWoAction"
+			method="getEquCStandardWoList">
+		</action>
+		<action name="saveEquCStandardWo"
+			class="power.web.equ.standardpackage.action.EquCStandardWoAction"
+			method="saveEquCStandardWo">
+		</action>
+		<action name="updateEquCStandardWo"
+			class="power.web.equ.standardpackage.action.EquCStandardWoAction"
+			method="updateEquCStandardWo">
+		</action>
+		<action name="deleteEquCStandardWo"
+			class="power.web.equ.standardpackage.action.EquCStandardWoAction"
+			method="deleteEquCStandardWo">
+		</action>
+		<action name="lockEquCStandardWo"
+			class="power.web.equ.standardpackage.action.EquCStandardWoAction"
+			method="lockEquCStandardWo">
+		</action>
+		<action name="unlockEquCStandardWo"
+			class="power.web.equ.standardpackage.action.EquCStandardWoAction"
+			method="unlockEquCStandardWo">
+		</action>
+		<!-- 相关设备 -->
+		<action name="getEquCStandardEquList"
+			class="power.web.equ.standardpackage.action.EquCStandardEquAction"
+			method="getEquCStandardEquList">
+		</action>
+		<action name="saveEquCStandardEqu"
+			class="power.web.equ.standardpackage.action.EquCStandardEquAction"
+			method="saveEquCStandardEqu">
+		</action>
+		<action name="deleteEquCStandardEqu"
+			class="power.web.equ.standardpackage.action.EquCStandardEquAction"
+			method="deleteEquCStandardEqu">
+		</action>
+		<action name="lockEquCStandardEqu"
+			class="power.web.equ.standardpackage.action.EquCStandardEquAction"
+			method="lockEquCStandardEqu">
+		</action>
+		<action name="unlockEquCStandardEqu"
+			class="power.web.equ.standardpackage.action.EquCStandardEquAction"
+			method="unlockEquCStandardEqu">
+		</action>
+		<action name="updateEquCStandardEqu"
+			class="power.web.equ.standardpackage.action.EquCStandardEquAction"
+			method="updateEquCStandardEqu">
+		</action>
+		<action name="getEquCStandardEquListToUse"
+			class="power.web.equ.standardpackage.action.EquCStandardEquAction"
+			method="getEquCStandardEquListToUse">
+		</action>
+		<!-- 材料 -->
+		<action name="getEquCStandardMainmatList"
+			class="power.web.equ.standardpackage.action.EquCStandardMainmatAction"
+			method="getEquCStandardMainmatList">
+		</action>
+		<action name="saveEquCStandardMainmat"
+			class="power.web.equ.standardpackage.action.EquCStandardMainmatAction"
+			method="saveEquCStandardMainmat">
+		</action>
+		
+		<!-- 人工 -->
+		<action name="getEquCStandardManplanList"
+			class="power.web.equ.standardpackage.action.EquCStandardManplanAction"
+			method="getEquCStandardManplanList">
+		</action>
+		<action name="saveEquCStandardManplan"
+			class="power.web.equ.standardpackage.action.EquCStandardManplanAction"
+			method="saveEquCStandardManplan">
+		</action>
+		<action name="deleteEquCStandardManplan"
+			class="power.web.equ.standardpackage.action.EquCStandardManplanAction"
+			method="deleteEquCStandardManplan">
+		</action>
+		<action name="updateEquCStandardManplan"
+			class="power.web.equ.standardpackage.action.EquCStandardManplanAction"
+			method="updateEquCStandardManplan">
+		</action>
+		<action name="useprolist"
+			class="power.web.equ.standardpackage.action.EquCStandardManplanAction"
+			method="useprolist">
+		</action>
+		<!-- 服务-->
+
+		<action name="getEquCStandardServplanList"
+			class="power.web.equ.standardpackage.action.EquCStandardServAction"
+			method="getEquCStandardServplanList">
+		</action>
+		<action name="saveEquCStandardServplan"
+			class="power.web.equ.standardpackage.action.EquCStandardServAction"
+			method="saveEquCStandardServplan">
+		</action>
+		<!-- 工序 -->
+		<action name="getEquCStandardOrderstepList"
+			class="power.web.equ.standardpackage.action.EquCStandardOrderstepAction"
+			method="getEquCStandardOrderstepList">
+		</action>
+		<action name="saveEquCStandardOrderstep"
+			class="power.web.equ.standardpackage.action.EquCStandardOrderstepAction"
+			method="saveEquCStandardOrderstep">
+		</action>
+		<action name="deleteEquCStandardOrderstep"
+			class="power.web.equ.standardpackage.action.EquCStandardOrderstepAction"
+			method="deleteEquCStandardOrderstep">
+		</action>
+		<action name="updateEquCStandardOrderstep"
+			class="power.web.equ.standardpackage.action.EquCStandardOrderstepAction"
+			method="updateEquCStandardOrderstep">
+		</action>
+		<!-- 维修方案 -->
+		<action name="getEquCStandardRepairmethodList"
+			class="power.web.equ.standardpackage.action.EquCStandardRepairmethodAction"
+			method="getEquCStandardRepairmethodList">
+		</action>
+		<action name="saveEquCStandardRepairmethod"
+			class="power.web.equ.standardpackage.action.EquCStandardRepairmethodAction"
+			method="saveEquCStandardRepairmethod">
+		</action>
+		<action name="deleteEquCStandardRepairmethod"
+			class="power.web.equ.standardpackage.action.EquCStandardRepairmethodAction"
+			method="deleteEquCStandardRepairmethod">
+		</action>
+		<action name="updateEquCStandardRepairmethod"
+			class="power.web.equ.standardpackage.action.EquCStandardRepairmethodAction"
+			method="updateEquCStandardRepairmethod">
+		</action>
+		<action name="lockEquCStandardRepairmethod"
+			class="power.web.equ.standardpackage.action.EquCStandardRepairmethodAction"
+			method="lockEquCStandardRepairmethod">
+		</action>
+		<action name="unlockEquCStandardRepairmethod"
+			class="power.web.equ.standardpackage.action.EquCStandardRepairmethodAction"
+			method="unlockEquCStandardRepairmethod">
+		</action>
+		<action name="deleteEquCStandardRepairmethodFile"
+			class="power.web.equ.standardpackage.action.EquCStandardRepairmethodAction"
+			method="deleteEquCStandardRepairmethodFile">
+		</action>
+		<action name="getEquCStandardRepairmethodListToUse"
+			class="power.web.equ.standardpackage.action.EquCStandardRepairmethodAction"
+			method="getEquCStandardRepairmethodListToUse">
+		</action>
+		<!-- 维修模式 -->
+		<action name="getEquCStandardRepairmodeList"
+			class="power.web.equ.standardpackage.action.EquCStandardRepairmodeAction"
+			method="getEquCStandardRepairmodeList">
+		</action>
+		<action name="saveEquCStandardRepairmode"
+			class="power.web.equ.standardpackage.action.EquCStandardRepairmodeAction"
+			method="saveEquCStandardRepairmode">
+		</action>
+		<action name="deleteEquCStandardRepairmode"
+			class="power.web.equ.standardpackage.action.EquCStandardRepairmodeAction"
+			method="deleteEquCStandardRepairmode">
+		</action>
+		<action name="deleteEquCStandardRepairmodes"
+			class="power.web.equ.standardpackage.action.EquCStandardRepairmodeAction"
+			method="deleteEquCStandardRepairmodes">
+		</action>
+		<action name="updateEquCStandardRepairmode"
+			class="power.web.equ.standardpackage.action.EquCStandardRepairmodeAction"
+			method="updateEquCStandardRepairmode">
+		</action>
+		<action name="lockEquCStandardRepairmodes"
+			class="power.web.equ.standardpackage.action.EquCStandardRepairmodeAction"
+			method="lockEquCStandardRepairmodes">
+		</action>
+		<action name="unlockEquCStandardRepairmodes"
+			class="power.web.equ.standardpackage.action.EquCStandardRepairmodeAction"
+			method="unlockEquCStandardRepairmodes">
+		</action>
+		<action name="getEquCStandardRepairmodeListToUse"
+			class="power.web.equ.standardpackage.action.EquCStandardRepairmodeAction"
+			method="getEquCStandardRepairmodeListToUse">
+		</action>
+		<!-- 相关文档 -->
+		<action name="getEquCStandardStepdocumentsList"
+			class="power.web.equ.standardpackage.action.EquCStandardStepdocumentsAction"
+			method="getEquCStandardStepdocumentsList">
+		</action>
+		<action name="saveEquCStandardStepdocuments"
+			class="power.web.equ.standardpackage.action.EquCStandardStepdocumentsAction"
+			method="saveEquCStandardStepdocuments">
+		</action>
+		<action name="deleteEquCStandardStepdocuments"
+			class="power.web.equ.standardpackage.action.EquCStandardStepdocumentsAction"
+			method="deleteEquCStandardStepdocuments">
+		</action>
+		<action name="updateEquCStandardStepdocuments"
+			class="power.web.equ.standardpackage.action.EquCStandardStepdocumentsAction"
+			method="updateEquCStandardStepdocuments">
+		</action>
+		<action name="deleteEquCStandardStepdocumentsFiles"
+			class="power.web.equ.standardpackage.action.EquCStandardStepdocumentsAction"
+			method="deleteEquCStandardStepdocumentsFiles">
+		</action>
+		
+		<!-- 工具 -->
+		<action name="addEquCStandardTools"
+			class="power.web.equ.standardpackage.action.EquCStandardToolAction"
+			method="addEquCStandardTools">
+		</action>
+		<action name="updateEquCStandardTools"
+			class="power.web.equ.standardpackage.action.EquCStandardToolAction"
+			method="updateEquCStandardTools">
+		</action>
+		<action name="deleteEquCStandardTool"
+			class="power.web.equ.standardpackage.action.EquCStandardToolAction"
+			method="deleteEquCStandardTool">
+		</action>
+		<action name="deleteEquCStandardTools"
+			class="power.web.equ.standardpackage.action.EquCStandardToolAction"
+			method="deleteEquCStandardTools">
+		</action>
+		<action name="findAll"
+			class="power.web.equ.standardpackage.action.EquCStandardToolAction"
+			method="findAll">
+		</action>
+		
+		<!-- 设备检修台帐 -->
+		<action name="findListByEquCode"
+			class="power.web.equ.standardpackage.action.EquMaintenanceAction"
+			method="findListByEquCode">
+		</action>
+		<action name="addMaintenance"
+			class="power.web.equ.standardpackage.action.EquMaintenanceAction"
+			method="addMaintenance">
+		</action>
+		<action name="updateMaintenance"
+			class="power.web.equ.standardpackage.action.EquMaintenanceAction"
+			method="updateMaintenance">
+		</action>
+		<action name="deleteMaintenance"
+			class="power.web.equ.standardpackage.action.EquMaintenanceAction"
+			method="deleteMaintenance">
+		</action>
+	</package>
+</struts>

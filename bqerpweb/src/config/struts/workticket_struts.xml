@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>   
+	<include file="struts-validation.xml" />
+	<package name="workticket" namespace="/workticket" extends="jfreechart-default">
+		<!-- 标识牌类型维护 -->
+		<action name="getMarkcardTypeList" class="power.web.workticket.markcard.action.MarkcardTypeMaintAction" method="getMarkcardTypeList"></action> 
+	    <action name="addMarkcardType" class="power.web.workticket.markcard.action.MarkcardTypeMaintAction" method="addMarkcardType"></action>		
+		<action name="updateMarkcardType" class="power.web.workticket.markcard.action.MarkcardTypeMaintAction" method="updateMarkcardType"></action> 
+		<action name="deleteMarkcardType" class="power.web.workticket.markcard.action.MarkcardTypeMaintAction" method="deleteMarkcardType"></action> 
+		
+		<!-- 动火票内容 -->
+		<action name="getFireContentList" class="power.web.workticket.fire.action.FireContentAction" method="getFireContentList"></action> 
+		<action name="addFireContent" class="power.web.workticket.fire.action.FireContentAction" method="addFireContent"></action> 
+		<action name="updateFireContent" class="power.web.workticket.fire.action.FireContentAction" method="updateFireContent"></action> 
+		<action name="deleteFireContent" class="power.web.workticket.fire.action.FireContentAction" method="deleteFireContent"></action> 
+	    
+		<!-- 工作票类型维护 -->
+		<action name="getWorkTicket" class="power.web.workticket.workticketpattern.action.WorkTicketAction" method="getWorkTicket"></action>
+		<action name="addWorkTicket" class="power.web.workticket.workticketpattern.action.WorkTicketAction" method="addWorkTicket"></action>	
+		<action name="updateWorkTicket" class="power.web.workticket.workticketpattern.action.WorkTicketAction" method="updateWorkTicket"></action>	
+		<action name="deleteWorkTicket" class="power.web.workticket.workticketpattern.action.WorkTicketAction" method="deleteWorkTicket"></action>
+	
+		<!-- 动火车票级别维护 -->
+		<action name="getWorkTicketFireLevel" class="power.web.workticket.firelevel.action.WorkTicketFireLevelAction" method="getWorkTicketFireLevel"></action>
+    	<action name="addWorkTicketFireLevel" class="power.web.workticket.firelevel.action.WorkTicketFireLevelAction" method="addWorkTicketFireLevel"></action>
+		<action name="updateWorkTicketFireLevel" class="power.web.workticket.firelevel.action.WorkTicketFireLevelAction" method="updateWorkTicketFireLevel"></action>
+		<action name="deleteWorkTicketFireLevel" class="power.web.workticket.firelevel.action.WorkTicketFireLevelAction" method="deleteWorkTicketFireLevel"></action>
+
+		
+		<!-- 工作类型维护 -->
+		<action name="getWorkType" class="power.web.workticket.worktype.action.WorkTicketWorkTypeAction" method="getWorkTicketWorkType"></action>
+		<action name="addWorkType" class="power.web.workticket.worktype.action.WorkTicketWorkTypeAction" method="addWorkTicketWorkType"></action>
+		<action name="updateWorkType" class="power.web.workticket.worktype.action.WorkTicketWorkTypeAction" method="updateWorkTicketWorkType"></action>
+		<action name="delsWorkType" class="power.web.workticket.worktype.action.WorkTicketWorkTypeAction" method="delsWorkTicketWorkType"></action>
+		<!-- 工作票类型带“所有”选项 -->
+		<action name="getWorkTypeListAll" class="power.web.workticket.worktype.action.WorkTicketWorkTypeAction" method="getTicketKeywordList"></action>
+
+		<!-- 安全措施项目维护 -->
+		<action name="getWorkticketType" class="power.web.workticket.safetyitemmaint.action.WorkticketTypeAction" method="getWorkticketType"></action>
+		<!-- 修改完成后删除wzhyan -->
+		<action name="searchSafety" class="power.web.workticket.safetyitemmaint.action.WorktickSafetyAction" method="searchSafety"></action>
+		
+		<action name="deleteSafety" class="power.web.workticket.safetyitemmaint.action.WorktickSafetyAction" method="deleteSafety"></action>
+		<action name="updateSafety" class="power.web.workticket.safetyitemmaint.action.WorktickSafetyAction" method="updateSafety"></action>
+		<action name="addSafety" class="power.web.workticket.safetyitemmaint.action.WorktickSafetyAction" method="addSafety"></action>
+		<action name="getMarkcardType" class="power.web.workticket.safetyitemmaint.action.RunCMarkcardTypeAction" method="getMarkcardType"></action>
+		<!-- 工作票来源维护 -->		
+		<action name="getSourceList" class="power.web.workticket.sourcemaint.action.RunCWorkticketSourceAction"	method="getSourceList"></action>
+		<action name="deleteSource" class="power.web.workticket.sourcemaint.action.RunCWorkticketSourceAction" method="deleteSource"></action>
+		<action name="addSource" class="power.web.workticket.sourcemaint.action.RunCWorkticketSourceAction" method="addSource">	</action>
+		<action name="updateSource" class="power.web.workticket.sourcemaint.action.RunCWorkticketSourceAction" method="updateSource"></action>
+
+		<!-- 工作条件维护 -->
+		<action name="getWorkConditionList" class="power.web.workticket.workcondition.action.WorkConditionMaintAction" method="getWorkConditionList"/>
+		<action name="addWorkCondition" class="power.web.workticket.workcondition.action.WorkConditionMaintAction" method="addWorkCondition"/>
+		<action name="updateWorkCondition" class="power.web.workticket.workcondition.action.WorkConditionMaintAction" method="updateWorkCondition"/>
+		<action name="deleteWorkCondition" class="power.web.workticket.workcondition.action.WorkConditionMaintAction" method="deleteWorkCondition"/>
+	
+		<!-- 标点符号维护 -->
+	    <action name="getFlagList" class="power.web.workticket.flag.action.FlagMaintenanceAction" method="getFlagList"></action>
+	    <action name="addFlag" class="power.web.workticket.flag.action.FlagMaintenanceAction" method="addFlag"></action>
+	    <action name="updateFlag" class="power.web.workticket.flag.action.FlagMaintenanceAction" method="updateFlag"></action>
+	    <action name="deleteFlag" class="power.web.workticket.flag.action.FlagMaintenanceAction" method="deleteFlag"></action>
+	    
+	    <!-- 工作票安全关键词维护 -->
+	    <action name="getTicketKeywordList" class="power.web.workticket.safetykey.action.WorkticketSafetyKeyMaintAction" method="getTicketKeywordList"></action>
+		<action name="getDataList" class="power.web.workticket.safetykey.action.WorkticketSafetyKeyMaintAction" method="getDataList"></action>
+		<action name="getReverseWorkType" class="power.web.workticket.safetykey.action.WorkticketSafetyKeyMaintAction" method="getReverseWorkType"></action>
+		<action name="getReverseKeyById" class="power.web.workticket.safetykey.action.WorkticketSafetyKeyMaintAction" method="getReverseWorkType"></action>
+		<action name="addSafetyKey" class="power.web.workticket.safetykey.action.WorkticketSafetyKeyMaintAction" method="addSafetyKey"></action>
+		<action name="updateSafetyKey" class="power.web.workticket.safetykey.action.WorkticketSafetyKeyMaintAction" method="updateSafetyKey"></action>
+		<action name="deleteSafetyKey" class="power.web.workticket.safetykey.action.WorkticketSafetyKeyMaintAction" method="deleteSafetyKey"></action>
+		
+		<!--  工作票内容关键词维护 --> 
+		<action name="getContentKeyList" class="power.web.workticket.contentkey.action.ContentKeyMaintenanceAction" method="getContentKeyList" /> 
+		<action name="addContentKey" class="power.web.workticket.contentkey.action.ContentKeyMaintenanceAction" method="addContentKey" /> 
+		<action name="updateContentKey" class="power.web.workticket.contentkey.action.ContentKeyMaintenanceAction" method="updateContentKey" /> 
+		<action name="deleteContentKey" class="power.web.workticket.contentkey.action.ContentKeyMaintenanceAction" method="deleteContentKey" /> 
+		<action name="getTicketTypeCodeList" class="power.web.workticket.contentkey.action.ContentKeyMaintenanceAction" method="getTicketTypeCodeList" /> 
+	
+		<!-- 标识牌维护 -->
+		<action name="getMarkcard" class="power.web.workticket.markcardmaint.action.RunCMarkcardAction" method="getMarkcard"></action> 
+		<action name="getWorkticketMarkcard" class="power.web.workticket.markcardmaint.action.MarkcardMaintAction" method="getWorkticketMarkcard"></action>
+		<action name="addWorkticketMarkcard" class="power.web.workticket.markcardmaint.action.MarkcardMaintAction" method="addWorkticketMarkcard"></action>
+		<action name="updateWorkticketMarkcard" class="power.web.workticket.markcardmaint.action.MarkcardMaintAction" method="updateWorkticketMarkcard"></action>
+		<action name="deleteMultiMackcard" class="power.web.workticket.markcardmaint.action.MarkcardMaintAction" method="deleteMultiMackcard"></action>   
+		<!-- 三种人维护  -->
+	    <action name="getroleList" class="power.web.workticket.threekindperson.action.ThreeKindPersonMaintAction" method="getroleList"></action>
+	    <action name="getUserList" class="power.web.workticket.threekindperson.action.ThreeKindPersonMaintAction" method="getUserList"></action>
+	    <action name="addSelectedUser" class="power.web.workticket.threekindperson.action.ThreeKindPersonMaintAction" method="addSelectedUser"></action>
+	    <action name="delSelectedUser" class="power.web.workticket.threekindperson.action.ThreeKindPersonMaintAction" method="delSelectedUser"></action>
+	    <!-- 工作票区域维护 -->
+		<action name="getBelongSystem" class="power.web.workticket.workticketlocation.action.WorkTicketBlockAction" method="getBelongSystem"></action>
+		<action name="addLocation" class="power.web.workticket.workticketlocation.action.WorkTicketLocationAction" method="addLocation"></action>
+		<action name="updateLocation" class="power.web.workticket.workticketlocation.action.WorkTicketLocationAction" method="updateLocation"></action>
+		<action name="getLocationList" class="power.web.workticket.workticketlocation.action.WorkTicketLocationAction" method="getLocationList"></action>
+		<action name="deleteLocation" class="power.web.workticket.workticketlocation.action.WorkTicketLocationAction" method="deleteLocation"></action>
+		
+		<!-- 压板维护 -->
+		<action name="getPressboardTreeNode" class="power.web.workticket.pressboard.action.PressboardMaintAction" method="getPressboardTreeNode"></action> 
+		<action name="addPressboard" class="power.web.workticket.pressboard.action.PressboardMaintAction" method="addPressboard"></action> 
+		<action name="updatePressboard" class="power.web.workticket.pressboard.action.PressboardMaintAction" method="updatePressboard"></action> 
+		<action name="deletePressboard" class="power.web.workticket.pressboard.action.PressboardMaintAction" method="deletePressboard"></action> 
+				
+		<!-- 工作票明细 -->
+		<action name="getDetailWorkticketTypeName" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getWorkticketTypeName"></action> 
+		<action name="getDetailWorkticketSource" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getWorkticketSource"></action> 
+		<action name="getDetailRepairSpecialityType" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getRepairSpecialityType"></action>
+		<action name="getDetailReceiveSpecialityType" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getReceiveSpecialityType"></action> 
+		<action name="getDetailWorkCondition" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getWorkCondition"></action>
+		<action name="getDetailEquList" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getEquList"></action> 
+		<action name="getDetailFireLevel" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getFireLevel"></action> 
+		<action name="getFireLevelByWorkticketNo" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getFireLevelByWorkticketNo"/>
+		<action name="getDetailWorkticketBaseInfoByNo" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getWorkticketBaseInfoByNo"></action>
+		<action name="addDetailWorkticketBaseInfo" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="addWorkticketBaseInfo"></action>
+		<action name="updateDetailWorkticketBaseInfo" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="updateWorkticketBaseInfo"></action>
+		<action name="getDetailTicketInfoByCode" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getTicketInfoByCode"></action>
+		<action name="getDetailMapByWorkticketNo" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getMapByWorkticketNo"></action>
+		<!-- 根据老数据产生一条新数据并删除老数据 add by sltang -->
+		<action name="createNewStandarWorktickect" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="createNewStandarWorktickect"></action>
+		<!-- 获得工单管理中的接收专业 add by liuyi  -->
+		<action name="getWorkOrderSpecialityType" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getWorkOrderSpecialityType"></action>
+		
+		
+		<action name="updateDetailWorkticketInfoByOld" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="updateDetailWorkticketInfoByOld"></action>
+		<action name="getDetailWorkticketStatusRef" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getWorkticketStatusRef"></action> 
+		<action name="getDetailRefWorkticket" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getRefWorkticket"></action> 
+		<action name="getDetailWorkticketTypeRef" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getDetailWorkticketTypeRef"></action> 
+		<action name="getWatcher" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getWatcher"></action>
+		
+		<action name="getDetailFireCharge" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getFireCharge"></action>
+		<action name="getDetailCharger" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getCharger"></action>
+	               <!-- 获得由终结票生成的工作票列表 add by fyyang 081230 -->
+		<action name="getHisWorkticketList" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getHisWorkticketList" />
+		
+		
+	  
+		<!-- 工作票上报列表 -->
+		<action name="getEquBlock" class="power.web.workticket.register.action.WorkticketReportAction" method="getEquBlock"></action>
+		<action name="getWorkticketApproveList" class="power.web.workticket.register.action.WorkticketReportAction" method="getWorkticketApproveList"></action>
+		<action name="deleteWorkticketNo" class="power.web.workticket.register.action.WorkticketReportAction" method="deleteWorkticketNo"></action>
+		<action name="reportWorkticketNo" class="power.web.workticket.register.action.WorkticketReportAction" method="reportWorkticketNo"></action>
+		<action name="getWorkticketTypeForReport" class="power.web.workticket.register.action.WorkticketReportAction" method="getWorkticketTypeForReport"></action>
+		   <!-- add by fyyang 081230  原上报页面状态的action为getDetailWorkticketStatusRef现改为下面的action-->
+		<action name="getWorkticketStatusForReport" class="power.web.workticket.register.action.WorkticketReportAction" method="getWorkticketStatusForReport"></action>
+		
+		<!-- 工作票填写-工作票安措tab -->
+		
+		
+		<action name="getSafetyContent" class="power.web.workticket.register.action.WorkticketSafetyAction" method="getSafetyContent"></action>
+		<!-- add 090325-->
+		<action name="modifySafety" class="power.web.workticket.register.action.WorkticketSafetyAction" method="modifySafety"></action>
+		<!-- 改完再删除 -->
+		<action name="getSafetyDetail" class="power.web.workticket.register.action.WorkticketSafetyAction" method="getSafetyDetail"></action>
+		
+		
+		<action name="getSafetyContents" class="power.web.workticket.register.action.WorkticketSafetyAction" method="getSafetyContents"></action>
+		<action name="getFlagIdList" class="power.web.workticket.register.action.WorkticketSafetyAction" method="getFlagIdList"></action>
+		<action name="getKeywordList" class="power.web.workticket.register.action.WorkticketSafetyAction" method="getKeywordList"></action>
+		
+
+		
+		<action name="getTreeForSelect" class="power.web.workticket.register.action.WorkticketSafetyAction" method="getTreeForSelect"></action>
+		<action name="getReportWorkticket" class="power.web.workticket.register.action.WorkticketSafetyAction" method="getReportWorkticket"></action>
+		<!-- 工作票内容填写 -->
+		<action name="getContentAllWithComm" class="power.web.workticket.register.action.WorkticketContentAction" method="getContentAllWithComm" />
+		<action name="getContentAreaContent" class="power.web.workticket.register.action.WorkticketContentAction" method="getContentAreaContent" />
+		<action name="getContentWorktypeName" class="power.web.workticket.register.action.WorkticketContentAction" method="getContentWorktypeName" />
+		<action name="getContentFlagId" class="power.web.workticket.register.action.WorkticketContentAction" method="getContentFlagId" />
+		
+		
+		<action name="getContentWorkticketList" class="power.web.workticket.register.action.WorkticketContentAction" method="getContentWorkticketList" /> 
+		
+			<!-- 已不使用 090328 
+			<action name="deleteControlForRegister" class="power.web.workticket.register.action.WorkticketDangerAction" method="deleteControl" />
+			<action name="deleteSafetyDetail" class="power.web.workticket.register.action.WorkticketSafetyAction" method="deleteSafetyDetail"></action>
+					<action name="updateSafetyBaseInfo" class="power.web.workticket.register.action.WorkticketSafetyAction" method="updateSafetyBaseInfo"></action>
+			<action name="addSafetyBaseInfo" class="power.web.workticket.register.action.WorkticketSafetyAction" method="addSafetyBaseInfo"></action>
+			<action name="updateWorkticketSafetyMeasureFire" class="power.web.workticket.register.action.WorkticketSafetyAction" method="updateWorkticketSafetyMeasureFire"></action>
+			<action name="getWorkticketSafetyMeasureFire" class="power.web.workticket.register.action.WorkticketSafetyAction" method="getWorkticketSafetyMeasureFire"></action>
+		<action name="addContentWorkticketContent" class="power.web.workticket.register.action.WorkticketContentAction" method="addContentWorkticketContent" />
+		<action name="updateContentWorkticketContent" class="power.web.workticket.register.action.WorkticketContentAction" method="updateContentWorkticketContent" />
+		<action name="deleteContentWorkticketContent" class="power.web.workticket.register.action.WorkticketContentAction" method="deleteContentWorkticketContent" />
+		 -->
+		
+		<!-- wzhyan -->
+		<action name="modifyContents" class="power.web.workticket.register.action.WorkticketContentAction" method="modifyContents" />
+		<action name="getSafetyBy" class="power.web.workticket.register.action.WorkticketSafetyAction" method="getSafetyBy"></action>
+		<action name="getMaintSafetyBy" class="power.web.workticket.safetyitemmaint.action.WorktickSafetyAction" method="getMaintSafetyBy"></action>
+		
+		
+		<action name="getContentFireList" class="power.web.workticket.register.action.WorkticketContentAction" method="getContentFireList" />
+		<action name="getContentWorkticketMember" class="power.web.workticket.register.action.WorkticketContentAction" method="getContentWorkticketMember" />
+		<action name="getContentWorkticketByNo" class="power.web.workticket.register.action.WorkticketContentAction" method="getContentWorkticketByNo" />
+		   <!-- add by fyyang 090306 -->
+		<action name="getDeptIdByCode" class="power.web.workticket.register.action.WorkticketContentAction" method="getDeptIdByCode" />
+		<!-- 工作票填写弹出窗口 -->
+		<action name="getContentStaffList" class="power.web.workticket.register.action.WorkticketContentAction" method="getStaffList"></action>
+		<action name="getContentActorList" class="power.web.workticket.register.action.WorkticketContentAction" method="getActorList"></action>
+		<action name="addContentFloaterActor" class="power.web.workticket.register.action.WorkticketContentAction" method="addFloaterActor"></action>
+		<action name="addContentNormalActor" class="power.web.workticket.register.action.WorkticketContentAction" method="addNormalActor"></action>
+		<action name="deleteContentActor" class="power.web.workticket.register.action.WorkticketContentAction" method="deleteActor"></action>
+		<action name="getContentFireContentList" class="power.web.workticket.register.action.WorkticketContentAction" method="getFireContentList"></action>
+		<action name="addContentFireContent" class="power.web.workticket.register.action.WorkticketContentAction" method="addFireContent"></action>
+		<action name="getContentTicketFireContentList" class="power.web.workticket.register.action.WorkticketContentAction" method="getTicketFireContentList"></action>
+		<action name="deleteContentFireContent" class="power.web.workticket.register.action.WorkticketContentAction" method="delFireContent"></action>
+		<action name="getRecordTotal" class="power.web.workticket.register.action.WorkticketContentAction" method="getRecordTotal"></action>
+		<action name="getFireRecordTotal" class="power.web.workticket.register.action.WorkticketContentAction" method="getFireRecordTotal"></action>
+		<action name="updateContent" class="power.web.workticket.register.action.WorkticketContentAction" method="updateContent"></action>
+		
+		<!-- 工作票查询 -->
+		<action name="getQueryWorkticketType" class="power.web.workticket.query.action.WorkticketQueryAction" method="getQueryWorkticketType"></action>
+		<action name="getQueryWorkticketStatus" class="power.web.workticket.query.action.WorkticketQueryAction" method="getQueryWorkticketStatus"></action>
+		<action name="getQueryEquBlock" class="power.web.workticket.query.action.WorkticketQueryAction" method="getQueryEquBlock"></action>
+		<action name="getQueryWorkticketList" class="power.web.workticket.query.action.WorkticketQueryAction" method="getQueryWorkticketList"></action>
+	
+	    <!-- 工作票统计 -->
+	    <action name="getStatusStatData" class="power.web.workticket.query.action.WorkticketQueryAction" method="getStatusStatData"></action>
+		<action name="getRateStatData" class="power.web.workticket.query.action.WorkticketQueryAction" method="getRateStatData"></action>
+		
+	
+		<!-- 工作票终结预警查询 -->
+		<action name="getEndWarnWorkticketType" class="power.web.workticket.query.action.WorkticketEndWarnQueryAction" method="getEndWarnWorkticketType"></action>
+		<action name="getEndWarnRunSpeciality" class="power.web.workticket.query.action.WorkticketEndWarnQueryAction" method="getEndWarnRunSpeciality"></action>
+		<action name="getEndWarnWorkticketList" class="power.web.workticket.query.action.WorkticketEndWarnQueryAction" method="getEndWarnWorkticketList"></action>
+		<!-- add by sltang 查找预警操作票 -->
+		<action name="getOptickectCode" class="power.web.workticket.query.action.WorkticketEndWarnQueryAction" method="getOptickectCode"></action>
+		
+		
+		
+		<!-- 危险点类型维护 -->
+		<action name="getDangerTypeList" class="power.web.workticket.danger.DangerTypeAction" method="getWorkticketDangerTypeList"></action> 
+	    <action name="addDangerType" class="power.web.workticket.danger.DangerTypeAction" method="addWorkticketDangerType"></action>		
+		<action name="updateDangerType" class="power.web.workticket.danger.DangerTypeAction" method="updateWorkticketDangerType"></action> 
+		<action name="deleteDangerType" class="power.web.workticket.danger.DangerTypeAction" method="deleteMultiWorkticketDangerType"></action>
+		<action name="getDangerTypeQueryWorkticketType" class="power.web.workticket.danger.DangerTypeAction" method="getQueryWorkticketType"></action>
+
+		
+		<!-- 工作票填写 危险点 -->
+		<action name="CoDataDangerType" class="power.web.workticket.register.action.WorkticketDangerAction" method="CoDataDangerType" />
+		<action name="findDangerListForRegister" class="power.web.workticket.register.action.WorkticketDangerAction" method="findDangerList" />
+		<action name="findDangerControlList" class="power.web.workticket.register.action.WorkticketDangerAction" method="findDangerControlList" />
+		
+		<action name="deleteDangerForRegister" class="power.web.workticket.register.action.WorkticketDangerAction" method="deleteDanger" />
+		
+		<action name="saveControlForRegister" class="power.web.workticket.register.action.WorkticketDangerAction" method="saveControl" />
+		<action name="saveDangerForRegister" class="power.web.workticket.register.action.WorkticketDangerAction" method="saveDanger" />
+		<action name="findDangerListForSelect" class="power.web.workticket.register.action.WorkticketDangerAction" method="findDangerListForSelect" />
+		
+		<!-- 危险点类型维护 -->
+		<action name="getDangerList" class="power.web.workticket.danger.DangerAction" method="getWorkticketDangerList"></action> 
+	    <action name="addDanger" class="power.web.workticket.danger.DangerAction" method="addWorkticketDanger"></action>		
+		<action name="updateDanger" class="power.web.workticket.danger.DangerAction" method="updateWorkticketDanger"></action> 
+		<action name="deleteDanger" class="power.web.workticket.danger.DangerAction" method="deleteMultiWorkticketDanger"></action>
+		<action name="getQueryDangerType" class="power.web.workticket.danger.DangerAction" method="getQueryDangerType"></action>
+	    
+	    
+	       <!-- 标准票上报列表的审批状态 -->
+	    <action name="getStandardTypeForReport" class="power.web.standardworkticket.approve.action.ApproveQueryAction" method="getTypeForReport"></action>
+	     <action name="getStandardTypeForApprove" class="power.web.standardworkticket.approve.action.ApproveQueryAction" method="getTypeForApprove"></action>
+	      <action name="getStandardApproveUrl" class="power.web.standardworkticket.approve.action.ApproveQueryAction" method="getApproveUrl"></action>
+	     <!-- 标准票审批方式 -->
+	      <action name="getStandardApproveMethod" class="power.web.standardworkticket.approve.action.ApproveSignAction" method="getApproveMethod"></action>
+	     <!-- 标准票审批列表 -->
+	     <action name="getStandardApproveList" class="power.web.standardworkticket.approve.action.ApproveQueryAction" method="getApproveList"></action>
+	     <!-- 标准票审批 -->
+	     <action name="StandardTicketReport" class="power.web.standardworkticket.approve.action.ApproveSignAction" method="report"></action>
+	     <action name="StandardAhDeptApprove" class="power.web.standardworkticket.approve.action.ApproveSignAction" method="ahDeptApprove"></action>
+	     <action name="StandardEngineerApprove" class="power.web.standardworkticket.approve.action.ApproveSignAction" method="engineerApprove"></action>
+	    <!-- 标准票查询 -->
+	    <action name="getQueryStandticketList" class="power.web.standardworkticket.query.action.StandardTicketQuery" method="getQueryStandticketList"></action>
+	    <action name="getStandTypeForQuery" class="power.web.standardworkticket.query.action.StandardTicketQuery" method="getTypeForApprove"></action>
+	      <!-- 由标准票生成 -->
+	      <action name="getStandListForSelect" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getStandListForSelect"></action>
+	     <!-- 
+	     <action name="createWorkticketByStandard" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="createWorkticketByStandard"></action>
+	     -->
+	      <action name="getTaskList" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="getTaskList"></action>
+	     
+	     
+	     
+	    <!-- 安措拆除页面  add by fyyang 090309-->
+		<action name="getHaulSpecialList" class="power.web.workticketbq.approve.action.SafetyClearAction" method="getHaulSpecialList"></action>
+		<action name="getRunSpecialList" class="power.web.workticketbq.approve.action.SafetyClearAction" method="getRunSpecialList"></action>
+		<action name="getSecurityMeasureList" class="power.web.workticketbq.approve.action.SafetyClearAction" method="getSecurityMeasureList"></action>
+		<action name="getSecurityDetailList" class="power.web.workticketbq.approve.action.SafetyClearAction" method="getSecurityDetailList"></action>
+		<action name="getNotSecurityList" class="power.web.workticketbq.approve.action.SafetyClearAction" method="getNotSecurityList"></action>
+		<action name="saveSafeSecurityReason" class="power.web.workticketbq.approve.action.SafetyClearAction" method="saveSafeSecurityReason"></action>
+	 <!-- 工作票审批信息修改查询  add by fyyang 090330-->
+	  <action name="findApproveInfoForUpdate" class="power.web.workticket.query.action.WorkticketApproveUpdate" method="findApproveInfoForUpdate"></action>
+	   <action name="updateApproveInfo" class="power.web.workticket.query.action.WorkticketApproveUpdate" method="updateApproveInfo"></action>
+		 <!-- 由终结票生成标准票-->
+	 		<action name="findEndWorkticketList" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="findEndWorkticketList"></action> 
+	 		<action name="createStandardByEndNo" class="power.web.workticket.register.action.WorkticketBaseInfoAction" method="createStandardByEndNo"></action> 
+	 <!-- 标准工作票批量审批-->
+	<action name="multiApprove" class="power.web.standardworkticket.approve.action.ApproveSignAction" method="multiApprove"></action>
+	</package>
+</struts>

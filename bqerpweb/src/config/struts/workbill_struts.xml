@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-validation.xml" />
+	<package name="workbill" namespace="/workbill"
+		extends="jfreechart-default">
+		<!-- 工单列表 -->
+		<action name="getAllWorkbillList"
+			class="power.web.equ.workbill.action.EquJWoAction"
+			method="getAllWorkbillList">
+		</action>
+		<action name="checkIfDelete"
+			class="power.web.equ.workbill.action.EquJWoAction"
+			method="checkIfDelete">
+		</action>
+		<action name="deleteWorkbill"
+			class="power.web.equ.workbill.action.EquJWoAction"
+			method="deleteWorkbill">
+		</action>
+		<!-- 工单上报、审批 -->
+		<action name="reportWorkBill"
+			class="power.web.equ.workbill.action.EquJWoAction"
+			method="reportWorkBill">
+		</action>
+		<action name="approveWorkBill"
+			class="power.web.equ.workbill.action.EquJWoAction"
+			method="approveWorkBill">
+		</action>
+		<!-- 工单信息 -->
+		<action name="addWorkBill"
+			class="power.web.equ.workbill.action.equipmentWokeBillAction"
+			method="addWorkBill">
+		</action>
+		<action name="finWorkbill"
+			class="power.web.equ.workbill.action.equipmentWokeBillAction"
+			method="finWorkbill">
+		</action>
+		<action name="updateWorkBill"
+			class="power.web.equ.workbill.action.equipmentWokeBillAction"
+			method="updateWorkBill">
+		</action>
+		<action name="findByFaWoCode"
+			class="power.web.equ.workbill.action.equipmentWokeBillAction"
+			method="findByFaWoCode">
+		</action>
+		<action name="findbywoCode"
+			class="power.web.equ.workbill.action.equipmentWokeBillAction"
+			method="findbywoCode">
+		</action>
+
+
+
+		<!-- 标准包 -->
+		<action name="findBystdPKage"
+			class="power.web.equ.workbill.action.equipmentWokeBillAction"
+			method="findBystdPKage">
+		</action>
+
+
+		<!-- 相关物料 -->
+		<action name="relateMaterielList"
+			class="power.web.equ.workbill.action.RelateMaterielAction"
+			method="relateMaterielList">
+		</action>
+		<action name="addIssueMateriel"
+			class="power.web.equ.workbill.action.RelateMaterielAction"
+			method="addIssueMateriel">
+		</action>
+		<action name="deleteMateriel"
+			class="power.web.equ.workbill.action.RelateMaterielAction"
+			method="deleteMateriel">
+		</action>
+		<action name="chooseIssueMateriel"
+			class="power.web.equ.workbill.action.RelateMaterielAction"
+			method="chooseIssueMateriel">
+		</action>
+		<action name="CancelIssueMateriel"
+			class="power.web.equ.workbill.action.RelateMaterielAction"
+			method="CancelIssueMateriel">
+		</action>
+		<!-- 相关工作票 -->
+		<action name="relateWorkticketAllList"
+			class="power.web.equ.workbill.action.RelateWorkticketAction"
+			method="relateWorkticketAllList">
+		</action>
+		<action name="deleteWorkticketRelation"
+			class="power.web.equ.workbill.action.RelateWorkticketAction"
+			method="deleteWorkticketRelation">
+		</action>
+		<action name="addWorktickets"
+			class="power.web.equ.workbill.action.RelateWorkticketAction"
+			method="addWorktickets">
+		</action>
+		<action name="deleteWorkticket"
+			class="power.web.equ.workbill.action.RelateWorkticketAction"
+			method="deleteWorkticket">
+		</action>
+		<action name="createWorkticket"
+			class="power.web.equ.workbill.action.RelateWorkticketAction"
+			method="createWorkticket">
+		</action>
+		<action name="findWorkticketByWorkticketNo"
+			class="power.web.equ.workbill.action.RelateWorkticketAction"
+			method="findWorkticketByWorkticketNo">
+		</action>
+		<!-- 工序 -->
+		<action name="getEquJOrderstepList"
+			class="power.web.equ.workbill.action.EquJOrderstepAction"
+			method="getEquJOrderstepList">
+		</action>
+		<action name="getEquCOrderstepList"
+			class="power.web.equ.workbill.action.EquJOrderstepAction"
+			method="getEquCOrderstepList">
+		</action>
+		<action name="saveEquJOrderstep"
+			class="power.web.equ.workbill.action.EquJOrderstepAction"
+			method="saveEquJOrderstep">
+		</action>
+		<!-- 人工 -->
+		<action name="useprolist"
+			class="power.web.equ.workbill.action.EquJManpowerAction"
+			method="useprolist">
+		</action>
+		<action name="saveEquJManplan"
+			class="power.web.equ.workbill.action.EquJManpowerAction"
+			method="saveEquJManplan">
+		</action>
+		<action name="getEquJManplan"
+			class="power.web.equ.workbill.action.EquJManpowerAction"
+			method="getEquJManplan">
+		</action>
+		<action name="getEquCManplan"
+			class="power.web.equ.workbill.action.EquJManpowerAction"
+			method="getEquCManplan">
+		</action>
+		<!-- 服务 -->
+
+		<action name="saveEquJStandardService"
+			class="power.web.equ.workbill.action.EquJServAction"
+			method="saveEquJStandardService">
+		</action>
+		<action name="getEquJStandardService"
+			class="power.web.equ.workbill.action.EquJServAction"
+			method="getEquJStandardService">
+		</action>
+		<action name="getEquCStandardService"
+			class="power.web.equ.workbill.action.EquJServAction"
+			method="getEquCStandardService">
+		</action>
+		<action name="getServiceByType"
+			class="power.web.equ.workbill.action.EquServiceAction"
+			method="getServiceByType">
+		</action>
+		<!-- 服务类型 -->
+		<action name="addServiceType"
+			class="power.web.equ.workbill.action.EquServiceAction"
+			method="addServiceType">
+		</action>
+		<action name="updateServiceType"
+			class="power.web.equ.workbill.action.EquServiceAction"
+			method="updateServiceType">
+		</action>
+		<action name="deleteServiceType"
+			class="power.web.equ.workbill.action.EquServiceAction"
+			method="deleteServiceType">
+		</action>
+		<action name="findBySPId"
+			class="power.web.equ.workbill.action.EquServiceAction"
+			method="findBySPId">
+		</action>
+		<action name="findInfoBySId"
+			class="power.web.equ.workbill.action.EquServiceAction"
+			method="findInfoBySId">
+		</action>
+		<!-- 服务维护 -->
+		<action name="getServiceList"
+			class="power.web.equ.workbill.action.EquServiceAction"
+			method="getServiceList">
+		</action>
+		<action name="addService"
+			class="power.web.equ.workbill.action.EquServiceAction"
+			method="addService">
+		</action>
+		<action name="updateService"
+			class="power.web.equ.workbill.action.EquServiceAction"
+			method="updateService">
+		</action>
+		<action name="deleteService"
+			class="power.web.equ.workbill.action.EquServiceAction"
+			method="deleteService">
+		</action>
+		
+		<!-- 工具类型维护 -->
+		<action name="addToolType"
+			class="power.web.equ.workbill.action.EquToolsAction"
+			method="addToolType">
+		</action>
+		
+		<action name="updateToolType"
+			class="power.web.equ.workbill.action.EquToolsAction"
+			method="updateToolType">
+		</action>
+		
+		<action name="deleteToolType"
+			class="power.web.equ.workbill.action.EquToolsAction"
+			method="deleteToolType">
+		</action>
+		
+		<action name="findByPId"
+			class="power.web.equ.workbill.action.EquToolsAction"
+			method="findByPId">
+		</action>
+		
+		<action name="findInfoById"
+			class="power.web.equ.workbill.action.EquToolsAction"
+			method="findInfoById">
+		</action>
+		<!-- 工具维护 -->
+		<action name="getToolList"
+			class="power.web.equ.workbill.action.EquToolsAction"
+			method="getToolList">
+		</action>
+		<action name="addTool"
+			class="power.web.equ.workbill.action.EquToolsAction"
+			method="addTool">
+		</action>
+		<action name="updateTool"
+			class="power.web.equ.workbill.action.EquToolsAction"
+			method="updateTool">
+		</action>
+		<action name="deleteTool"
+			class="power.web.equ.workbill.action.EquToolsAction"
+			method="deleteTool">
+		</action>
+		<!-- 工具 -->
+
+		<action name="saveEquJTools"
+			class="power.web.equ.workbill.action.EquJToolAction"
+			method="saveEquJTools">
+		</action>
+		<action name="findAll"
+			class="power.web.equ.workbill.action.EquJToolAction"
+			method="findAll">
+		</action>
+		<action name="getEquCTools"
+			class="power.web.equ.workbill.action.EquJToolAction"
+			method="getEquCTools">
+		</action>
+		<action name="getToolsByType"
+			class="power.web.equ.workbill.action.EquToolsAction"
+			method="getToolsByType">
+		</action>
+		<!-- 材料 -->
+		<action name="saveEquJMainmat"
+			class="power.web.equ.workbill.action.EquJMatAction"
+			method="saveEquJMainmat">
+		</action>
+		<action name="getEquJMainmat"
+			class="power.web.equ.workbill.action.EquJMatAction"
+			method="getEquJMainmat">
+		</action>
+		<action name="getEquCMainmat"
+			class="power.web.equ.workbill.action.EquJMatAction"
+			method="getEquCMainmat">
+		</action>
+		<!-- 相关文件包 -->
+		<action name="saveEquJStepdocuments"
+			class="power.web.equ.workbill.action.EquJRelatedFilePackageAction"
+			method="saveEquJStepdocuments">
+		</action>
+		<action name="updateEquJStepdocuments"
+			class="power.web.equ.workbill.action.EquJRelatedFilePackageAction"
+			method="updateEquJStepdocuments">
+		</action>
+		<action name="deleteEquJStepdocuments"
+			class="power.web.equ.workbill.action.EquJRelatedFilePackageAction"
+			method="deleteEquJStepdocuments">
+		</action>
+		<action name="deleteEquJStepdocumentsFiles"
+			class="power.web.equ.workbill.action.EquJRelatedFilePackageAction"
+			method="deleteEquJStepdocumentsFiles">
+		</action>
+		<action name="getEquJStepdocumentsList"
+			class="power.web.equ.workbill.action.EquJRelatedFilePackageAction"
+			method="getEquJStepdocumentsList">
+		</action>
+		<action name="getEquCStepdocumentsList"
+			class="power.web.equ.workbill.action.EquJRelatedFilePackageAction"
+			method="getEquCStepdocumentsList">
+		</action>
+
+		<!-- 执行日志 -->
+		<action name="saveEquJWoLog"
+			class="power.web.equ.workbill.action.EquJWologAction"
+			method="saveEquJWoLog">
+		</action>
+		<action name="getEquJWoLog"
+			class="power.web.equ.workbill.action.EquJWologAction"
+			method="getEquJWoLog">
+		</action>
+		<!-- 完结报告 -->
+		<action name="saveEquJFinishedRpt"
+			class="power.web.equ.workbill.action.EquJFinishedRptAction"
+			method="saveEquJFinishedRpt">
+		</action>
+		<action name="updateEquJFinishedRpt"
+			class="power.web.equ.workbill.action.EquJFinishedRptAction"
+			method="updateEquJFinishedRpt">
+		</action>
+		<action name="getEquJFinishedRpt"
+			class="power.web.equ.workbill.action.EquJFinishedRptAction"
+			method="getEquJFinishedRpt">
+		</action>
+		<action name="finishedRptCheckUser"
+			class="power.web.equ.workbill.action.EquJPEUserValidate"
+			method="finishedRptCheckUser">
+		</action>
+
+		<action name="getDefaultWorkerCode"
+			class="power.web.equ.workbill.action.EquJPEUserValidate"
+			method="getDefaultWorkerCode">
+		</action>
+
+
+	</package>
+</struts>

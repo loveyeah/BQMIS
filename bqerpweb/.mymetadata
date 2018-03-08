@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="bqerpweb"
+  id="myeclipse.1231577138406"
+  context-root="/bqerpweb"
+  j2ee-spec="5.0"
+  archive="bqerpweb.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

@@ -1,0 +1,1050 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.2.r232_20090202 Build &lt;2.3.2.v20090218-0730></property>
+    <property name="units">in</property>
+    <method name="beforeFactory"><![CDATA[if(params["no"].value!=null){
+    operateTicket = new Packages.power.web.birt.action.bqmis.ElectricOpticket();
+elecForm = operateTicket.setOperateTicketBean(params["no"].value);
+
+    //监护操作
+    params["select1"].value = elecForm.getSelect1();
+    //单人操作
+    params["select2"].value = elecForm.getSelect2();
+    //单位
+    params["unit"].value = elecForm.getSpecialityName();
+    //编号
+    params["number"].value = elecForm.getOpticketCode();
+    //操作开始时间
+    params["startedDate"].value = elecForm.getStartTime();
+    //终结时间
+    params["finishedDate"].value = elecForm.getEndTime();
+    //操作任务
+    params["opreatedTask"].value = elecForm.getOperateTaskName();
+    //备注
+    params["opreatedMemo"].value = elecForm.getMemo();
+    //操作人
+    params["operator"].value = elecForm.getOperatorName();
+    //监护人
+    params["guardian"].value = elecForm.getChargeBy();
+    //运行值班负责人
+    params["runWatchChargeBy"].value = elecForm.getChargeName();
+}]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="startedDate" id="154">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="finishedDate" id="155">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="opreatedTask" id="156">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="opreatedMemo" id="157">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="operator" id="692">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="guardian" id="630">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="runWatchChargeBy" id="2527">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="number" id="2533">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="unit" id="2534">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="no" id="2538">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="select1" id="2554">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="select2" id="2556">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <script-data-source name="Data Source" id="2439"/>
+    </data-sources>
+    <data-sets>
+        <script-data-set name="Data Set" id="2440">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">countLine</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">operatedItem</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">actualPerformance</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">date</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">countLine</property>
+                </structure>
+                <structure>
+                    <property name="columnName">operatedItem</property>
+                </structure>
+                <structure>
+                    <property name="columnName">actualPerformance</property>
+                </structure>
+                <structure>
+                    <property name="columnName">date</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">countLine</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">operatedItem</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">actualPerformance</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">date</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <method name="open"><![CDATA[count = 0;
+if(params["no"].value!=null){
+list = elecForm.getOperateDetailList();
+}]]></method>
+            <method name="fetch"><![CDATA[if(params["no"].value!=null){
+    if(list != null) {
+        if (count<list.size()) {
+	        row["countLine"] = count+1;
+	        row["operatedItem"] = list[count].getOperateStepName();
+	        row["actualPerformance"] = list[count].getExecStatus();
+	        row["date"] = list[count].getFinishTime();
+	        count++;
+	        return true;
+        }
+        pageNumber = BirtMath.add(BirtMath.roundDown(BirtMath.divide(list.size(),24)),1);
+        if(list.size()<=count &amp;&amp; count<pageNumber*24) {
+            row["practice"] = "";
+	        row["countLine"] = "";
+	        row["operatedItem"] = (count == list.size()?"以下空白":"");
+	        row["date"] = "";
+	        count++;
+	        return true;
+        }
+    }
+}    
+return false;]]></method>
+        </script-data-set>
+    </data-sets>
+    <styles>
+        <style name="crosstab-cell" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="lineStyle" id="2537">
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="topMargin">0.5cm</property>
+            <property name="leftMargin">1.25cm</property>
+            <property name="bottomMargin">0.5cm</property>
+            <property name="rightMargin">1.25cm</property>
+            <page-header>
+                <grid id="2353">
+                    <property name="width">100%</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">kkkkk</property>
+                            <expression name="expression">params["no"].value</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                    </list-property>
+                    <column id="2354">
+                        <property name="width">0.5416666666666666in</property>
+                    </column>
+                    <column id="2355"/>
+                    <column id="2356"/>
+                    <column id="2357">
+                        <property name="width">1.6041666666666667in</property>
+                    </column>
+                    <column id="2358">
+                        <property name="width">0.5729166666666666in</property>
+                    </column>
+                    <column id="2359"/>
+                    <row id="2360">
+                        <cell id="2361">
+                            <property name="colSpan">6</property>
+                            <property name="rowSpan">1</property>
+                            <label id="2388">
+                                <property name="fontFamily">"宋体"</property>
+                                <property name="fontSize">24pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">center</property>
+                                <property name="whiteSpace">normal</property>
+                                <text-property name="text">热力机械操作票</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                    <row id="2374">
+                        <cell id="2375"/>
+                        <cell id="2376"/>
+                        <cell id="2377">
+                            <grid id="2391">
+                                <property name="width">100%</property>
+                                <column id="2392">
+                                    <property name="width">0.2in</property>
+                                </column>
+                                <column id="2393"/>
+                                <column id="2400"/>
+                                <column id="2394"/>
+                                <row id="2395">
+                                    <property name="height">0.2in</property>
+                                    <cell id="2396">
+                                        <data id="2558">
+                                            <property name="borderBottomColor">#000000</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderLeftColor">#000000</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderRightColor">#000000</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="borderTopColor">#000000</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">select1</property>
+                                                    <expression name="expression">params["select1"].value</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">select1</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="2397">
+                                        <property name="colSpan">3</property>
+                                        <property name="rowSpan">1</property>
+                                        <label id="2401">
+                                            <property name="fontFamily">"宋体"</property>
+                                            <property name="fontSize">large</property>
+                                            <text-property name="text">监护操作</text-property>
+                                        </label>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                        <cell id="2378">
+                            <grid id="2416">
+                                <property name="width">100%</property>
+                                <column id="2417">
+                                    <property name="width">0.2in</property>
+                                </column>
+                                <column id="2418"/>
+                                <column id="2419"/>
+                                <column id="2420"/>
+                                <column id="2421"/>
+                                <column id="2422"/>
+                                <row id="2423">
+                                    <property name="height">0.2in</property>
+                                    <cell id="2424">
+                                        <data id="2559">
+                                            <property name="borderBottomColor">#000000</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderLeftColor">#000000</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderRightColor">#000000</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="borderTopColor">#000000</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">select2</property>
+                                                    <expression name="expression">params["select2"].value</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">select2</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="2425">
+                                        <property name="colSpan">5</property>
+                                        <property name="rowSpan">1</property>
+                                        <label id="2430">
+                                            <property name="fontFamily">"宋体"</property>
+                                            <property name="fontSize">large</property>
+                                            <text-property name="text">单人操作</text-property>
+                                        </label>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                        <cell id="2379"/>
+                        <cell id="2380"/>
+                    </row>
+                    <row id="2381">
+                        <cell id="2382">
+                            <label id="2389">
+                                <property name="fontFamily">"宋体"</property>
+                                <property name="fontSize">large</property>
+                                <text-property name="text">单位：</text-property>
+                            </label>
+                        </cell>
+                        <cell id="2383">
+                            <property name="colSpan">2</property>
+                            <property name="rowSpan">1</property>
+                            <data id="2535">
+                                <property name="fontFamily">"宋体"</property>
+                                <property name="fontSize">large</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">unit</property>
+                                        <expression name="expression">params["unit"].value</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">unit</property>
+                            </data>
+                        </cell>
+                        <cell id="2385"/>
+                        <cell id="2386">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                            <label id="2390">
+                                <property name="fontFamily">"宋体"</property>
+                                <property name="fontSize">large</property>
+                                <property name="textAlign">right</property>
+                                <text-property name="text">编号：</text-property>
+                            </label>
+                        </cell>
+                        <cell id="2669">
+                            <data id="2536">
+                                <property name="fontFamily">"宋体"</property>
+                                <property name="fontSize">large</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">number</property>
+                                        <expression name="expression">params["number"].value</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">number</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="2540">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <cell id="2541">
+                            <property name="colSpan">6</property>
+                            <property name="rowSpan">1</property>
+                            <grid id="57">
+                                <property name="width">100%</property>
+                                <column id="58">
+                                    <property name="width">18%</property>
+                                </column>
+                                <column id="59">
+                                    <property name="width">35%</property>
+                                </column>
+                                <column id="60">
+                                    <property name="width">12%</property>
+                                </column>
+                                <column id="61">
+                                    <property name="width">35%</property>
+                                </column>
+                                <row id="62">
+                                    <cell id="63">
+                                        <label id="67">
+                                            <property name="fontFamily">"宋体"</property>
+                                            <property name="fontSize">large</property>
+                                            <text-property name="text">操作开始时间：</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="64">
+                                        <text id="2670">
+                                            <property name="fontFamily">"宋体"</property>
+                                            <property name="fontSize">large</property>
+                                            <property name="contentType">html</property>
+                                            <text-property name="content"><![CDATA[<VALUE-OF format="HTML">params["startedDate"].value</VALUE-OF>]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="65">
+                                        <label id="68">
+                                            <property name="fontFamily">"宋体"</property>
+                                            <property name="fontSize">large</property>
+                                            <text-property name="text">终结时间：</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="66">
+                                        <text id="2671">
+                                            <property name="fontFamily">"宋体"</property>
+                                            <property name="fontSize">large</property>
+                                            <property name="contentType">html</property>
+                                            <text-property name="content"><![CDATA[<VALUE-OF format="HTML">params["finishedDate"].value</VALUE-OF>]]></text-property>
+                                        </text>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                    <row id="2547">
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <cell id="2548">
+                            <property name="colSpan">6</property>
+                            <property name="rowSpan">1</property>
+                            <grid id="104">
+                                <property name="height">0.78125in</property>
+                                <property name="width">100%</property>
+                                <column id="105">
+                                    <property name="width">0.90625in</property>
+                                </column>
+                                <column id="106"/>
+                                <row id="107">
+                                    <property name="height">0.4in</property>
+                                    <cell id="108">
+                                        <label id="102">
+                                            <property name="fontFamily">"宋体"</property>
+                                            <property name="fontSize">large</property>
+                                            <text-property name="text">操作任务：</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="109">
+                                        <text id="701">
+                                            <property name="fontFamily">"宋体"</property>
+                                            <property name="fontSize">large</property>
+                                            <property name="contentType">html</property>
+                                            <text-property name="content"><![CDATA[<VALUE-OF format="HTML">params["opreatedTask"].value</VALUE-OF>]]></text-property>
+                                        </text>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="2328">
+                    <property name="marginTop">0pt</property>
+                    <property name="height">0.3645833333333333in</property>
+                    <property name="width">100%</property>
+                    <column id="2329">
+                        <property name="width">0.3020833333333333in</property>
+                    </column>
+                    <column id="2330">
+                        <property name="width">0.20833333333333334in</property>
+                    </column>
+                    <column id="2331">
+                        <property name="width">0.6145833333333334in</property>
+                    </column>
+                    <column id="2352">
+                        <property name="width">2.2395833333333335in</property>
+                    </column>
+                    <column id="2332">
+                        <property name="width">0.5416666666666666in</property>
+                    </column>
+                    <column id="2345">
+                        <property name="width">0.5in</property>
+                    </column>
+                    <column id="2347">
+                        <property name="width">0.5208333333333334in</property>
+                    </column>
+                    <column id="2333">
+                        <property name="width">0.4375in</property>
+                    </column>
+                    <column id="2334">
+                        <property name="width">0.2604166666666667in</property>
+                    </column>
+                    <row id="2667">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <cell id="2668">
+                            <property name="colSpan">9</property>
+                            <property name="rowSpan">1</property>
+                            <grid id="2482">
+                                <property name="height">0.27in</property>
+                                <property name="width">7.125in</property>
+                                <column id="2483">
+                                    <property name="width">0.7291666666666666in</property>
+                                </column>
+                                <column id="2484"/>
+                                <row id="2485">
+                                    <property name="height">0.3in</property>
+                                    <cell id="2486">
+                                        <property name="colSpan">1</property>
+                                        <property name="rowSpan">1</property>
+                                        <label id="2491">
+                                            <property name="fontFamily">"宋体"</property>
+                                            <property name="fontSize">large</property>
+                                            <text-property name="text">备注：</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="2487">
+                                        <property name="colSpan">1</property>
+                                        <property name="rowSpan">1</property>
+                                        <text id="2524">
+                                            <property name="fontFamily">"宋体"</property>
+                                            <property name="fontSize">large</property>
+                                            <property name="contentType">html</property>
+                                            <text-property name="content"><![CDATA[<VALUE-OF format="HTML">params["opreatedMemo"].value</VALUE-OF>]]></text-property>
+                                        </text>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                    <row id="2647">
+                        <cell id="2648">
+                            <property name="colSpan">9</property>
+                            <property name="rowSpan">1</property>
+                            <label id="2497">
+                                <property name="fontFamily">"宋体"</property>
+                                <property name="fontSize">large</property>
+                                <text-property name="text">（注：√表示已执行。若有未执行项，在备注栏说明原因。）</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                    <row id="2637">
+                        <cell id="2638">
+                            <property name="colSpan">9</property>
+                            <property name="rowSpan">1</property>
+                            <grid id="2503">
+                                <property name="height">0.34375in</property>
+                                <property name="width">7.333333333333333in</property>
+                                <column id="2504">
+                                    <property name="width">0.5in</property>
+                                </column>
+                                <column id="2505">
+                                    <property name="width">1.3125in</property>
+                                </column>
+                                <column id="2506">
+                                    <property name="width">0.5in</property>
+                                </column>
+                                <column id="2507">
+                                    <property name="width">0.8in</property>
+                                </column>
+                                <column id="2508">
+                                    <property name="width">1in</property>
+                                </column>
+                                <column id="2509">
+                                    <property name="width">0.4791666666666667in</property>
+                                </column>
+                                <column id="2510">
+                                    <property name="width">0.45in</property>
+                                </column>
+                                <row id="2512">
+                                    <cell id="2513">
+                                        <label id="150">
+                                            <property name="fontFamily">"宋体"</property>
+                                            <property name="fontSize">large</property>
+                                            <text-property name="text">操作人：</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="2514">
+                                        <data id="2525">
+                                            <property name="style">lineStyle</property>
+                                            <property name="fontFamily">"宋体"</property>
+                                            <property name="fontSize">12pt</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">operator</property>
+                                                    <expression name="expression">params["operator"].value</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">operator</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="2515">
+                                        <label id="151">
+                                            <property name="fontFamily">"宋体"</property>
+                                            <property name="fontSize">12pt</property>
+                                            <text-property name="text">监护人：</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="2516">
+                                        <data id="2526">
+                                            <property name="style">lineStyle</property>
+                                            <property name="fontFamily">"宋体"</property>
+                                            <property name="fontSize">12pt</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">guardian</property>
+                                                    <expression name="expression">params["guardian"].value</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">guardian</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="2517">
+                                        <property name="colSpan">2</property>
+                                        <property name="rowSpan">1</property>
+                                        <label id="2521">
+                                            <property name="fontFamily">"宋体"</property>
+                                            <property name="fontSize">12pt</property>
+                                            <text-property name="text">(单元长)运行值班负责人：</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="2519">
+                                        <property name="colSpan">1</property>
+                                        <property name="rowSpan">1</property>
+                                        <property name="textAlign">left</property>
+                                        <data id="2528">
+                                            <property name="style">lineStyle</property>
+                                            <property name="fontFamily">"宋体"</property>
+                                            <property name="fontSize">12pt</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">runWatchChargeBy</property>
+                                                    <expression name="expression">params["runWatchChargeBy"].value</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">runWatchChargeBy</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                    <row id="2335">
+                        <cell id="2336"/>
+                        <cell id="2337"/>
+                        <cell id="2338"/>
+                        <cell id="2351"/>
+                        <cell id="2339">
+                            <label id="2348">
+                                <property name="fontFamily">"宋体"</property>
+                                <property name="fontSize">large</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text">当前第</text-property>
+                            </label>
+                        </cell>
+                        <cell id="2344">
+                            <auto-text id="2342">
+                                <property name="fontFamily">"宋体"</property>
+                                <property name="fontSize">large</property>
+                                <property name="textAlign">center</property>
+                                <property name="type">page-number</property>
+                            </auto-text>
+                        </cell>
+                        <cell id="2346">
+                            <label id="2349">
+                                <property name="fontFamily">"宋体"</property>
+                                <property name="fontSize">large</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text">页/共</text-property>
+                            </label>
+                        </cell>
+                        <cell id="2340">
+                            <auto-text id="2343">
+                                <property name="fontFamily">"宋体"</property>
+                                <property name="fontSize">large</property>
+                                <property name="textAlign">center</property>
+                                <property name="type">total-page</property>
+                            </auto-text>
+                        </cell>
+                        <cell id="2341">
+                            <label id="2350">
+                                <property name="fontFamily">"宋体"</property>
+                                <property name="fontSize">large</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text">页</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="2596">
+            <property name="width">100%</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">countLine</property>
+                    <expression name="expression">dataSetRow["countLine"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">operatedItem</property>
+                    <expression name="expression">dataSetRow["operatedItem"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">actualPerformance</property>
+                    <expression name="expression">dataSetRow["actualPerformance"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">date</property>
+                    <expression name="expression">dataSetRow["date"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="pageBreakInterval">24</property>
+            <column id="2612">
+                <property name="width">5%</property>
+            </column>
+            <column id="2613">
+                <property name="width">73%</property>
+            </column>
+            <column id="2614">
+                <property name="width">10%</property>
+            </column>
+            <column id="2615">
+                <property name="width">12%</property>
+            </column>
+            <header>
+                <row id="2597">
+                    <cell id="2598">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="2471">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">large</property>
+                            <text-property name="text">序号</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2599">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="2472">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">large</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">操          作          项          目</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2600">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="2474">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">large</property>
+                            <text-property name="text">执行情况</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2601">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="2475">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">large</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">时间</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="2602">
+                    <property name="height">0.337in</property>
+                    <cell id="2603">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="2616">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">large</property>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">countLine</property>
+                        </data>
+                    </cell>
+                    <cell id="2604">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="2617">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">large</property>
+                            <property name="resultSetColumn">operatedItem</property>
+                        </data>
+                    </cell>
+                    <cell id="2605">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="2618">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">large</property>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">actualPerformance</property>
+                        </data>
+                    </cell>
+                    <cell id="2606">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="2619">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">large</property>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">date</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+    </body>
+</report>

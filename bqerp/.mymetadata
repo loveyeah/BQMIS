@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enterprise-project
+  version="1.0.0"
+  name="bqerp"
+  id="myeclipse.1231578465125"
+  j2ee-spec="5.0"
+  archive="bqerp.ear">
+  <project-modules>
+    <project-module
+      type="WEB"
+      name="bqerpweb"
+      id="myeclipse.1231577138406"
+      context-root="/bqerpweb"
+      j2ee-spec="5.0"
+      archive="bqerpweb.war">
+      <attributes>
+        <attribute name="webrootdir" value="WebRoot" />
+      </attributes>
+    </project-module>
+    <project-module
+      type="WEB"
+      name="bqerprpt"
+      id="myeclipse.1231578302234"
+      context-root="/bqerprpt"
+      j2ee-spec="5.0"
+      archive="bqerprpt.war">
+      <attributes>
+        <attribute name="webrootdir" value="WebRoot" />
+      </attributes>
+    </project-module>
+    <project-module
+      type="EJB"
+      name="bqerpcomm"
+      id="myeclipse.1231577611484"
+      j2ee-spec="5.0"
+      archive="bqerpcomm.jar" />
+    <project-module
+      type="EJB"
+      name="bqerpejb"
+      id="myeclipse.1231577409218"
+      j2ee-spec="5.0"
+      archive="bqerpejb.jar" />
+  </project-modules>
+</enterprise-project>
+

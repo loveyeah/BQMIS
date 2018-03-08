@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-validation.xml" />
+	<package name="security" namespace="/security"
+		extends="jfreechart-default">
+
+		<!-- 安全帽领用登记 -->
+		<action name="addSafeCapInfo"
+			class="power.web.run.securityproduction.action.SafeCapOfferAction"
+			method="addSafeCapInfo">
+		</action>
+		<action name="updateSafeCapInfo"
+			class="power.web.run.securityproduction.action.SafeCapOfferAction"
+			method="updateSafeCapInfo">
+		</action>
+		<action name="deleteSafeCapInfo"
+			class="power.web.run.securityproduction.action.SafeCapOfferAction"
+			method="deleteSafeCapInfo">
+		</action>
+		<action name="findSafeCapList"
+			class="power.web.run.securityproduction.action.SafeCapOfferAction"
+			method="findSafeCapList">
+		</action>
+		<action name="getDeptNameAndWorkCode"
+			class="power.web.run.securityproduction.action.SafeCapOfferAction"
+			method="getDeptNameAndWorkCode">
+		</action>
+		<!-- 职业病检查登记 -->
+		<action name="addWorkDiseasesInfo"
+			class="power.web.run.securityproduction.action.SpDiseasesAction"
+			method="addWorkDiseasesInfo">
+		</action>
+		<action name="updateWorkDiseasesInfo"
+			class="power.web.run.securityproduction.action.SpDiseasesAction"
+			method="updateWorkDiseasesInfo">
+		</action>
+		<action name="deleteWorkDiseasesInfo"
+			class="power.web.run.securityproduction.action.SpDiseasesAction"
+			method="deleteWorkDiseasesInfo">
+		</action>
+		<action name="findWorkDiseasesList"
+			class="power.web.run.securityproduction.action.SpDiseasesAction"
+			method="findWorkDiseasesList">
+		</action>
+		<action name="getInfoByWorkCode"
+			class="power.web.run.securityproduction.action.SpDiseasesAction"
+			method="getInfoByWorkCode">
+		</action>
+
+		<!-- 特种作业人员登记 -->
+		<action name="addSpecialoperatorsInfo"
+			class="power.web.run.securityproduction.action.SpecialoperatorsAction"
+			method="addSpecialoperatorsInfo">
+		</action>
+		<action name="updateSpecialoperatorsInfo"
+			class="power.web.run.securityproduction.action.SpecialoperatorsAction"
+			method="updateSpecialoperatorsInfo">
+		</action>
+		<action name="deleteSpecialoperatorsInfo"
+			class="power.web.run.securityproduction.action.SpecialoperatorsAction"
+			method="deleteSpecialoperatorsInfo">
+		</action>
+		<action name="findSpecialoperatorsList"
+			class="power.web.run.securityproduction.action.SpecialoperatorsAction"
+			method="findSpecialoperatorsList">
+		</action>
+		<!-- 安全工器具管理 -->
+		<action name="addSafeToolInfo"
+			class="power.web.run.securityproduction.action.SafeToolAction"
+			method="addSafeToolInfo">
+		</action>
+		<action name="updateSafeToolInfo"
+			class="power.web.run.securityproduction.action.SafeToolAction"
+			method="updateSafeToolInfo">
+		</action>
+		<action name="deleteSafeToolInfo"
+			class="power.web.run.securityproduction.action.SafeToolAction"
+			method="deleteSafeToolInfo">
+		</action>
+		<action name="findSafeToolList"
+			class="power.web.run.securityproduction.action.SafeToolAction"
+			method="findSafeToolList">
+		</action>
+		<!-- 安全培训 -->
+		<action name="saveSpJSafetraining"
+			class="power.web.run.securityproduction.action.SpJSafetrainingAction"
+			method="saveSpJSafetraining">
+		</action>
+		<action name="deleteSpJSafetraining"
+			class="power.web.run.securityproduction.action.SpJSafetrainingAction"
+			method="deleteSpJSafetraining">
+		</action>
+		<action name="saveSpJSafetrainingAttend"
+			class="power.web.run.securityproduction.action.SpJSafetrainingAction"
+			method="saveSpJSafetrainingAttend">
+		</action>
+		<action name="getSpJSafetrainingList"
+			class="power.web.run.securityproduction.action.SpJSafetrainingAction"
+			method="getSpJSafetrainingList">
+		</action>
+		<action name="getSpJSafetrainingAttendList"
+			class="power.web.run.securityproduction.action.SpJSafetrainingAction"
+			method="getSpJSafetrainingAttendList">
+		</action>
+		<!-- 月度安全分析会 -->
+		<action name="getSafeMeetingList"
+			class="power.web.run.securityproduction.action.SafeMeetingAction"
+			method="getSafeMeetingList">
+		</action>
+		<action name="getSafeMeeting"
+			class="power.web.run.securityproduction.action.SafeMeetingAction"
+			method="getSafeMeeting">
+		</action>
+		<action name="saveSafeMeeting"
+			class="power.web.run.securityproduction.action.SafeMeetingAction"
+			method="saveSafeMeeting">
+		</action>
+		<action name="deleteSafeMeeting"
+			class="power.web.run.securityproduction.action.SafeMeetingAction"
+			method="deleteSafeMeeting">
+		</action>
+		<action name="getSafeMeetingAtnList"
+			class="power.web.run.securityproduction.action.SafeMeetingAction"
+			method="getSafeMeetingAtnList">
+		</action>
+		<action name="saveSafeMeetingAtnList"
+			class="power.web.run.securityproduction.action.SafeMeetingAction"
+			method="saveSafeMeetingAtnList">
+		</action>
+		<action name="getSafeMeetingAbsList"
+			class="power.web.run.securityproduction.action.SafeMeetingAction"
+			method="getSafeMeetingAbsList">
+		</action>
+		<action name="saveSafeMeetingAbsList"
+			class="power.web.run.securityproduction.action.SafeMeetingAction"
+			method="saveSafeMeetingAbsList">
+		</action>
+		<!-- 安全奖励 -->
+		<action name="getSafeAwardList"
+			class="power.web.run.securityproduction.action.SafeAwardAction"
+			method="getSafeAwardList">
+		</action>
+		<action name="getSafeAward"
+			class="power.web.run.securityproduction.action.SafeAwardAction"
+			method="getSafeAward">
+		</action>
+		<action name="saveSafeAward"
+			class="power.web.run.securityproduction.action.SafeAwardAction"
+			method="saveSafeAward">
+		</action>
+		<action name="deleteSafeAward"
+			class="power.web.run.securityproduction.action.SafeAwardAction"
+			method="deleteSafeAward">
+		</action>
+		<action name="getSafeAwardDetailsList"
+			class="power.web.run.securityproduction.action.SafeAwardAction"
+			method="getSafeAwardDetailsList">
+		</action>
+		<action name="saveSafeAwardDetailsList"
+			class="power.web.run.securityproduction.action.SafeAwardAction"
+			method="saveSafeAwardDetailsList">
+		</action>
+		<!-- 违章处罚 -->
+		<action name="getSafePunishList"
+			class="power.web.run.securityproduction.action.SafePunishAction"
+			method="getSafePunishList">
+		</action>
+		<action name="getSafePunish"
+			class="power.web.run.securityproduction.action.SafePunishAction"
+			method="getSafePunish">
+		</action>
+		<action name="saveSafePunish"
+			class="power.web.run.securityproduction.action.SafePunishAction"
+			method="saveSafePunish">
+		</action>
+		<action name="deleteSafePunish"
+			class="power.web.run.securityproduction.action.SafePunishAction"
+			method="deleteSafePunish">
+		</action>
+		<action name="getSafePunishDetailsList"
+			class="power.web.run.securityproduction.action.SafePunishAction"
+			method="getSafePunishDetailsList">
+		</action>
+		<action name="saveSafePunishDetailsList"
+			class="power.web.run.securityproduction.action.SafePunishAction"
+			method="saveSafePunishDetailsList">
+		</action>
+		<!-- 安全简报 -->
+		<action name="getBriefNews"
+			class="power.web.run.securityproduction.action.BriefNewsAction"
+			method="getBriefNews">
+		</action>
+		<action name="addBriefNews"
+			class="power.web.run.securityproduction.action.BriefNewsAction"
+			method="addBriefNews">
+		</action>
+		<action name="updateBriefNews"
+			class="power.web.run.securityproduction.action.BriefNewsAction"
+			method="updateBriefNews">
+		</action>
+		<action name="deleteBriefnews"
+			class="power.web.run.securityproduction.action.BriefNewsAction"
+			method="deleteBriefnews">
+		</action>
+		<!-- 安措计划项目 -->
+		<action name="addSpJSecurityPlanInfo"
+			class="power.web.run.securityproduction.action.SpJSecurityPlanAction"
+			method="addSpJSecurityPlanInfo">
+		</action>
+		<action name="updateSpJSecurityPlanInfo"
+			class="power.web.run.securityproduction.action.SpJSecurityPlanAction"
+			method="updateSpJSecurityPlanInfo">
+		</action>
+		<action name="deleteSpJSecurityPlanInfo"
+			class="power.web.run.securityproduction.action.SpJSecurityPlanAction"
+			method="deleteSpJSecurityPlanInfo">
+		</action>
+		<action name="findSpJSecurityPlanList"
+			class="power.web.run.securityproduction.action.SpJSecurityPlanAction"
+			method="findSpJSecurityPlanList">
+		</action>
+		<!-- 年度安全计划 -->
+		<action name="getsafetyAnnualPlan"
+			class="power.web.run.securityproduction.action.SafetyAnnualPlanAction"
+			method="getsafetyAnnualPlan">
+		</action>
+		<action name="addSafetyAnnualPlan"
+			class="power.web.run.securityproduction.action.SafetyAnnualPlanAction"
+			method="addSafetyAnnualPlan">
+		</action>
+		<action name="deleteSafeAnnualPlan"
+			class="power.web.run.securityproduction.action.SafetyAnnualPlanAction"
+			method="deleteSafeAnnualPlan">
+		</action>
+		<action name="updateSafetyAnnualPlan"
+			class="power.web.run.securityproduction.action.SafetyAnnualPlanAction"
+			method="updateSafetyAnnualPlan">
+		</action>
+		<!--安全生产月-->
+		<action name="getSafetyMonthInfo"
+			class="power.web.run.securityproduction.action.SafetyMonthAction"
+			method="getSafetyMonthInfo">
+		</action>
+		<action name="deleteSafetyMonth"
+			class="power.web.run.securityproduction.action.SafetyMonthAction"
+			method="deleteSafetyMonth">
+		</action>
+		<action name="addSafetyMonth"
+			class="power.web.run.securityproduction.action.SafetyMonthAction"
+			method="addSafetyMonth">
+		</action>
+		<action name="updateSafetyMonth"
+			class="power.web.run.securityproduction.action.SafetyMonthAction"
+			method="updateSafetyMonth">
+		</action>
+		<!-- 安全天数记录 -->
+		<action name="getSafetyDaysRecordList"
+			class="power.web.run.securityproduction.action.SafetyDaysAction"
+			method="getSafetyDaysRecordList">
+		</action>
+		<action name="addSafeDays"
+			class="power.web.run.securityproduction.action.SafetyDaysAction"
+			method="addSafeDays">
+		</action>
+		<action name="stopSafeDays"
+			class="power.web.run.securityproduction.action.SafetyDaysAction"
+			method="stopSafeDays">
+		</action>
+		<!-- 25项反事故措施维护 -->
+		<action name="findByParentCode"
+			class="power.web.run.securityproduction.action.SafeMeasureAction"
+			method="findByParentCode">
+		</action>
+		<action name="findByMeasureCode"
+			class="power.web.run.securityproduction.action.SafeMeasureAction"
+			method="findByMeasureCode">
+		</action>
+		<action name="addMeasure"
+			class="power.web.run.securityproduction.action.SafeMeasureAction"
+			method="addMeasure">
+		</action>
+		<action name="updateMeasure"
+			class="power.web.run.securityproduction.action.SafeMeasureAction"
+			method="updateMeasure">
+		</action>
+		<action name="deleteMeasure"
+			class="power.web.run.securityproduction.action.SafeMeasureAction"
+			method="deleteMeasure">
+		</action>
+		<action name="saveDetailMeasure"
+			class="power.web.run.securityproduction.action.SafeMeasureAction"
+			method="saveDetailMeasure">
+		</action>
+		<action name="deleteDetail"
+			class="power.web.run.securityproduction.action.SafeMeasureAction"
+			method="deleteDetail">
+		</action>
+		<action name="getMeasurListByCode"
+			class="power.web.run.securityproduction.action.SafeMeasureAction"
+			method="getMeasurListByCode">
+		</action>
+		<!-- 发电公司人员表维护 -->
+		<action name="findEmpInfoList"
+			class="power.web.run.securityproduction.action.EmpInfoTreatAtion"
+			method="findEmpInfoList">
+		</action>
+		<action name="addEmpInfo"
+			class="power.web.run.securityproduction.action.EmpInfoTreatAtion"
+			method="addEmpInfo">
+		</action>
+		<action name="updateEmpInfo"
+			class="power.web.run.securityproduction.action.EmpInfoTreatAtion"
+			method="updateEmpInfo">
+		</action>
+		<action name="deleteEmpInfo"
+			class="power.web.run.securityproduction.action.EmpInfoTreatAtion"
+			method="deleteEmpInfo">
+		</action>
+		<!-- 25项反措动态检查 -->
+		<action name="getSafeCheckupList"
+			class="power.web.run.securityproduction.action.SafeCheckAction"
+			method="getSafeCheckupList">
+		</action>
+		<action name="saveCheckup"
+			class="power.web.run.securityproduction.action.SafeCheckAction"
+			method="saveCheckup">
+		</action>
+		<action name="deleteCheckup"
+			class="power.web.run.securityproduction.action.SafeCheckAction"
+			method="deleteCheckup">
+		</action>
+		<action name="updateCheckup"
+			class="power.web.run.securityproduction.action.SafeCheckAction"
+			method="updateCheckup">
+		</action>
+		<action name="reportCheckup"
+			class="power.web.run.securityproduction.action.SafeCheckAction"
+			method="reportCheckup">
+		</action>
+		<action name="checkApprove"
+			class="power.web.run.securityproduction.action.SafeCheckAction"
+			method="checkApprove">
+		</action>
+
+		<!-- 25项反措动态检查整改 -->
+		<action name="getSafeAmendList"
+			class="power.web.run.securityproduction.action.SafeAmendAction"
+			method="getSafeAmendList">
+		</action>
+		<action name="saveAmend"
+			class="power.web.run.securityproduction.action.SafeAmendAction"
+			method="saveAmend">
+		</action>
+		<action name="deleteAmend"
+			class="power.web.run.securityproduction.action.SafeAmendAction"
+			method="deleteAmend">
+		</action>
+		<action name="updateAmend"
+			class="power.web.run.securityproduction.action.SafeAmendAction"
+			method="updateAmend">
+		</action>
+
+		<!-- 25项反事故措施导出excel -->
+		<action name="getSafeMeasureListForExcel"
+			class="power.web.run.securityproduction.action.SafeMeasureAction"
+			method="getListForExcel">
+		</action>
+
+		<!-- 锅炉设备清册 -->
+		<action name="getTreeListForBoiler"
+			class="power.web.run.securityproduction.action.SafeSuperviseAction"
+			method="getTreeListForBoiler">
+		</action>
+		<action name="getInfoBoilerByCode"
+			class="power.web.run.securityproduction.action.SafeSuperviseAction"
+			method="getInfoBoilerByCode">
+		</action>
+		<action name="addOrUpdateBoilerInfo"
+			class="power.web.run.securityproduction.action.SafeSuperviseAction"
+			method="addOrUpdateBoilerInfo">
+		</action>
+		<action name="deleteBoilerInfoById"
+			class="power.web.run.securityproduction.action.SafeSuperviseAction"
+			method="deleteBoilerInfoById">
+		</action>
+		<action name="getTreeForBoiler"
+			class="power.web.run.securityproduction.action.SafeSuperviseAction"
+			method="getTreeForBoiler">
+		</action>
+		<action name="saveBoilerInfo"
+			class="power.web.run.securityproduction.action.SafeSuperviseAction"
+			method="saveBoilerInfo">
+		</action>
+
+		<!-- 车辆维修记录 -->
+		<action name="addCarRepair"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpCarRepairAction"
+			method="addCarRepair">
+		</action>
+		<action name="updateCarRepair"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpCarRepairAction"
+			method="updateCarRepair">
+		</action>
+		<action name="deleteCarRepair"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpCarRepairAction"
+			method="deleteCarRepair">
+		</action>
+		<action name="findCarRepairList"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpCarRepairAction"
+			method="findCarRepairList">
+		</action>
+		<!-- 消防器材配置 -->
+		<action name="saveFireControlRecord"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpFireControlAction"
+			method="saveFireControlRecord">
+		</action>
+		<action name="updateFireControlRecord"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpFireControlAction"
+			method="updateFireControlRecord">
+		</action>
+		<action name="deleteFireControlRecord"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpFireControlAction"
+			method="deleteFireControlRecord">
+		</action>
+		<action name="findFireControlList"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpFireControlAction"
+			method="findFireControlList">
+		</action>
+		<!-- 安全监察锅炉设备检修 -->
+		<action name="getBoilRepair"
+			class="power.web.run.securityproduction.action.BoilerRepairAction"
+			method="getBoilRepair">
+		</action>
+		<action name="saveBoilRepair"
+			class="power.web.run.securityproduction.action.BoilerRepairAction"
+			method="saveBoilRepair">
+		</action>
+		<action name="deleteBoilRepair"
+			class="power.web.run.securityproduction.action.BoilerRepairAction"
+			method="deleteBoilRepair">
+		</action>
+		<action name="getBoilerEquList"
+			class="power.web.run.securityproduction.action.BoilerRepairAction"
+			method="getBoilerEquList">
+		</action>
+
+		<!-- 整改计划动态检查 -->
+		<action name="saveDynamicCheckInfo"
+			class="power.web.run.securityproduction.action.safesuperviseaction.DynamicCheckAction"
+			method="saveDynamicCheckInfo">
+		</action>
+		<action name="updateDynamicCheckInfo"
+			class="power.web.run.securityproduction.action.safesuperviseaction.DynamicCheckAction"
+			method="updateDynamicCheckInfo">
+		</action>
+		<action name="deleteDynamicCheckInfo"
+			class="power.web.run.securityproduction.action.safesuperviseaction.DynamicCheckAction"
+			method="deleteDynamicCheckInfo">
+		</action>
+		<action name="findDynamicCheckList"
+			class="power.web.run.securityproduction.action.safesuperviseaction.DynamicCheckAction"
+			method="findDynamicCheckList">
+		</action>
+		<action name="findDynamicPlanList"
+			class="power.web.run.securityproduction.action.safesuperviseaction.DynamicCheckAction"
+			method="findDynamicPlanList">
+		</action>
+		<action name="findDynamicQueryList"
+			class="power.web.run.securityproduction.action.safesuperviseaction.DynamicCheckAction"
+			method="findDynamicQueryList">
+		</action>
+		<!--add by ltong 20100429 取一级部门-->
+		<action name="getdeptcode"
+			class="power.web.run.securityproduction.action.safesuperviseaction.DynamicCheckAction"
+			method="getdeptcode">
+		</action>
+		<!-- 问题汇总查询 add by ltong 20100510 -->
+		<action name="findMatterGather"
+			class="power.web.run.securityproduction.action.safesuperviseaction.DynamicCheckAction"
+			method="findMatterGather">
+		</action>
+		<action name="findMatterGatherQuery"
+			class="power.web.run.securityproduction.action.safesuperviseaction.DynamicCheckAction"
+			method="findMatterGatherQuery">
+		</action>
+		<!--电动工具和电气安全用具清册 电气安全用具检修记录 add by liuyi 20100420   -->
+		<action name="findToolsByCondi"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpJToolsManageAction"
+			method="findToolsByCondi">
+		</action>
+		<action name="saveToolsEntity"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpJToolsManageAction"
+			method="saveToolsEntity">
+		</action>
+		<action name="deleteToolsEntity"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpJToolsManageAction"
+			method="deleteToolsEntity">
+		</action>
+		<action name="findToolsRepairObject"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpJToolsManageAction"
+			method="findToolsRepairObject">
+		</action>
+		<action name="saveRepairEntity"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpJToolsManageAction"
+			method="saveRepairEntity">
+		</action>
+		<action name="deleteRepairEntity"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpJToolsManageAction"
+			method="deleteRepairEntity">
+		</action>
+		<!-- 电动工器具和电焊机监测记录 add by ltong 20100421 -->
+		<action name="findWeldingList"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpJWeldingRepairAction"
+			method="findWeldingList">
+		</action>
+		<action name="deleteWelding"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpJWeldingRepairAction"
+			method="deleteWelding">
+		</action>
+		<action name="saveWelding"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpJWeldingRepairAction"
+			method="saveWelding">
+		</action>
+
+		<!-- 车辆档案维护 add by sychen 20100420 -->
+		<action name="saveSpCcarfile"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpCCarorDriverAction"
+			method="saveSpCcarfile">
+		</action>
+		<action name="updateSpCcarfile"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpCCarorDriverAction"
+			method="updateSpCcarfile">
+		</action>
+		<action name="deleteSpCcarfile"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpCCarorDriverAction"
+			method="deleteSpCcarfile">
+		</action>
+		<action name="getSpCcarfileList"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpCCarorDriverAction"
+			method="getSpCcarfileList">
+		</action>
+		<action name="showphoto"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpCCarorDriverAction"
+			method="showphoto">
+		</action>
+
+		<!-- 司机档案维护 add by sychen 20100421 -->
+		<action name="saveSpCDriver"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpCCarorDriverAction"
+			method="saveSpCDriver">
+		</action>
+		<action name="updateSpCDriver"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpCCarorDriverAction"
+			method="updateSpCDriver">
+		</action>
+		<action name="deleteSpCDriver"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpCCarorDriverAction"
+			method="deleteSpCDriver">
+		</action>
+		<action name="getSpCDriverList"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpCCarorDriverAction"
+			method="getSpCDriverList">
+		</action>
+		<action name="getNativePlaceData"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpCCarorDriverAction"
+			method="getNativePlaceData">
+		</action>
+		<action name="getPoliticsData"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpCCarorDriverAction"
+			method="getPoliticsData">
+		</action>
+		
+		<!-- 车辆、司机档案查询部门列表 add by sychen 20100612 -->
+		<action name="getDeptListForCarOrDriver"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpCCarorDriverAction"
+			method="getDeptListForCarOrDriver">
+		</action>
+		
+		<!-- 安全带清册检修记录  -->
+		<action name="addBeltRepair"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpJBeltRepairAction"
+			method="addBeltRepair">
+		</action>
+		<action name="updateBeltRepair"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpJBeltRepairAction"
+			method="updateBeltRepair">
+		</action>
+		<action name="deleteBeltRepair"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpJBeltRepairAction"
+			method="deleteBeltRepair">
+		</action>
+		<action name="findBeltRepairList"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpJBeltRepairAction"
+			method="findBeltRepairList">
+		</action>
+
+		<!-- 锅炉或压力容器、附件检修记录 add by sychen 20100423 -->
+		<action name="saveSpJPressureRepair"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpJPressureRepairAction"
+			method="saveSpJPressureRepair">
+		</action>
+		<action name="updateSpJPressureRepair"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpJPressureRepairAction"
+			method="updateSpJPressureRepair">
+		</action>
+		<action name="deleteSpJPressureRepair"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpJPressureRepairAction"
+			method="deleteSpJPressureRepair">
+		</action>
+		<action name="getSpJPressureRepairList"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpJPressureRepairAction"
+			method="getSpJPressureRepairList">
+		</action>
+		<!-- 压力容器设备信息 add by ltong 20100517 -->
+		<action name="findptYlrqJDjList"
+			class="power.web.run.securityproduction.action.safesuperviseaction.SpJPressureRepairAction"
+			method="findptYlrqJDjList">
+		</action>
+		<action name="importMatterInfo"
+			class="power.web.run.securityproduction.action.safesuperviseaction.DynamicCheckAction"
+			method="importMatterInfo">
+		</action>
+		
+		<!-- 反违章管理 -->
+		<action name="findRuleList"
+			class="power.web.run.securityproduction.action.safesuperviseaction.ViolationRuleAction"
+			method="findRuleList">
+		</action>
+		<action name="saveRuleInfo"
+			class="power.web.run.securityproduction.action.safesuperviseaction.ViolationRuleAction"
+			method="saveRuleInfo">
+		</action>
+		<action name="updateRuleInfo"
+			class="power.web.run.securityproduction.action.safesuperviseaction.ViolationRuleAction"
+			method="updateRuleInfo">
+		</action>
+		<action name="deleteRuleInfo"
+			class="power.web.run.securityproduction.action.safesuperviseaction.ViolationRuleAction"
+			method="deleteRuleInfo">
+		</action>
+		<action name="queryRuleList"
+			class="power.web.run.securityproduction.action.safesuperviseaction.ViolationRuleAction"
+			method="queryRuleList">
+		</action>
+		<!-- 重大危险源管理 add by qxjiao 20100728-->
+		<action name="findDangerList" class="power.web.run.securityproduction.action.danger.DangerAssessAction"
+			method="getDangerAssessList">
+		</action>
+		<action name="deleteDangerInfo" class="power.web.run.securityproduction.action.danger.DangerAssessAction"
+			method="deleteTarget">	
+		</action>
+
+		<action name="updateDangerInfo" class="power.web.run.securityproduction.action.danger.DangerAssessAction"
+			method="updateTarget">	
+		</action>
+		<action name="addDangerInfo" class="power.web.run.securityproduction.action.danger.DangerAssessAction"
+			method="save"
+		></action>
+		<!-- 重大危险源回录 add by qxjiao 20100727-->
+		<action name="findDangerReportList" class="power.web.run.securityproduction.action.danger.DangerReportAction"
+			method="getDangerReportList">
+		</action>
+	
+		<action name="updateDangerReport" class="power.web.run.securityproduction.action.danger.DangerReportAction"
+			method="updateTarget"
+		></action>
+		<action name="uploadDangerAnnex" class="power.web.run.securityproduction.action.danger.DangerReportAction"
+			method="uploadAnnex"
+		></action>	
+		
+		<action name="getDangerValueList" class="power.web.run.securityproduction.action.danger.DangerReportAction"
+			method="getValueList"
+		></action>
+		<action name="exportData" class="power.web.run.securityproduction.action.danger.ExportData"
+			method="export"
+		></action>
+		<action name="reportData" class="power.web.run.securityproduction.action.danger.DangerReportAction"
+			method="reportRecord"
+		></action>
+		<action name="confirmData" class="power.web.run.securityproduction.action.danger.DangerReportAction"
+			method="confirmReport"
+		></action>
+		<action name="checkValue" class="power.web.run.securityproduction.action.danger.DangerReportAction"
+			method="checkLBValue"
+		></action>
+		<action name="queryDangerReport" class="power.web.run.securityproduction.action.danger.DangerReportAction"
+			method="queryDangerReport"
+		></action>
+		<!-- L值B2值填写 add by kzhang 2010729-->
+		<action name="findScorebyDangerId"
+			class="power.web.run.securityproduction.action.danger.DangerManageAction"
+			method="findDangerManageList">
+		</action>
+		<action name="saveDangerDeptValue"
+			class="power.web.run.securityproduction.action.danger.DangerManageAction"
+			method="saveDangerDeptValue">
+		</action>
+		
+		
+		<!-- 重大危险源落实部门 add by kzhang2010730 -->
+		<action name="findDeptRegisterListByDangerYear"
+			class="power.web.run.securityproduction.action.danger.DangerManageAction"
+			method="findDeptRegisterListByDangerYear">
+		</action>
+		<action name="saveDangerDeptRegister"
+			class="power.web.run.securityproduction.action.danger.DangerManageAction"
+			method="saveDangerDeptRegister">
+		</action>
+		<action name="importBigDangerDeptValue"
+			class="power.web.run.securityproduction.action.danger.DangerManageAction"
+			method="importBigDangerDeptValue">
+		</action>
+		<action name="sendTodept"
+			class="power.web.run.securityproduction.action.danger.DangerManageAction"
+			method="sendTodept">
+		</action>
+		<action name="deptChargeBy"
+			class="power.web.run.securityproduction.action.danger.DangerManageAction"
+			method="deptChargeBy">
+		</action>
+		<!-- 重大危险源落实部门 按钮是否可用，检测 add by kzhang20100811-->
+		<action name="checkIsEditable"
+			class="power.web.run.securityproduction.action.danger.DangerManageAction"
+			method="checkIsEditable">
+		</action>
+		<!-- 重大危险源落实部门信息删除 add by kzhang20100811-->
+		<action name="deleteBigDangerDeptRegistion"
+			class="power.web.run.securityproduction.action.danger.DangerManageAction"
+			method="deleteBigDangerDeptRegistion">
+		</action>
+	</package>
+</struts>

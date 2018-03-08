@@ -1,0 +1,2425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.1.v20080911 Build &lt;2.3.1.v20080922-1151></property>
+    <property name="units">in</property>
+    <method name="beforeFactory"><![CDATA[if(params["no"].value!=null){
+elecTwo = new Packages.power.web.birt.action.bqmis.EnergTwo();
+elecForm = new Packages.power.web.birt.bean.bqmis.EnergTwoBean();
+elecForm = elecTwo.setEnergBean(params["no"].value, "2");
+
+		// NO 
+		params["workticketNo"].value=elecForm.getWorkticketNo();
+		//<!-- 机组名 -->
+		params["machineClass"].value=elecForm.getEquAttributeName();
+		////<!-- 工作负责人（监护人） -->
+		params["chargeBy"].value=elecForm.getChargeBy();
+		params["workWatcher"].value=elecForm.getWorkWacth();		
+		////<!-- 部门 -->
+		params["chargeDept"].value=elecForm.getChargeDept();
+		params["repairSpecail"].value=elecForm.getEquAttributeName();
+		////<!-- 班组 -->
+		params["equAttributeName"].value=elecForm.getEquAttributeName();
+		////<!-- 工作班人员 -->
+		params["members"].value=elecForm.getMembers();
+		//<!-- 共?人 -->
+		params["memberCount"].value=elecForm.getMemberCount();
+		//<!-- 工作地点 -->
+		params["workPlace"].value=elecForm.getWorkSpace();
+		//<!-- 工作内容及工作地点 -->
+		params["workContent"].value=elecForm.getWorkticketContent();
+		//<!-- 计划工作时间开始 -->
+		params["planStartDate"].value=elecForm.getPlanStartDate();
+		//<!-- 计划工作时间结束 -->
+		params["planEndDate"].value=elecForm.getPlanEndDate();
+		//<!-- 工作票签发人(签名) -->
+		params["workticketSignBy"].value=elecForm.getSignMan();	
+		//<!-- 工作票签发时间 -->
+		params["workticketSignDate"].value=elecForm.getSignDate();
+		///<!-- 工作票接收人 -->
+		params["workticketReceiveBy"].value=elecForm.getAcceptBy();
+		//<!-- 收到工作票时间 -->
+		params["workticketReceiveDate"].value=elecForm.getAcceptDate();
+		//<!-- 许可开始工作时间 -->
+		if(elecForm.getAdmissionDate()!= "" &amp;&amp; elecForm.getAdmissionDate() != null){
+			params["admissionDate"].value=elecForm.getAdmissionDate();
+		} else {
+			params["admissionDate"].value="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;年&amp;nbsp;&amp;nbsp;&amp;nbsp;月&amp;nbsp;&amp;nbsp;&amp;nbsp;日&amp;nbsp;&amp;nbsp;&amp;nbsp;时&amp;nbsp;&amp;nbsp;&amp;nbsp;分";;
+		}
+		//<!-- 许可 工作许可人 -->
+		params["startAdmissionMan"].value=elecForm.getAdmissionMan();
+		//<!-- 许可 值班负责人 -->
+		params["watchCharge"].value=elecForm.getWatchCharge();
+		//<!-- 许可 工作负责人 -->
+		params["chargeBy7"].value=elecForm.getAdmissionChargeBy();
+		//<!-- 工作结束时间 -->
+		if(elecForm.getActualEndDate()!= "" &amp;&amp; elecForm.getActualEndDate() != null){
+			params["actualEndDate"].value=elecForm.getActualEndDate();
+		} else {
+			params["actualEndDate"].value="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;年&amp;nbsp;&amp;nbsp;&amp;nbsp;月&amp;nbsp;&amp;nbsp;&amp;nbsp;日&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;时&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;分";;
+		}
+		//<!-- 工作许可人(值班员) 结束-->
+		params["endAdmissionMan"].value=elecForm.getActualEndMan();
+		//<!-- 工作负责人 结束-->
+		params["chargeBy8"].value=elecForm.getEndChargeBy();
+		//<!-- 备注 -->
+		params["workticketMemoOne"].value=elecForm.getWorkticketMemo();
+		//<!-- 危险点分析（附后） -->
+		params["dangerContent"].value=elecForm.getDangerContent();
+		//<!-- 工作票考核人 -->
+		params["checkMan"].value=elecForm.getCheckMan();
+		//<!-- 考核情况 -->
+		params["checkStatus"].value=elecForm.getCheckStatus();
+		//<!-- 考核年 -->
+		params["checkDateYear"].value=elecForm.getCheckDateYear();
+		//<!-- 考核月 -->
+		params["checkDateMonth"].value=elecForm.getCheckDateMonth();
+		//<!-- 考核日 -->
+		params["checkDateDay"].value=elecForm.getCheckDateDay();		
+		params["contentFlg"].value=elecForm.isContentFlg();
+		params["delete"].value=elecForm.isDelete();
+}		]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="workticketNo" id="1425">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="chargeBy" id="1427">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="equAttributeName" id="1429">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="chargeDept" id="1432">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="members" id="1434">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="memberCount" id="1436">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="workContent" id="1438">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="workPlace" id="1440">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="planStartDate" id="1442">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="planEndDate" id="1452">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="workCondition" id="1462">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="safetyOne" id="1464">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="safetyTwo" id="1465">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="executeOne" id="1467">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="executeTwo" id="1468">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="acceptDate" id="1484">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="watchCharge" id="1494">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="approveMan8" id="1496">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="admissionDate" id="1499">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="startAdmissionMan" id="1511">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="finishedDate" id="1514">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="approveMan15" id="1524">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="actualEndDate" id="1540">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="workticketMemoOne" id="1554">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="workticketMemoTwo" id="1556">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="dangerContent" id="1558">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="checkMan" id="1560">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="checkStatus" id="1562">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="checkDateYear" id="1564">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="checkDateMonth" id="1566">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="checkDateDay" id="1568">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="no" id="1572">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="signDate" id="1628">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="placeAndMachineName" id="1650">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="machineClass" id="1652">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="approveMan3" id="1707">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="approveMan4" id="1709">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="approveMan7" id="1711">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="signMan" id="1716">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="endAdmissionMan" id="1717">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="contentFlg" id="1720">
+            <property name="valueType">static</property>
+            <property name="dataType">boolean</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">check-box</property>
+            <property name="distinct">true</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="workPlaceTwo" id="1721">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="chargeBy7" id="1737">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="chargeBy8" id="1738">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="chargeBy15" id="1739">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="chargeBy16" id="1740">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="workticketSignBy" id="1782">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="checkSignBy" id="1784">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="workticketSignDate" id="1786">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="checkSignDate" id="1788">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="workticketReceiveBy" id="1790">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="workticketReceiveDate" id="1792">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="checkReceiveBy" id="1867">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="workWatcher" id="2360">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="delete" id="2761">
+            <property name="valueType">static</property>
+            <property name="dataType">boolean</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">check-box</property>
+            <property name="distinct">true</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="repairSpecail" id="2789">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <script-data-source name="Data Source" id="2102"/>
+    </data-sources>
+    <data-sets>
+        <script-data-set name="Data Set" id="2103">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">0</property>
+                    <property name="name">countLine</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">dangerName</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">controlMeasure</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">countLine</property>
+                </structure>
+                <structure>
+                    <property name="columnName">dangerName</property>
+                </structure>
+                <structure>
+                    <property name="columnName">controlMeasure</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">countLine</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">dangerName</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">controlMeasure</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <method name="open"><![CDATA[count=0;if(params["no"].value!=null){
+list=elecForm.getDangerList();}]]></method>
+            <method name="fetch"><![CDATA[if(params["no"].value!=null){
+    if(list!=null) {
+		if (count<list.size()) {
+			// 序号
+			row["countLine"]=count+1;
+			if("无" == list[count].getDangerName()) {
+				row["dangerName"]="无";
+			} else {
+				row["dangerName"]=list[count].getDangerName();
+			}
+			// 物料名称
+			if("无" == list[count].getDangerMeasure()) {
+				row["controlMeasure"]="无";
+			} else {
+				row["controlMeasure"]=list[count].getDangerMeasure();
+			}	
+			// 危险点
+			//row["dangerName"]=list[count].getDangerName();
+			// 控制措施
+			//row["controlMeasure"]=list[count].getDangerMeasure();
+			count++;
+			return true;
+		}
+	}
+	if (count<13) {
+			// 序号
+			row["countLine"]="";
+			// 危险点
+			row["dangerName"]=(count == 0?"无":"");
+			// 控制措施
+			row["controlMeasure"]=(count == 0?"无":"");
+			count++;
+			return true;
+	}	
+}
+return false;]]></method>
+        </script-data-set>
+        <script-data-set name="Data Set1" id="2104">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">0</property>
+                    <property name="name">countLine1</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">dangerName1</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">controlMeasure1</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">countLine1</property>
+                </structure>
+                <structure>
+                    <property name="columnName">dangerName1</property>
+                </structure>
+                <structure>
+                    <property name="columnName">controlMeasure1</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">countLine1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">dangerName1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">controlMeasure1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <method name="open"><![CDATA[count=0;if(params["no"].value!=null){
+workticketStausId=elecForm.getWorktickStauts();             
+list=elecForm.getAddDangerList();}]]></method>
+            <method name="fetch"><![CDATA[if(params["no"].value!=null){if(list!=null) {
+if (count<list.size()) {
+	// 行号
+	row["countLine1"]=count+1;
+	// 物料编码
+	if("无" == list[count].getDangerName()) {
+		row["dangerName1"]="无补充";
+	} else {
+		row["dangerName1"]=list[count].getDangerName();
+	}
+	// 物料名称
+	if("无" == list[count].getDangerMeasure()) {
+		row["controlMeasure1"]="无补充";
+	} else {
+		row["controlMeasure1"]=list[count].getDangerMeasure();
+	}	
+	count++;
+	return true;
+	}
+}
+	if (count<6) {
+			// 序号
+			row["countLine1"]="";
+			// 危险点
+			row["dangerName1"]=(count == 0&amp;&amp;(workticketStausId==4||workticketStausId==7||workticketStausId==8||workticketStausId==14)?"无补充":"");
+			// 控制措施
+			row["controlMeasure1"]=(count == 0&amp;&amp;(workticketStausId==4||workticketStausId==7||workticketStausId==8||workticketStausId==14)?"无补充":"");
+			count++;
+			return true;
+	}		
+}
+return false;]]></method>
+        </script-data-set>
+    </data-sets>
+    <styles>
+        <style name="crosstab-cell" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="LargeSong" id="88">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">8pt</property>
+            <property name="textUnderline">none</property>
+            <property name="whiteSpace">nowrap</property>
+        </style>
+        <style name="ButtomLineSong" id="504">
+            <property name="backgroundPositionX">left</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">8pt</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="textAlign">left</property>
+            <property name="whiteSpace">nowrap</property>
+        </style>
+        <style name="ButtomLineNumber" id="1570">
+            <property name="backgroundPositionX">right</property>
+            <property name="fontFamily">"Times New Roman"</property>
+            <property name="fontSize">8pt</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="textAlign">right</property>
+            <property name="whiteSpace">nowrap</property>
+        </style>
+        <style name="Number" id="1571">
+            <property name="fontFamily">"Times New Roman"</property>
+            <property name="fontSize">8pt</property>
+            <property name="whiteSpace">nowrap</property>
+        </style>
+        <style name="long" id="1705">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">8pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="orientation">portrait</property>
+            <property name="topMargin">0.5cm</property>
+            <property name="leftMargin">1cm</property>
+            <property name="bottomMargin">1cm</property>
+            <property name="rightMargin">1cm</property>
+            <property name="showHeaderOnFirst">true</property>
+            <property name="showFooterOnLast">false</property>
+            <property name="footerHeight">0in</property>
+            <page-header>
+                <grid id="1389">
+                    <property name="height">0.90625in</property>
+                    <property name="width">100%</property>
+                    <column id="1390">
+                        <property name="width">0.6875in</property>
+                    </column>
+                    <column id="2364">
+                        <property name="width">1.71875in</property>
+                    </column>
+                    <column id="1391">
+                        <property name="width">1.09375in</property>
+                    </column>
+                    <column id="1392">
+                        <property name="width">1.8854166666666667in</property>
+                    </column>
+                    <column id="2367">
+                        <property name="width">0.8125in</property>
+                    </column>
+                    <column id="1393">
+                        <property name="width">1.2291666666666667in</property>
+                    </column>
+                    <row id="2384">
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr">params["contentFlg"].value</expression>
+                            </structure>
+                        </list-property>
+                        <cell id="2385"/>
+                        <cell id="2386"/>
+                        <cell id="2387"/>
+                        <cell id="2388"/>
+                        <cell id="2389"/>
+                        <cell id="2390">
+                            <label id="2760">
+                                <property name="fontFamily">"宋体"</property>
+                                <property name="fontSize">16pt</property>
+                                <property name="color">#FF0000</property>
+                                <property name="borderBottomColor">#FF0000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftColor">#FF0000</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightColor">#FF0000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopColor">#FF0000</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text">已执行</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                    <row id="2762">
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr">params["delete"].value</expression>
+                            </structure>
+                        </list-property>
+                        <cell id="2763"/>
+                        <cell id="2764"/>
+                        <cell id="2765"/>
+                        <cell id="2766"/>
+                        <cell id="2767"/>
+                        <cell id="2768">
+                            <label id="2769">
+                                <property name="fontFamily">"宋体"</property>
+                                <property name="fontSize">16pt</property>
+                                <property name="color">#FF0000</property>
+                                <property name="borderBottomColor">#FF0000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftColor">#FF0000</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightColor">#FF0000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopColor">#FF0000</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text">已作废</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                    <row id="1394">
+                        <property name="height">0.40625in</property>
+                        <cell id="1395">
+                            <property name="colSpan">6</property>
+                            <property name="rowSpan">1</property>
+                            <label id="1401">
+                                <property name="fontFamily">"宋体"</property>
+                                <property name="fontSize">24pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">center</property>
+                                <property name="textTransform">none</property>
+                                <text-property name="text">热力控制二种工作票</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                    <row id="1399">
+                        <property name="height">0.3in</property>
+                        <cell id="1400"/>
+                        <cell id="2363"/>
+                        <cell id="1402">
+                            <property name="colSpan">4</property>
+                            <property name="rowSpan">1</property>
+                            <grid id="2777">
+                                <property name="width">100%</property>
+                                <column id="2778"/>
+                                <column id="2779">
+                                    <property name="width">2.3in</property>
+                                </column>
+                                <column id="2781">
+                                    <property name="width">1in</property>
+                                </column>
+                                <row id="2782">
+                                    <cell id="2783">
+                                        <label id="2790">
+                                            <property name="fontFamily">"宋体"</property>
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">right</property>
+                                            <property name="verticalAlign">top</property>
+                                            <property name="widows">2</property>
+                                            <text-property name="text">编号：</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="2784">
+                                        <data id="1426">
+                                            <property name="fontFamily">"宋体"</property>
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">workticketNo</property>
+                                                    <expression name="expression">params["workticketNo"].value</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">workticketNo</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="2786">
+                                        <data id="2791">
+                                            <property name="fontFamily">"宋体"</property>
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">right</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">repairSpecail</property>
+                                                    <expression name="expression">params["repairSpecail"].value</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">repairSpecail</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="2328">
+                    <property name="height">0.5833333333333334in</property>
+                    <property name="width">6.479166666666667in</property>
+                    <column id="2329"/>
+                    <column id="2330">
+                        <property name="width">0.6979166666666666in</property>
+                    </column>
+                    <column id="2331">
+                        <property name="width">1.59375in</property>
+                    </column>
+                    <column id="2352">
+                        <property name="width">1.59375in</property>
+                    </column>
+                    <column id="2332">
+                        <property name="width">0.53125in</property>
+                    </column>
+                    <column id="2345">
+                        <property name="width">0.5in</property>
+                    </column>
+                    <column id="2347">
+                        <property name="width">0.4479166666666667in</property>
+                    </column>
+                    <column id="2333">
+                        <property name="width">0.5in</property>
+                    </column>
+                    <column id="2334">
+                        <property name="width">0.40625in</property>
+                    </column>
+                    <row id="2335">
+                        <cell id="2336"/>
+                        <cell id="2337"/>
+                        <cell id="2338"/>
+                        <cell id="2351"/>
+                        <cell id="2339">
+                            <label id="2348">
+                                <property name="textAlign">center</property>
+                                <text-property name="text">当前第</text-property>
+                            </label>
+                        </cell>
+                        <cell id="2344">
+                            <auto-text id="2342">
+                                <property name="textAlign">center</property>
+                                <property name="type">page-number</property>
+                            </auto-text>
+                        </cell>
+                        <cell id="2346">
+                            <label id="2349">
+                                <property name="textAlign">center</property>
+                                <text-property name="text">页/共</text-property>
+                            </label>
+                        </cell>
+                        <cell id="2340">
+                            <auto-text id="2343">
+                                <property name="textAlign">center</property>
+                                <property name="type">total-page</property>
+                            </auto-text>
+                        </cell>
+                        <cell id="2341">
+                            <label id="2350">
+                                <property name="textAlign">center</property>
+                                <text-property name="text">页</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="6">
+            <property name="height">1.9895833333333333in</property>
+            <property name="width">100%</property>
+            <column id="7">
+                <property name="width">100%</property>
+            </column>
+            <row id="14">
+                <property name="height">0.2604166666666667in</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="15">
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <grid id="90">
+                        <property name="height">0.23958333333333334in</property>
+                        <property name="width">7.072916666666667in</property>
+                        <column id="91">
+                            <property name="width">1.0104166666666667in</property>
+                        </column>
+                        <column id="1746">
+                            <property name="width">1.4791666666666667in</property>
+                        </column>
+                        <column id="93">
+                            <property name="width">0.8854166666666666in</property>
+                        </column>
+                        <column id="94">
+                            <property name="width">1.46875in</property>
+                        </column>
+                        <column id="98">
+                            <property name="width">0.875in</property>
+                        </column>
+                        <column id="100">
+                            <property name="width">1.3541666666666667in</property>
+                        </column>
+                        <row id="101">
+                            <property name="verticalAlign">middle</property>
+                            <cell id="117">
+                                <property name="colSpan">1</property>
+                                <property name="rowSpan">1</property>
+                                <label id="112">
+                                    <property name="style">LargeSong</property>
+                                    <property name="fontFamily">"宋体"</property>
+                                    <text-property name="text">1、工作负责人：</text-property>
+                                </label>
+                            </cell>
+                            <cell id="1745">
+                                <data id="1430">
+                                    <property name="style">ButtomLineSong</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">chargeBy</property>
+                                            <expression name="expression">params["chargeBy"].value</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">chargeBy</property>
+                                </data>
+                            </cell>
+                            <cell id="104">
+                                <label id="2359">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">8pt</property>
+                                    <text-property name="text">工作监护人：</text-property>
+                                </label>
+                            </cell>
+                            <cell id="105">
+                                <data id="2361">
+                                    <property name="style">ButtomLineSong</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">workWatcher</property>
+                                            <expression name="expression">params["workWatcher"].value</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">workWatcher</property>
+                                </data>
+                            </cell>
+                            <cell id="109">
+                                <label id="113">
+                                    <property name="style">LargeSong</property>
+                                    <text-property name="text">班 组：</text-property>
+                                </label>
+                            </cell>
+                            <cell id="111">
+                                <data id="2353">
+                                    <property name="style">ButtomLineSong</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">chargeDept</property>
+                                            <expression name="expression">params["chargeDept"].value</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">chargeDept</property>
+                                </data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="16">
+                <property name="height">0.15in</property>
+                <property name="borderLeftColor">#000000</property>
+                <property name="borderLeftStyle">solid</property>
+                <property name="borderLeftWidth">thin</property>
+                <property name="borderRightColor">#000000</property>
+                <property name="borderRightStyle">solid</property>
+                <property name="borderRightWidth">thin</property>
+                <cell id="17">
+                    <grid id="120">
+                        <property name="height">0.40625in</property>
+                        <property name="width">7.364583333333333in</property>
+                        <column id="122">
+                            <property name="width">0.9895833333333334in</property>
+                        </column>
+                        <column id="123">
+                            <property name="width">58%</property>
+                        </column>
+                        <column id="124">
+                            <property name="width">3%</property>
+                        </column>
+                        <column id="125">
+                            <property name="width">8%</property>
+                        </column>
+                        <column id="126">
+                            <property name="width">3%</property>
+                        </column>
+                        <column id="127"/>
+                        <row id="128">
+                            <property name="verticalAlign">middle</property>
+                            <cell id="129">
+                                <property name="colSpan">1</property>
+                                <property name="rowSpan">1</property>
+                                <label id="137">
+                                    <property name="style">LargeSong</property>
+                                    <text-property name="text">2、工作班成员：</text-property>
+                                </label>
+                            </cell>
+                            <cell id="131">
+                                <data id="1435">
+                                    <property name="style">ButtomLineSong</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">members</property>
+                                            <expression name="expression">params["members"].value</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">members</property>
+                                </data>
+                            </cell>
+                            <cell id="132">
+                                <label id="138">
+                                    <property name="style">LargeSong</property>
+                                    <text-property name="text">共</text-property>
+                                </label>
+                            </cell>
+                            <cell id="133">
+                                <data id="1437">
+                                    <property name="style">ButtomLineNumber</property>
+                                    <property name="textAlign">center</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">memberCount</property>
+                                            <expression name="expression">params["memberCount"].value</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">memberCount</property>
+                                </data>
+                            </cell>
+                            <cell id="134">
+                                <label id="139">
+                                    <property name="style">LargeSong</property>
+                                    <text-property name="text">人</text-property>
+                                </label>
+                            </cell>
+                            <cell id="135"/>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="18">
+                <property name="height">0.15in</property>
+                <property name="borderLeftColor">#000000</property>
+                <property name="borderLeftStyle">solid</property>
+                <property name="borderLeftWidth">thin</property>
+                <property name="borderRightColor">#000000</property>
+                <property name="borderRightStyle">solid</property>
+                <property name="borderRightWidth">thin</property>
+                <cell id="19">
+                    <grid id="140">
+                        <property name="height">0.23958333333333334in</property>
+                        <property name="width">7.09375in</property>
+                        <column id="142">
+                            <property name="width">0.90625in</property>
+                        </column>
+                        <column id="143">
+                            <property name="width">6.1875in</property>
+                        </column>
+                        <row id="144">
+                            <property name="verticalAlign">middle</property>
+                            <cell id="1752">
+                                <label id="149">
+                                    <property name="style">LargeSong</property>
+                                    <text-property name="text">3、工作地点：</text-property>
+                                </label>
+                            </cell>
+                            <cell id="1753">
+                                <property name="style">ButtomLineSong</property>
+                                <text id="1754">
+                                    <property name="contentType">html</property>
+                                    <text-property name="content"><![CDATA[<VALUE-OF format="HTML">params["workPlace"].value</VALUE-OF>]]></text-property>
+                                </text>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="20">
+                <property name="height">0.3in</property>
+                <property name="borderLeftColor">#000000</property>
+                <property name="borderLeftStyle">solid</property>
+                <property name="borderLeftWidth">thin</property>
+                <property name="borderRightColor">#000000</property>
+                <property name="borderRightStyle">solid</property>
+                <property name="borderRightWidth">thin</property>
+                <cell id="21">
+                    <grid id="2232">
+                        <property name="height">0.23958333333333334in</property>
+                        <property name="width">7.125in</property>
+                        <column id="2233">
+                            <property name="width">0.8958333333333334in</property>
+                        </column>
+                        <column id="2234">
+                            <property name="width">6.229166666666667in</property>
+                        </column>
+                        <row id="2235">
+                            <cell id="2236">
+                                <label id="2238">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">8pt</property>
+                                    <text-property name="text">4、工作内容：</text-property>
+                                </label>
+                            </cell>
+                            <cell id="2237">
+                                <property name="style">ButtomLineSong</property>
+                                <text id="2239">
+                                    <property name="contentType">html</property>
+                                    <text-property name="content"><![CDATA[<VALUE-OF format="HTML">params["workContent"].value</VALUE-OF>]]></text-property>
+                                </text>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="22">
+                <property name="height">0.14583333333333334in</property>
+                <property name="borderLeftColor">#000000</property>
+                <property name="borderLeftStyle">solid</property>
+                <property name="borderLeftWidth">thin</property>
+                <property name="borderRightColor">#000000</property>
+                <property name="borderRightStyle">solid</property>
+                <property name="borderRightWidth">thin</property>
+                <cell id="23">
+                    <grid id="159">
+                        <property name="height">0.23958333333333334in</property>
+                        <property name="width">7.114583333333333in</property>
+                        <column id="161">
+                            <property name="width">1.3125in</property>
+                        </column>
+                        <column id="162">
+                            <property name="width">1.9270833333333333in</property>
+                        </column>
+                        <column id="171">
+                            <property name="width">0.3854166666666667in</property>
+                        </column>
+                        <column id="181">
+                            <property name="width">1.625in</property>
+                        </column>
+                        <column id="182">
+                            <property name="width">1.8645833333333333in</property>
+                        </column>
+                        <row id="183">
+                            <property name="verticalAlign">middle</property>
+                            <cell id="185">
+                                <label id="208">
+                                    <property name="style">LargeSong</property>
+                                    <text-property name="text">5、计划工作时间：自</text-property>
+                                </label>
+                            </cell>
+                            <cell id="186">
+                                <data id="1683">
+                                    <property name="style">ButtomLineSong</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">planStartDate</property>
+                                            <expression name="expression">params["planStartDate"].value</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">planStartDate</property>
+                                </data>
+                            </cell>
+                            <cell id="195">
+                                <property name="style">LargeSong</property>
+                                <label id="213">
+                                    <text-property name="text">至</text-property>
+                                </label>
+                            </cell>
+                            <cell id="205">
+                                <property name="style">LargeSong</property>
+                                <data id="1706">
+                                    <property name="style">ButtomLineSong</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">planEndDate</property>
+                                            <expression name="expression">params["planEndDate"].value</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">planEndDate</property>
+                                </data>
+                            </cell>
+                            <cell id="206"/>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="38">
+                <property name="height">0.14583333333333334in</property>
+                <property name="borderLeftColor">#000000</property>
+                <property name="borderLeftStyle">solid</property>
+                <property name="borderLeftWidth">thin</property>
+                <property name="borderRightColor">#000000</property>
+                <property name="borderRightStyle">solid</property>
+                <property name="borderRightWidth">thin</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="39">
+                    <grid id="1417">
+                        <property name="height">0.23958333333333334in</property>
+                        <property name="width">7.145833333333333in</property>
+                        <column id="1764">
+                            <property name="width">1.6770833333333333in</property>
+                        </column>
+                        <column id="1419">
+                            <property name="width">5.46875in</property>
+                        </column>
+                        <row id="1420">
+                            <cell id="1763">
+                                <label id="1424">
+                                    <property name="style">LargeSong</property>
+                                    <text-property name="text">6、危险点分析及控制措施：</text-property>
+                                </label>
+                            </cell>
+                            <cell id="1422"/>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+        <table name="table1" id="1908">
+            <property name="borderBottomColor">#000000</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="borderLeftColor">#000000</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">thin</property>
+            <property name="borderRightColor">#000000</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">thin</property>
+            <property name="borderTopColor">#000000</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">thin</property>
+            <property name="height">0.65625in</property>
+            <property name="width">100%</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">countLine</property>
+                    <property name="displayName">countLine</property>
+                    <expression name="expression">dataSetRow["countLine"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">dangerName</property>
+                    <property name="displayName">dangerName</property>
+                    <expression name="expression">dataSetRow["dangerName"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">controlMeasure</property>
+                    <property name="displayName">controlMeasure</property>
+                    <expression name="expression">dataSetRow["controlMeasure"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="pageBreakInterval">50</property>
+            <column id="1921">
+                <property name="width">5%</property>
+            </column>
+            <column id="1922">
+                <property name="width">25%</property>
+            </column>
+            <column id="1923">
+                <property name="width">70%</property>
+            </column>
+            <header>
+                <row id="1909">
+                    <cell id="1910">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="2040">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">8pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">序号</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1911">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="2041">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">8pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">危险点</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1912">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="2042">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">8pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">控制措施</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="1913">
+                    <property name="height">0.24in</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <cell id="1914">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="2378">
+                            <property name="textAlign">center</property>
+                            <property name="widows">2</property>
+                            <property name="resultSetColumn">countLine</property>
+                        </data>
+                    </cell>
+                    <cell id="1915">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="2379">
+                            <property name="widows">2</property>
+                            <property name="resultSetColumn">dangerName</property>
+                        </data>
+                    </cell>
+                    <cell id="1916">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="2770">
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[<VALUE-OF format="HTML">row["controlMeasure"]</VALUE-OF>]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+        <table name="table2" id="1974">
+            <property name="borderBottomColor">#000000</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="borderLeftColor">#000000</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">thin</property>
+            <property name="borderRightColor">#000000</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">thin</property>
+            <property name="height">4.40625in</property>
+            <property name="width">100%</property>
+            <property name="dataSet">Data Set1</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">countLine1</property>
+                    <property name="displayName">countLine1</property>
+                    <expression name="expression">dataSetRow["countLine1"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">dangerName1</property>
+                    <property name="displayName">dangerName1</property>
+                    <expression name="expression">dataSetRow["dangerName1"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">controlMeasure1</property>
+                    <property name="displayName">controlMeasure1</property>
+                    <expression name="expression">dataSetRow["controlMeasure1"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="1987">
+                <property name="width">5%</property>
+            </column>
+            <column id="2039">
+                <property name="width">25%</property>
+            </column>
+            <column id="2028">
+                <property name="width">20%</property>
+            </column>
+            <column id="1988">
+                <property name="width">20%</property>
+            </column>
+            <column id="1989">
+                <property name="width">30%</property>
+            </column>
+            <header>
+                <row id="2056">
+                    <cell id="2057">
+                        <property name="colSpan">5</property>
+                        <property name="rowSpan">1</property>
+                        <label id="2068">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">8pt</property>
+                            <text-property name="text">作业成员声明：我已经学习了上述危险点分析与控制措施，没有补充意见，在作业中遵照执行。</text-property>
+                        </label>
+                    </cell>
+                </row>
+                <row id="2062">
+                    <cell id="2063">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <label id="2069">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">8pt</property>
+                            <text-property name="text">工作班成员签名：</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2065">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                    </cell>
+                </row>
+                <row id="2070">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <cell id="2071"/>
+                    <cell id="2072"/>
+                    <cell id="2073">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                        <grid id="2076">
+                            <property name="height">0.2708333333333333in</property>
+                            <property name="width">4.729166666666667in</property>
+                            <column id="2077">
+                                <property name="width">0.96875in</property>
+                            </column>
+                            <column id="2078"/>
+                            <column id="2091">
+                                <property name="width">0.6979166666666666in</property>
+                            </column>
+                            <column id="2089">
+                                <property name="width">0.3020833333333333in</property>
+                            </column>
+                            <column id="2079">
+                                <property name="width">0.65625in</property>
+                            </column>
+                            <column id="2094">
+                                <property name="width">0.3020833333333333in</property>
+                            </column>
+                            <column id="2080"/>
+                            <column id="2081">
+                                <property name="width">0.3020833333333333in</property>
+                            </column>
+                            <row id="2082">
+                                <cell id="2083"/>
+                                <cell id="2084"/>
+                                <cell id="2090"/>
+                                <cell id="2088">
+                                    <label id="2092">
+                                        <property name="fontFamily">"宋体"</property>
+                                        <property name="fontSize">8pt</property>
+                                        <text-property name="text">年</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="2085"/>
+                                <cell id="2093">
+                                    <label id="2095">
+                                        <property name="fontFamily">"宋体"</property>
+                                        <property name="fontSize">8pt</property>
+                                        <text-property name="text">月</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="2086"/>
+                                <cell id="2087">
+                                    <label id="2096">
+                                        <property name="fontFamily">"宋体"</property>
+                                        <property name="fontSize">8pt</property>
+                                        <text-property name="text">日</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </grid>
+                    </cell>
+                </row>
+                <row id="2049">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <cell id="2050">
+                        <property name="colSpan">5</property>
+                        <property name="rowSpan">1</property>
+                        <label id="2055">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">8pt</property>
+                            <text-property name="text">工作许可人补充的危险点分析：</text-property>
+                        </label>
+                    </cell>
+                </row>
+                <row id="1975">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <cell id="1976">
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="2046">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">8pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">序号</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2029">
+                        <label id="2047">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">8pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">危险点</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2018">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <label id="2048">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">8pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">控制措施</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="1979">
+                    <property name="height">0.24in</property>
+                    <cell id="1980">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="2381">
+                            <property name="textAlign">center</property>
+                            <property name="widows">2</property>
+                            <property name="resultSetColumn">countLine1</property>
+                        </data>
+                    </cell>
+                    <cell id="2030">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="2382">
+                            <property name="widows">2</property>
+                            <property name="resultSetColumn">dangerName1</property>
+                        </data>
+                    </cell>
+                    <cell id="2019">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="2771">
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[<VALUE-OF format="HTML">row["controlMeasure1"]</VALUE-OF>]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="1983">
+                    <cell id="1984">
+                        <property name="colSpan">5</property>
+                        <property name="rowSpan">1</property>
+                        <grid id="1767">
+                            <property name="width">100%</property>
+                            <column id="1907">
+                                <property name="width">0.21875in</property>
+                            </column>
+                            <column id="1768">
+                                <property name="width">1.2916666666666667in</property>
+                            </column>
+                            <column id="1769">
+                                <property name="width">2.0208333333333335in</property>
+                            </column>
+                            <column id="2099">
+                                <property name="width">0.8333333333333334in</property>
+                            </column>
+                            <column id="1770"/>
+                            <row id="1771">
+                                <cell id="1905">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <label id="1779">
+                                        <property name="fontFamily">"宋体"</property>
+                                        <property name="fontSize">8pt</property>
+                                        <text-property name="text">7、工作票签发人：</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="1773">
+                                    <data id="1783">
+                                        <property name="style">ButtomLineSong</property>
+                                        <list-property name="boundDataColumns">
+                                            <structure>
+                                                <property name="name">workticketSignBy</property>
+                                                <expression name="expression">params["workticketSignBy"].value</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">workticketSignBy</property>
+                                    </data>
+                                </cell>
+                                <cell id="2097"/>
+                                <cell id="1774">
+                                    <data id="1787">
+                                        <property name="style">ButtomLineSong</property>
+                                        <list-property name="boundDataColumns">
+                                            <structure>
+                                                <property name="name">workticketSignDate</property>
+                                                <expression name="expression">params["workticketSignDate"].value</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">workticketSignDate</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </grid>
+                    </cell>
+                </row>
+                <row id="1990">
+                    <cell id="1991">
+                        <property name="colSpan">5</property>
+                        <property name="rowSpan">1</property>
+                        <grid id="1589">
+                            <property name="width">100%</property>
+                            <column id="1591">
+                                <property name="width">1.5208333333333333in</property>
+                            </column>
+                            <column id="1592">
+                                <property name="width">2.0416666666666665in</property>
+                            </column>
+                            <column id="2101">
+                                <property name="width">0.8020833333333334in</property>
+                            </column>
+                            <column id="1604"/>
+                            <row id="1605">
+                                <cell id="1607">
+                                    <label id="1621">
+                                        <property name="style">LargeSong</property>
+                                        <text-property name="text">8、工作票接收人签名：</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="1608">
+                                    <data id="1793">
+                                        <property name="style">ButtomLineSong</property>
+                                        <list-property name="boundDataColumns">
+                                            <structure>
+                                                <property name="name">workticketReceiveBy</property>
+                                                <expression name="expression">params["workticketReceiveBy"].value</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">workticketReceiveBy</property>
+                                    </data>
+                                </cell>
+                                <cell id="2100"/>
+                                <cell id="1620">
+                                    <data id="1794">
+                                        <property name="style">ButtomLineSong</property>
+                                        <list-property name="boundDataColumns">
+                                            <structure>
+                                                <property name="name">workticketReceiveDate</property>
+                                                <expression name="expression">params["workticketReceiveDate"].value</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">workticketReceiveDate</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </grid>
+                    </cell>
+                </row>
+                <row id="1994">
+                    <cell id="1995">
+                        <property name="colSpan">5</property>
+                        <property name="rowSpan">1</property>
+                        <grid id="239">
+                            <property name="width">100%</property>
+                            <column id="241">
+                                <property name="width">1.40625in</property>
+                            </column>
+                            <column id="242">
+                                <property name="width">2.8125in</property>
+                            </column>
+                            <column id="252"/>
+                            <row id="253">
+                                <property name="verticalAlign">middle</property>
+                                <cell id="255">
+                                    <label id="268">
+                                        <property name="style">LargeSong</property>
+                                        <text-property name="text">9、许可开始工作时间：</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="256">
+                                    <text id="2772">
+                                        <property name="style">ButtomLineSong</property>
+                                        <property name="contentType">html</property>
+                                        <text-property name="content"><![CDATA[<VALUE-OF format="HTML">params["admissionDate"].value</VALUE-OF>]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="266"/>
+                            </row>
+                        </grid>
+                    </cell>
+                </row>
+                <row id="1998">
+                    <cell id="1999">
+                        <property name="colSpan">5</property>
+                        <property name="rowSpan">1</property>
+                        <grid id="274">
+                            <property name="height">0.2604166666666667in</property>
+                            <property name="width">6.84375in</property>
+                            <column id="2377">
+                                <property name="width">0.7291666666666666in</property>
+                            </column>
+                            <column id="276">
+                                <property name="width">0.8645833333333334in</property>
+                            </column>
+                            <column id="277">
+                                <property name="width">1.125in</property>
+                            </column>
+                            <column id="279">
+                                <property name="width">0.4583333333333333in</property>
+                            </column>
+                            <column id="281">
+                                <property name="width">0.9166666666666666in</property>
+                            </column>
+                            <column id="2373">
+                                <property name="width">1.1666666666666667in</property>
+                            </column>
+                            <column id="282">
+                                <property name="width">0.9375in</property>
+                            </column>
+                            <column id="283">
+                                <property name="width">1.0416666666666667in</property>
+                            </column>
+                            <row id="284">
+                                <property name="verticalAlign">middle</property>
+                                <cell id="2376"/>
+                                <cell id="286">
+                                    <label id="294">
+                                        <property name="style">LargeSong</property>
+                                        <text-property name="text">工作许可人:</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="287">
+                                    <data id="2354">
+                                        <property name="style">ButtomLineNumber</property>
+                                        <property name="textAlign">left</property>
+                                        <list-property name="boundDataColumns">
+                                            <structure>
+                                                <property name="name">startAdmissionMan</property>
+                                                <expression name="expression">params["startAdmissionMan"].value</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">startAdmissionMan</property>
+                                    </data>
+                                </cell>
+                                <cell id="289"/>
+                                <cell id="291">
+                                    <label id="2374">
+                                        <property name="fontFamily">"宋体"</property>
+                                        <property name="fontSize">8pt</property>
+                                        <text-property name="text">值班负责人：</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="2372">
+                                    <data id="2375">
+                                        <property name="style">ButtomLineNumber</property>
+                                        <property name="textAlign">left</property>
+                                        <list-property name="boundDataColumns">
+                                            <structure>
+                                                <property name="name">watchCharge</property>
+                                                <expression name="expression">params["watchCharge"].value</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">watchCharge</property>
+                                    </data>
+                                </cell>
+                                <cell id="292">
+                                    <property name="textAlign">right</property>
+                                    <label id="296">
+                                        <property name="style">LargeSong</property>
+                                        <text-property name="text">工作负责人：</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="293">
+                                    <data id="1741">
+                                        <property name="style">ButtomLineSong</property>
+                                        <list-property name="boundDataColumns">
+                                            <structure>
+                                                <property name="name">chargeBy7</property>
+                                                <expression name="expression">params["chargeBy7"].value</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">chargeBy7</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </grid>
+                    </cell>
+                </row>
+                <row id="2002">
+                    <cell id="2003">
+                        <property name="colSpan">5</property>
+                        <property name="rowSpan">1</property>
+                        <grid id="1869">
+                            <property name="width">100%</property>
+                            <column id="1870">
+                                <property name="width">1.40625in</property>
+                            </column>
+                            <column id="1871">
+                                <property name="width">2.84375in</property>
+                            </column>
+                            <column id="1872"/>
+                            <row id="1873">
+                                <property name="verticalAlign">middle</property>
+                                <cell id="1874">
+                                    <label id="1875">
+                                        <property name="style">LargeSong</property>
+                                        <text-property name="text">10、工作结束时间：</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="1876">
+                                    <text id="2773">
+                                        <property name="style">ButtomLineSong</property>
+                                        <property name="contentType">html</property>
+                                        <text-property name="content"><![CDATA[<VALUE-OF format="HTML">params["actualEndDate"].value</VALUE-OF>]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1878"/>
+                            </row>
+                        </grid>
+                    </cell>
+                </row>
+                <row id="2006">
+                    <cell id="2007">
+                        <property name="colSpan">5</property>
+                        <property name="rowSpan">1</property>
+                        <grid id="1879">
+                            <property name="width">100%</property>
+                            <column id="1880">
+                                <property name="width">0.75in</property>
+                            </column>
+                            <column id="1881">
+                                <property name="width">1.1145833333333333in</property>
+                            </column>
+                            <column id="1883">
+                                <property name="width">17%</property>
+                            </column>
+                            <column id="1885">
+                                <property name="width">0.3333333333333333in</property>
+                            </column>
+                            <column id="1886">
+                                <property name="width">12%</property>
+                            </column>
+                            <column id="2371">
+                                <property name="width">2.5104166666666665in</property>
+                            </column>
+                            <column id="1887"/>
+                            <row id="1888">
+                                <property name="verticalAlign">middle</property>
+                                <cell id="1889"/>
+                                <cell id="1891">
+                                    <label id="1900">
+                                        <property name="style">LargeSong</property>
+                                        <text-property name="text">工作负责人：</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="1894">
+                                    <data id="2356">
+                                        <property name="style">ButtomLineSong</property>
+                                        <list-property name="boundDataColumns">
+                                            <structure>
+                                                <property name="name">chargeBy8</property>
+                                                <expression name="expression">params["chargeBy8"].value</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">chargeBy8</property>
+                                    </data>
+                                </cell>
+                                <cell id="1898"/>
+                                <cell id="1899">
+                                    <label id="1890">
+                                        <property name="style">LargeSong</property>
+                                        <text-property name="text">工作许可人:</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="2370">
+                                    <data id="2358">
+                                        <property name="style">ButtomLineSong</property>
+                                        <list-property name="boundDataColumns">
+                                            <structure>
+                                                <property name="name">endAdmissionMan</property>
+                                                <expression name="expression">params["endAdmissionMan"].value</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">endAdmissionMan</property>
+                                    </data>
+                                </cell>
+                                <cell id="1901"/>
+                            </row>
+                        </grid>
+                    </cell>
+                </row>
+                <row id="2010">
+                    <cell id="2011">
+                        <property name="colSpan">5</property>
+                        <property name="rowSpan">1</property>
+                        <grid id="444">
+                            <property name="width">100%</property>
+                            <column id="446">
+                                <property name="width">0.7291666666666666in</property>
+                            </column>
+                            <column id="447"/>
+                            <row id="448">
+                                <property name="verticalAlign">middle</property>
+                                <cell id="450">
+                                    <label id="453">
+                                        <property name="style">LargeSong</property>
+                                        <text-property name="text">11、备注：</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="451">
+                                    <data id="1555">
+                                        <property name="style">ButtomLineSong</property>
+                                        <list-property name="boundDataColumns">
+                                            <structure>
+                                                <property name="name">workticketMemoOne</property>
+                                                <expression name="expression">params["workticketMemoOne"].value</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">workticketMemoOne</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </grid>
+                    </cell>
+                </row>
+                <row id="2014">
+                    <cell id="2015">
+                        <property name="colSpan">5</property>
+                        <property name="rowSpan">1</property>
+                        <grid id="1580">
+                            <property name="width">100%</property>
+                            <column id="1581">
+                                <property name="width">0.6979166666666666in</property>
+                            </column>
+                            <column id="1582"/>
+                            <row id="1583">
+                                <cell id="1584">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <data id="1586">
+                                        <property name="style">ButtomLineSong</property>
+                                        <list-property name="boundDataColumns">
+                                            <structure>
+                                                <property name="name">workticketMemoTwo</property>
+                                                <expression name="expression">params["workticketMemoTwo"].value</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">workticketMemoTwo</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </grid>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

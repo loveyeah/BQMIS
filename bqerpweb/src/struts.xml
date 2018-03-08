@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="config/struts/system_struts.xml" /> 
+	<include file="config/struts/runlog_struts.xml"/> 
+	<include file="config/struts/equ_struts.xml" />
+	<include file="config/struts/bqfailure_struts.xml"/>
+	<include file="config/struts/equbug_struts.xml"/>
+	<include file="config/struts/hr_struts.xml"/>
+	<include file="config/struts/manager_struts.xml"/>
+	<include file="config/struts/timework_struts.xml"/>
+	<include file="config/struts/equchange_struts.xml"/>
+	<include file="config/struts/busmananger_struts.xml"/>
+	<include file="config/struts/managecontract_struts.xml"/>
+	<include file="config/struts/manageplan_struts.xml"/>
+    <include file="config/struts/workticket_struts.xml"/>
+	<include file="config/struts/operateticket_struts.xml"/>
+	<include file="config/struts/comm_struts.xml"/>
+	<include file="config/struts/bqworkticket_struts.xml"/> 
+	<include file="config/struts/powernotice_struts.xml"/> 
+	<include file="config/struts/resource_struts.xml"/> 
+	<include file="config/struts/protectapply_struts.xml"/> 
+	<include file="config/struts/securityproduction_struts.xml" />
+	<include file="config/struts/clients_struts.xml"/>
+	<include file="config/struts/manageproject_struts.xml"/>
+	<include file="config/struts/productionrec_struts.xml"/>
+	<include file="config/struts/managebudget_struts.xml"/>
+	<include file="config/struts/equplanrepair_struts.xml"/>
+	<include file="config/struts/ca_struts.xml"/>
+	<include file="config/struts/administration_struts.xml" />
+	<include file="config/struts/managexam_struts.xml" />
+	<include file="config/struts/workbill_struts.xml" />
+	<include file="config/struts/equstandardjob_struts.xml" />
+	<include file="config/struts/manageitemplan_struts.xml" />
+	<include file="config/struts/managemaintweek_struts.xml" />
+</struts>

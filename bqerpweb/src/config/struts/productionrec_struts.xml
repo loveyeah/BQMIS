@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-validation.xml" />
+	<package name="productionrec" namespace="/productionrec"
+		extends="jfreechart-default">
+		<!-- 节能监督 -->
+		<!-- 节能分析 -->
+		<action name="findEnergAnalyseList"
+			class="power.web.productiontec.retrenchenergy.action.RetEnergyAnalyseAction"
+			method="findEnergAnalyseList">
+		</action>
+		<action name="addEnergAnalyseInfo"
+			class="power.web.productiontec.retrenchenergy.action.RetEnergyAnalyseAction"
+			method="addEnergAnalyseInfo">
+		</action>
+		<action name="updateEnergAnalyseInfo"
+			class="power.web.productiontec.retrenchenergy.action.RetEnergyAnalyseAction"
+			method="updateEnergAnalyseInfo">
+		</action>
+		<action name="deleteEnergAnalyseInfo"
+			class="power.web.productiontec.retrenchenergy.action.RetEnergyAnalyseAction"
+			method="deleteEnergAnalyseInfo">
+		</action>
+		<!-- 节能总结 -->
+		<action name="findEnergySummaryList"
+			class="power.web.productiontec.retrenchenergy.action.ReEnergySummaryAction"
+			method="findEnergySummaryList">
+		</action>
+		<action name="addEnergySummaryInfo"
+			class="power.web.productiontec.retrenchenergy.action.ReEnergySummaryAction"
+			method="addEnergySummaryInfo">
+		</action>
+		<action name="updateEnergySummaryInfo"
+			class="power.web.productiontec.retrenchenergy.action.ReEnergySummaryAction"
+			method="updateEnergySummaryInfo">
+		</action>
+		<action name="deleteEnergySummaryInfo"
+			class="power.web.productiontec.retrenchenergy.action.ReEnergySummaryAction"
+			method="deleteEnergySummaryInfo">
+		</action>
+		<!-- 节能快报 -->
+		<action name="findEnergyReportList"
+			class="power.web.productiontec.retrenchenergy.action.ReEnergyReportAction"
+			method="findEnergyReportList">
+		</action>
+		<action name="addEnergyReportInfo"
+			class="power.web.productiontec.retrenchenergy.action.ReEnergyReportAction"
+			method="addEnergyReportInfo">
+		</action>
+		<action name="updateEnergyReportInfo"
+			class="power.web.productiontec.retrenchenergy.action.ReEnergyReportAction"
+			method="updateEnergyReportInfo">
+		</action>
+		<action name="deleteEnergyReportInfo"
+			class="power.web.productiontec.retrenchenergy.action.ReEnergyReportAction"
+			method="deleteEnergyReportInfo">
+		</action>
+
+		<!-- 中长期节能规划 -->
+		<action name="findEnergyProgramList"
+			class="power.web.productiontec.retrenchenergy.action.RetEnergyProgramAction"
+			method="findEnergyProgramList">
+		</action>
+		<action name="addEnergyProgramInfo"
+			class="power.web.productiontec.retrenchenergy.action.RetEnergyProgramAction"
+			method="addEnergyProgramInfo">
+		</action>
+		<action name="updateEnergyProgramInfo"
+			class="power.web.productiontec.retrenchenergy.action.RetEnergyProgramAction"
+			method="updateEnergyProgramInfo">
+		</action>
+		<action name="deleteEnergyProgramInfo"
+			class="power.web.productiontec.retrenchenergy.action.RetEnergyProgramAction"
+			method="deleteEnergyProgramInfo">
+		</action>
+
+		<!-- 绝缘事故登记 -->
+		<action name="addSGDJInfo"
+			class="power.web.productiontec.insulation.action.SGDJAction"
+			method="addSGDJInfo">
+		</action>
+		<action name="updateSGDJInfo"
+			class="power.web.productiontec.insulation.action.SGDJAction"
+			method="updateSGDJInfo">
+		</action>
+		<action name="deleteSGDJInfo"
+			class="power.web.productiontec.insulation.action.SGDJAction"
+			method="deleteSGDJInfo">
+		</action>
+		<action name="findSGDJList"
+			class="power.web.productiontec.insulation.action.SGDJAction"
+			method="findSGDJList">
+		</action>
+
+		<!-- 绝缘缺陷登记 -->
+		<action name="findQxdjList"
+			class="power.web.productiontec.insulation.action.FailureRegisterAction"
+			method="findQxdjList">
+		</action>
+		<action name="addQxdjInfo"
+			class="power.web.productiontec.insulation.action.FailureRegisterAction"
+			method="addQxdjInfo">
+		</action>
+		<action name="updateQxdjInfo"
+			class="power.web.productiontec.insulation.action.FailureRegisterAction"
+			method="updateQxdjInfo">
+		</action>
+		<action name="deleteQxdjInfo"
+			class="power.web.productiontec.insulation.action.FailureRegisterAction"
+			method="deleteQxdjInfo">
+		</action>
+
+		<!-- 绝缘监督试验报告 -->
+		<action name="addSybgInfo"
+			class="power.web.productiontec.insulation.action.TestReportAction"
+			method="addSybgInfo">
+		</action>
+		<action name="updateSybgInfo"
+			class="power.web.productiontec.insulation.action.TestReportAction"
+			method="updateSybgInfo">
+		</action>
+		<action name="deleteSybgInfo"
+			class="power.web.productiontec.insulation.action.TestReportAction"
+			method="deleteSybgInfo">
+		</action>
+		<action name="findSybgAllList"
+			class="power.web.productiontec.insulation.action.TestReportAction"
+			method="findSybgAllList">
+		</action>
+
+		<!-- 绝缘仪器仪表 -->
+		<action name="addPtJyjdJYqybtzlh"
+			class="power.web.productiontec.insulation.action.ApparatusAction"
+			method="addPtJyjdJYqybtzlh">
+		</action>
+		<action name="updatePtJyjdJYqybtzlh"
+			class="power.web.productiontec.insulation.action.ApparatusAction"
+			method="updatePtJyjdJYqybtzlh">
+		</action>
+		<action name="deletePtJyjdJYqybtzlh"
+			class="power.web.productiontec.insulation.action.ApparatusAction"
+			method="deletePtJyjdJYqybtzlh">
+		</action>
+		<action name="findPtJyjdJYqybtzlhList"
+			class="power.web.productiontec.insulation.action.ApparatusAction"
+			method="findPtJyjdJYqybtzlhList">
+		</action>
+		<action name="findPjjTryList"
+			class="power.web.productiontec.insulation.action.ApparatusAction"
+			method="findPjjTryList">
+		</action>
+		<action name="editPjjTryInfo"
+			class="power.web.productiontec.insulation.action.ApparatusAction"
+			method="editPjjTryInfo">
+		</action>
+		<!-- 绝缘设备 -->
+		<action name="addPtJyjdJSbtzlh"
+			class="power.web.productiontec.insulation.action.DeviceAction"
+			method="addPtJyjdJSbtzlh">
+		</action>
+		<action name="updatePtJyjdJSbtzlh"
+			class="power.web.productiontec.insulation.action.DeviceAction"
+			method="updatePtJyjdJSbtzlh">
+		</action>
+		<action name="deletePtJyjdJSbtzlh"
+			class="power.web.productiontec.insulation.action.DeviceAction"
+			method="deletePtJyjdJSbtzlh">
+		</action>
+		<action name="findPtJyjdJSbtzlhList"
+			class="power.web.productiontec.insulation.action.DeviceAction"
+			method="findPtJyjdJSbtzlhList">
+		</action>
+		<action name="findDeviceTryList"
+			class="power.web.productiontec.insulation.action.DeviceAction"
+			method="findDeviceTryList">
+		</action>
+		<action name="editDeviceTryInfo"
+			class="power.web.productiontec.insulation.action.DeviceAction"
+			method="editDeviceTryInfo">
+		</action>
+		<!-- 电除尘器运行监督月报 -->
+		<action name="findPtJReportList"
+			class="power.web.productiontec.environmentSupervise.action.PrecipitatorRunAction"
+			method="findPtJReportList">
+		</action>
+		<action name="addPtJReportInfo"
+			class="power.web.productiontec.environmentSupervise.action.PrecipitatorRunAction"
+			method="addPtJReportInfo">
+		</action>
+		<action name="updatePtJReportInfo"
+			class="power.web.productiontec.environmentSupervise.action.PrecipitatorRunAction"
+			method="updatePtJReportInfo">
+		</action>
+		<action name="deletePtJReportInfo"
+			class="power.web.productiontec.environmentSupervise.action.PrecipitatorRunAction"
+			method="deletePtJReportInfo">
+		</action>
+		<!-- 电能质量监督月报 -->
+		<action name="findPQSList"
+			class="power.web.productiontec.powerQuaSupervise.action.PowerQuaSupAction"
+			method="findList">
+		</action>
+		<action name="addPQSMonthlyInfo"
+			class="power.web.productiontec.powerQuaSupervise.action.PowerQuaSupAction"
+			method="addMonthlyInfo">
+		</action>
+		<action name="updatePQSInfo"
+			class="power.web.productiontec.powerQuaSupervise.action.PowerQuaSupAction"
+			method="updateInfo">
+		</action>
+		<action name="deletePQSInfo"
+			class="power.web.productiontec.powerQuaSupervise.action.PowerQuaSupAction"
+			method="deleteInfo">
+		</action>
+		<!--电能质量监督季报-->
+		<action name="addPQSQuarterlyInfo"
+			class="power.web.productiontec.powerQuaSupervise.action.PowerQuaSupAction"
+			method="addQuarterlyInfo">
+		</action>
+
+		<!-- 化学在线仪表 -->
+		<action name="addPtHxjdCHxzxybwh"
+			class="power.web.productiontec.chemistry.action.ChemistryAction"
+			method="addPtHxjdCHxzxybwh">
+		</action>
+		<action name="updatePtHxjdCHxzxybwh"
+			class="power.web.productiontec.chemistry.action.ChemistryAction"
+			method="updatePtHxjdCHxzxybwh">
+		</action>
+		<action name="deletePtHxjdCHxzxybwh"
+			class="power.web.productiontec.chemistry.action.ChemistryAction"
+			method="deletePtHxjdCHxzxybwh">
+		</action>
+		<action name="findPtHxjdCHxzxybwhList"
+			class="power.web.productiontec.chemistry.action.ChemistryAction"
+			method="findPtHxjdCHxzxybwhList">
+		</action>
+		<!-- 化学在线仪器月报 -->
+		<action name="findPtHxjdJZxybybzbList"
+			class="power.web.productiontec.chemistry.action.ChemistryAction"
+			method="findPtHxjdJZxybybzbList">
+		</action>
+		<action name="deletePtHxjdJZxybybzb"
+			class="power.web.productiontec.chemistry.action.ChemistryAction"
+			method="deletePtHxjdJZxybybzb">
+		</action>
+		<action name="findChemistryDetailsList"
+			class="power.web.productiontec.chemistry.action.ChemistryAction"
+			method="findChemistryDetailsList">
+		</action>
+		<action name="modifyChemistryReportDetails"
+			class="power.web.productiontec.chemistry.action.ChemistryAction"
+			method="modifyChemistryReportDetails">
+		</action>
+
+		<!-- 凝汽器泄漏台帐 -->
+		<action name="findCondenserLeakList"
+			class="power.web.productiontec.chemistry.action.CondenserleakAction"
+			method="findCondenserLeakList">
+		</action>
+		<action name="findcondenserDetailsList"
+			class="power.web.productiontec.chemistry.action.CondenserleakAction"
+			method="findcondenserDetailsList">
+		</action>
+		<action name="deleteCondenserLeak"
+			class="power.web.productiontec.chemistry.action.CondenserleakAction"
+			method="deleteCondenserLeak">
+		</action>
+		<action name="modifyCondenserLeakDetails"
+			class="power.web.productiontec.chemistry.action.CondenserleakAction"
+			method="modifyCondenserLeakDetails">
+		</action>
+
+		<!-- 热力设备检查情况 -->
+		<action name="findThermalEquCheckList"
+			class="power.web.productiontec.chemistry.action.ThermalEquCheckAction"
+			method="findThermalEquCheckList">
+		</action>
+		<action name="addThermalEquCheck"
+			class="power.web.productiontec.chemistry.action.ThermalEquCheckAction"
+			method="addThermalEquCheck">
+		</action>
+		<action name="updateThermalEquCheck"
+			class="power.web.productiontec.chemistry.action.ThermalEquCheckAction"
+			method="updateThermalEquCheck">
+		</action>
+		<action name="deleteThermalEquCheck"
+			class="power.web.productiontec.chemistry.action.ThermalEquCheckAction"
+			method="deleteThermalEquCheck">
+		</action>
+		<action name="saveAndUpdateRecord"
+			class="power.web.productiontec.chemistry.action.ThermalEquCheckAction"
+			method="saveAndUpdateRecord">
+		</action>
+		<action name="findEquCheckDetailList"
+			class="power.web.productiontec.chemistry.action.ThermalEquCheckAction"
+			method="findEquCheckDetailList">
+		</action>
+
+		<!-- 焊工技能考核等级 -->
+		<action name="saveJbxx"
+			class="power.web.productiontec.metalSupervise.action.WelderInfoAction"
+			method="saveJbxx">
+		</action>
+		<action name="updateJbxx"
+			class="power.web.productiontec.metalSupervise.action.WelderInfoAction"
+			method="updateJbxx">
+		</action>
+		<action name="deleteJbxx"
+			class="power.web.productiontec.metalSupervise.action.WelderInfoAction"
+			method="deleteJbxx">
+		</action>
+		<action name="findJbxxList"
+			class="power.web.productiontec.metalSupervise.action.WelderInfoAction"
+			method="findJbxxList">
+		</action>
+		<action name="findJnkhbListByweldId"
+			class="power.web.productiontec.metalSupervise.action.WelderInfoAction"
+			method="findJnkhbListByweldId">
+		</action>
+		<action name="saveJnkhb"
+			class="power.web.productiontec.metalSupervise.action.WelderInfoAction"
+			method="saveJnkhb">
+		</action>
+
+		<action name="findJnKhxmListByhgjnkhId"
+			class="power.web.productiontec.metalSupervise.action.AssessAction"
+			method="findJnKhxmListByhgjnkhId">
+		</action>
+
+		<action name="saveJnKhxm"
+			class="power.web.productiontec.metalSupervise.action.AssessAction"
+			method="saveJnKhxm">
+		</action>
+
+		<!-- 继电保护类型维护 -->
+		<action name="addRelayProtection"
+			class="power.web.productiontec.relayProtection.RelayProtectionAction"
+			method="addRelayProtection">
+		</action>
+		<action name="updateRelayProtection"
+			class="power.web.productiontec.relayProtection.RelayProtectionAction"
+			method="updateRelayProtection">
+		</action>
+		<action name="deleteRelayProtection"
+			class="power.web.productiontec.relayProtection.RelayProtectionAction"
+			method="deleteRelayProtection">
+		</action>
+		<action name="findRelayProtectionList"
+			class="power.web.productiontec.relayProtection.RelayProtectionAction"
+			method="findRelayProtectionList">
+		</action>
+		<!-- 继电定值项目维护 -->
+		<action name="addPtJdbhCDzxmwh"
+			class="power.web.productiontec.relayProtection.ProtectionProjectAction"
+			method="addPtJdbhCDzxmwh">
+		</action>
+		<action name="updatePtJdbhCDzxmwh"
+			class="power.web.productiontec.relayProtection.ProtectionProjectAction"
+			method="updatePtJdbhCDzxmwh">
+		</action>
+		<action name="deletePtJdbhCDzxmwh"
+			class="power.web.productiontec.relayProtection.ProtectionProjectAction"
+			method="deletePtJdbhCDzxmwh">
+		</action>
+		<action name="findPtJdbhCDzxmwhList"
+			class="power.web.productiontec.relayProtection.ProtectionProjectAction"
+			method="findPtJdbhCDzxmwhList">
+		</action>
+		<!-- 保护装置对应保护类型 -->
+		<action name="saveDeviceAndType"
+			class="power.web.productiontec.relayProtection.ProtectionProjectAction"
+			method="saveDeviceAndType">
+		</action>
+		<action name="findDeviceProList"
+			class="power.web.productiontec.relayProtection.ProtectionProjectAction"
+			method="findDeviceProList">
+		</action>
+
+		<!--热控监督 -->
+		<!--仪器仪表台帐 -->
+		<action name="saveTZ"
+			class="power.web.productiontec.thermalSupervise.action.InstrumentAccountAction"
+			method="saveTZ">
+		</action>
+		<action name="updateTz"
+			class="power.web.productiontec.thermalSupervise.action.InstrumentAccountAction"
+			method="updateTz">
+		</action>
+		<action name="findAccountByNames"
+			class="power.web.productiontec.thermalSupervise.action.InstrumentAccountAction"
+			method="findAccountByNames">
+		</action>
+		<action name="deleteTZ"
+			class="power.web.productiontec.thermalSupervise.action.InstrumentAccountAction"
+			method="deleteTZ">
+		</action>
+		<action name="findAccountByMonth"
+			class="power.web.productiontec.thermalSupervise.action.InstrumentAccountAction"
+			method="findAccountByMonth">
+		</action>
+		<action name="findOverdueTestRecord"
+			class="power.web.productiontec.thermalSupervise.action.InstrumentAccountAction"
+			method="findOverdueTestRecord">
+		</action>
+
+		<!--仪器仪表检验参数维护 -->
+		<action name="save"
+			class="power.web.productiontec.thermalSupervise.action.InstrumentTestParamsAction"
+			method="save">
+		</action>
+		<action name="findJycsBySort"
+			class="power.web.productiontec.thermalSupervise.action.InstrumentTestParamsAction"
+			method="findJycsBySort">
+		</action>
+		<!--仪器仪表参数维护 -->
+		<action name="findLBList"
+			class="power.web.productiontec.thermalSupervise.action.InstrumentSortAction"
+			method="findLBList">
+		</action>
+		<action name="saveLB"
+			class="power.web.productiontec.thermalSupervise.action.InstrumentSortAction"
+			method="saveLB">
+		</action>
+		<action name="saveDJ"
+			class="power.web.productiontec.thermalSupervise.action.InstrumentGradeAction"
+			method="saveDJ">
+		</action>
+		<action name="findDJList"
+			class="power.web.productiontec.thermalSupervise.action.InstrumentGradeAction"
+			method="findDJList">
+		</action>
+		<action name="saveJD"
+			class="power.web.productiontec.thermalSupervise.action.InstrumentPrecisonAction"
+			method="saveJD">
+		</action>
+		<action name="findJDList"
+			class="power.web.productiontec.thermalSupervise.action.InstrumentPrecisonAction"
+			method="findJDList">
+		</action>
+		<!--仪器仪表检验记录 -->
+		<action name="saveCSZ"
+			class="power.web.productiontec.thermalSupervise.action.InstrumentTestRecordsAction"
+			method="saveCSZ">
+		</action>
+		<action name="deleteJLAndCSZ"
+			class="power.web.productiontec.thermalSupervise.action.InstrumentTestRecordsAction"
+			method="deleteJLAndCSZ">
+		</action>
+		<action name="findCSZ"
+			class="power.web.productiontec.thermalSupervise.action.InstrumentTestRecordsAction"
+			method="findCSZ">
+		</action>
+		<action name="findJLList"
+			class="power.web.productiontec.thermalSupervise.action.InstrumentTestRecordsAction"
+			method="findJLList">
+		</action>
+		<action name="findJLByTz"
+			class="power.web.productiontec.thermalSupervise.action.InstrumentTestRecordsAction"
+			method="findJLByTz">
+		</action>
+		<!--技术监督网成员维护 -->
+		<action name="findPtJJdwcyList"
+			class="power.web.productiontec.technologySupervise.action.SuperviseMembersAction"
+			method="findPtJJdwcyList">
+		</action>
+		<action name="addPtJJdwcyInfo"
+			class="power.web.productiontec.technologySupervise.action.SuperviseMembersAction"
+			method="addPtJJdwcyInfo">
+		</action>
+		<action name="updatePtJJdwcyInfo"
+			class="power.web.productiontec.technologySupervise.action.SuperviseMembersAction"
+			method="updatePtJJdwcyInfo">
+		</action>
+		<action name="deletePtJJdwcyInfo"
+			class="power.web.productiontec.technologySupervise.action.SuperviseMembersAction"
+			method="deletePtJJdwcyInfo">
+		</action>
+
+		<!--继电保护实验类别维护 -->
+		<action name="findExperimentSortList"
+			class="power.web.productiontec.relayProtection.ExperimentSortAction"
+			method="findExperimentSortList">
+		</action>
+		<action name="addExperimentSortInfo"
+			class="power.web.productiontec.relayProtection.ExperimentSortAction"
+			method="addExperimentSortInfo">
+		</action>
+		<action name="updateExperimentSortInfo"
+			class="power.web.productiontec.relayProtection.ExperimentSortAction"
+			method="updateExperimentSortInfo">
+		</action>
+		<action name="deleteExperimentSortInfo"
+			class="power.web.productiontec.relayProtection.ExperimentSortAction"
+			method="deleteExperimentSortInfo">
+		</action>
+		<!--继电保护实验类别与项目对应 -->
+		<action name="findExperimentSortRefItemList"
+			class="power.web.productiontec.relayProtection.ExperimentSortRefItemAction"
+			method="findExperimentSortRefItemList">
+		</action>
+		<action name="saveExperimentSortRefItemInfo"
+			class="power.web.productiontec.relayProtection.ExperimentSortRefItemAction"
+			method="saveExperimentSortRefItemInfo">
+		</action>
+		<!--继电保护试验项目名称与试验点对应 -->
+		<action name="getSyxmwhList"
+			class="power.web.productiontec.relayProtection.ExperimentItemAction"
+			method="getSyxmwhList">
+		</action>
+		<action name="saveSyxmwh"
+			class="power.web.productiontec.relayProtection.ExperimentItemAction"
+			method="saveSyxmwh">
+		</action>
+		<action name="updateSyxmwh"
+			class="power.web.productiontec.relayProtection.ExperimentItemAction"
+			method="updateSyxmwh">
+		</action>
+		<action name="deleteSyxmwh"
+			class="power.web.productiontec.relayProtection.ExperimentItemAction"
+			method="deleteSyxmwh">
+		</action>
+		<action name="findSydwhListBySyxmId"
+			class="power.web.productiontec.relayProtection.ExperimentItemAction"
+			method="findSydwhListBySyxmId">
+		</action>
+		<action name="saveSydwh"
+			class="power.web.productiontec.relayProtection.ExperimentItemAction"
+			method="saveSydwh">
+		</action>
+		<!-- 被保护设备台帐 -->
+		<action name="addProtectedDevice"
+			class="power.web.productiontec.protectedDevices.ProtectedDevicesAction"
+			method="addProtectedDevice">
+		</action>
+		<action name="deleteProtectedDevice"
+			class="power.web.productiontec.protectedDevices.ProtectedDevicesAction"
+			method="deleteProtectedDevice">
+		</action>
+		<action name="updateProtectedDevice"
+			class="power.web.productiontec.protectedDevices.ProtectedDevicesAction"
+			method="updateProtectedDevice">
+		</action>
+		<action name="findProtectedDeviceList"
+			class="power.web.productiontec.protectedDevices.ProtectedDevicesAction"
+			method="findProtectedDeviceList">
+		</action>
+
+		<!--继电保护定值登记  -->
+		<action name="addAndUpdateRecord"
+			class="power.web.productiontec.relayProtection.ProtectionNoticeAction"
+			method="addAndUpdateRecord">
+		</action>
+		<action name="findRelayProtectionNoticeList"
+			class="power.web.productiontec.relayProtection.ProtectionNoticeAction"
+			method="findRelayProtectionNoticeList">
+		</action>
+		<action name="findNoticeDetailList"
+			class="power.web.productiontec.relayProtection.ProtectionNoticeAction"
+			method="findNoticeDetailList">
+		</action>
+		<action name="deleteNotice"
+			class="power.web.productiontec.relayProtection.ProtectionNoticeAction"
+			method="deleteNotice">
+		</action>
+		<action name="saveFile"
+			class="power.web.productiontec.relayProtection.ProtectionNoticeAction"
+			method="saveFile">
+		</action>
+
+		<!-- 监督网信息录入 -->
+		<!-- 活动纪要信息录入 -->
+		<action name="findPtJJdhdjlList"
+			class="power.web.productiontec.technologySupervise.action.ActivityAction"
+			method="findPtJJdhdjlList">
+		</action>
+		<!-- 可靠性年报表 ghzhou-->
+		<action name="findDependOnlyYear"
+			class="power.web.productiontec.dependability.action.DependReportAction"
+			method="findDependOnlyYear">
+		</action>
+		<!-- 增加可靠性报表 ghzhou 091029 -->
+		<action name="addDependYearReport"
+				class="power.web.productiontec.dependability.action.DependReportAction"
+				method="addDependYearReport">
+		</action>
+		<!-- 修改可靠性报表 ghzhou 091029 -->
+		<action name="updateDependYearReport" 
+				class="power.web.productiontec.dependability.action.DependReportAction"
+				method="updateDependYearReport">
+		</action>
+		<!--  删除可靠性报表 -->
+		<action name="deleteDependYearReport" 
+				class="power.web.productiontec.dependability.action.DependReportAction"
+				method="deleteDependYearReport">
+		</action>
+		<action name="addPtJJdhdjlInfo"
+			class="power.web.productiontec.technologySupervise.action.ActivityAction"
+			method="addPtJJdhdjlInfo">
+		</action>
+		<action name="updatePtJJdhdjlInfo"
+			class="power.web.productiontec.technologySupervise.action.ActivityAction"
+			method="updatePtJJdhdjlInfo">
+		</action>
+		<action name="deletePtJJdhdjlInfo"
+			class="power.web.productiontec.technologySupervise.action.ActivityAction"
+			method="deletePtJJdhdjlInfo">
+		</action>
+		<!-- 总结信息录入 -->
+		<action name="findPtJJdzjList"
+			class="power.web.productiontec.technologySupervise.action.SummaryAction"
+			method="findPtJJdzjList">
+		</action>
+		<action name="addPtJJdzjInfo"
+			class="power.web.productiontec.technologySupervise.action.SummaryAction"
+			method="addPtJJdzjInfo">
+		</action>
+		<action name="updatePtJJdzjInfo"
+			class="power.web.productiontec.technologySupervise.action.SummaryAction"
+			method="updatePtJJdzjInfo">
+		</action>
+		<action name="deletePtJJdzjInfo"
+			class="power.web.productiontec.technologySupervise.action.SummaryAction"
+			method="deletePtJJdzjInfo">
+		</action>
+		<!-- 事件分析信息录入 -->
+		<action name="findPtJSjfxList"
+			class="power.web.productiontec.technologySupervise.action.EventAnalysisAction"
+			method="findPtJSjfxList">
+		</action>
+		<action name="addPtJSjfxInfo"
+			class="power.web.productiontec.technologySupervise.action.EventAnalysisAction"
+			method="addPtJSjfxInfo">
+		</action>
+		<action name="updatePtJSjfxInfo"
+			class="power.web.productiontec.technologySupervise.action.EventAnalysisAction"
+			method="updatePtJSjfxInfo">
+		</action>
+		<action name="deletePtJSjfxInfo"
+			class="power.web.productiontec.technologySupervise.action.EventAnalysisAction"
+			method="deletePtJSjfxInfo">
+		</action>
+		<!-- 保护设备台帐 -->
+		<action name="addProtectEqu"
+			class="power.web.productiontec.protectedDevices.ProtectEquAction"
+			method="addProtectEqu">
+		</action>
+		<action name="updateProtectEqu"
+			class="power.web.productiontec.protectedDevices.ProtectEquAction"
+			method="updateProtectEqu">
+		</action>
+		<action name="deleteProtectEqu"
+			class="power.web.productiontec.protectedDevices.ProtectEquAction"
+			method="deleteProtectEqu">
+		</action>
+		<action name="findProtectEquList"
+			class="power.web.productiontec.protectedDevices.ProtectEquAction"
+			method="findProtectEquList">
+		</action>
+		<!-- 保护装置动作情况 -->
+		<action name="addPProtectDevMotion"
+			class="power.web.productiontec.protectedDevices.ProtectDevMotionAction"
+			method="addPProtectDevMotion">
+		</action>
+		<action name="updateProtectDevMotion"
+			class="power.web.productiontec.protectedDevices.ProtectDevMotionAction"
+			method="updateProtectDevMotion">
+		</action>
+		<action name="deleteProtectDevMotion"
+			class="power.web.productiontec.protectedDevices.ProtectDevMotionAction"
+			method="deleteProtectDevMotion">
+		</action>
+		<action name="findProtectDevMotionList"
+			class="power.web.productiontec.protectedDevices.ProtectDevMotionAction"
+			method="findProtectDevMotionList">
+		</action>
+		<!-- 继电试验报告 -->
+		<action name="addExperimentReportInfo"
+			class="power.web.productiontec.relayProtection.ExperimentReportAction"
+			method="addExperimentReportInfo">
+		</action>
+		<action name="updateExperimentReportInfo"
+			class="power.web.productiontec.relayProtection.ExperimentReportAction"
+			method="updateExperimentReportInfo">
+		</action>
+		<action name="deleteExperimentReport"
+			class="power.web.productiontec.relayProtection.ExperimentReportAction"
+			method="deleteExperimentReport">
+		</action>
+		<action name="findExperimentReportList"
+			class="power.web.productiontec.relayProtection.ExperimentReportAction"
+			method="findExperimentReportList">
+		</action>
+		<action name="findExperiReportDetailsList"
+			class="power.web.productiontec.relayProtection.ExperimentReportAction"
+			method="findExperiReportDetailsList">
+		</action>
+		<action name="modifyExperiReportDetails"
+			class="power.web.productiontec.relayProtection.ExperimentReportAction"
+			method="modifyExperiReportDetails">
+		</action>
+		<!-- 继电保护定值计算说明 -->
+		<action name="saveDzjssm"
+			class="power.web.productiontec.relayProtection.CalculateInstructionAction"
+			method="saveDzjssm">
+		</action>
+		<action name="updateDzjssm"
+			class="power.web.productiontec.relayProtection.CalculateInstructionAction"
+			method="updateDzjssm">
+		</action>
+		<action name="deleteDzjssm"
+			class="power.web.productiontec.relayProtection.CalculateInstructionAction"
+			method="deleteDzjssm">
+		</action>
+		<action name="getAllDzjssm"
+			class="power.web.productiontec.relayProtection.CalculateInstructionAction"
+			method="getAllDzjssm">
+		</action>
+		<!-- 可靠性分析 -->
+		<!-- 机组状态维护 -->
+		<action name="saveNode"
+			class="power.web.productiontec.dependability.action.BlockStatusMaintAction"
+			method="saveNode">
+		</action>
+		<action name="updateNode"
+			class="power.web.productiontec.dependability.action.BlockStatusMaintAction"
+			method="updateNode">
+		</action>
+		<action name="deleteNode"
+			class="power.web.productiontec.dependability.action.BlockStatusMaintAction"
+			method="deleteNode">
+		</action>
+		<action name="findNodeByPNode"
+			class="power.web.productiontec.dependability.action.BlockStatusMaintAction"
+			method="findNodeByPNode">
+		</action>
+		<action name="findNodeInfo"
+			class="power.web.productiontec.dependability.action.BlockStatusMaintAction"
+			method="findNodeInfo">
+		</action>
+		<!-- 机组可靠信录入-->
+		<action name="saveDependInput"
+			class="power.web.productiontec.dependability.action.BlockDependInputActon"
+			method="saveDependInput">
+		</action>
+		<action name="getBlockDependList"
+			class="power.web.productiontec.dependability.action.BlockDependInputActon"
+			method="getBlockDependList">
+		</action>
+		<!-- 机组信息-->
+		<action name="saveBlockInfo"
+			class="power.web.productiontec.dependability.action.BlockInfoActon"
+			method="saveBlockInfo">
+		</action>
+		<action name="getBlockInfoList"
+			class="power.web.productiontec.dependability.action.BlockInfoActon"
+			method="getBlockInfoList">
+		</action>
+		<!-- 可靠性数据月报-->
+		<action name="getMonthInput"
+			class="power.web.productiontec.dependability.action.MonthlyDependItemComputationAction"
+			method="getMonthInput">
+		</action>
+		<action name="computeAndSave"
+			class="power.web.productiontec.dependability.action.MonthlyDependItemComputationAction"
+			method="computeAndSave">
+		</action>
+		<action name="update"
+			class="power.web.productiontec.dependability.action.MonthlyDependItemComputationAction"
+			method="update">
+		</action>
+		<action name="findAllBlockMonthly"
+			class="power.web.productiontec.dependability.action.MonthlyDependItemComputationAction"
+			method="findAllBlockMonthly">
+		</action>
+		<action name="monthlyResultsModify"
+			class="power.web.productiontec.dependability.action.MonthlyDependItemComputationAction"
+			method="monthlyResultsModify">
+		</action>
+		<!-- 大唐集团继电保护监督报表2AND4(升压站继电保护及安全自动装置校验计划完成情况月报表) -->
+		<action name="getPtJJdbhjd2List"
+			class="power.web.productiontec.report.action.PtJJdbhjd2Action"
+			method="getPtJJdbhjd2List">
+		</action>
+		<action name="savePtJjdbhjd2Mod"
+			class="power.web.productiontec.report.action.PtJJdbhjd2Action"
+			method="savePtJjdbhjd2Mod">
+		</action>
+		<!-- 大唐继电保护月报表1AND3（机组继电保护及安全自动装置动作情况月报表） -->
+		<action name="getPtJJdbhjd1List"
+			class="power.web.productiontec.report.action.PtJJdbhjd1Action"
+			method="getPtJJdbhjd1List">
+		</action>
+		<action name="savePtJjdbhjd1Mod"
+			class="power.web.productiontec.report.action.PtJJdbhjd1Action"
+			method="savePtJjdbhjd1Mod">
+		</action>
+		<!-- 辅机设备状态维护 -->
+		<action name="saveFjStatusNode"
+			class="power.web.productiontec.dependability.action.FjStatusMaintAction"
+			method="saveNode">
+		</action>
+		<action name="updateFjStatusNode"
+			class="power.web.productiontec.dependability.action.FjStatusMaintAction"
+			method="updateNode">
+		</action>
+		<action name="deleteFjStatusNode"
+			class="power.web.productiontec.dependability.action.FjStatusMaintAction"
+			method="deleteNode">
+		</action>
+		<action name="findFjStatusNodeByPNode"
+			class="power.web.productiontec.dependability.action.FjStatusMaintAction"
+			method="findNodeByPNode">
+		</action>
+		<action name="findFjStatusNodeInfo"
+			class="power.web.productiontec.dependability.action.FjStatusMaintAction"
+			method="findNodeInfo">
+		</action>
+		<!-- 辅机设备维护 -->
+		<action name="findFjCodeList"
+			class="power.web.productiontec.dependability.action.FjCodeMaintAction"
+			method="findFjCodeList">
+		</action>
+		<action name="addFjCodeInfo"
+			class="power.web.productiontec.dependability.action.FjCodeMaintAction"
+			method="addFjCodeInfo">
+		</action>
+		<action name="updateFjCodeInfo"
+			class="power.web.productiontec.dependability.action.FjCodeMaintAction"
+			method="updateFjCodeInfo">
+		</action>
+		<action name="deleteFjCodeInfo"
+			class="power.web.productiontec.dependability.action.FjCodeMaintAction"
+			method="deleteFjCodeInfo">
+		</action>
+		<!-- 辅机数据录入 -->
+		<action name="findAssistRecList"
+			class="power.web.productiontec.dependability.action.AssistRecordRegisterAction"
+			method="findAssistRecList">
+		</action>
+		<action name="modifyAssistRec"
+			class="power.web.productiontec.dependability.action.AssistRecordRegisterAction"
+			method="modifyAssistRec">
+		</action>
+		<!-- 继电保护和安全自动装置动作统计分析月报 -->
+		<action name="saveModDetails"
+			class="power.web.productiontec.report.action.ProtectedMotionAction"
+			method="saveModDetails">
+		</action>
+		<action name="findAllDetails"
+			class="power.web.productiontec.report.action.ProtectedMotionAction"
+			method="findAllDetails">
+		</action>
+		<action name="getMainRecord"
+			class="power.web.productiontec.report.action.ProtectedMotionAction"
+			method="getMainRecord">
+		</action>
+		<!-- 继电保护装置定检完成情况 -->
+		<action name="getProtectCheckupRecAll"
+			class="power.web.productiontec.report.action.PtJProtectCheckupAction"
+			method="getProtectCheckupRecAll">
+		</action>
+		<action name="saveProtectCheckupRecMod"
+			class="power.web.productiontec.report.action.PtJProtectCheckupAction"
+			method="saveProtectCheckupRecMod">
+		</action>
+		<!-- 快速保护（线路高频保护及元件差动保护）统计报表 -->
+		<action name="getQuickProtectCountList"
+			class="power.web.productiontec.report.action.QuickProtectCountAction"
+			method="getQuickProtectCountList">
+		</action>
+		<action name="saveQuickProtectCountMod"
+			class="power.web.productiontec.report.action.QuickProtectCountAction"
+			method="saveQuickProtectCountMod">
+		</action>
+		<!-- 锅炉信息 -->
+		<action name="getBoilerInfoByBlockId"
+			class="power.web.productiontec.dependability.action.BoilerInfoAction"
+			method="getBoilerInfoByBlockId">
+		</action>
+		<action name="saveBoilderInfoOrUpdate"
+			class="power.web.productiontec.dependability.action.BoilerInfoAction"
+			method="saveBoilderInfoOrUpdate">
+		</action>
+		<!-- 主变压器信息 -->
+		<action name="getTransformerInfoByBlockId"
+			class="power.web.productiontec.dependability.action.TransformerInfoAction"
+			method="getTransformerInfoByBlockId">
+		</action>
+		<action name="saveTransformerInfoOrUpdate"
+			class="power.web.productiontec.dependability.action.TransformerInfoAction"
+			method="saveTransformerInfoOrUpdate">
+		</action>
+		<!--机组信息 -->
+		<action name="addKkxBlockInfo"
+			class="power.web.productiontec.dependability.action.KkxBlockInfoAction"
+			method="addKkxBlockInfo">
+		</action>
+		<action name="updateKkxBlockInfo"
+			class="power.web.productiontec.dependability.action.KkxBlockInfoAction"
+			method="updateKkxBlockInfo">
+		</action>
+		<action name="deleteKkxBlockInfo"
+			class="power.web.productiontec.dependability.action.KkxBlockInfoAction"
+			method="deleteKkxBlockInfo">
+		</action>
+		<action name="findKkxBlockList"
+			class="power.web.productiontec.dependability.action.KkxBlockInfoAction"
+			method="findKkxBlockList">
+		</action>
+		<!-- 汽轮机信息 -->
+		<action name="getTurbineInfoByBlockId"
+			class="power.web.productiontec.dependability.action.TurbineInfoAction"
+			method="getTurbineInfoByBlockId">
+		</action>
+		<action name="saveTurbineInfoOrUpdate"
+			class="power.web.productiontec.dependability.action.TurbineInfoAction"
+			method="saveTurbineInfoOrUpdate">
+		</action>
+		<!-- 发电机信息 -->
+		<action name="getGeneratorInfo"
+			class="power.web.productiontec.dependability.action.GeneratorInfoAction"
+			method="getGeneratorInfo">
+		</action>
+		<action name="saveGeneratorInfo"
+			class="power.web.productiontec.dependability.action.GeneratorInfoAction"
+			method="saveGeneratorInfo">
+		</action>
+		<!-- 辅机录入 -->
+		<action name="getAllAuxiliaryInfo"
+			class="power.web.productiontec.dependability.action.AuxiliaryInfoAction"
+			method="getAllAuxiliaryInfo">
+		</action>
+		<action name="saveAuxiliaryInfo"
+			class="power.web.productiontec.dependability.action.AuxiliaryInfoAction"
+			method="saveAuxiliaryInfo">
+		</action>
+		<action name="deleteAuxiliaryInfo"
+			class="power.web.productiontec.dependability.action.AuxiliaryInfoAction"
+			method="deleteAuxiliaryInfo">
+		</action>
+		<!-- 给水泵组技术参数 -->
+		<action name="saveFeedpumpParameter"
+			class="power.web.productiontec.dependability.action.FeedpumpParameterAction"
+			method="saveFeedpumpParameter">
+		</action>
+		<action name="findParameterById"
+			class="power.web.productiontec.dependability.action.FeedpumpParameterAction"
+			method="findParameterById">
+		</action>
+		<!-- 磨煤机技术参数 -->
+		<action name="getPulverizerParamByAuxId"
+			class="power.web.productiontec.dependability.action.PulverizerParameterAction"
+			method="getPulverizerParamByAuxId">
+		</action>
+		<action name="savePulverizerParam"
+			class="power.web.productiontec.dependability.action.PulverizerParameterAction"
+			method="savePulverizerParam">
+		</action>
+		<!-- 送风机技术参数 -->
+		<action name="getBlowerParamByAuxId"
+			class="power.web.productiontec.dependability.action.BlowerParameterAction"
+			method="getBlowerParamByAuxId">
+		</action>
+		<action name="saveBlowerParam"
+			class="power.web.productiontec.dependability.action.BlowerParameterAction"
+			method="saveBlowerParam">
+		</action>
+		<!-- 电除尘技术参数 -->
+		<action name="savePrecipitationParameter"
+			class="power.web.productiontec.dependability.action.PrecipitationAction"
+			method="savePrecipitationParameter">
+		</action>
+		<action name="getPrecipitationParameterById"
+			class="power.web.productiontec.dependability.action.PrecipitationAction"
+			method="getPrecipitationParameterById">
+		</action>
+	<!-- 脱硫系统技术参数 -->
+		<action name="getDesulfurizationParamByAuxId"
+			class="power.web.productiontec.dependability.action.DesulfurizationParameterAction"
+			method="getDesulfurizationParamByAuxId">
+		</action>
+		<action name="saveDesulfurizationParam"
+			class="power.web.productiontec.dependability.action.DesulfurizationParameterAction"
+			method="saveDesulfurizationParam">
+		</action>
+	<!-- 高压加热器技术参数 -->
+		<action name="getHeaterParameter"
+			class="power.web.productiontec.dependability.action.HeaterParameterAction"
+			method="getHeaterParameter">
+		</action>
+		<action name="saveHeaterParameter"
+			class="power.web.productiontec.dependability.action.HeaterParameterAction"
+			method="saveHeaterParameter">
+		</action>
+		
+		<!-- 投退保护审批 add by sychen 20100317 -->
+		<action name="getCastBackProtectApproveList"
+			class="power.web.productiontec.castBackProtect.action.CastBackProtectAction"
+			method="getCastBackProtectApproveList">
+		</action>
+		<action name="saveCastBackProtect"
+			class="power.web.productiontec.castBackProtect.action.CastBackProtectAction"
+			method="saveCastBackProtect">
+		</action>
+		<action name="approveCastBackProtect"
+			class="power.web.productiontec.castBackProtect.action.CastBackProtectAction"
+			method="approveCastBackProtect">
+		</action>
+		<!--投退保护数据维护  -->
+		<action name="getProtectApply"
+			class="power.web.productiontec.castBackProtect.action.ProtectApplyAction"
+			method="getProtectApply">
+		</action>
+		<action name="addProtectApply"
+			class="power.web.productiontec.castBackProtect.action.ProtectApplyAction"
+			method="addProtectApply">
+		</action>
+		<action name="getApplyNo"
+			class="power.web.productiontec.castBackProtect.action.ProtectApplyAction"
+			method="getApplyNo">
+		</action>
+		<action name="updateProtectApply"
+			class="power.web.productiontec.castBackProtect.action.ProtectApplyAction"
+			method="updateProtectApply">
+		</action>
+		<action name="deleteProtect"
+			class="power.web.productiontec.castBackProtect.action.ProtectApplyAction"
+			method="deleteProtect">
+		</action>
+		<action name="protectReport"
+			class="power.web.productiontec.castBackProtect.action.ProtectApplyAction"
+			method="protectReport">
+		</action>
+		
+	</package>
+</struts>

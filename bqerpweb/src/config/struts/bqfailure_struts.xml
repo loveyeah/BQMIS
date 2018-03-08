@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-validation.xml" />
+	<package name="bqfailure" namespace="/bqfailure"
+		extends="jfreechart-default">
+		<!-- 运行专业列表 -->
+		<action name="runProfessionList"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="getRunProfessionList">
+		</action>
+		<!-- 检修专业列表 -->
+		<action name="dominationProfessionList"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="getDominationProfessionList">
+		</action>
+		<!-- 检修部门列表 -->
+		<action name="repairDept"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="getRepairDeptList">
+		</action>
+		<action name="repairDeptByEqu"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="getRepairDeptListByEqu">
+		</action>
+		<!-- 管辖专业列表 -->
+		<action name="querydominationProfessionList"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="queryDominationProfessionList">
+		</action>
+		<!-- 检修部门列表 -->
+		<action name="queryrepairDept"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="queryRepairDeptList">
+		</action>
+		<!-- 停用检修部门列表 091219 by bjxu -->
+		<action name="queryRepairDeptStopList"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="queryRepairDeptStopList">
+		</action>
+		
+		<!-- 选择发现人 -->
+		<action name="deptTree"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="getDeptTree">
+		</action>
+		<action name="empbyList"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="getEmpbyList">
+		</action>
+		<!-- 机组列表,没有"全部"选项 -->
+		<action name="blocklistByRe"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="findBlockListByRe">
+		</action>
+		<!-- 机组列表 -->
+		<action name="blocklist"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="findBlockList">
+		</action>
+		<!--故障类别树-->
+		<action name="bugTreeList"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="getBugTreeByCode">
+		</action>
+		<!-- 缺陷类别 -->
+		<action name="addFailureType"
+			class="power.web.equ.failure.action.EquFailureTypeAction"
+			method="addFailureType">
+		</action>
+		<action name="updateFailureType"
+			class="power.web.equ.failure.action.EquFailureTypeAction"
+			method="updateFailureType">
+		</action>
+		<action name="deleteFailureType"
+			class="power.web.equ.failure.action.EquFailureTypeAction"
+			method="deleteFailureType">
+		</action>
+		<action name="findEquFailureTypelist"
+			class="power.web.equ.failure.action.EquFailureTypeAction"
+			method="findFailureTypeList">
+		</action>
+		<action name="findFailureType"
+			class="power.web.equ.failure.action.EquFailureTypeAction"
+			method="findFailureTypeById">
+		</action>
+		<!-- 缺陷登记 -->
+		<action name="saveFailContrSend"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="saveFailContrSend">
+		</action>
+		<action name="addFailure"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="addFailure">
+		</action>
+		<action name="updateFailure"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="updateFailure">
+		</action>
+		<action name="deleteFailure"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="deleteFailure">
+		</action>
+		<action name="findEquFailurelist"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="findFailureList">
+		</action>
+		<!-- 缺陷审批 -->
+		<action name="approveFailurelist"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="findApproveFailureList">
+		</action>
+		<!-- 缺陷查询 -->
+		<action name="getToptipMsg"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="getToptipMsg">
+		</action>
+		<action name="queryListByStatus"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="queryListByStatus">
+		</action>
+		<action name="queryListByType"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="queryListByType">
+		</action>
+		
+		<!-- 审批控制处理 -->
+		<action name="approveFailure"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="approveFailure">
+		</action>
+		<!-- 上报 -->
+		<action name="reportFailure"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="reportFailure">
+		</action>
+		<!-- 认领 -->
+		<action name="claimFailure"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="claimFailure">
+		</action>
+		<!-- 缺陷确认 -->
+		<action name="confirmFailure"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="confirmFailure">
+		</action>
+		<!-- 消缺 -->
+		<action name="eliminateFailure"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="eliminateFailure" />
+		<!-- 申请仲裁 -->
+		<action name="applyArbitrateFailure"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="applyArbitrateFailure">
+		</action>
+		<!-- 仲裁（到消缺） -->
+		<action name="arbitrateFailure"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="arbitrateFailure">
+		</action>
+		<!-- 仲裁（到运行验收） -->
+		<action name="runarbitrateFailure"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="runarbitrateFailure">
+		</action>
+		<!-- 申请待处理 -->
+		<action name="applyAwaitFailure"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="applyAwaitFailure">
+		</action>
+		<!-- 点检待处理 -->
+		<action name="repaireAwaitFailure"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="repaireAwaitFailure">
+		</action>
+		<!-- 设备部待处理 -->
+		<action name="depawaitFailure"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="depawaitFailure">
+		</action>
+		<!-- 发电部待处理 -->
+		<action name="shiftawaitFailure"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="shiftawaitFailure">
+		</action>
+		<!-- 总工待处理 -->
+			<action name="chiefawaitFailure"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="chiefawaitFailure">
+		</action>
+		
+		<!-- 作废 -->
+		<action name="invalidFailure"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="invalidFailure">
+		</action>
+		<!-- 退回 -->
+		<action name="sendBackFailure"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="sendBackFailure">
+		</action>
+		<!-- 生技部验收 -->
+		<action name="acceptanceFailure"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="acceptanceFailure">
+		</action>
+		<!-- 运行验收 -->
+		<action name="runacceptanceFailure"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="runacceptanceFailure">
+		</action>
+		<!-- 缺陷历史信息 -->
+		<action name="getApplyType"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="getApplyType">
+		</action>
+		<action name="findFailureById"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="findFailureById">
+		</action>
+		<action name="getAwaitCount"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="getAwaitCount">
+		</action>
+		<action name="queryApproveList"
+			class="power.web.equ.failure.action.BqEquFailureAction"
+			method="queryApproveList">
+		</action>
+			<!-- 缺陷综合统计 -->
+		<action name="failureIntegerQuery"
+			class="power.web.equ.failure.action.EquFailureQueryAction"
+			method="failureIntegerQuery">
+		</action>
+		<action name="getIntegerPie"
+			class="power.web.equ.failure.action.EquFailureQueryAction"
+			method="getIntegerPie">
+		</action>
+		<action name="getIntegerColumn"
+			class="power.web.equ.failure.action.EquFailureQueryAction"
+			method="getIntegerColumn">
+		</action>
+		<action name="getIntegerLine"
+			class="power.web.equ.failure.action.EquFailureQueryAction"
+			method="getIntegerLine">
+		</action>
+		
+		<action name="failureFindQuery"
+			class="power.web.equ.failure.action.EquFailureQueryAction"
+			method="failureFindQuery">
+		</action>
+		<action name="failureEliminateQuery"
+			class="power.web.equ.failure.action.EquFailureQueryAction"
+			method="failureEliminateQuery">
+		</action>
+		<action name="noKKSfailureQuery"
+			class="power.web.equ.failure.action.EquFailureQueryAction"
+			method="noKKSfailureQuery">
+		</action>
+		<action name="noKKSfailureQueryByWorker"
+			class="power.web.equ.failure.action.EquFailureQueryAction"
+			method="noKKSfailureQueryByWorker">
+		</action>
+		<action name="failureQueryBySystem"
+			class="power.web.equ.failure.action.EquFailureQueryAction"
+			method="failureQueryBySystem">
+		</action>
+		<action name="failureQueryByEqu"
+			class="power.web.equ.failure.action.EquFailureQueryAction"
+			method="failureQueryByEqu">
+		</action>
+		<action name="failureAwaitQuery"
+			class="power.web.equ.failure.action.EquFailureQueryAction"
+			method="failureAwaitQuery">
+		</action>
+		<action name="failureMonthReport"
+			class="power.web.equ.failure.action.EquFailureQueryAction"
+			method="failureMonthReport">
+		</action>
+		
+		<!-- 查询已消除缺陷数列、未消除缺陷数、退回缺陷数、超时缺陷数详细明细 -->
+		<!-- add by sychen 20100915 -->
+		<action name="getEquDetailList"
+			class="power.web.equ.failure.action.EquFailureQueryAction"
+			method="getEquDetailList">
+		</action>
+		<action name="failureYearReport"
+			class="power.web.equ.failure.action.EquFailureQueryAction"
+			method="failureYearReport">
+		</action>
+		<action name="findNotEliminateFailureList"
+			class="power.web.equ.failure.action.EquFailureQueryAction"
+			method="findNotEliminateFailureList">
+		</action>
+		<action name="findBackFailureList"
+			class="power.web.equ.failure.action.EquFailureQueryAction"
+			method="findBackFailureList">
+		</action>
+	</package>
+</struts>

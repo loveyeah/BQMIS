@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-validation.xml" />
+	<package name="opticket" namespace="/opticket" extends="jfreechart-default">
+		
+		<!-- 操作票登记-详细信息 -->
+		<action name="getDetailOpTaskTree" class="power.web.operateticket.register.action.OperateticketRegisterAction" method="getOpTaskTree"></action>
+		<action name="getDetailOpticketSpecials" class="power.web.operateticket.register.action.OperateticketRegisterAction" method="getOpticketSpecials"></action>
+		<action name="addDetailOpticket" class="power.web.operateticket.register.action.OperateticketRegisterAction" method="addOpticket"></action>
+		<action name="updateDetailOpticket" class="power.web.operateticket.register.action.OperateticketRegisterAction" method="updateOpticket"></action>
+		<action name="getDetailOpticketByCode" class="power.web.operateticket.register.action.OperateticketRegisterAction" method="getOpticketByCode"></action>
+		<action name="getStantdOpticktetList" class="power.web.operateticket.register.action.OperateticketRegisterAction" method="getStantdOpticktetList"></action>	
+		<!-- 操作票登记-上报列表 -->
+		<action name="getReportOpticketTypes" class="power.web.operateticket.register.action.OperateticketRegisterAction" method="getOpticketTypes"></action>
+		<action name="getReportOpSpecials" class="power.web.operateticket.register.action.OperateticketRegisterAction" method="getOpticketSpecials"></action>
+		<action name="getReportApproveList" class="power.web.operateticket.register.action.OperateticketRegisterAction" method="getApproveList"></action>
+		<action name="deleteReportOpticket" class="power.web.operateticket.register.action.OperateticketRegisterAction" method="deleteOpticket"></action>
+		<action name="reportOpticket" class="power.web.operateticket.register.action.OperateticketRegisterAction" method="reportOpticket"></action>
+		<action name="creatNewOptickectByNo" class="power.web.operateticket.register.action.OperateticketRegisterAction" method="creatNewOptickectByNo"></action>
+		<!-- 操作票登记-操作项目信息列表-->
+		<action name="getFillOpSteps" class="power.web.operateticket.register.action.OperateticketRegisterAction" method="getFillOpSteps"></action>
+		<action name="getContentOpticketsteps" class="power.web.operateticket.register.action.OperateticketRegisterAction" method="getOpticketsteps"></action>
+		<action name="deleteContentOpticketsteps" class="power.web.operateticket.register.action.OperateticketRegisterAction" method="deleteOpticketsteps"></action>
+		<action name="updateOPContentList" class="power.web.operateticket.register.action.OpContentAction" method="updateOPContentList"></action>
+		<action name="selectAllItems" class="power.web.operateticket.register.action.OpContentAction" method="selectAllItems"></action>
+		<!-- 操作票登记-操作后工作信息列表 -->
+		<action name="updateFinishWorkList" class="power.web.operateticket.register.action.AftFinWorkAction" method="updateFinishWorkList"></action>
+		<action name="deleteOpFinishWork" class="power.web.operateticket.register.action.AftFinWorkAction" method="deleteFinishWork"></action>
+		<action name="getFinWorks" class="power.web.operateticket.register.action.OperateticketRegisterAction" method="getFinWorks"></action>
+		<!-- 操作票登记-操作前检查项目信息列表
+		<action name="addOpCheckStep" class="power.web.operateticket.register.action.BefCheckStepAction" method="addCheckStep"></action> -->
+		<action name="updateBefCheckStepList" class="power.web.operateticket.register.action.BefCheckStepAction" method="updateBefCheckStepList"></action>
+		<action name="deleteOpCheckStep" class="power.web.operateticket.register.action.BefCheckStepAction" method="deleteCheckStep"></action>
+		<action name="getChecksteps" class="power.web.operateticket.register.action.OperateticketRegisterAction" method="getChecksteps"></action>
+		<!-- 操作票登记-危险点信息列表 -->
+		<action name="updateDangerMeasureList" class="power.web.operateticket.register.action.OpDangerMeasureAction" method="updateDangerMeasureList"></action>
+		<action name="deleteOpDangerMeasure" class="power.web.operateticket.register.action.OpDangerMeasureAction" method="deleteDangerMeasure"></action>
+		<action name="getMeasures" class="power.web.operateticket.register.action.OperateticketRegisterAction" method="getMeasures"></action>
+		<!-- 操作票查询 -->
+		<action name="getOpticketList" class="power.web.operateticket.operationticketquery.action.OperationticketQueryAction" method="getOperationticket"></action>
+		<action name="updateOpticketList" class="power.web.operateticket.operationticketquery.action.OperationticketQueryAction" method="updateOperationticket"></action>
+		<!-- 操作票查询-获取操作票类型 -->
+		<action name="getOpticketTypeList" class="power.web.operateticket.operationticketquery.action.OperationticketQueryAction" method="getOperationticketType"></action>
+		<action name="getTreeNode" class="power.web.operateticket.operationticketquery.action.OperationticketQueryAction" method="getTreeNode"></action>
+		<!-- 操作票查询-获取操作票专业 -->
+		<action name="getSpeTypeList" class="power.web.operateticket.operationticketquery.action.OperationticketQueryAction" method="getSpeType"></action>
+		
+		<!-- 操作票统计 -->
+		<action name="stat" class="power.web.operateticket.stat.StatAction" method="stat"></action>
+		<action name="getStatData" class="power.web.operateticket.stat.StatAction" method="getStatData"></action>
+		<action name="clearStat" class="power.web.operateticket.stat.StatAction" method="clearStat"></action>
+		<action name="saveReportInfo" class="power.web.operateticket.stat.StatAction" method="saveReportInfo"></action>
+		<action name="getOptickectQuyStat" class="power.web.operateticket.stat.StatAction" method="getOptickectQuyStat"></action>
+		<action name="getOptickectStatuStat" class="power.web.operateticket.stat.StatAction" method="getOptickectStatuStat"></action>
+		
+		<!-- 操作票任务维护 -->
+		<action name="getOpTickTaskTreeNode" class="power.web.operateticket.taskMaint.action.OpticketTastMaintAction" method="getOpTickTaskTreeNode"></action>
+		<action name="pasteNode" class="power.web.operateticket.taskMaint.action.OpticketTastMaintAction" method="pasteNode"></action>
+		<action name="deleteOpTickTask" class="power.web.operateticket.taskMaint.action.OpticketTastMaintAction" method="deleteOpTickTask"></action>
+		<action name="addOpTickTask" class="power.web.operateticket.taskMaint.action.OpticketTastMaintAction" method="addOpTickTask"></action>
+		<action name="updateOpTickTask" class="power.web.operateticket.taskMaint.action.OpticketTastMaintAction" method="updateOpTickTask"></action>
+		
+	    <!-- 操作票审批：工作票审批列表 -->
+		<action name="getOpticketType" class="power.web.operateticket.approve.action.OpticketApproveListAction" method="getOpticketType"></action>
+		<action name="getOpticketSpeciality" class="power.web.operateticket.approve.action.OpticketApproveListAction" method="getOpticketSpeciality"></action>
+		<action name="getOpticketApproveList" class="power.web.operateticket.approve.action.OpticketApproveListAction" method="getOpticketApproveList"></action>
+		<!-- 操作票审批 操作人，监护人，值长审批，操作项目信息列表 -->
+		<action name="getApproveType" class="power.web.operateticket.approve.action.SignAction" method="getApproveType"></action>
+		<action name="chargerSign" class="power.web.operateticket.approve.action.SignAction" method="chargerSign"></action>
+		<action name="watcherSign" class="power.web.operateticket.approve.action.SignAction" method="watcherSign"></action>
+		<action name="dutySign" class="power.web.operateticket.approve.action.SignAction" method="dutySign"></action>
+		<action name="endSign" class="power.web.operateticket.approve.action.SignAction" method="endSign"></action>
+		<action name="getStepList" class="power.web.operateticket.approve.action.SignAction" method="getStepList"></action>
+		<action name="getCheckStepList" class="power.web.operateticket.approve.action.SignAction" method="getCheckStepList"></action>
+		<action name="getFinishWorkList" class="power.web.operateticket.approve.action.SignAction" method="getFinishWorkList"></action>
+		<action name="getDangerousList" class="power.web.operateticket.approve.action.SignAction" method="getDangerousList"></action>
+		<action name="updateStepList" class="power.web.operateticket.approve.action.SignAction" method="updateStepList"></action>
+		<action name="deleteStepList" class="power.web.operateticket.approve.action.SignAction" method="deleteStepList"></action>
+		<action name="createTicket" class="power.web.operateticket.approve.action.SignAction" method="createTicket"></action>
+		<!-- 操作后工作维护 -->
+		<action name="updateOPfinWorkList" class="power.web.operateticket.finishWork.action.OpticketFinishWorkAction" method="updateOPfinWorkList"></action>
+		<action name="deleteFinishWork" class="power.web.operateticket.finishWork.action.OpticketFinishWorkAction" method="deleteFinishWork"></action>
+		<action name="findFinishWork" class="power.web.operateticket.finishWork.action.OpticketFinishWorkAction" method="findFinishWork"></action>
+		<!-- 核实情况内容维护 -->
+		<action name="findCheckStatus" class="power.web.operateticket.maint.action.CheckStatusAction" method="findCheckStatus"></action>
+		<action name="deleteCheckStatus" class="power.web.operateticket.maint.action.CheckStatusAction" method="deleteCheckStatus"></action>
+		<action name="updateCheckStatus" class="power.web.operateticket.maint.action.CheckStatusAction" method="updateCheckStatus"></action>
+		<action name="addCheckStatus" class="power.web.operateticket.maint.action.CheckStatusAction" method="addCheckStatus"></action>
+		<action name="findCheckStatusById" class="power.web.operateticket.maint.action.CheckStatusAction" method="findById"></action>
+		<!-- 操作前控制措施维护 -->
+		<action name="updateStepChecklist" class="power.web.operateticket.maint.action.CheckStepAction" method="updateStepChecklist"></action>
+		<action name="deleteCheckStep" class="power.web.operateticket.maint.action.CheckStepAction" method="deleteCheckStep"></action>
+		<action name="findCheckStep" class="power.web.operateticket.maint.action.CheckStepAction" method="findCheckStep"></action>
+		<!-- 危险点维护 -->
+		<action name="updateConMeasureList" class="power.web.operateticket.maint.action.DangerMeasureAction" method="updateConMeasureList"></action>
+		<action name="deleteDangerMeasure" class="power.web.operateticket.maint.action.DangerMeasureAction" method="deleteDangerMeasure"></action>
+		<action name="findDangerMeasure" class="power.web.operateticket.maint.action.DangerMeasureAction" method="findDangerMeasure"></action>
+		<!-- 操作步骤维护 -->
+		<action name="updateOperateStepList" class="power.web.operateticket.maint.action.OperatetStepAction" method="updateOperateStepList"></action>
+		<action name="deleteOpticketStep" class="power.web.operateticket.maint.action.OperatetStepAction" method="deleteOpticketStep"></action>
+		<action name="findOpticketStep" class="power.web.operateticket.maint.action.OperatetStepAction" method="findOpticketStep"></action>
+		<!-- 标准操作票审批 -->
+		<action name="safeDeptSign" class="power.web.operateticket.approve.action.SignAction" method="safeDeptSign"></action>
+		<action name="engineerSign" class="power.web.operateticket.approve.action.SignAction" method="engineerSign"></action>
+		<action name="headSign" class="power.web.operateticket.approve.action.SignAction" method="headSign"></action>
+		<!-- 操作票批量上报，审批 -->
+		<action name="batchReport" class="power.web.operateticket.register.action.OperateticketRegisterAction" method="batchReport"></action>
+		<action name="batchApprove" class="power.web.operateticket.approve.action.SignAction" method="batchApprove"></action>
+	</package>
+</struts>

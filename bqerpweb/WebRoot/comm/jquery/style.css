@@ -1,0 +1,35 @@
+ 
+img {
+	border: none;
+}
+
+/* dock - top   background: url(images/dock-bg2.gif);*/
+.dock {
+	position: relative;
+	text-align: center;
+}
+.dock-container {
+	position: absolute;
+	height: 50px;
+	background:#transparent; 
+	padding-left: 20px;
+}
+a.dock-item {
+	display: block;
+	width: 40px;
+	color: #000;
+	position: absolute;
+	top: 0px;
+	text-align: center;
+	text-decoration: none;
+	font: bold 12px Arial, Helvetica, sans-serif;
+}
+.dock-item img {
+	border: none; 
+	margin: 5px 10px 0px; 
+	width: 100%; 
+}
+.dock-item span {
+	display: none; 
+	padding-left: 20px;
+}

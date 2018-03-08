@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.1.v20080911 Build &lt;2.3.1.v20080922-1151></property>
+    <property name="units">in</property>
+    <method name="beforeFactory"><![CDATA[
+          yearmonth= params["yearmonth"].value
+        elecOne = new Packages.power.web.birt.action.bqmis.TrainPlanReport();
+ approvelist = elecOne.setApprove(yearmonth);
+if(approvelist!=null){
+ if(approvelist.size()>0){
+  /////主管公司领导
+ 		params["deptManger"].value = approvelist.get(0).getCaller();
+	}
+
+ if(approvelist.size()>1){
+////培训科负责人
+	params["LeaderManger"].value= approvelist.get(1).getCaller();
+	}
+}
+		
+]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="yearmonth" id="666">
+            <text-property name="helpText">年月</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">2006-09</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="LeaderManger" id="827">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="deptManger" id="828">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="7">
+            <property name="odaDriverClass">oracle.jdbc.driver.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@192.168.32.3:1521:bqdb</property>
+            <property name="odaUser">power</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cG93ZXI=</encrypted-property>
+            <property name="odaJndiName">java:powererpDS</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="8">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">DEPT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">TRAIN_TYPE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">TRAINING_NUMBER</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">FINISH_NUMBER</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">TRAINING_TYPE_ID</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">yearmonth</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">yearmonth</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_3</property>
+                    <property name="paramName">yearmonth</property>
+                    <property name="dataType">string</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">DEPT</property>
+                    <property name="nativeName">DEPT</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">TRAIN_TYPE</property>
+                    <property name="nativeName">TRAIN_TYPE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">TRAINING_NUMBER</property>
+                    <property name="nativeName">TRAINING_NUMBER</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">FINISH_NUMBER</property>
+                    <property name="nativeName">FINISH_NUMBER</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">TRAINING_TYPE_ID</property>
+                    <property name="nativeName">TRAINING_TYPE_ID</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select dept, train_type, training_number, finish_number,training_type_id
+  from (select getdeptname(a.training_dep) dept,
+               b.training_type_name train_type,
+               a.training_number as training_number,
+               a.finish_number as finish_number,
+               a.training_type_id as training_type_id
+          from bp_j_training_sum a, BP_C_TRAINING_type b,bp_j_training_main m
+         where a.training_month = to_date(?, 'yyyy-MM')
+           and a.training_type_id = b.training_type_id
+           and m.training_month = a.training_month
+           and m.training_dep = a.training_dep
+           and m.backfill_workflow_status = 2
+        union
+        select (select getdeptname(a.training_dep)
+                  from bp_j_training_sum a
+                 where a.training_month(+) = to_date(?, 'yyyy-MM')
+                   and rownum = 1) dept,
+               b.training_type_name train_type,
+               null training_number,
+               null finish_number,
+                b.training_type_id
+          From BP_C_TRAINING_type b
+         where b.training_type_id not in
+               (select distinct a.training_type_id
+                  from bp_j_training_sum a
+                 where a.training_month(+) = to_date(?, 'yyyy-MM'))
+           and b.is_use = 'Y')
+ order by training_type_id
+</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>ITEM_NAME</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ITEM_NAME</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ITEM_NAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>GETDEPTNAME(A.DEP_CODE)</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>4000</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>GETDEPTNAME(A.DEP_CODE)</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>GETDEPTNAME(A.DEP_CODE)</design:label>
+            <design:formattingHints>
+              <design:displaySize>4000</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CASH_BONUS</design:name>
+            <design:position>3</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CASH_BONUS</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CASH_BONUS</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube" id="667">
+            <property name="dimensions">
+                <tabular-dimension name="dept" id="668">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="669">
+                            <property name="levels">
+                                <tabular-level name="DEPT" id="670">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">DEPT</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="type" id="671">
+                    <property name="defaultHierarchy">NewTabularHierarchy1</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy1" id="672">
+                            <property name="levels">
+                                <tabular-level name="TRAIN_TYPE" id="730">
+                                    <property name="dataType">string</property>
+                                    <property name="levelType">dynamic</property>
+                                    <property name="columnName">TRAINING_TYPE_ID</property>
+                                    <expression name="displayColumnName">dataSetRow["TRAIN_TYPE"]</expression>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="typeid" id="784">
+                    <property name="defaultHierarchy">NewTabularHierarchy2</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy2" id="785">
+                            <property name="levels">
+                                <tabular-level name="TRAINING_TYPE_ID" id="786">
+                                    <property name="dataType">decimal</property>
+                                    <property name="columnName">TRAINING_TYPE_ID</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="plan" id="674">
+                    <property name="measures">
+                        <tabular-measure name="TRAINING_NUMBER" id="675">
+                            <property name="function">first</property>
+                            <expression name="measureExpression">dataSetRow["TRAINING_NUMBER"]</expression>
+                            <property name="dataType">string</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="truth" id="676">
+                    <property name="measures">
+                        <tabular-measure name="FINISH_NUMBER" id="677">
+                            <property name="function">first</property>
+                            <expression name="measureExpression">dataSetRow["FINISH_NUMBER"]</expression>
+                            <property name="dataType">string</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">Data Set</property>
+        </tabular-cube>
+    </cubes>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">"Verdana"</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="orientation">landscape</property>
+            <property name="topMargin">1in</property>
+            <property name="leftMargin">1.25in</property>
+            <property name="bottomMargin">1in</property>
+            <property name="rightMargin">1.25in</property>
+            <property name="backgroundPositionX">0%</property>
+            <property name="backgroundPositionY">0%</property>
+            <property name="canShrink">false</property>
+            <property name="showHeaderOnFirst">true</property>
+            <property name="showFooterOnLast">true</property>
+            <property name="headerHeight">0.5cm</property>
+            <property name="footerHeight">0.5cm</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <extended-item extensionName="Crosstab" extensionVersion="2.5.0" id="753">
+            <property name="measures">
+                <extended-item extensionName="MeasureView" id="765">
+                    <property name="measure">TRAINING_NUMBER</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="766">
+                            <property name="aggregationOnRow">type/TRAIN_TYPE</property>
+                            <property name="aggregationOnColumn">dept/DEPT</property>
+                            <property name="textAlign">center</property>
+                            <property name="content">
+                                <data id="767">
+                                    <property name="resultSetColumn">TRAINING_NUMBER_type/TRAIN_TYPE_dept/DEPT</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="768">
+                            <property name="content">
+                                <label id="769">
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">计划值</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="770">
+                    <property name="measure">FINISH_NUMBER</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="771">
+                            <property name="aggregationOnRow">type/TRAIN_TYPE</property>
+                            <property name="aggregationOnColumn">dept/DEPT</property>
+                            <property name="content">
+                                <data id="772">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">FINISH_NUMBER_type/TRAIN_TYPE_dept/DEPT</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="773">
+                            <property name="content">
+                                <label id="774">
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">实际值</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="rows">
+                <extended-item extensionName="CrosstabView" id="760">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="832">
+                            <property name="dimension">type</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View" id="833">
+                                    <property name="level">type/TRAIN_TYPE</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="834">
+                                            <property name="content">
+                                                <data name="TRAIN_TYPE" id="835">
+                                                    <property name="resultSetColumn">TRAIN_TYPE</property>
+                                                </data>
+                                            </property>
+                                            <property name="width">197px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="columns">
+                <extended-item extensionName="CrosstabView" id="755">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="780">
+                            <property name="dimension">dept</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View1" id="781">
+                                    <property name="level">dept/DEPT</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="782">
+                                            <property name="content">
+                                                <data name="DEPT" id="783">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">DEPT</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="754">
+                    <property name="content">
+                        <image id="775">
+                            <property name="height">42px</property>
+                            <property name="width">197px</property>
+                            <property name="source">embed</property>
+                            <property name="imageName">tu.JPG</property>
+                        </image>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="cube">Data Cube</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">TRAINING_NUMBER</property>
+                    <expression name="expression">measure["TRAINING_NUMBER"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="aggregateFunction">FIRST</property>
+                </structure>
+                <structure>
+                    <property name="name">FINISH_NUMBER</property>
+                    <expression name="expression">measure["FINISH_NUMBER"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="aggregateFunction">FIRST</property>
+                </structure>
+                <structure>
+                    <property name="name">DEPT</property>
+                    <expression name="expression">dimension["dept"]["DEPT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TRAINING_NUMBER_dept/DEPT</property>
+                    <expression name="expression">measure["TRAINING_NUMBER"]</expression>
+                    <property name="dataType">string</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>dept/DEPT</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">FIRST</property>
+                </structure>
+                <structure>
+                    <property name="name">FINISH_NUMBER_dept/DEPT</property>
+                    <expression name="expression">measure["FINISH_NUMBER"]</expression>
+                    <property name="dataType">string</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>dept/DEPT</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">FIRST</property>
+                </structure>
+                <structure>
+                    <property name="name">TRAIN_TYPE</property>
+                    <expression name="expression">dimension["type"]["TRAIN_TYPE"]["DisplayName"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TRAINING_NUMBER_type/TRAIN_TYPE_dept/DEPT</property>
+                    <expression name="expression">measure["TRAINING_NUMBER"]</expression>
+                    <property name="dataType">string</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>type/TRAIN_TYPE</value>
+                        <value>dept/DEPT</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">FIRST</property>
+                </structure>
+                <structure>
+                    <property name="name">FINISH_NUMBER_type/TRAIN_TYPE_dept/DEPT</property>
+                    <expression name="expression">measure["FINISH_NUMBER"]</expression>
+                    <property name="dataType">string</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>type/TRAIN_TYPE</value>
+                        <value>dept/DEPT</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">FIRST</property>
+                </structure>
+            </list-property>
+        </extended-item>
+        <grid id="816">
+            <property name="width">100%</property>
+            <column id="817"/>
+            <column id="818"/>
+            <column id="819"/>
+            <column id="820"/>
+            <row id="821">
+                <cell id="822">
+                    <text id="826">
+                        <property name="textAlign">right</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[主管厂领导：]]></text-property>
+                    </text>
+                </cell>
+                <cell id="823">
+                    <data id="829">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">LeaderManger</property>
+                                <expression name="expression">params["LeaderManger"].value</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">LeaderManger</property>
+                    </data>
+                </cell>
+                <cell id="824">
+                    <text id="830">
+                        <property name="textAlign">right</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[部门领导：]]></text-property>
+                    </text>
+                </cell>
+                <cell id="825">
+                    <data id="831">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">deptManger</property>
+                                <expression name="expression">params["deptManger"].value</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">deptManger</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">tu.JPG</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAYABgAAD/4QAWRXhpZgAASUkqAAgAAAAAAAAAAAD/2wBDAAgGBgcGBQgHBwcJ
+                CQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJ
+                CQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy
+                MjL/wAARCAAqALMDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAA
+                AgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRol
+                JicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZ
+                mqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QA
+                HwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+                BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RV
+                VldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPE
+                xcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1z/hDtGgGdNjn0hhy
+                o02d7aMP2cxIRE7dPvo2QACCBil/snxFbN/oXifz933/AO1bCObb6bPIMOO+d27tjHOeiooA53+0fEln
+                /wAfehwX0Y+QPpl2vmOf75imCKinB4ErkEgfMMsAeMNPtxt1aC90ll/1jX1sywxem64XdBzxjEh5IX73
+                FdFRQBQ03VtO1m3a40y/tb2BXKNJbTLKobAOCVJGcEHHuKv1k6l4b0bVpxdahpdrPdomyO6MQE0QBJGy
+                QfOhBJIKkEHkYNVP+EWNuf8AiW67rlju/wBZ/pn2vf6f8fIl245+7tznnOBgA6GiudMHiuyx5V1peqxj
+                5Vjnjezkx2d5V8xWbjkLEgJORtA2lP8AhINRs+NV8OX0ap/rLmxZbyEZ6bVXE7dQDiHg5/hG6gDo6KwI
+                PF+gzXUdu+pJaXUzBIrW/RrSeQk4G2OUK7AngEAgkEDkGt+gAooooAKKKKACiiigAryb4reLZNJvNNtL
+                fxTZabF9qjW6NvulvbN8F1kMSyASQkYDK6ngggMSAPWa898d6/qOmeL/AApp1vqN9ZWOo/bPtRsLNbmZ
+                vLjVk2qY5D1POF6E56ZAB59F8V9YuZzeav4ltLGAaG18lnpKwEtc+cVjhLSLMd7LtYjAKg8qNrE93rV9
+                rmlfD3QtN127nl1zW7qHTpryCQW72k025lceVw3lkAYBAfbyQCa898J69r2ufFnxJm3j8RPbabdWMdvq
+                O2zaW2WdcIwEON5zgq6qPmOSMYrob3R9U0DwF8NdL1l999B4kshIPN8zYC0pVN3+ypVeOBtwCRigD0KD
+                w9rawRrceNNYkn2AO8dtZIrNjkhTASBntk49TVT4X63qPiL4c6Vquq3H2i+n87zJdqpu2zOo4UADgAcC
+                unv7+00yykvL67gtbaPG+aeQRouSAMseBkkD8a4r4J/8ki0L/t4/9KJKAPQKKKKAMfXvEln4b+xy6jHP
+                HY3EvkyXwUGG1Y/dMpzlVY/KGwVBxuK5FY6/EfR5PtEUFtfT30eqy6TFYxohmuZo9u9kG7HlqG3F2KgA
+                c4yM4fjW3j1jxKbS70m0it4ERW1IeHZ9TunXKPsjJgMSDmQZzLgn7oOceaeDvDGk28Wvz2MU9zdWuqz2
+                0EGqeG5b+CWGNSIxIUh3wybny2CCMDKHgUAe/wDiHxRpPhWzF5rE08FqesyWksqJyB8zIpC5LADdjPbN
+                U9N8e+G9VuGgt7+RHW4NoTdWs1uvn5A8kNIigy8/6vO7rxwa4vxn4dh8SeENG0fRtHvrKTU5Y4HitluY
+                LSwiWTzJpXgZY42wQcb1Rn3AryAK5e38Ow2d5rkk93PbzeHPGEesXiTXFzcAWDDej7E3h5CMksRuAB3s
+                BQB7R4W8SWfi7w5aa5YRzx2t1v2JOoDja7IcgEjqp71sVwfwYgmtvhJoKTxSROUlcK6lSVaZ2U89ipBB
+                7gg13lABRRRQBXuLeG6t5beeKOaCVSkkbqGV1IwQQeCCOMVi/wDCE+H4z/oWn/2Zn7/9lTSWPmem/wAh
+                k345xuzjJxjJroqKAOcGi6zaHOm+I7gqPlWHU7dLmNE7AFPLlZhgDc8jZGc7idwU3fiexH+k6ZY6nEn3
+                pbG4MM0mem2CX5BgnBzPyASOSEroqKAOc/4Su3tjjVdN1XTD94m4tTJGqf33mhMkSKOc7nGAMkAYJ0NM
+                13SNa83+ytVsb/yceZ9luEl2ZzjO0nGcHr6GtOszU9C0jWvK/tXSrG/8nPl/ardJdmcZxuBxnA6egoA0
+                6K5z/hFLe2OdK1LVdMP3QLe6Mkap/cSGYSRIo4xtQYAwCBkFRaeJ7Ef6NqdjqcSfdivrcwzSZ67p4vkG
+                CcjEHIAB5JegDoqK5w61rNocal4cuCo+ZptMuEuY0TuSH8uVmGCdqRtkYxuJ2hf+E28Pxn/TdQ/szP3P
+                7VhksfM9dnnqm/HGducZGcZFAGv9gtP7S/tD7JD9t8ryPtPljzPLzu2buu3POOmaLqxtL4wfa7SC48iV
+                Z4fOjD+XIv3XXPRhk4I5FPt7iG6t4riCWOaCVQ8ciMGV1IyCCOCCOc1YoAr3FvDdW8tvPFHNBKpSSN1D
+                K6kYIIPBBHGKLe3htbeK3gijhgiUJHGihVRQMAADgADjFWKKACiiigDm9dsPE2sXEmn2d9aaTpLptkvY
+                GaS9cErlYwQqQnHmDfmQjKkAHpnzeAYdHQXfgmWPQ9Qit1hESoGtbwIwZVuFIJY/eXzFIkAcnLdK7Sig
+                Dk7/AEDXtc0uzg1iXwxcOqB54bjRnuYhN83KbpxgBW25IyeTxu2jm7T4R/ZNY1HUc+FJvt3lf6NN4b3Q
+                2+xdv7pfP+Xd1brk16hRQBl6Bpk2j6WtlL/ZoSNyYk06xNpEinnGze/O4sSQRnPTudSiigAooooAKKKK
+                ACiiigAooooAKKKKACiiigDAn8IaDNdSXCaalpdTMXlurB2tJ5CTk7pIirsCeSCSCQCeQKj/AOEf1Gz5
+                0rxHfRqn+rtr5VvIRnruZsTt1JGZuDj+Eba6OigDnRN4rsv9ba6XqsY+ZpIJHs5Md0SJvMVm44LSoCTg
+                7QNxP+EpNuf+JloWuWO7/V/6H9r3+v8Ax7GXbjj723OeM4OOiooA5w+OPCg4l8SaXBIOGhuLxIpIz3V0
+                ZgyMOhVgCDwQDRXR0UAf/9k=
+            </property>
+        </structure>
+    </list-property>
+</report>

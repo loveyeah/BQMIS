@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<TITLE>PL/SQL Developer Export</TITLE>
+<script>
+	function viewFlow(flowCode){  
+		window.open('/power/workflow/manager/flowshow/flowshow.jsp?flowCode='+flowCode);
+		return false;
+	}
+</script>
+</HEAD>
+<BODY>
+<hr/>
+灞桥电厂---------------- 审批流程
+<hr/> 
+<a style="cursor:hand"   href="#"  onclick=" return viewFlow('bqStandWorkticket');">bqStandWorkticket&nbsp;&nbsp;&nbsp;标准工作票审批&nbsp;&nbsp;&nbsp;[单击查看]</a><hr/>
+<a style="cursor:hand"   href="#"  onclick=" return viewFlow('bqWorkticket1');"> bqWorkticket1&nbsp;&nbsp;&nbsp;电气一种工作票&nbsp;&nbsp;&nbsp;[单击查看]</a><hr/>
+<a style="cursor:hand"   href="#"  onclick=" return viewFlow('bqWorkticket2');">bqWorkticket2&nbsp;&nbsp;&nbsp;电气二种工作票&nbsp;&nbsp;&nbsp;[单击查看]</a><hr/>
+<a style="cursor:hand"   href="#"  onclick=" return viewFlow('bqWorkticketRJ1');">bqWorkticketRJ1&nbsp;&nbsp;&nbsp;热力机械一种工作票&nbsp;&nbsp;&nbsp;[单击查看]</a><hr/>
+<a style="cursor:hand"   href="#"  onclick=" return viewFlow('bqWorkticketRJ2');">bqWorkticketRJ2&nbsp;&nbsp;&nbsp;热力机械二种工作票&nbsp;&nbsp;&nbsp;[单击查看]</a><hr/>
+<a style="cursor:hand"   href="#"  onclick=" return viewFlow('bqWorkticketRK1');">bqWorkticketRK1&nbsp;&nbsp;&nbsp;热控一种工作票&nbsp;&nbsp;&nbsp;[单击查看]</a><hr/>
+<a style="cursor:hand"   href="#"  onclick=" return viewFlow('bqWorkticketRK2');">bqWorkticketRK2&nbsp;&nbsp;&nbsp;热控二种工作票&nbsp;&nbsp;&nbsp;[单击查看]</a><hr/>
+<a style="cursor:hand"   href="#"  onclick=" return viewFlow('bqWorkticketDH1');">bqWorkticketDH1&nbsp;&nbsp;&nbsp;一级动火工作票&nbsp;&nbsp;&nbsp;[单击查看]</a><hr/>
+<a style="cursor:hand"   href="#"  onclick=" return viewFlow('bqWorkticketDH2');">bqWorkticketDH2&nbsp;&nbsp;&nbsp;二级动火工作票&nbsp;&nbsp;&nbsp;[单击查看]</a><hr/>
+
+<a style="cursor:hand"   href="#"  onclick=" return viewFlow('bqFailure');">bqFailure&nbsp;&nbsp;&nbsp;缺陷审批&nbsp;&nbsp;&nbsp;[单击查看]</a><hr/>
+<a style="cursor:hand"   href="#"  onclick=" return viewFlow('bqStopSendElec');">bqStopSendElec&nbsp;&nbsp;&nbsp;停送电通知单&nbsp;&nbsp;&nbsp;[单击查看]</a><hr/>
+ 
+ 
+操作票流程<hr/>
+<a style="cursor:hand"   href="#"  onclick=" return viewFlow('bqOpTicketDQ');">bqOpTicketDQ&nbsp;&nbsp;&nbsp;电气操作票流程&nbsp;&nbsp;&nbsp;[单击查看]</a><hr/>
+<a style="cursor:hand"   href="#"  onclick=" return viewFlow('bqOpTicketRL');">bqOpTicketRL&nbsp;&nbsp;&nbsp;势力操作票审批&nbsp;&nbsp;&nbsp;[单击查看]</a><hr/>
+<a style="cursor:hand"   href="#"  onclick=" return viewFlow('bqStandOpTicket');">bqStandOpTicket&nbsp;&nbsp;&nbsp;标准操作票审批&nbsp;&nbsp;&nbsp;[单击查看]</a><hr/>
+
+
+<hr/>
+</BODY>
+</HTML>

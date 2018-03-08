@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-validation.xml" />
+	<package name="ca" namespace="/ca" extends="jfreechart-default">
+		<!-- 考勤合计项维护开始-->
+		<action name="getStatItemList"
+			class="power.web.hr.ca.attendance.statitem.action.StatItemAction"
+			method="getStatItemList">
+		</action>
+		<action name="saveOrUpdateStatItem"
+			class="power.web.hr.ca.attendance.statitem.action.StatItemAction"
+			method="saveOrUpdateStatItem">
+		</action>
+		<action name="getStatNameListByTypeCode"
+			class="power.web.hr.ca.attendance.statitem.action.StatItemAction"
+			method="getStatNameListByTypeCode">
+		</action>
+		<action name="deleteStatItem"
+			class="power.web.hr.ca.attendance.statitem.action.StatItemAction"
+			method="deleteStatItem">
+		</action>
+		<!-- 考勤合计项维护结束-->
+		<!-- 节假日维护开始-->
+		<action name="getRestDateList"
+			class="power.web.hr.ca.attendance.holiday.action.HolidayAction"
+			method="getRestDateList">
+		</action>
+		<action name="getWorkDateList"
+			class="power.web.hr.ca.attendance.holiday.action.HolidayAction"
+			method="getWorkDateList">
+		</action>
+		<action name="saveOrUpdateHoliday"
+			class="power.web.hr.ca.attendance.holiday.action.HolidayAction"
+			method="saveOrUpdateHoliday">
+		</action>
+		<action name="deleteHoliday"
+			class="power.web.hr.ca.attendance.holiday.action.HolidayAction"
+			method="deleteHoliday">
+		</action>
+		<!-- 节假日维护结束-->
+		<!--  基础表维护开始 -->
+		<action name="getBaseTableRecordList"
+			class="power.web.hr.ca.attendance.basetable.action.BaseTableAction"
+			method="getBaseTableRecordList" />
+		<action name="saveOrUpdateBaseTable"
+			class="power.web.hr.ca.attendance.basetable.action.BaseTableAction"
+			method="saveOrUpdateBaseTable" />
+		<action name="deleteBaseTableRecord"
+			class="power.web.hr.ca.attendance.basetable.action.BaseTableAction"
+			method="deleteBaseTableRecord" />
+		<!--  基础表维护结束 -->
+		<!-- 员工请假登记 -->
+		<action name="getVacationInfo"
+			class="power.web.hr.ca.leave.empvacationregister.action.EmpVacationRegisterAction"
+			method="getVacationInfo">
+		</action>
+		<action name="getOnDutyTime"
+			class="power.web.hr.ca.leave.empvacationregister.action.EmpVacationRegisterAction"
+			method="getOnDutyTime">
+		</action>
+		<action name="getAttendanceDept"
+			class="power.web.hr.ca.leave.empvacationregister.action.EmpVacationRegisterAction"
+			method="getAttendanceDept">
+		</action>
+		<action name="getVacationType"
+			class="power.web.hr.ca.leave.empvacationregister.action.EmpVacationRegisterAction"
+			method="getVacationType">
+		</action>
+		<action name="getHoliday"
+			class="power.web.hr.ca.leave.empvacationregister.action.EmpVacationRegisterAction"
+			method="getHoliday">
+		</action>
+		<action name="saveVacation"
+			class="power.web.hr.ca.leave.empvacationregister.action.EmpVacationRegisterAction"
+			method="saveVacation">
+		</action>
+		<action name="calculate"
+			class="power.web.hr.ca.leave.empvacationregister.action.EmpVacationRegisterAction"
+			method="calculate">
+		</action>
+		<!-- 部门请假登记 -->
+		<action name="getDeptVacationInfo"
+			class="power.web.hr.ca.leave.deptvacationregister.action.DeptVacationRegisterAction"
+			method="getDeptVacationInfo">
+		</action>
+		<action name="getDeptOnDutyTime"
+			class="power.web.hr.ca.leave.deptvacationregister.action.DeptVacationRegisterAction"
+			method="getDeptOnDutyTime">
+		</action>
+		<action name="getDeptAttendanceDept"
+			class="power.web.hr.ca.leave.deptvacationregister.action.DeptVacationRegisterAction"
+			method="getDeptAttendanceDept">
+		</action>
+		<action name="getDeptVacationType"
+			class="power.web.hr.ca.leave.deptvacationregister.action.DeptVacationRegisterAction"
+			method="getDeptVacationType">
+		</action>
+		<action name="getDeptHoliday"
+			class="power.web.hr.ca.leave.deptvacationregister.action.DeptVacationRegisterAction"
+			method="getDeptHoliday">
+		</action>
+		<action name="saveDeptVacation"
+			class="power.web.hr.ca.leave.deptvacationregister.action.DeptVacationRegisterAction"
+			method="saveDeptVacation">
+		</action>
+		<action name="calculateDept"
+			class="power.web.hr.ca.leave.deptvacationregister.action.DeptVacationRegisterAction"
+			method="calculateDept">
+		</action>
+		<action name="getDeptEmpInfo"
+			class="power.web.hr.ca.leave.deptvacationregister.action.DeptVacationRegisterAction"
+			method="getDeptEmpInfo">
+		</action>
+		<!-- 个人请假登记 -->
+		<action name="getPersonalVacationInfo"
+			class="power.web.hr.ca.leave.personalvacationregister.action.PersonalVacationRegisterAction"
+			method="getPersonalVacationInfo">
+		</action>
+		<action name="getPersonalOnDutyTime"
+			class="power.web.hr.ca.leave.personalvacationregister.action.PersonalVacationRegisterAction"
+			method="getPersonalOnDutyTime">
+		</action>
+		<action name="getPersonalAttendanceDept"
+			class="power.web.hr.ca.leave.personalvacationregister.action.PersonalVacationRegisterAction"
+			method="getPersonalAttendanceDept">
+		</action>
+		<action name="getPersonalVacationType"
+			class="power.web.hr.ca.leave.personalvacationregister.action.PersonalVacationRegisterAction"
+			method="getPersonalVacationType">
+		</action>
+		<action name="getPersonalHoliday"
+			class="power.web.hr.ca.leave.personalvacationregister.action.PersonalVacationRegisterAction"
+			method="getPersonalHoliday">
+		</action>
+		<action name="savePersonalVacation"
+			class="power.web.hr.ca.leave.personalvacationregister.action.PersonalVacationRegisterAction"
+			method="savePersonalVacation">
+		</action>
+		<action name="calculatePersonal"
+			class="power.web.hr.ca.leave.personalvacationregister.action.PersonalVacationRegisterAction"
+			method="calculatePersonal">
+		</action>
+		<action name="getPersonalEmpInfo"
+			class="power.web.hr.ca.leave.personalvacationregister.action.PersonalVacationRegisterAction"
+			method="getPersonalEmpInfo">
+		</action>
+
+		<!-- 部门考勤登记 开始 -->
+		<action name="getAttendanceDeptForRegister"
+			class="power.web.hr.ca.attendance.deptattendance.action.DeptAttendanceAction"
+			method="getAttendanceDeptForRegister">
+		</action>
+		<action name="getApprovedForRegister"
+			class="power.web.hr.ca.attendance.deptattendance.action.DeptAttendanceAction"
+			method="getApprovedForRegister">
+		</action>
+		<action name="getVacationTypeCommon"
+			class="power.web.hr.ca.common.CaCommonBusinessAction"
+			method="getVacationTypeCommon">
+		</action>
+		<!-- add by liuyi 20100202 查询基本天数 -->
+		<action name="getBasicDaysCommon"
+			class="power.web.hr.ca.common.CaCommonBusinessAction"
+			method="getBasicDaysCommon">
+		</action>
+		<action name="getOvertimeTypeCommon"
+			class="power.web.hr.ca.common.CaCommonBusinessAction"
+			method="getOvertimeTypeCommon">
+		</action>
+		<action name="getWorkshiftTypeCommon"
+			class="power.web.hr.ca.common.CaCommonBusinessAction"
+			method="getWorkshiftTypeCommon">
+		</action>
+		<action name="getEmpExistForRegister"
+			class="power.web.hr.ca.attendance.deptattendance.action.DeptAttendanceAction"
+			method="getEmpExistForRegister">
+		</action>
+		<action name="getDetailInfoForRegister"
+			class="power.web.hr.ca.attendance.deptattendance.action.DeptAttendanceAction"
+			method="getDetailInfoForRegister">
+		</action>
+		<action name="saveDeptAttendanceForRegister"
+			class="power.web.hr.ca.attendance.deptattendance.action.DeptAttendanceAction"
+			method="saveDeptAttendanceForRegister">
+		</action>
+		<!-- 部门考勤登记 结束-->
+
+		<!-- 假别维护开始 -->
+		<action name="searchVacationTypeList"
+			class="power.web.hr.ca.leave.vacationType.action.VacationTypeAction"
+			method="searchVacationTypeList">
+		</action>
+		<action name="deleteVacationType"
+			class="power.web.hr.ca.leave.vacationType.action.VacationTypeAction"
+			method="deleteVacationType">
+		</action>
+		<action name="updateVacationType"
+			class="power.web.hr.ca.leave.vacationType.action.VacationTypeAction"
+			method="updateVacationType">
+		</action>
+		<action name="addVacationType"
+			class="power.web.hr.ca.leave.vacationType.action.VacationTypeAction"
+			method="addVacationType">
+		</action>
+		<!-- 假别维护结束 -->
+		<!-- 考勤标准维护-->
+		<action name="getAttendanceDeptInfo"
+			class="power.web.hr.ca.attendance.attendancestandard.action.AttendanceStandardAction"
+			method="getAttendanceDeptInfo">
+		</action>
+		<action name="getAttendanceStandardInfo"
+			class="power.web.hr.ca.attendance.attendancestandard.action.AttendanceStandardAction"
+			method="getAttendanceStandardInfo">
+		</action>
+		<action name="saveAttendanceStandard"
+			class="power.web.hr.ca.attendance.attendancestandard.action.AttendanceStandardAction"
+			method="saveAttendanceStandard">
+		</action>
+		<!-- 考勤标准维护-->
+
+		<!-- 加班换休登记开始-->
+		<action name="searchLastMonth"
+			class="power.web.hr.ca.leave.leaveManagement.LeaveManagementAction"
+			method="searchLastMonth">
+		</action>
+		<action name="saveLastMonth"
+			class="power.web.hr.ca.leave.leaveManagement.LeaveManagementAction"
+			method="saveLastMonth">
+		</action>
+		<!-- 加班换休登记结束-->
+
+		<!-- 员工销假登记开始-->
+		<action name="getEmpLeave"
+			class="power.web.hr.ca.leave.leaveregister.LeaveRegisterAction"
+			method="getEmpLeave">
+		</action>
+		<action name="clearLeave"
+			class="power.web.hr.ca.leave.leaveregister.LeaveRegisterAction"
+			method="clearLeave">
+		</action>
+		<!-- 员工销假登记结束-->
+
+		<!-- 部门销假登记开始-->
+		<action name="getEmpName"
+			class="power.web.hr.ca.leave.deptClearLeave.DeptClearLeaveAction"
+			method="getEmpName">
+		</action>
+		<action name="getDeptLeave"
+			class="power.web.hr.ca.leave.deptClearLeave.DeptClearLeaveAction"
+			method="getEmpLeave">
+		</action>
+		<action name="clearDeptLeave"
+			class="power.web.hr.ca.leave.deptClearLeave.DeptClearLeaveAction"
+			method="clearLeave">
+		</action>
+		<!-- 部门销假登记结束-->
+		<!-- 考勤统计查询开始-->
+		<action name="getDeptOndutyStatisticsQueryInfo"
+			class="power.web.hr.ca.attendance.attendancestatisticsquery.action.AttendanceStatisticsQueryAction"
+			method="getDeptOndutyStatisticsQueryInfo">
+		</action>
+		<action name="getDeptleaveStatisticsQueryInfo"
+			class="power.web.hr.ca.attendance.attendancestatisticsquery.action.AttendanceStatisticsQueryAction"
+			method="getDeptleaveStatisticsQueryInfo">
+		</action>
+		<action name="exportDeptleaveStatisticsQueryInfo"
+			class="power.web.hr.ca.attendance.attendancestatisticsquery.action.AttendanceStatisticsQueryAction"
+			method="exportDeptleaveStatisticsQueryInfo">
+		</action>
+		<action name="exportDeptOndutyStatisticsQueryInfo"
+			class="power.web.hr.ca.attendance.attendancestatisticsquery.action.AttendanceStatisticsQueryAction"
+			method="exportDeptOndutyStatisticsQueryInfo">
+		</action>
+		<action name="exportLeaveStatisticsQueryInfo"
+			class="power.web.hr.ca.attendance.attendancestatisticsquery.action.AttendanceStatisticsQueryAction"
+			method="exportLeaveStatisticsQueryInfo">
+		</action>
+		<!-- 考勤统计查询结束-->
+		<!-- 年初计划登记 -->
+		<action name="searchYearPlanList"
+			class="power.web.hr.ca.leave.yearPlan.action.YearPlanAction"
+			method="searchYearPlanList">
+		</action>
+		<action name="saveYearPlanByVacation"
+			class="power.web.hr.ca.leave.yearPlan.action.YearPlanAction"
+			method="saveYearPlanByVacation">
+		</action>
+		<action name="reportYearPlanRecords"
+			class="power.web.hr.ca.leave.yearPlan.action.YearPlanAction"
+			method="reportRecords">
+		</action>
+		<action name="getEmpOfDeptRecords"
+			class="power.web.hr.ca.leave.yearPlan.action.YearPlanAction"
+			method="getEmpOfDeptRecords">
+		</action>
+		<!-- 年初计划登记 -->
+		<!-- 考勤员审核开始-->
+		<action name="getAttendanceList"
+			class="power.web.hr.ca.attendance.timekeeperexamine.action.TimeKeeperExamineAction"
+			method="getAttendanceList">
+		</action>
+		<action name="getAttendanceDeptType2Info"
+			class="power.web.hr.ca.attendance.timekeeperexamine.action.TimeKeeperExamineAction"
+			method="getAttendanceDeptType2Info">
+		</action>
+		<action name="getEmpAttendanceInfo"
+			class="power.web.hr.ca.attendance.timekeeperexamine.action.TimeKeeperExamineAction"
+			method="getEmpAttendanceInfo">
+		</action>
+		<action name="saveEmpAttendanceInfo"
+			class="power.web.hr.ca.attendance.timekeeperexamine.action.TimeKeeperExamineAction"
+			method="saveEmpAttendanceInfo">
+		</action>
+		<action name="cancelLastCheck"
+			class="power.web.hr.ca.attendance.timekeeperexamine.action.TimeKeeperExamineAction"
+			method="cancelLastCheck">
+		</action>
+		<action name="exportAttendanceQueryFile"
+			class="power.web.hr.ca.attendance.timekeeperexamine.action.TimeKeeperExamineAction"
+			method="exportAttendanceQueryFile">
+		</action>
+		<action name="setAttendanceCheck"
+			class="power.web.hr.ca.attendance.timekeeperexamine.action.TimeKeeperExamineAction"
+			method="setAttendanceCheck">
+		</action>
+		<!-- 考勤员审核结束-->
+		<!-- 考勤权限设置-->
+		<action name="getAttendanceDeptData"
+			class="power.web.hr.ca.attendance.attendancerights.action.AttendanceRightsAction"
+			method="getAttendanceDeptData">
+		</action>
+		<action name="getAttendanceEmpInfo"
+			class="power.web.hr.ca.attendance.attendancerights.action.AttendanceRightsAction"
+			method="getAttendanceEmpInfo">
+		</action>
+		<action name="getAttendanceDeptSingleInfo"
+			class="power.web.hr.ca.attendance.attendancerights.action.AttendanceRightsAction"
+			method="getAttendanceDeptSingleInfo">
+		</action>
+		<action name="deleteAttendanceDeptInfo"
+			class="power.web.hr.ca.attendance.attendancerights.action.AttendanceRightsAction"
+			method="deleteAttendanceDeptInfo">
+		</action>
+		<action name="addAttendanceDeptInfo"
+			class="power.web.hr.ca.attendance.attendancerights.action.AttendanceRightsAction"
+			method="addAttendanceDeptInfo">
+		</action>
+		<action name="modifyAttendanceDeptInfo"
+			class="power.web.hr.ca.attendance.attendancerights.action.AttendanceRightsAction"
+			method="modifyAttendanceDeptInfo">
+		</action>
+		<action name="modifyDeptByEmpId"
+			class="power.web.hr.ca.attendance.attendancerights.action.AttendanceRightsAction"
+			method="modifyDeptByEmpId">
+		</action>
+		<action name="getAttendanceDeptsByTid"
+			class="power.web.hr.ca.attendance.attendancerights.action.AttendanceRightsAction"
+			method="getAttendanceDeptsByTid">
+		</action>
+		
+		<!-- 部门考勤管理<考勤人员变更>删除考勤部门人员 add by sychen 20100713-->
+		<action name="deleteAttendanceDeptId"
+			class="power.web.hr.ca.attendance.attendancerights.action.AttendanceRightsAction"
+			method="deleteAttendanceDeptId">
+		</action>
+		<!-- 考勤权限设置-->
+		<!-- 个人考勤权限设置-->
+		<action name="getDataByWriterCheckerId"
+			class="power.web.hr.ca.attendance.personattendancerights.action.PersonAttendanceRightsAction"
+			method="getDataByWriterCheckerId">
+		</action>
+		<action name="modifyWriterChecker"
+			class="power.web.hr.ca.attendance.personattendancerights.action.PersonAttendanceRightsAction"
+			method="modifyWriterChecker">
+		</action>
+		<!-- 个人考勤权限设置-->
+		<!-- 请假登记查询-->
+		<action name="searchVacationList"
+			class="power.web.hr.ca.leave.vacation.action.Vacation"
+			method="searchVacationList">
+		</action>
+		<action name="exportVacationExcel"
+			class="power.web.hr.ca.leave.vacation.action.Vacation"
+			method="exportVacationExcel">
+		</action>
+	<!-- 全公司考勤查询开始-->
+		<action name="getAllAttendanceList"
+			class="power.web.hr.ca.attendance.allattendancequery.action.AllAttendanceQueryAction"
+			method="getAllAttendanceList">
+		</action>
+		<action name="getAttendanceDeptInfoAll"
+			class="power.web.hr.ca.attendance.allattendancequery.action.AllAttendanceQueryAction"
+			method="getAttendanceDeptInfo">
+		</action>
+		<action name="getEmpAttendance"
+			class="power.web.hr.ca.attendance.allattendancequery.action.AllAttendanceQueryAction"
+			method="getEmpAttendance">
+		</action>
+		<action name="getAuditeDetail"
+			class="power.web.hr.ca.attendance.allattendancequery.action.AllAttendanceQueryAction"
+			method="getAuditeDetail">
+		</action>
+		<action name="exportFileAllAttendance"
+			class="power.web.hr.ca.attendance.allattendancequery.action.AllAttendanceQueryAction"
+			method="exportFile">
+		</action>
+	<!-- 全公司考勤查询结束-->
+	<!-- 负责人审核开始-->
+		<action name="getAttendanceListPrin"
+			class="power.web.hr.ca.attendance.principalaudite.action.PrincipalAuditeAction"
+			method="getAttendanceList">
+		</action>
+		<action name="getAttendanceDeptType2InfoPrin"
+			class="power.web.hr.ca.attendance.principalaudite.action.PrincipalAuditeAction"
+			method="getAttendanceDeptType2Info">
+		</action>
+		<action name="getEmpAttendanceInfoPrin"
+			class="power.web.hr.ca.attendance.principalaudite.action.PrincipalAuditeAction"
+			method="getEmpAttendanceInfo">
+		</action>
+		<action name="saveEmpAttendanceInfoPrin"
+			class="power.web.hr.ca.attendance.principalaudite.action.PrincipalAuditeAction"
+			method="saveEmpAttendanceInfo">
+		</action>
+		<action name="cancelLastCheckPrin"
+			class="power.web.hr.ca.attendance.principalaudite.action.PrincipalAuditeAction"
+			method="cancelLastCheck">
+		</action>
+		<action name="exportAttendanceQueryFilePrin"
+			class="power.web.hr.ca.attendance.principalaudite.action.PrincipalAuditeAction"
+			method="exportAttendanceQueryFile">
+		</action>
+		<action name="setAttendanceCheckPrin"
+			class="power.web.hr.ca.attendance.principalaudite.action.PrincipalAuditeAction"
+			method="setAttendanceCheck">
+		</action>
+	<!-- 负责人审核结束-->
+		<!-- 请假登记查询 -->
+	<!-- add by liuyi 20100203 考勤月度统计病旷加事 -->
+		<action name="getEmpAttendanceRecordList"
+			class="power.web.hr.ca.common.EmpAttendanceAction"
+			method="getEmpAttendanceRecordList">
+		</action>
+		
+	<!--考勤登记  -->
+		<action name="getNewEmpExistForRegister"
+			class="power.web.hr.ca.attendance.deptattendance.action.DeptAttendanceNewAction"
+			method="getNewEmpExistForRegister">
+		</action>
+		<action name="getNewAttendanceDeptForRegister"
+			class="power.web.hr.ca.attendance.deptattendance.action.DeptAttendanceNewAction"
+			method="getNewAttendanceDeptForRegister">
+		</action>
+		<action name="saveNewDeptAttendanceForRegister"
+			class="power.web.hr.ca.attendance.deptattendance.action.DeptAttendanceNewAction"
+			method="saveNewDeptAttendanceForRegister">
+		</action>
+		<action name="getDetailInfoForRegisterNew"
+			class="power.web.hr.ca.attendance.deptattendance.action.DeptAttendanceNewAction"
+			method="getDetailInfoForRegisterNew">
+		</action>
+		<action name="getNewApprovedForRegister"
+			class="power.web.hr.ca.attendance.deptattendance.action.DeptAttendanceNewAction"
+			method="getNewApprovedForRegister">
+		</action>
+		<!-- 考勤上报 -->
+		<action name="reportAttendanceDept"
+			class="power.web.hr.ca.attendance.deptattendance.action.DeptAttendanceNewAction"
+			method="reportAttendanceDept">
+		</action>
+		
+		
+		<action name="getNewAttendanceList"
+			class="power.web.hr.ca.attendance.timekeeperexamine.action.TimeKeeperExamineNewAction"
+			method="getNewAttendanceList">
+		</action>
+		
+		<!-- 考勤审批 -->
+		<action name="approveAttendance"
+			class="power.web.hr.ca.attendance.deptattendance.action.DeptAttendanceNewAction"
+			method="approveAttendance">
+		</action>
+		
+		<action name="findNewAttendApproveList"
+			class="power.web.hr.ca.attendance.timekeeperexamine.action.TimeKeeperExamineNewAction"
+			method="findNewAttendApproveList">
+		</action>
+		
+		<action name="getAttendanceInfo"
+			class="power.web.hr.ca.attendance.deptattendance.action.DeptAttendanceNewAction"
+			method="getAttendanceInfo">
+		</action>
+		
+		<action name="getAttendanceApproveInfo"
+			class="power.web.hr.ca.attendance.deptattendance.action.DeptAttendanceNewAction"
+			method="getAttendanceApproveInfo">
+		</action>
+		
+		<action name="getAttendDeptDataByPerson"
+			class="power.web.hr.ca.attendance.attendancerights.action.AttendanceRightsAction"
+			method="getAttendDeptDataByPerson">
+		</action>
+		<action name="queryLeftDay"
+				class = "power.web.hr.ca.attendance.attendancerights.action.LeftDayManageAction"
+				method = "queryLeftDay"></action>
+	</package>
+</struts>

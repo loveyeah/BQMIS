@@ -1,0 +1,160 @@
+/**
+　* Copyright ustcsoft.com
+　* All right reserved.
+*/
+package power.web.administration.dutynotesearch.action;
+
+import java.sql.SQLException;
+import java.util.logging.Level;
+
+import power.ear.comm.Employee;
+import power.ear.comm.ejb.PageObject;
+import power.ejb.administration.business.DutyNoteSearchFacadeRemote;
+import power.ejb.administration.comm.ADCommonFacadeRemote;
+import power.ejb.administration.comm.ComAdCRight;
+import power.ejb.hr.LogUtil;
+import power.web.comm.AbstractAction;
+
+import com.googlecode.jsonplugin.JSONException;
+import com.googlecode.jsonplugin.JSONUtil;
+
+/**
+ * RegularWorkSearchAction action 查询值班记事.
+ * 
+ * @author 赵明建
+ */
+@SuppressWarnings("serial")
+public class DutyNoteSearchAction extends AbstractAction {
+	// 远程EJB接口
+	DutyNoteSearchFacadeRemote remote = null;
+	//通用EJB接口
+	ADCommonFacadeRemote remoteComm = null;
+	PageObject result = null;
+	/** 起始时间*/
+	private String strStartDate = "";
+	/**截止时间*/
+	private String strEndDate = "";
+	/**子工作类型编码*/
+	private String  strSubWorkTypeCode = "";
+	/**值类型编码*/
+	private String strDutyTypeCode = "";
+	/**起始查询行*/
+	private int start = 0;
+	/**查询限制行*/
+	private int limit = 0;
+	
+	/**无参构造函数*/
+	public DutyNoteSearchAction(){
+	   //调用EJB远程接口获取AdJonDutyFacade实例
+		remote = (DutyNoteSearchFacadeRemote)factory.getFacadeRemote("DutyNoteSearchFacade");
+		//调用EJB远程接口获取ADCommonFacade实例
+		remoteComm = (ADCommonFacadeRemote)factory.getFacadeRemote("ADCommonFacade");
+    }
+	/*
+     * 取得值班记事
+     * @throws JSONException
+     */
+	public void getOnDutyListInfo()throws JSONException{
+		
+		//Action log start
+		LogUtil.log("Action:值班记事查询开始", Level.INFO, null);
+		try{
+		//取得用户worktype
+		String strUserID = employee.getWorkerCode();
+		String strEnterPriseCode = employee.getEnterpriseCode();
+		PageObject pobjWorkTypeCode = remoteComm.getUserRight(strUserID,strEnterPriseCode);
+		String strWorkCode =((ComAdCRight) (pobjWorkTypeCode.getList().get(0))).getWorktypeCode();
+	    
+     	 //调用远程方法获取PageObject实例
+		 result=(PageObject)remote.getOnDutyListInfo(strStartDate, strEndDate, strWorkCode, strSubWorkTypeCode, strDutyTypeCode,strEnterPriseCode,start,limit);
+		 //转换为字符串形式
+		 String strPageObject =null;
+	     if (result.getTotalCount() <= 0) {
+	      	strPageObject = "{\"list\":[],\"totalCount\":null}";
+	     }else{
+	    	 strPageObject  = JSONUtil.serialize(result);
+	     }
+	     LogUtil.log("Action:值班记事查询结束", Level.INFO, null);
+	     write(strPageObject);
+		}catch(SQLException e){
+			LogUtil.log("值班记事查询 SQL 异常抛出", Level.SEVERE,e);
+		}
+    }
+	/**
+	 * 
+	 * @return  employee 员工对象
+	 */
+	public Employee getEmployeeInfo(){
+		Employee employee = (Employee)session.getAttribute("employee");
+		return employee;
+	}
+	/**
+	 * 
+	 * @return strStartDate 起始时间 
+	 */
+	public String getStrStartDate() {
+		return strStartDate;
+	}
+	/**
+	 * 
+	 * @param strStartDate 起始时间 
+	 */
+	public void setStrStartDate(String strStartDate) {
+		this.strStartDate = strStartDate;
+	}
+	/**
+	 * 
+	 * @return strEndDate 截止时间
+	 */
+	public String getStrEndDate() {
+		return strEndDate;
+	}
+	/**
+	 * 
+	 * @param strEndDate 截止时间
+	 */
+	public void setStrEndDate(String strEndDate) {
+		this.strEndDate = strEndDate;
+	}
+	/**
+	 * 
+	 * @return strSubWorkTypeCode 子工作类型编码
+	 */
+	public String getStrSubWorkTypeCode() {
+		return strSubWorkTypeCode;
+	}
+	/**
+	 * 
+	 * @param strSubWorkTypeCode 子工作类型编码
+	 */
+	public void setStrSubWorkTypeCode(String strSubWorkTypeCode) {
+		this.strSubWorkTypeCode = strSubWorkTypeCode;
+	}
+	/**
+	 *  
+	 * @return strDutyTypeCode 值类型编码
+	 */
+	public String getStrDutyTypeCode() {
+		return strDutyTypeCode;
+	}
+	/**
+	 * 
+	 * @param strDutyTypeCode 值类型编码
+	 */
+	public void setStrDutyTypeCode(String strDutyTypeCode) {
+		this.strDutyTypeCode = strDutyTypeCode;
+	}
+	public int getStart() {
+		return start;
+	}
+	public void setStart(int start) {
+		this.start = start;
+	}
+	public int getLimit() {
+		return limit;
+	}
+	public void setLimit(int limit) {
+		this.limit = limit;
+	}
+
+}

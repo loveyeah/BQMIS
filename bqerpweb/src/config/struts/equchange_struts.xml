@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>   
+	<include file="struts-validation.xml" />
+	<package name="equchange" namespace="/equchange" extends="jfreechart-default"> 
+	  	 
+	    <!--异动来源类型-->
+		<action name="findChangeSourceList" class="power.web.equ.change.action.EquChangeSourceAction" method="findChangeSourceList"></action> 
+		<action name="addChangeSource" class="power.web.equ.change.action.EquChangeSourceAction" method="addChangeSource"></action> 
+		<action name="updateChangeSource" class="power.web.equ.change.action.EquChangeSourceAction" method="updateChangeSource"></action> 
+		<action name="deleteChangeSource" class="power.web.equ.change.action.EquChangeSourceAction" method="deleteChangeSource"></action> 
+		
+		 <!--异动登记-->
+		<action name="findChangeList" class="power.web.equ.change.action.EquChangeAction" method="findChangeList"></action> 
+		<action name="addChange" class="power.web.equ.change.action.EquChangeAction" method="addChange"></action> 
+	    <action name="saveThingAndImage" class="power.web.equ.change.action.EquChangeAction" method="saveThingAndImage"></action> 
+		<action name="updateChange" class="power.web.equ.change.action.EquChangeAction" method="updateChange"></action> 
+		<action name="deleteChange" class="power.web.equ.change.action.EquChangeAction" method="deleteChange"></action> 
+		<action name="findSpecialList" class="power.web.equ.change.action.EquChangeAction" method="findSpecialList"></action> 
+		<action name="findChangeModel" class="power.web.equ.change.action.EquChangeAction" method="findChangeModel"></action> 
+		<action name="showphoto" class="power.web.equ.change.action.EquChangeAction" method="showphoto"></action> 
+		
+		
+		<action name="getEquChangeNo" class="power.web.equ.change.action.EquChangeAction" method="getEquChangeNo"></action> 
+	    <action name="reportEquChange" class="power.web.equ.change.action.EquChangeAction" method="reportEquChange"></action> 
+	    <action name="approveEquChange" class="power.web.equ.change.action.EquChangeAction" method="approveEquChange"></action> 
+	    
+	    <!-- 异动回录 -->
+	    <action name="saveBackFill" class="power.web.equ.change.action.EquChangeAction" method="saveBackFill"></action>
+	     <action name="findBackFillModel" class="power.web.equ.change.action.EquChangeAction" method="findBackFillModel"></action>
+	      <!-- 设备异动台帐查询 add by kzhang 20100921 -->
+	    <action name="findChangeListByEquCode" class="power.web.equ.change.action.EquChangeAction" method="findChangeListByEquCode"></action>
+	</package> 
+</struts>

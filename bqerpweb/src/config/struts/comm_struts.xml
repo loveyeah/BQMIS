@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>   
+	<include file="struts-validation.xml" />
+	<package name="comm" namespace="/comm" extends="jfreechart-default"> 
+		<!-- 导入operaterTiciket -->
+		<action name="createOpration" class="power.basedata.action.BaseDataAction" method="createOpration"></action> 
+		<!-- 取得当前Session中的人员信息 -->
+		<action name="getCurrentSessionEmployee" class="power.basedata.action.BaseDataAction" method="getCurrentSessionEmployee"></action> 
+		<!-- 更新参数 -->
+		<action name="updateParamsValue" class="power.basedata.action.BaseDataAction" method="updateParamsValue"></action> 
+		<!-- 取得参数列表 -->
+		<action name="getParamsList" class="power.basedata.action.BaseDataAction" method="getParamsList"></action>
+		<!-- 获取本币-->
+		<action name="getOriCurrency" class="power.basedata.action.BaseDataAction" method="getOriCurrency"></action>
+		<!-- 获取物料领用方式  -->
+		<action name="getIssueType" class="power.basedata.action.BaseDataAction" method="getIssueType"></action>
+		<!-- 取得子部门(树形)-->
+		<action name="getDeptsByPid" class="power.basedata.action.BaseDataAction" method="getDeptsByPid"></action>
+		<!-- 部门取人 -->
+		<action name="getWorkerByDept" class="power.basedata.action.BaseDataAction" method="getWorkerByDept"></action>
+		<!-- 取得子专业(树形) -->
+		<action name="getSpecialsByPCode" class="power.basedata.action.BaseDataAction" method="getSpecialsByPCode"></action>
+		<!-- 用户验证 -->
+		<action name="workticketApproveCheckUser" class="power.basedata.action.BaseDataAction" method="workticketApproveCheckUser"></action> 
+		<!-- 判断是否是点检员 -->
+		<action name="checkIsDianJianYuan" class="power.basedata.action.BaseDataAction" method="checkIsDianJianYuan"></action> 
+		<!-- 获取参数值 -->
+		<action name="getPamValue" class="power.basedata.action.BaseDataAction" method="getPamValue"></action>
+	    <!-- 取得计划统计基础信息 -->
+		<action name="getBpBasicDataByType" class="power.basedata.action.BaseDataAction" method="getBpBasicDataByType"></action> 
+		<!-- excel报表控制 -->
+		<action name="test" class="power.basedata.action.ExcelReportAction" method="test">
+	 	</action>
+	 	<action name="addExcelTemplate" class="power.basedata.action.ExcelReportAction" method="add">
+	 	</action>
+	 	<action name="removeExcelTemplate" class="power.basedata.action.ExcelReportAction" method="delete">
+	 	</action>
+	 	<action name="getExcelTemplateList" class="power.basedata.action.ExcelReportAction" method="getList">
+	 	</action>
+	 	<action name="viewTemplate" class="power.basedata.action.ExcelReportAction" method="viewTemplate">
+	 	</action>
+	 	<action name="saveRoleUsers" class="power.basedata.action.ExcelReportAction" method="saveRoleUsers">
+	 	</action>
+	 	<action name="getUsersList" class="power.basedata.action.ExcelReportAction" method="getUsersList">
+	 	</action>
+	 	<action name="getReportModelList" class="power.basedata.action.ExcelReportAction" method="getReportModelList">
+	 	</action>
+	 	<!-- 取得单位 -->
+		<action name="findUnitList" class="power.basedata.action.BaseDataAction" method="findUnitList"></action>
+		<!-- 取得统计指标grid -->
+		<action name="getAllItemToCommon" class="power.basedata.action.BaseDataAction" method="getAllItemToCommon"></action>
+		<!-- 取得统计指标tree -->
+		<action name="findItemTreeToCommon" class="power.basedata.action.BaseDataAction" method="findItemTreeToCommon"></action>
+		<!-- 取得经营指标grid -->
+		<action name="getOperateItemForSelect" class="power.basedata.action.BaseDataAction" method="getOperateItemForSelect"></action>
+		<!-- 取得经营指标tree -->
+		<action name="findOperateItemTreeForSelect" class="power.basedata.action.BaseDataAction" method="findOperateItemTreeForSelect"></action>
+		<!-- 查询一级部门信息 by部门Id add by kzhang20100917 -->
+		<action name="findFirstLeverDeptByDeptId" class="power.basedata.action.BaseDataAction" method="findFirstLeverDeptDetailByDeptId"></action>
+	</package>
+</struts>

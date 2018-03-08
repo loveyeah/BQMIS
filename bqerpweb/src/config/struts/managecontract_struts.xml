@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>   
+	<include file="struts-validation.xml" />
+	<package name="managecontract" namespace="/managecontract" extends="jfreechart-default"> 
+	 
+		<!-- 合同类型维护 -->
+		<action name="addConType" class="power.web.manage.contract.action.ConTypeAction" method="addConType"></action>
+		<action name="updateConType" class="power.web.manage.contract.action.ConTypeAction" method="updateConType"></action>
+		<action name="deleteConType" class="power.web.manage.contract.action.ConTypeAction" method="deleteConType"></action>
+		<action name="findInfoById" class="power.web.manage.contract.action.ConTypeAction" method="findInfoById"></action>
+		<action name="findByPId" class="power.web.manage.contract.action.ConTypeAction" method="findByPId"></action>	
+		<!-- 发票类型维护 --> 
+		<action name="addInvoice" class="power.web.manage.contract.action.ConInvoiceAction" method="addInvoice"></action>
+		<action name="updateInvoice" class="power.web.manage.contract.action.ConInvoiceAction" method="updateInvoice"></action> 
+		<action name="deleteInvoice" class="power.web.manage.contract.action.ConInvoiceAction" method="deleteInvoice"></action> 
+		<action name="findInvoice" class="power.web.manage.contract.action.ConInvoiceAction" method="findInvoice"></action> 
+		<action name="findAllInvoices" class="power.web.manage.contract.action.ConInvoiceAction" method="findAllInvoices"></action>          
+		<!-- 变更会签申请 --> 
+		<!-- 变更会签申请信息填写 --> 
+		<action name="findConModifyList" class="power.web.manage.contract.action.ConModifyAction" method="findConModifyList"></action>  
+		<action name="addModifyBase" class="power.web.manage.contract.action.ConModifyAction" method="addModifyBase"></action>          
+		<action name="updateModifyBase" class="power.web.manage.contract.action.ConModifyAction" method="updateModifyBase"></action> 
+		<action name="deleteModifyBase" class="power.web.manage.contract.action.ConModifyAction" method="deleteModifyBase"></action>  
+		<action name="findModifyBaseInfo" class="power.web.manage.contract.action.ConModifyAction" method="findModifyBaseInfo"></action> 
+		<action name="findConListForSelect" class="power.web.manage.contract.action.ConModifyAction" method="findConListForSelect"></action>  
+		<action name="showModifyFile" class="power.web.manage.contract.action.ConModifyAction" method="showFile">
+			<result name="success">/manage/contract/business/modifyMeetSign/register/tabBase/fileShow.jsp</result> 
+		</action>   
+		<!-- 取变更会签id --> 
+		<action name="findconModifyIds" class="power.web.manage.contract.action.ConModifyAction" method="findconModifyIds"></action>  
+	   
+		<!-- 变更会签申请附件 -->                                                
+		<action name="findDocModifyList" class="power.web.manage.contract.action.ConDocModifyAction" method="findDocModifyList"></action>  
+		<action name="addDocModifyInfo" class="power.web.manage.contract.action.ConDocModifyAction" method="addDocModifyInfo"></action>  
+		<action name="openContractDoc" class="power.web.manage.contract.action.ConDocModifyAction" method="openContractDoc"></action>
+		<action name="typeOfFile" class="power.web.manage.contract.action.ConDocModifyAction" method="typeOfFile"></action>
+		<action name="svaeDocContent" class="power.web.manage.contract.action.ConDocModifyAction" method="svaeDocContent"></action> 
+		<action name="updateDocModifyInfo" class="power.web.manage.contract.action.ConDocModifyAction" method="updateDocModifyInfo"></action>  
+		<action name="deleteDocModifyInfo" class="power.web.manage.contract.action.ConDocModifyAction" method="deleteDocModifyInfo"></action>  
+		<!-- 变更合同归档申请 --> 
+		<action name="findBackOpinion" class="power.web.manage.contract.action.ConModifyAction" method="findBackOpinion"></action>  
+		<action name="applyArchive" class="power.web.manage.contract.action.ConModifyAction" method="applyArchive"></action>  
+	
+		<!-- 变更会签审批 -->	
+		<action name="findConModifyApproveList" class="power.web.manage.contract.action.ConModifyAction" method="findConModifyApproveList"></action>
+		<action name="conModApproveReport" class="power.web.manage.contract.action.ConModifyAction" method="conModApproveReport"></action>
+		<action name="contractModifyApprove" class="power.web.manage.contract.action.ConModifyAction" method="contractModifyApprove"></action>
+		<action name="findMaterialsByConId" class="power.web.manage.contract.action.ConModifyAction" method="findMaterialsByConId"></action>	
+		<!-- 合同归档申请 --> 
+		<action name="getArchiveList" class="power.web.manage.contract.action.ConArchiveAction" method="getArchiveList"></action>
+		<action name="contractArchive" class="power.web.manage.contract.action.ConArchiveAction" method="contractArchive"></action>
+		<action name="getFileOpinionList" class="power.web.manage.contract.action.ConArchiveAction" method="getFileOpinionList"></action>
+		<!-- 合同归档确认 -->
+		<action name="getConModel" class="power.web.manage.contract.action.ConArchiveAction" method="getConModel"></action>
+		<action name="getArchiveConfirmList" class="power.web.manage.contract.action.ConArchiveAction" method="getArchiveConfirmList"></action>
+		<action name="conArchiveConfirm" class="power.web.manage.contract.action.ConArchiveAction" method="conArchiveConfirm"></action>
+		<action name="conArchiveBack" class="power.web.manage.contract.action.ConArchiveAction" method="conArchiveBack"></action>
+		<action name="queryArchiveOkList" class="power.web.manage.contract.action.ConArchiveAction" method="queryArchiveOkList"></action>
+		<!-- 合同会签申请 --> 
+		<action name="getSessionInfo" class="power.web.manage.contract.action.ConMeetSignAction" method="getSessionInfo"></action>
+		<action name="getEmpByDept" class="power.web.manage.contract.action.ConMeetSignAction" method="getEmpByDept"></action>
+		<action name="queryMeetConlist" class="power.web.manage.contract.action.ConMeetSignAction" method="queryMeetConlist"></action>
+		<action name="addMeetConInfo" class="power.web.manage.contract.action.ConMeetSignAction" method="addMeetConInfo"></action>
+		<action name="findMeetConModel" class="power.web.manage.contract.action.ConMeetSignAction" method="findMeetConModel"></action>
+		<action name="deleteMeetConInfo" class="power.web.manage.contract.action.ConMeetSignAction" method="deleteMeetConInfo"></action>
+		<action name="findDocList" class="power.web.manage.contract.action.ConMeetSignAction" method="findDocList"></action>
+		<action name="addConDoc" class="power.web.manage.contract.action.ConMeetSignAction" method="addConDoc"></action>
+		<action name="updateConDoc" class="power.web.manage.contract.action.ConMeetSignAction" method="updateConDoc"></action>
+		<action name="deleteConDoc" class="power.web.manage.contract.action.ConMeetSignAction" method="deleteConDoc"></action>
+		<action name="showConFile" class="power.web.manage.contract.action.ConMeetSignAction" method="showConFile"> </action> 
+	   
+		<action name="getConCurrencyList" class="power.web.manage.contract.action.ConMeetSignAction" method="getConCurrencyList"> </action>
+		<action name="findAllMaterialByContractNo" class="power.web.manage.contract.action.ConMeetSignAction" method="findAllMaterialByContractNo"></action>
+		<action name="updateMaterial" class="power.web.manage.contract.action.ConMeetSignAction" method="updateMaterial"></action>
+		<!-- 合同会签审批 --> 
+		<action name="contractReport" class="power.web.manage.contract.action.ConMeetSignAction" method="contractReport"></action>
+		<action name="queryApproveConlist" class="power.web.manage.contract.action.ConMeetSignAction" method="queryApproveConlist"></action>
+		<action name="contractApprove" class="power.web.manage.contract.action.ConMeetSignAction" method="contractApprove"></action>
+		<action name="modifyMeetConInfo" class="power.web.manage.contract.action.ModifyMeetConAction" method="modifyMeetConInfo"></action>
+		<action name="contractApproveCheckUser" class="power.web.manage.contract.action.ConApproveUserValidate" method="contractApproveCheckUser"></action>
+		<!-- 合同委托管理 -->
+		<action name="findDelegationList" class="power.web.manage.contract.action.ConMeetSignAction" method="findDelegationList"></action>
+		<!-- 付款计划 -->
+		<action name="findPayPlanList" class="power.web.manage.contract.action.ConPayPlanModifyAction" method="findPayPlanList"></action>
+		<action name="updatePayPlan" class="power.web.manage.contract.action.ConPayPlanModifyAction" method="updatePayPlan"></action>
+		<action name="deletePayPlan" class="power.web.manage.contract.action.ConPayPlanModifyAction" method="deletePayPlan"></action>
+		<action name="addPayPlan" class="power.web.manage.contract.action.ConPayPlanModifyAction" method="addPayPlan"></action>	 
+		<!-- 合同付款计划统计 -->
+		<action name="findConPayPlayList" class="power.web.manage.contract.action.ConPayPlanModifyAction" method="findConPayPlayList"></action>	 
+		<!-- 合同实际付款明细统计 -->
+		<action name="findConPayDetailsList" class="power.web.manage.contract.action.ConBalanceAction" method="findConPayDetailsList"></action>	 
+		<!-- 合同综合统计 -->
+		<action name="finConIntegrateList" class="power.web.manage.contract.action.ConMeetSignAction" method="finConIntegrateList"></action>
+		<!--查询执行合同列表 -->
+		<action name="getExecConList" class="power.web.manage.contract.action.ConMeetSignAction" method="getExecConList"></action>
+		<!--合同会签查询 -->
+		<action name="getAllConList" class="power.web.manage.contract.action.ConMeetSignAction" method="getAllConList"></action>
+		<!-- 合同付款执行情况统计 -->
+		<action name="findConPaymentList" class="power.web.manage.contract.action.ConBalanceAction" method="findConPaymentList"></action>	
+	 
+		<!-- 合同结算申请 -->
+		<action name="findAppConList" class="power.web.manage.contract.action.ConBalanceAction" method="findAppConList"></action>
+		<action name="findBalanceList" class="power.web.manage.contract.action.ConBalanceAction" method="findBalanceList"></action>
+		<action name="deleteBal" class="power.web.manage.contract.action.ConBalanceAction" method="deleteBal"></action>
+		<action name="addBalance" class="power.web.manage.contract.action.ConBalanceAction" method="addBalance"></action>
+		<action name="updateBalance" class="power.web.manage.contract.action.ConBalanceAction" method="updateBalance"></action>
+	  
+		<action name="findBalDocList" class="power.web.manage.contract.action.ConBalanceAction" method="findDocList"></action>
+		<action name="addBalDoc" class="power.web.manage.contract.action.ConBalanceAction" method="addBalDoc"></action>
+		<action name="updateBalDoc" class="power.web.manage.contract.action.ConBalanceAction" method="updateBalDoc"></action>
+		<action name="deleteBalDoc" class="power.web.manage.contract.action.ConBalanceAction" method="deleteBalDoc"></action>
+		<action name="findConFullInfo" class="power.web.manage.contract.action.ConBalanceAction" method="findConFullInfo"></action>
+		<action name="findBalanceInfo" class="power.web.manage.contract.action.ConBalanceAction" method="findBalanceInfo"></action>
+	 
+		<action name="updateBalInvoice" class="power.web.manage.contract.action.ConBalanceAction" method="updateBalInvoice"></action>
+
+		<action name="findBalInvoice" class="power.web.manage.contract.action.ConBalanceAction" method="findBalInvoice"></action>
+	  
+		<action name="reportBalance" class="power.web.manage.contract.action.ConBalanceAction" method="reportBalance"></action>
+		<action name="approveBalance" class="power.web.manage.contract.action.ConBalanceAction" method="approveBalance"></action>
+		<action name="updateMaterialById" class="power.web.manage.contract.action.ConBalanceAction" method="updateMaterialById"></action>
+		<action name="findBalanceApproveList" class="power.web.manage.contract.action.ConBalanceAction" method="findBalanceApproveList"></action>
+		<!-- 合同验收终止 -->
+		<action name="findContractTerminateList" class="power.web.manage.contract.action.ConTerminateAction" method="findContractTerminateList"></action>
+		<action name="findConModel" class="power.web.manage.contract.action.ConTerminateAction" method="findConModel"></action>
+		<action name="findTerminateDocList" class="power.web.manage.contract.action.ConTerminateAction" method="findTerminateDocList"></action>
+		<action name="conTerminate" class="power.web.manage.contract.action.ConTerminateAction" method="conTerminate"></action>
+		<action name="getSession" class="power.web.manage.contract.action.ConTerminateAction" method="getSession"></action>
+		<action name="conTerminate" class="power.web.manage.contract.action.ConTerminateAction" method="conTerminate"></action>
+		<action name="findConModifyModel" class="power.web.manage.contract.action.ConTerminateAction" method="findConModifyModel"></action>
+	
+		<!-- 案卷管理 -->
+		<action name="findArchiveList" class="power.web.manage.contract.action.ArchiveAction" method="findArchiveList"></action>
+		<action name="updateArchives" class="power.web.manage.contract.action.ArchiveAction" method="updateArchives"></action>
+		<action name="addarchive" class="power.web.manage.contract.action.ArchiveAction" method="addarchive"></action>
+		<action name="deleteArchive" class="power.web.manage.contract.action.ArchiveAction" method="deleteArchive"></action>
+		<action name="judgeArchive" class="power.web.manage.contract.action.ArchiveAction" method="judgeArchive"></action>
+		<action name="queryArch" class="power.web.manage.contract.action.ArchiveAction" method="queryArch"></action>
+		<action name="undertakeNolist" class="power.web.manage.contract.action.ArchiveAction" method="undertakeNolist"></action>
+		<!-- 员工签名维护 -->
+		<action name="addSignatory" class="power.web.manage.contract.action.SignatoryAction" method="addSignatory"></action>
+		<action name="updateSignatory" class="power.web.manage.contract.action.SignatoryAction" method="updateSignatory"></action>
+		<action name="delSignatory" class="power.web.manage.contract.action.SignatoryAction" method="delSignatory"></action>
+		<action name="viewSignFile" class="power.web.manage.contract.action.SignatoryAction" method="viewSignatoryFile"></action>
+		<action name="findSignatoryList" class="power.web.manage.contract.action.SignatoryAction" method="findSignatoryList"></action>
+		<!-- 项目合同会签上报、审批 --> 
+		<action name="prjContractApprove" class="power.web.manage.contract.action.ConMeetSignAction" method="prjContractApprove"></action>
+		<action name="prjContractReport" class="power.web.manage.contract.action.ConMeetSignAction" method="prjContractReport"></action>
+		<!-- 项目合同变更上报、审批 --> 
+		<action name="prjConModApproveReport" class="power.web.manage.contract.action.ConModifyAction" method="prjConModApproveReport"></action>
+		<action name="prjContractModifyApprove" class="power.web.manage.contract.action.ConModifyAction" method="prjContractModifyApprove"></action>
+		<!--项目合同结算上报、审批  -->
+		<action name="prjreportBalance" class="power.web.manage.contract.action.ConBalanceAction" method="prjreportBalance"></action>
+	
+	<!-- 项目合同委托管理 add by drdu 091110--> 
+		<action name="proConDelegationApprove" class="power.web.manage.contract.action.ConMeetSignAction" method="proConDelegationApprove"></action>
+	<!-- 采购合同委托管理 add by drdu 091119--> 
+		<action name="purConDelegationApprove" class="power.web.manage.contract.action.ConMeetSignAction" method="purConDelegationApprove"></action>
+		
+	 <!-- 保存质保期限 add by fyyang 090729 -->
+		<action name="saveWarrantyPeriod" class="power.web.manage.contract.action.ConMeetSignAction" method="saveWarrantyPeriod"></action>
+	
+	<!-- 费用来源维护 -->
+	<action name="addItemSource" class="power.web.manage.contract.action.ConItemSourceAction" method="addItemSource"></action>
+	<action name="updateItemSource" class="power.web.manage.contract.action.ConItemSourceAction" method="updateItemSource"></action>
+	<action name="deleteItemSource" class="power.web.manage.contract.action.ConItemSourceAction" method="deleteItemSource"></action>
+	<action name="findByPItemId" class="power.web.manage.contract.action.ConItemSourceAction" method="findByPItemId"></action>
+	<action name="findInfoByItemId" class="power.web.manage.contract.action.ConItemSourceAction" method="findInfoByItemId"></action>
+	
+	<!-- 采购合同付款申请 add by liuyi 091120 -->
+	<action name="bqAddorUpdateBalance" class="power.web.manage.contract.action.BqConBalaceAction" method="bqAddorUpdateBalance"></action>
+	<action name="bqfindAppConList" class="power.web.manage.contract.action.BqConBalaceAction" method="bqfindAppConList"></action>
+	<action name="bqfindBalanceList" class="power.web.manage.contract.action.BqConBalaceAction" method="bqfindBalanceList"></action>
+	<action name="bqDelRecByAppId" class="power.web.manage.contract.action.BqConBalaceAction" method="bqDelRecByAppId"></action>
+	<action name="bqReportByAppId" class="power.web.manage.contract.action.BqConBalaceAction" method="bqReportByAppId"></action>
+	<action name="bqReportApproveByAppId" class="power.web.manage.contract.action.BqConBalaceAction" method="bqReportApproveByAppId"></action>
+	<action name="bqContractSelect" class="power.web.manage.contract.action.BqConBalaceAction" method="bqContractSelect"></action>
+	<action name="bqBalanceQueryList" class="power.web.manage.contract.action.BqConBalaceAction" method="bqBalanceQueryList"></action>
+	<!-- 保存合同文档 -->
+		<action name="saveContractFile" class="power.web.manage.contract.action.ManagerContractDocAction" method="saveContractFile"></action>
+	<!-- 查询所有合同 -->
+	<action name="queryContract" class="power.web.manage.contract.action.ContractQuery"
+		method="findContractList"
+	></action> 
+	</package> 
+</struts>

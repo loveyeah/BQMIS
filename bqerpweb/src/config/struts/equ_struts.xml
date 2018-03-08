@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>   
+	<include file="struts-validation.xml" />
+	<package name="equ" namespace="/equ" extends="jfreechart-default"> 
+	  	<!-- 机组编码维护 -->
+	  <action name="getblockList" class="power.web.equ.base.action.EquBlockAction" method="findBlockList"></action>
+	  <action name="deleteblock" class="power.web.equ.base.action.EquBlockAction" method="deleteBlock"></action>
+	  <action name="saveblock" class="power.web.equ.base.action.EquBlockAction" method="addOrUpdateBlock"></action>
+	  <action name="findblock" class="power.web.equ.base.action.EquBlockAction" method="findBlockInfo"></action>
+	  <!-- 系统、设备及部件编码维护 -->
+	  <action name="findClass" class="power.web.equ.base.action.EquClassAction" method="findClassInfo"></action>
+	  <action name="deleteClass" class="power.web.equ.base.action.EquClassAction" method="deleteClass"></action>
+	  <action name="findSysList" class="power.web.equ.base.action.EquClassAction" method="findSysCodeList"></action>
+	  <action name="findEquList" class="power.web.equ.base.action.EquClassAction" method="findEquCodeList"></action>
+	  <action name="findPartList" class="power.web.equ.base.action.EquClassAction" method="findPartCodeList"></action>
+	  <action name="saveSysCode" class="power.web.equ.base.action.EquClassAction" method="addOrUpdateSys"></action>
+	  <action name="saveEquCode" class="power.web.equ.base.action.EquClassAction" method="addOrUpdateEqu"></action>
+	  <action name="savePartCode" class="power.web.equ.base.action.EquClassAction" method="addOrUpdatePart"></action>
+	<!-- 设备功能码 -->
+	 <action name="getEquTreeList" class="power.web.equ.base.action.EquBaseAction" method="getTreeListByParent"></action>
+	 <action name="findEquByCode" class="power.web.equ.base.action.EquBaseAction" method="getInfoByCode"></action>
+	 <action name="saveEquInfo" class="power.web.equ.base.action.EquBaseAction" method="addOrUpdateAttributeCode"></action>
+	 <action name="deleteEqu" class="power.web.equ.base.action.EquBaseAction" method="deleteAttributeCode"></action>
+	 <action name="findClassForSelect" class="power.web.equ.base.action.EquClassAction" method="findClassForSelect"></action>
+	<!-- 设备位置码 -->
+	 <action name="getLocationTreeList" class="power.web.equ.base.action.EquLocationAction" method="getLocationTreeList"></action>
+	 <action name="getLocationByCode" class="power.web.equ.base.action.EquLocationAction" method="getLocationByCode"></action>
+	  <action name="saveLocationCode" class="power.web.equ.base.action.EquLocationAction" method="addOrUpdateLocationCode"></action>
+	 <action name="deleteLocation" class="power.web.equ.base.action.EquLocationAction" method="deleteLocationCode"></action>
+	 <action name="addEquRLocation" class="power.web.equ.base.action.EquLocationAction" method="addEquRLocation"></action>
+	 <action name="deleteEquRLocation" class="power.web.equ.base.action.EquLocationAction" method="deleteEquRLocation"></action>
+	 <action name="findListByLocationCode" class="power.web.equ.base.action.EquBaseAction" method="findListByLocationCode"></action>
+	 <!-- 设备查询树 -->
+	<action name="getTreeForSelect" class="power.web.equ.base.action.EquBaseAction" method="getTreeForSelect"></action>
+	<action name="findEquListByFuzzy" class="power.web.equ.base.action.EquBaseAction" method="findEquListByFuzzy"></action>
+	<!-- 设备安装点码 -->
+	<action name="getInstallTreeList" class="power.web.equ.base.action.EquInstallationAction" method="getInstallTreeList"></action>
+	<action name="getInstallByCode" class="power.web.equ.base.action.EquInstallationAction" method="getInstallByCode"></action>
+	<action name="saveInstallCode" class="power.web.equ.base.action.EquInstallationAction" method="addOrUpdateInstallCode"></action>
+	<action name="deleteInstall" class="power.web.equ.base.action.EquInstallationAction" method="deleteInstallCode"></action>
+	<action name="addEquRInstall" class="power.web.equ.base.action.EquInstallationAction" method="addEquRInstall"></action>
+	<action name="deleteEquRInstall" class="power.web.equ.base.action.EquInstallationAction" method="deleteEquRInstall"></action>
+	 <action name="findListByInstallationCode" class="power.web.equ.base.action.EquBaseAction" method="findListByInstallationCode"></action>
+	 <!-- 设备基本信息填写 -->
+	  <action name="findSpecialList" class="power.web.equ.base.action.EquBaseAction" method="findSpecialList"></action>
+	  <action name="findDeptList" class="power.web.equ.base.action.EquBaseAction" method="findDeptList"></action>
+	   <action name="getBaseInfoByCode" class="power.web.equ.base.action.EquBaseAction" method="getBaseInfoByCode"></action>
+	  <action name="saveEquBaseInfo" class="power.web.equ.base.action.EquBaseAction" method="saveEquBaseInfo"></action>
+	  <!--备品备件库预警查询 -->
+	  <action name="EquAction" class="power.web.equ.base.action.EquLibraryAction" method=" EquAction"></action>
+	   <!-- 备品备件库存查询 -->
+	   <!-- add by ypan 20100917 -->
+	   <action name="findEquLibrary"
+	           class="power.web.equ.base.action.EquLibraryAction"
+	           method="findEquLibrary">
+	           </action>
+	    <!-- 设备基础信息维护 addby kzhang 20100919 -->
+	   <action name="saveOrUpdateBaseInfo" class="power.web.equ.base.action.EquBaseInfoAction" method=" saveOrUpdateBaseInfo"></action>
+	    <action name="saveOrUpdateBaseAnnex" class="power.web.equ.base.action.EquBaseInfoAction" method=" saveOrUpdateBaseAnnex"></action>
+	     <action name="deleteBaseInfo" class="power.web.equ.base.action.EquBaseInfoAction" method=" deleteBaseInfo"></action>
+	      <action name="deleteBaseAnnex" class="power.web.equ.base.action.EquBaseInfoAction" method=" deleteBaseAnnex"></action>
+	       <action name="findBaseInfoByAttributeCode" class="power.web.equ.base.action.EquBaseInfoAction" method=" findBaseInfoByAttributeCode"></action>
+	        <action name="findBaseAnnexByBaseId" class="power.web.equ.base.action.EquBaseInfoAction" method=" findBaseAnnexByBaseId"></action>
+	</package> 
+</struts>

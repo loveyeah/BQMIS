@@ -1,0 +1,97 @@
+﻿<?xml version="1.0"?>
+<config>
+<!--excel 对应要读取的文件 Begin-->
+<!--id  业务ID-->
+<!--excel 对应要读取的文件 End-->
+
+<!-- colomn 对应的读取文件对应的列  Begin-->
+<!--id  属性-->
+<!--name  title-->
+<!--type  类型(string,long,double,int)-->
+<!--length  字段最大长度-->
+<!--empty  是否做非空的check（yes，no）-->
+<!--key  是否为key（yes，no）-->
+<!--maxValue  最大值（数字类型）-->
+<!--minValue  最小值（数字类型）-->
+<!--half  是否为半角英数字-->
+<!-- colomn 对应的读取文件对应的列  End-->
+
+<!--check DB存在性的check和code定义存在性check的配置 Begin-->
+<!-- method  验证的方法名-->
+<!-- 注意* method参数 为args的String数组 -->
+<!-- class  验证的类名-->
+<!-- args  验证的方法参数(多个时，用逗号隔开)-->
+<!--check DB存在性的check和code定义存在性check的配置 End-->
+
+<!--hiddenColumn  excel中没有但是画面邦定的时候用到的列 Begin-->
+<!--id  表示所有的隐藏的列，用逗号分割(对应的列都被赋予缺省值)-->
+<!--hiddenColumn  excel中没有但是画面邦定的时候用到的列 End-->
+<excel id ="PO002">
+<column id = "stationCode" name="岗位编码" type="string" length="6" empty="yes" key="yes" half="yes" />
+<column id = "stationName" name="岗位名称" type="string" length="30" empty="yes" />
+<column id = "stationLevelId" name="岗位级别" type="long" length="10" empty="yes" />
+<column id = "stationTypeId" name="岗位类别" type="long" length="10" empty="yes"  />
+<column id = "workKind" name="工作类别" type="string" length="1" empty="yes"  />
+<column id = "stationSalary" name="岗薪标准" type="long" length="10" maxValue="9999999999" minValue="0" />
+<column id = "ifAlways" name="是否常设" type="string" length="1" empty="yes" />
+<column id = "retrieveCode" name="检索码" type="string" length="8" half = "yes" />
+<column id = "stationNote" name="岗位说明" type="string" length="500" />
+<column id = "stationDuty" name="岗位职责" type="string" length="500" />
+<column id = "aptitude" name="资质要求" type="string" length="100" />
+<column id = "stationMemo" name="备注" type="string" length="250" />
+<!-- 岗位编码DB存在性check -->
+<check method="dbStationCodeIsExist" 
+       class="power.web.hr.organization.stationmaintain.action.StationMaintainAction" 
+       args="stationCode" />
+<!-- 岗位级别Id DB存在性check -->
+<check method="dbStationLevelIsExist" 
+       class="power.web.hr.organization.stationmaintain.action.StationMaintainAction" 
+       args="stationLevelId" />
+<!-- 岗位类别Id DB存在性check -->
+<check method="dbStationTypeIsExist" 
+       class="power.web.hr.organization.stationmaintain.action.StationMaintainAction" 
+       args="stationTypeId" />
+<!-- 是否常设code定义中存在性check -->
+<check method="codeIfAlwaysIsExist" 
+       class="power.web.hr.organization.stationmaintain.action.StationMaintainAction" 
+       args="ifAlways"/>
+<!-- 工作类别code定义中存在性check -->
+<check method="codeWorkKindIsExist" 
+       class="power.web.hr.organization.stationmaintain.action.StationMaintainAction" 
+       args="workKind"/>
+</excel>
+
+<!-- 组织机构 -->
+<excel id ="PO001">
+<column id = "pdeptCode" name="父部门编码" type="string" length="20" empty="yes"/>
+<column id = "deptCode" name="部门编码" type="string" length="20" empty="yes" key="yes"/>
+<column id = "deptName" name="部门名称" type="string" length="50" empty="yes" />
+<column id = "manger" name="部门负责人" type="string" length="12"/>
+<column id = "deptTypeId" name="部门类别" type="long" length="10" empty="yes"  />
+<column id = "memo" name="备注" type="string" length="250" />
+<column id = "retrieveCode" name="检索码" type="string" length="20" half="yes" />
+<column id = "depFeature" name="部门性质" type="long" length="1" empty="yes" half = "yes" />
+<column id = "isBanzu" name="是否班组" type="long" length="1" maxValue="1" minValue="0"/>
+
+<!-- 部门类别DB存在性check -->
+<check method="isInDB" 
+       class="power.web.hr.organization.organization.action.OrganizationAction" 
+       args="deptTypeId" />
+
+<!-- 部门性质code定义中存在性check -->
+<check method="isInCode" 
+       class="power.web.hr.organization.organization.action.OrganizationAction" 
+       args="depFeature"/>
+
+</excel>
+
+<excel id = "PD001">
+<column id = "empCode" name ="员工工号" type ="string" length ="6" empty ="yes" key ="yes" half = "yes"></column>
+<column id = "empName" name ="员工姓名" type ="string" length ="12" empty = "yes"></column>
+<column id = "searchCode" name ="检索码" type ="string" length ="20" empty ="no" half = "yes"></column>
+<!-- 部门类别DB存在性check -->
+<check method="codeRepeatCheck" 
+       class="power.web.hr.employee.empinfo.action.EmpInfoAction" 
+       args="empCode" />
+</excel>
+</config>

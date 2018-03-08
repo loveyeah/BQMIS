@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>   
+	<include file="struts-validation.xml" />
+	<package name="runlog" namespace="/runlog" extends="jfreechart-default"> 
+		<!-- 运行日志基础数据维护      天气维护-->
+		<action name="addWeather" class="power.web.run.runlog.action.RunLogWeatherAction" method="addWeather"></action> 
+		<action name="updateWeather" class="power.web.run.runlog.action.RunLogWeatherAction" method="updateWeather"/>
+		<action name="findWeatherList" class="power.web.run.runlog.action.RunLogWeatherAction" method="findWeatherList"/>
+		<action name="deleteWeather" class="power.web.run.runlog.action.RunLogWeatherAction" method="deleteWeather"/>
+
+		<!-- 运行方式维护 -->
+		<action name="addRunWay" class="power.web.run.runlog.action.RunWayAction" method="addRunWay"></action> 
+		<action name="updateRunWay" class="power.web.run.runlog.action.RunWayAction" method="updateRunWay"></action>
+		<action name="deleteRunWay" class="power.web.run.runlog.action.RunWayAction" method="deleteRunWay"></action>
+		<action name="findRunWay" class="power.web.run.runlog.action.RunWayAction" method="findRunWay"></action>
+
+        <!--重点事项维护 -->
+        <action name="addRunLogMainItem" class="power.web.run.runlog.action.RunLogMainItemAction" method="addRunLogMainItem"></action> 
+		<action name="updateRunLogMainItem" class="power.web.run.runlog.action.RunLogMainItemAction" method="updateRunLogMainItem"></action>
+		<action name="deleteRunLogMainItem" class="power.web.run.runlog.action.RunLogMainItemAction" method="deleteRunLogMainItem"></action>
+        <action name="findRunLogMainItem" class="power.web.run.runlog.action.RunLogMainItemAction" method="findRunLogMainItem"></action>
+        
+		<!-- 运行日志值班轮值相关维护 -->
+		<action name="findInitialList" class="power.web.run.runlog.action.ShiftInitialMaintAction" method="findInitialList"></action>
+		<action name="findInitialModel" class="power.web.run.runlog.action.ShiftInitialMaintAction" method="findInitialModel"></action> 
+		<action name="initialMaint" class="power.web.run.runlog.action.ShiftInitialMaintAction" method="initialMaint"></action> 
+		<action name="deleteInitial" class="power.web.run.runlog.action.ShiftInitialMaintAction" method="deleteInitial"></action>
+		<action name="findInitialBySpecial" class="power.web.run.runlog.action.ShiftInitialMaintAction" method="findInitialBySpecial"></action>  
+		
+		<action name="findShiftList" class="power.web.run.runlog.action.ShiftMaintAction" method="findShiftList"></action>
+		<action name="findShiftModel" class="power.web.run.runlog.action.ShiftMaintAction" method="findShiftModel"></action> 
+		<action name="shiftMaint" class="power.web.run.runlog.action.ShiftMaintAction" method="shiftMaint"></action> 
+		<action name="deleteShift" class="power.web.run.runlog.action.ShiftMaintAction" method="deleteShift"></action>
+		
+		<action name="findShiftTimeList" class="power.web.run.runlog.action.ShiftTimeMaintAction" method="findShiftTimeList"></action>
+		<action name="findShiftTimeModel" class="power.web.run.runlog.action.ShiftTimeMaintAction" method="findShiftTimeModel"></action> 
+		<action name="shiftTimeMaint" class="power.web.run.runlog.action.ShiftTimeMaintAction" method="shiftTimeMaint"></action> 
+		<action name="deleteShiftTime" class="power.web.run.runlog.action.ShiftTimeMaintAction" method="deleteShiftTime"></action>      
+		<!-- 值班人员维护  岗位维护-->
+		<action name="findShiftWorkerList" class="power.web.run.runlog.action.ShiftWorkerAction" method="findShiftWorkerList"></action>
+		<action name="deleteShiftWorker" class="power.web.run.runlog.action.ShiftWorkerAction" method="deleteShiftWorker"></action>
+		<action name="updateShiftWorker" class="power.web.run.runlog.action.ShiftWorkerAction" method="updateShiftWorker"></action>
+		<action name="getDeptTree" class="power.web.run.runlog.action.ShiftWorkerAction" method="getDeptTree"></action>
+		<action name="getEmpbyList" class="power.web.run.runlog.action.ShiftWorkerAction" method="getEmpbyList"></action>
+		<action name="addShiftWorker" class="power.web.run.runlog.action.ShiftWorkerAction" method="addShiftWorker"></action>
+		<action name="findShiftWorkerStationList" class="power.web.run.runlog.action.ShiftWorkerStationAction" method="findShiftWorkerStationList"></action>
+		<action name="deleteShiftWorkerStation" class="power.web.run.runlog.action.ShiftWorkerStationAction" method="deleteShiftWorkerStation"></action>
+		<action name="findAllStationList" class="power.web.run.runlog.action.ShiftWorkerStationAction" method="findAllStationList"></action>
+		<action name="addShiftWorkerStation" class="power.web.run.runlog.action.ShiftWorkerStationAction" method="addShiftWorkerStation"></action>
+		<!-- 运行日志值班人员管理 -->
+		<action name="findRunLogWorkerList" class="power.web.run.runlog.action.RunLogWorkerAction" method="findRunLogWorkerList"></action>
+		<action name="addAbsent" class="power.web.run.runlog.action.RunLogWorkerAction" method="addAbsent"></action>
+		<action name="updateAbsentMemo" class="power.web.run.runlog.action.RunLogWorkerAction" method="updateAbsentMemo"></action>
+		<action name="deleteAbsent" class="power.web.run.runlog.action.RunLogWorkerAction" method="deleteAbsent"></action>
+		<action name="addAgent" class="power.web.run.runlog.action.RunLogWorkerAction" method="addAgent"></action>
+		<action name="deleteAgent" class="power.web.run.runlog.action.RunLogWorkerAction" method="deleteAgent"></action>
+		<action name="addAbsentReason" class="power.web.run.runlog.action.RunLogWorkerAction" method="addAbsentReason"></action>
+		<!-- 值班轮值查询 -->
+		<action name="dutyQuery" class="power.web.run.runlog.action.RunLogDutyQueryAction" method="dutyQuery"></action>
+		<action name="findShfitTimeBySpecial" class="power.web.run.runlog.action.RunLogDutyQueryAction" method="findShfitTimeBySpecial"></action>
+		<!-- 运行单元专业维护 -->
+		<action name="findUintProfessionList" class="power.web.run.runlog.action.UnitProfessionAction" method="findUintProfessionList"></action>
+		<action name="findSpecialityList" class="power.web.run.runlog.action.RunSpecialsAction" method="findSpecialityList"></action>
+		<action name="updateUnitProfession" class="power.web.run.runlog.action.UnitProfessionAction" method="updateUnitProfession"></action>
+		<action name="addUnitProfession" class="power.web.run.runlog.action.UnitProfessionAction" method="addUnitProfession"></action>
+		<action name="deleteUnitProfession" class="power.web.run.runlog.action.UnitProfessionAction" method="deleteUnitProfession"></action>
+		<action name="getSpecialExp" class="power.web.run.runlog.action.UnitProfessionAction" method="getSpecialExp"></action>
+		<!-- 设备状态维护 -->
+		<action name="addEquStatus" class="power.web.run.runlog.action.RunEqustatusAction" method="addEquStatus"></action> 
+		<action name="updateEquStatus" class="power.web.run.runlog.action.RunEqustatusAction" method="updateEquStatus"></action>
+		<action name="deleteEquStatus" class="power.web.run.runlog.action.RunEqustatusAction" method="deleteEquStatus"></action>
+		<action name="findEquStatus" class="power.web.run.runlog.action.RunEqustatusAction" method="findEquStatus"></action>
+	
+	   <!-- 班组所关心的设备运行方式维护 -->
+	   <action name="getSpecialsAllList" class="power.web.run.runlog.action.RunShiftEquAction" method="getSpecialsAllList"></action> 
+		<action name="getRunWayAllList" class="power.web.run.runlog.action.RunShiftEquAction" method="getRunWayAllList"></action> 
+		<action name="findShiftEqu" class="power.web.run.runlog.action.RunShiftEquAction" method="findShiftEqu"></action> 
+		<action name="findRunStatus" class="power.web.run.runlog.action.RunShiftEquAction" method="findRunStatus"></action> 
+		<action name="deleteShiftEqu" class="power.web.run.runlog.action.RunShiftEquAction" method="deleteShiftEqu"></action> 
+		<action name="addRunStatus" class="power.web.run.runlog.action.RunShiftEquAction" method="addRunStatus"></action> 
+		<action name="deleteRunStatus" class="power.web.run.runlog.action.RunShiftEquAction" method="deleteRunStatus"></action> 
+		<action name="updateRunShiftEqu" class="power.web.run.runlog.action.RunShiftEquAction" method="updateRunShiftEqu"></action> 
+		<action name="addShiftEqu" class="power.web.run.runlog.action.RunShiftEquAction" method="addShiftEqu"></action> 
+		
+		<!-- 地线维护 -->
+		<action name="getEarthList" class="power.web.run.runlog.action.EarthMaintAction" method="getEarthList"></action>
+		<action name="addEarth" class="power.web.run.runlog.action.EarthMaintAction" method="addEarth"></action>
+		<action name="updateEarth" class="power.web.run.runlog.action.EarthMaintAction" method="updateEarth"></action>
+		<action name="delteEarth" class="power.web.run.runlog.action.EarthMaintAction" method="delteEarth"></action>
+		
+		<!-- 专业树维护 -->
+		<action name="addRunSpecials" class="power.web.run.runlog.action.RunSpecialsAction" method="addRunSpecials"></action> 
+		<action name="updateRunSpecials" class="power.web.run.runlog.action.RunSpecialsAction" method="updateRunSpecials"></action> 
+		<action name="deleteRunSpecials" class="power.web.run.runlog.action.RunSpecialsAction" method="deleteRunSpecials"></action> 
+		<action name="findRunSpecials" class="power.web.run.runlog.action.RunSpecialsAction" method="findRunSpecials"></action> 
+        <action name="findRunSpecialsByCode" class="power.web.run.runlog.action.RunSpecialsAction" method="findRunSpecialsByCode"></action> 	
+	
+		<!-- 值班记事 -->
+		<action name="addRunShiftRecord" class="power.web.run.runlog.action.RunShiftRecordAction" method="addRunShiftRecord"></action> 
+		<action name="updateRunShiftRecord" class="power.web.run.runlog.action.RunShiftRecordAction" method="updateRunShiftRecord"></action> 
+		<action name="deleteRunShiftRecord" class="power.web.run.runlog.action.RunShiftRecordAction" method="deleteRunShiftRecord"></action> 
+		<action name="findRunShiftRecord" class="power.web.run.runlog.action.RunShiftRecordAction" method="findRunShiftRecord"></action> 
+		<action name="otherRecord" class="power.web.run.runlog.action.RunShiftRecordAction" method="getOtherRecordList"></action> 
+		<!-- 标记成未完成项 -->
+		<action name="notCompletionRunShiftRecord" class="power.web.run.runlog.action.RunShiftRecordAction" method="notCompletionRunShiftRecord"></action>
+		<action name="completionRunShiftRecord" class="power.web.run.runlog.action.RunShiftRecordAction" method="completionRunShiftRecord"></action>
+		<action name="findRunShiftRecord" class="power.web.run.runlog.action.RunShiftRecordAction" method="findRunShiftRecord"></action>
+		<action name="findNotComlpetionRecord" class="power.web.run.runlog.action.RunShiftRecordAction" method="findNotCompletionRunShiftRecord"></action>
+		<action name="impRecord" class="power.web.run.runlog.action.RunShiftRecordAction" method="impRecord"></action>
+		<!-- 运行交接班 -->
+		<action name="findLatestRunLogList" class="power.web.run.runlog.action.RunLogHandAction" method="findLatestRunLogList"></action>
+		<action name="findRunLogByWorker" class="power.web.run.runlog.action.RunLogHandAction" method="findRunLogByWorker"></action>
+		<action name="shiftHandOver" class="power.web.run.runlog.action.RunLogHandAction" method="shiftHandOver"></action>
+		<action name="changeShiftCharger" class="power.web.run.runlog.action.RunLogHandAction" method="changeShiftCharger"></action> 
+	    <action name="saveWeather" class="power.web.run.runlog.action.RunLogHandAction" method="saveWeather"></action>
+	    <!-- 运行参数 -->
+	    <action name="getRunLogParmList" class="power.web.run.runlog.action.RunLogParmAction" method="getRunLogParmList"></action>  
+	    <action name="addRunLogParm" class="power.web.run.runlog.action.RunLogParmAction" method="addParm"></action> 
+	    <action name="updateRunLogParm" class="power.web.run.runlog.action.RunLogParmAction" method="updateParm"></action> 
+	    <action name="deleteRunLogparm" class="power.web.run.runlog.action.RunLogParmAction" method="deleteparm"></action> 
+	
+		<!-- 交接班运行方式 -->
+		<action name="findRunWayByProfession" class="power.web.run.runlog.action.ShiftEquAction" method="findRunWayByProfession"></action> 
+		<action name="findShiftEquStatus" class="power.web.run.runlog.action.ShiftEquAction" method="findShiftEquStatus"></action> 
+		<action name="findListExcept" class="power.web.run.runlog.action.ShiftEquAction" method="findListExcept"></action> 
+		<action name="updateShiftEqu" class="power.web.run.runlog.action.ShiftEquAction" method="updateShiftEqu"></action>
+		<action name="addAndUpdateShiftEqu" class="power.web.run.runlog.action.ShiftEquAction" method="addAndUpdateShiftEqu"></action> 
+        <action name="findEquStatusHis" class="power.web.run.runlog.action.ShiftEquAction" method="findEquStatusHis"></action> 
+        <!-- 接地线/闸刀装、拆登记 -->
+        <action name="findEarthRecordList" class="power.web.run.runlog.action.EarthRecordAction" method="findEarthRecordList"></action>
+        <action name="installEarthRecord" class="power.web.run.runlog.action.EarthRecordAction" method="installEarthRecord"></action>
+        <action name="backEarthRecord" class="power.web.run.runlog.action.EarthRecordAction" method="backEarthRecord"></action>
+        <action name="deleteEarthRecord" class="power.web.run.runlog.action.EarthRecordAction" method="deleteEarthRecord"></action>
+        <action name="queryEarthRecordList" class="power.web.run.runlog.action.EarthRecordAction" method="queryEarthRecordList"></action>
+        
+        <!-- 交接班参数 -->
+	    <action name="findShifParmList" class="power.web.run.runlog.action.RunShiftParmAction" method="findShifParmList"></action> 
+	    <action name="addShifParm" class="power.web.run.runlog.action.RunShiftParmAction" method="addShifParm"></action> 
+		<!-- 运行日志初始化 -->
+		<action name="getInitialSpecial" class="power.web.run.runlog.action.RunLogInitialAction" method="getInitialSpecial"></action>
+		<action name="getInitialShift" class="power.web.run.runlog.action.RunLogInitialAction" method="getInitialShift"></action>
+		<action name="findShfitTimeBySpecial" class="power.web.run.runlog.action.RunLogDutyQueryAction" method="findShfitTimeBySpecial"></action>
+		<action name="getInitialWorker" class="power.web.run.runlog.action.RunLogInitialAction" method="getInitialWorker"></action>
+		<action name="runlogInitial" class="power.web.run.runlog.action.RunLogInitialAction" method="runlogInitial"></action>
+		<!-- 运行日志查询 -->
+		<action name="RunLogMainQuery" class="power.web.run.runlog.action.RunLogQueryAction" method="RunLogMainQuery"></action>
+		<action name="queryWorkerList" class="power.web.run.runlog.action.RunLogQueryAction" method="queryWorkerList"></action>
+		<action name="queryEquStatusList" class="power.web.run.runlog.action.RunLogQueryAction" method="queryEquStatusList"></action>
+		<action name="queryRunlogParm" class="power.web.run.runlog.action.RunLogQueryAction" method="queryRunlogParm"></action>
+		<action name="queryShiftRecord" class="power.web.run.runlog.action.RunShiftRecordAction" method="queryShiftRecordList"></action>
+		<action name="queryNotCompletion" class="power.web.run.runlog.action.RunShiftRecordAction" method="queryNotCompletionList"></action>
+		<action name="reviewNotCompletion" class="power.web.run.runlog.action.RunShiftRecordAction" method="reviewNotCompletion"></action>
+	</package> 
+</struts>

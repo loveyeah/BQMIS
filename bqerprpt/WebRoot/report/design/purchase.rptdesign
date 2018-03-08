@@ -1,0 +1,1497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.1.v20080911 Build &lt;2.3.1.v20080922-1151></property>
+    <property name="units">in</property>
+    <method name="beforeFactory"><![CDATA[purchaseAction = new Packages.power.web.birt.action.PurchaseAction();
+purchaseBean = new Packages.power.ejb.resource.PurchaseBean();
+purchaseBean = purchaseAction.setPurchaseBean(params["purNo"].value,"hfdc");
+
+		//<!-- 打印日期 -->
+		params["nowDate"].value=purchaseBean.getNowDate();
+		//<!-- 合同号 -->
+		params["contractNo"].value=purchaseBean.getContractNo();
+		//<!-- 供应商名称 -->
+		//params["clientName"].value="dawdawd";//purchaseBean.getClientName();
+		//<!-- 币别 -->
+		params["currencyType"].value=purchaseBean.getCurrencyType();
+		//<!-- 税率 -->
+		params["taxRate"].value=purchaseBean.getTaxRate();
+		//<!-- 汇率 -->
+		params["exchangeRate"].value=purchaseBean.getExchangeRate();
+		//<!-- 交期 -->
+		params["dueDate"].value=purchaseBean.getDueDate();]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="createMan" id="185">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="nowDate" id="187">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="enterpriseCode" id="188">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="purNo" id="238">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="contractNo" id="240">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="buyer" id="242">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="supplier" id="244">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="currencyType" id="248">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="dueDate" id="250">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="taxRate" id="252">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="exchangeRate" id="254">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="clientName" id="409">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="meno" id="411">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <script-data-source name="Data Source" id="391"/>
+    </data-sources>
+    <data-sets>
+        <script-data-set name="Data Set" id="392">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">countLine</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">orderDetailsId</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">materialNo</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">materialName</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">specNo</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">paramater</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">purchaseQuatity</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">achieveQuantity</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">quotedPrice</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">dueDate</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">taxRate</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">littleCulMoney</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">taxMoney</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">whetherNoCheck</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">meno</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">cntRow</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">sumRow</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">flag</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">deptName</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">countLine</property>
+                </structure>
+                <structure>
+                    <property name="columnName">orderDetailsId</property>
+                </structure>
+                <structure>
+                    <property name="columnName">materialNo</property>
+                </structure>
+                <structure>
+                    <property name="columnName">materialName</property>
+                </structure>
+                <structure>
+                    <property name="columnName">specNo</property>
+                </structure>
+                <structure>
+                    <property name="columnName">paramater</property>
+                </structure>
+                <structure>
+                    <property name="columnName">purchaseQuatity</property>
+                </structure>
+                <structure>
+                    <property name="columnName">achieveQuantity</property>
+                </structure>
+                <structure>
+                    <property name="columnName">quotedPrice</property>
+                </structure>
+                <structure>
+                    <property name="columnName">dueDate</property>
+                </structure>
+                <structure>
+                    <property name="columnName">taxRate</property>
+                </structure>
+                <structure>
+                    <property name="columnName">littleCulMoney</property>
+                </structure>
+                <structure>
+                    <property name="columnName">taxMoney</property>
+                </structure>
+                <structure>
+                    <property name="columnName">whetherNoCheck</property>
+                </structure>
+                <structure>
+                    <property name="columnName">meno</property>
+                </structure>
+                <structure>
+                    <property name="columnName">cntRow</property>
+                </structure>
+                <structure>
+                    <property name="columnName">sumRow</property>
+                </structure>
+                <structure>
+                    <property name="columnName">flag</property>
+                </structure>
+                <structure>
+                    <property name="columnName">deptName</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">countLine</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">orderDetailsId</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">materialNo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">materialName</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">specNo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">paramater</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">purchaseQuatity</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">achieveQuantity</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">quotedPrice</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">dueDate</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">taxRate</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">littleCulMoney</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">taxMoney</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">whetherNoCheck</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">meno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">cntRow</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">sumRow</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">flag</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">deptName</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <method name="open"><![CDATA[count = 0;
+countRow = 0;
+sumRow = 0;
+beforeSet = 1;
+nowSet = 1;
+pageBreak = 35.3;
+list=purchaseBean.getPurchaseList();]]></method>
+            <method name="fetch"><![CDATA[if(list!=null)
+{
+if (count<list.size())
+{
+	// 行号
+	row["countLine"]=count+1;
+	// 物料编码
+	row["materialNo"]=list[count].getMaterialNo();
+	// 物料名称
+	row["materialName"]=list[count].getMaterialName();
+	// 规格型号
+	row["specNo"]=list[count].getSpecNo();
+	// 采购数
+	row["purchaseQuatity"]=list[count].getPurchaseQuatity();
+	// 已收数
+	row["achieveQuantity"]=list[count].getAchieveQuantity();
+	// 单价
+	row["quotedPrice"]=list[count].getQuotedPrice();
+	// 交期
+	row["dueDate"]=list[count].getDueDate();
+	// 税率
+	row["taxRate"]=list[count].getTaxRate();
+	// 小计金额
+	row["littleCulMoney"]=list[count].getLittleCulMoney();
+	// 税额
+	row["taxMoney"]=list[count].getTaxMoney();
+	// 是否免检
+	row["whetherNoCheck"]=list[count].getWhetherNoCheck();
+	// 备注
+	row["meno"]=list[count].getMeno();
+	// 申报部门
+	row["deptName"]=list[count].getDeptName();
+	// 行数计数
+	countRow = list[count].getCntRow();
+	// 前一行所属集合数
+	beforeSet = BirtMath.add(BirtMath.roundDown(BirtMath.divide(sumRow,pageBreak)),1);
+	// 到此行为止（包括此行）的总行数
+	sumRow = BirtMath.add(BirtMath.add(sumRow,countRow),0.2);
+	// 当前行所属集合数
+	nowSet = BirtMath.add(BirtMath.roundDown(BirtMath.divide(sumRow,pageBreak)),1);
+	if(nowSet!=beforeSet){
+		row["flag"]=1;
+	}else{
+		row["flag"]=0;
+	}
+	count++;
+	return true;
+}
+}
+return false;]]></method>
+        </script-data-set>
+    </data-sets>
+    <styles>
+        <style name="crosstab-cell" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="CenterSong" id="77">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">8pt</property>
+            <property name="textAlign">center</property>
+            <property name="whiteSpace">nowrap</property>
+        </style>
+        <style name="labelSong" id="143">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">10pt</property>
+            <property name="textAlign">left</property>
+        </style>
+        <style name="LeftSong" id="90">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">8pt</property>
+            <property name="textAlign">left</property>
+            <property name="whiteSpace">normal</property>
+        </style>
+        <style name="LineSong" id="157">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">10pt</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="textAlign">left</property>
+        </style>
+        <style name="RightSong" id="91">
+            <property name="fontFamily">"Times New Roman"</property>
+            <property name="fontSize">8pt</property>
+            <property name="textAlign">right</property>
+            <property name="whiteSpace">nowrap</property>
+        </style>
+        <style name="TitleSong" id="31">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">12pt</property>
+            <property name="whiteSpace">nowrap</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.5cm</property>
+            <property name="leftMargin">1cm</property>
+            <property name="bottomMargin">0.5cm</property>
+            <property name="rightMargin">1cm</property>
+            <property name="showHeaderOnFirst">true</property>
+            <property name="showFooterOnLast">false</property>
+            <page-header>
+                <grid id="296">
+                    <property name="width">100%</property>
+                    <column id="297"/>
+                    <row id="298">
+                        <cell id="299">
+                            <grid id="6">
+                                <property name="width">100%</property>
+                                <column id="7"/>
+                                <row id="8">
+                                    <property name="height">0.4in</property>
+                                    <cell id="9">
+                                        <label id="12">
+                                            <property name="fontFamily">"宋体"</property>
+                                            <property name="fontSize">20pt</property>
+                                            <property name="marginTop">0pt</property>
+                                            <property name="textAlign">center</property>
+                                            <property name="whiteSpace">nowrap</property>
+                                            <text-property name="text">皖能合肥发电有限公司采购登记表</text-property>
+                                        </label>
+                                    </cell>
+                                </row>
+                                <row id="10">
+                                    <property name="height">0.2in</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <cell id="11">
+                                        <grid id="13">
+                                            <property name="width">100%</property>
+                                            <column id="413">
+                                                <property name="width">7.5%</property>
+                                            </column>
+                                            <column id="414">
+                                                <property name="width">22.5%</property>
+                                            </column>
+                                            <column id="14">
+                                                <property name="width">12%</property>
+                                            </column>
+                                            <column id="15">
+                                                <property name="width">6%</property>
+                                            </column>
+                                            <column id="16">
+                                                <property name="width">20%</property>
+                                            </column>
+                                            <column id="17">
+                                                <property name="width">9%</property>
+                                            </column>
+                                            <column id="18">
+                                                <property name="width">7.5%</property>
+                                            </column>
+                                            <column id="19">
+                                                <property name="width">13.5%</property>
+                                            </column>
+                                            <row id="21">
+                                                <property name="verticalAlign">middle</property>
+                                                <cell id="415">
+                                                    <label id="229">
+                                                        <property name="style">TitleSong</property>
+                                                        <property name="fontSize">12pt</property>
+                                                        <property name="textAlign">left</property>
+                                                        <text-property name="text">采购单号:</text-property>
+                                                    </label>
+                                                </cell>
+                                                <cell id="416">
+                                                    <data id="239">
+                                                        <property name="style">TitleSong</property>
+                                                        <list-property name="boundDataColumns">
+                                                            <structure>
+                                                                <property name="name">purNo</property>
+                                                                <expression name="expression">params["purNo"].value</expression>
+                                                                <property name="dataType">string</property>
+                                                            </structure>
+                                                        </list-property>
+                                                        <property name="resultSetColumn">purNo</property>
+                                                    </data>
+                                                </cell>
+                                                <cell id="22"/>
+                                                <cell id="23">
+                                                    <label id="29">
+                                                        <property name="style">TitleSong</property>
+                                                        <property name="textAlign">left</property>
+                                                        <text-property name="text">采购员:</text-property>
+                                                    </label>
+                                                </cell>
+                                                <cell id="24">
+                                                    <data id="95">
+                                                        <property name="style">TitleSong</property>
+                                                        <list-property name="boundDataColumns">
+                                                            <structure>
+                                                                <property name="name">createMan</property>
+                                                                <expression name="expression">params["createMan"].value</expression>
+                                                                <property name="dataType">string</property>
+                                                            </structure>
+                                                        </list-property>
+                                                        <property name="resultSetColumn">createMan</property>
+                                                    </data>
+                                                </cell>
+                                                <cell id="25"/>
+                                                <cell id="26">
+                                                    <label id="30">
+                                                        <property name="style">TitleSong</property>
+                                                        <property name="textAlign">left</property>
+                                                        <text-property name="text">打印日期:</text-property>
+                                                    </label>
+                                                </cell>
+                                                <cell id="27">
+                                                    <data id="96">
+                                                        <property name="style">TitleSong</property>
+                                                        <list-property name="boundDataColumns">
+                                                            <structure>
+                                                                <property name="name">nowDate</property>
+                                                                <expression name="expression">params["nowDate"].value</expression>
+                                                                <property name="dataType">string</property>
+                                                            </structure>
+                                                        </list-property>
+                                                        <property name="resultSetColumn">nowDate</property>
+                                                    </data>
+                                                </cell>
+                                            </row>
+                                        </grid>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                    <row id="300">
+                        <property name="verticalAlign">middle</property>
+                        <cell id="301">
+                            <grid id="256">
+                                <property name="width">100%</property>
+                                <column id="257">
+                                    <property name="width">7.5%</property>
+                                </column>
+                                <column id="258">
+                                    <property name="width">22.5%</property>
+                                </column>
+                                <column id="259">
+                                    <property name="width">12%</property>
+                                </column>
+                                <column id="260">
+                                    <property name="width">6%</property>
+                                </column>
+                                <column id="261">
+                                    <property name="width">20%</property>
+                                </column>
+                                <column id="447">
+                                    <property name="width">30%</property>
+                                </column>
+                                <row id="267">
+                                    <property name="height">0.2in</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <cell id="268">
+                                        <label id="231">
+                                            <property name="style">labelSong</property>
+                                            <property name="fontSize">12pt</property>
+                                            <text-property name="text">合同号:</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="269">
+                                        <data id="241">
+                                            <property name="style">LineSong</property>
+                                            <property name="fontSize">12pt</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">contractNo</property>
+                                                    <expression name="expression">params["contractNo"].value</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">contractNo</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="270"/>
+                                    <cell id="271">
+                                        <label id="233">
+                                            <property name="style">labelSong</property>
+                                            <property name="fontSize">12pt</property>
+                                            <text-property name="text">供应商:</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="272">
+                                        <data id="410">
+                                            <property name="style">LineSong</property>
+                                            <property name="fontSize">12pt</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">clientName</property>
+                                                    <expression name="expression">params["clientName"].value</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">clientName</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="446"/>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="313">
+            <property name="width">100%</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">countLine</property>
+                    <property name="displayName">countLine</property>
+                    <expression name="expression">dataSetRow["countLine"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">orderDetailsId</property>
+                    <property name="displayName">orderDetailsId</property>
+                    <expression name="expression">dataSetRow["orderDetailsId"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">materialNo</property>
+                    <property name="displayName">materialNo</property>
+                    <expression name="expression">dataSetRow["materialNo"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">materialName</property>
+                    <property name="displayName">materialName</property>
+                    <expression name="expression">dataSetRow["materialName"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">specNo</property>
+                    <property name="displayName">specNo</property>
+                    <expression name="expression">dataSetRow["specNo"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">paramater</property>
+                    <property name="displayName">paramater</property>
+                    <expression name="expression">dataSetRow["paramater"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">purchaseQuatity</property>
+                    <property name="displayName">purchaseQuatity</property>
+                    <expression name="expression">dataSetRow["purchaseQuatity"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">achieveQuantity</property>
+                    <property name="displayName">achieveQuantity</property>
+                    <expression name="expression">dataSetRow["achieveQuantity"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">quotedPrice</property>
+                    <property name="displayName">quotedPrice</property>
+                    <expression name="expression">dataSetRow["quotedPrice"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">dueDate</property>
+                    <property name="displayName">dueDate</property>
+                    <expression name="expression">dataSetRow["dueDate"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">taxRate</property>
+                    <property name="displayName">taxRate</property>
+                    <expression name="expression">dataSetRow["taxRate"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">littleCulMoney</property>
+                    <property name="displayName">littleCulMoney</property>
+                    <expression name="expression">dataSetRow["littleCulMoney"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">taxMoney</property>
+                    <property name="displayName">taxMoney</property>
+                    <expression name="expression">dataSetRow["taxMoney"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">whetherNoCheck</property>
+                    <property name="displayName">whetherNoCheck</property>
+                    <expression name="expression">dataSetRow["whetherNoCheck"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">meno</property>
+                    <property name="displayName">meno</property>
+                    <expression name="expression">dataSetRow["meno"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">cntRow</property>
+                    <property name="displayName">cntRow</property>
+                    <expression name="expression">dataSetRow["cntRow"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">sumRow</property>
+                    <property name="displayName">sumRow</property>
+                    <expression name="expression">dataSetRow["sumRow"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">flag</property>
+                    <property name="displayName">flag</property>
+                    <expression name="expression">dataSetRow["flag"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">deptName</property>
+                    <property name="displayName">deptName</property>
+                    <expression name="expression">dataSetRow["deptName"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="pageBreakInterval">100</property>
+            <column id="362">
+                <property name="width">3%</property>
+            </column>
+            <column id="364">
+                <property name="width">12%</property>
+            </column>
+            <column id="365">
+                <property name="width">10%</property>
+            </column>
+            <column id="366">
+                <property name="width">7%</property>
+            </column>
+            <column id="450">
+                <property name="width">4%</property>
+            </column>
+            <column id="368">
+                <property name="width">7%</property>
+            </column>
+            <column id="370">
+                <property name="width">7%</property>
+            </column>
+            <column id="371">
+                <property name="width">8%</property>
+            </column>
+            <column id="372">
+                <property name="width">5%</property>
+            </column>
+            <column id="373">
+                <property name="width">10%</property>
+            </column>
+            <column id="374">
+                <property name="width">1%</property>
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr">true</expression>
+                    </structure>
+                </list-property>
+            </column>
+            <column id="440">
+                <property name="width">1%</property>
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr">true</expression>
+                    </structure>
+                </list-property>
+            </column>
+            <column id="453">
+                <property name="width">10%</property>
+            </column>
+            <column id="459">
+                <property name="width">14%</property>
+            </column>
+            <header>
+                <row id="314">
+                    <property name="verticalAlign">middle</property>
+                    <cell id="315">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="377">
+                            <property name="style">CenterSong</property>
+                            <property name="fontSize">12pt</property>
+                            <text-property name="text">行号</text-property>
+                        </label>
+                    </cell>
+                    <cell id="317">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="379">
+                            <property name="style">CenterSong</property>
+                            <property name="fontSize">12pt</property>
+                            <text-property name="text">物料编码</text-property>
+                        </label>
+                    </cell>
+                    <cell id="318">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="380">
+                            <property name="style">CenterSong</property>
+                            <property name="fontSize">12pt</property>
+                            <text-property name="text">物料名称</text-property>
+                        </label>
+                    </cell>
+                    <cell id="319">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="381">
+                            <property name="style">CenterSong</property>
+                            <property name="fontSize">12pt</property>
+                            <text-property name="text">规格型号</text-property>
+                        </label>
+                    </cell>
+                    <cell id="448">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="389">
+                            <property name="style">CenterSong</property>
+                            <property name="fontSize">12pt</property>
+                            <text-property name="text">单位</text-property>
+                        </label>
+                    </cell>
+                    <cell id="321">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="382">
+                            <property name="style">CenterSong</property>
+                            <property name="fontSize">12pt</property>
+                            <text-property name="text">采购数量</text-property>
+                        </label>
+                    </cell>
+                    <cell id="323">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="384">
+                            <property name="style">CenterSong</property>
+                            <property name="fontSize">12pt</property>
+                            <text-property name="text">单价</text-property>
+                        </label>
+                    </cell>
+                    <cell id="324">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="385">
+                            <property name="style">CenterSong</property>
+                            <property name="fontSize">12pt</property>
+                            <text-property name="text">交期</text-property>
+                        </label>
+                    </cell>
+                    <cell id="325">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="386">
+                            <property name="style">CenterSong</property>
+                            <property name="fontSize">12pt</property>
+                            <text-property name="text">税率</text-property>
+                        </label>
+                    </cell>
+                    <cell id="326">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="387">
+                            <property name="style">CenterSong</property>
+                            <property name="fontSize">12pt</property>
+                            <text-property name="text">小计金额</text-property>
+                        </label>
+                    </cell>
+                    <cell id="327">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="388">
+                            <property name="style">CenterSong</property>
+                            <property name="fontSize">12pt</property>
+                            <text-property name="text">税额</text-property>
+                        </label>
+                    </cell>
+                    <cell id="438">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="441">
+                            <property name="style">CenterSong</property>
+                            <property name="fontSize">12pt</property>
+                            <text-property name="text">flag</text-property>
+                        </label>
+                    </cell>
+                    <cell id="451">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="455">
+                            <property name="style">CenterSong</property>
+                            <property name="fontSize">12pt</property>
+                            <text-property name="text">备注</text-property>
+                        </label>
+                    </cell>
+                    <cell id="457">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="460">
+                            <property name="style">CenterSong</property>
+                            <property name="fontSize">12pt</property>
+                            <text-property name="text">申报单位</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="330">
+                    <method name="onCreate"><![CDATA[if(row["flag"]==1){
+	this.getStyle().pageBreakBefore = "always";
+}]]></method>
+                    <property name="verticalAlign">middle</property>
+                    <cell id="331">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="394">
+                            <property name="style">RightSong</property>
+                            <property name="fontSize">12pt</property>
+                            <property name="resultSetColumn">countLine</property>
+                        </data>
+                    </cell>
+                    <cell id="333">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="423">
+                            <property name="style">LeftSong</property>
+                            <property name="fontSize">12pt</property>
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[<VALUE-OF format="HTML">row["materialNo"]</VALUE-OF>]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="334">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="424">
+                            <property name="style">LeftSong</property>
+                            <property name="fontSize">12pt</property>
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[<VALUE-OF format="HTML">row["materialName"]</VALUE-OF>]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="335">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="425">
+                            <property name="style">LeftSong</property>
+                            <property name="fontSize">12pt</property>
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[<VALUE-OF format="HTML">row["specNo"]</VALUE-OF>]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="449">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="407">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">12pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="textTransform">none</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="widows">2</property>
+                            <property name="resultSetColumn">whetherNoCheck</property>
+                        </data>
+                    </cell>
+                    <cell id="337">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="400">
+                            <property name="style">RightSong</property>
+                            <property name="fontSize">12pt</property>
+                            <property name="resultSetColumn">purchaseQuatity</property>
+                        </data>
+                    </cell>
+                    <cell id="339">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="402">
+                            <property name="style">RightSong</property>
+                            <property name="fontSize">12pt</property>
+                            <property name="resultSetColumn">quotedPrice</property>
+                        </data>
+                    </cell>
+                    <cell id="340">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="427">
+                            <property name="style">LeftSong</property>
+                            <property name="fontSize">12pt</property>
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[<VALUE-OF format="HTML">row["dueDate"]</VALUE-OF>]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="341">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="404">
+                            <property name="style">RightSong</property>
+                            <property name="fontSize">12pt</property>
+                            <property name="resultSetColumn">taxRate</property>
+                        </data>
+                    </cell>
+                    <cell id="342">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="405">
+                            <property name="style">RightSong</property>
+                            <property name="fontSize">12pt</property>
+                            <property name="resultSetColumn">littleCulMoney</property>
+                        </data>
+                    </cell>
+                    <cell id="343">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="406">
+                            <property name="style">RightSong</property>
+                            <property name="fontSize">12pt</property>
+                            <property name="resultSetColumn">taxMoney</property>
+                        </data>
+                    </cell>
+                    <cell id="439">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="442">
+                            <property name="style">RightSong</property>
+                            <property name="fontSize">12pt</property>
+                            <property name="resultSetColumn">flag</property>
+                        </data>
+                    </cell>
+                    <cell id="452">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="456">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">12pt</property>
+                            <property name="resultSetColumn">meno</property>
+                        </data>
+                    </cell>
+                    <cell id="458">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="461">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">12pt</property>
+                            <property name="resultSetColumn">deptName</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+    </body>
+</report>

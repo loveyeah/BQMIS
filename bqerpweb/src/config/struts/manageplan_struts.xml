@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-validation.xml" />
+	<package name="manageplan" namespace="/manageplan"
+		extends="jfreechart-default">
+		<!-- 主题名称、主题指标 -->
+		<action name="saveBpCPlanTopic"
+			class="power.web.manage.plan.action.BpCPlanTopicAction"
+			method="saveBpCPlanTopic">
+		</action>
+		<action name="getBpCPlanTopicList"
+			class="power.web.manage.plan.action.BpCPlanTopicAction"
+			method="getBpCPlanTopicList">
+		</action>
+		<action name="getBpCPlanTopicItem"
+			class="power.web.manage.plan.action.BpCPlanTopicAction"
+			method="getBpCPlanTopicItem">
+		</action>
+		<action name="saveBpCPlanTopicItem"
+			class="power.web.manage.plan.action.BpCPlanTopicAction"
+			method="saveBpCPlanTopicItem">
+		</action>
+		<action name="getAllFitItemaList"
+			class="power.web.manage.plan.action.BpCPlanTopicAction"
+			method="getAllFitItemaList">
+		</action>
+		<!--计划指标维护-->
+		<action name="getPlanItemModel"
+			class="power.web.manage.plan.action.PlanItemAction"
+			method="getPlanItemModel">
+		</action>
+		<action name="getPlanItemTreeNode"
+			class="power.web.manage.plan.action.PlanItemAction"
+			method="getPlanItemTreeNode">
+		</action>
+		<action name="savePlanItemModel"
+			class="power.web.manage.plan.action.PlanItemAction"
+			method="savePlanItemModel">
+		</action>
+		<action name="updatePlanItemModel"
+			class="power.web.manage.plan.action.PlanItemAction"
+			method="updatePlanItemModel">
+		</action>
+		<action name="deletePlanItemModel"
+			class="power.web.manage.plan.action.PlanItemAction"
+			method="deletePlanItemModel">
+		</action>
+		<action name="getAccountOrder"
+			class="power.web.manage.plan.action.PlanItemAction"
+			method="getAccountOrder">
+		</action>
+		<!--计划指标公式-->
+		<action name="saveBpCPlanFormula"
+			class="power.web.manage.plan.action.FormulaAction"
+			method="saveBpCPlanFormula">
+		</action>
+
+		<action name="getBpCPlanFormulaList"
+			class="power.web.manage.plan.action.FormulaAction"
+			method="getBpCPlanFormulaList">
+		</action>
+		<action name="getPlanItemList"
+			class="power.web.manage.plan.action.FormulaAction"
+			method="getPlanItemList">
+		</action>
+		<!-- 检修周计划 -->
+		<action name="getAllRepair"
+			class="power.web.manage.plan.trainplan.registerAction"
+			method="getAllRepair">
+		</action>
+
+		<action name="saveRepair"
+			class="power.web.manage.plan.trainplan.registerAction"
+			method="saveRepair">
+		</action>
+		<action name="deleteRepair"
+			class="power.web.manage.plan.trainplan.registerAction"
+			method="deleteRepair">
+		</action>
+		<action name="repairReport"
+			class="power.web.manage.plan.trainplan.registerAction"
+			method="repairReport">
+		</action>
+		<action name="repairApprove"
+			class="power.web.manage.plan.trainplan.registerAction"
+			method="repairApprove">
+		</action>
+		<action name="findAlldept"
+			class="power.web.manage.plan.trainplan.registerAction"
+			method="findAlldept">
+		</action>
+		<action name="getDetailByDept"
+			class="power.web.manage.plan.trainplan.registerAction"
+			method="getDetailByDept">
+		</action>
+		<action name="getRepairDeptObj"
+			class="power.web.manage.plan.trainplan.registerAction"
+			method="getRepairDeptObj">
+		</action>
+		<!--检修周计划 查询审批最大月份下最大周的数据 add by sychen 20100319  -->
+		<action name="getRepairApproveInfo"
+			class="power.web.manage.plan.trainplan.registerAction"
+			method="getRepairApproveInfo">
+		</action>
+		<!--检修周计划 判断审批页面时间下主表Id是否存在 add by sychen 20100320  -->
+		<action name="getRepairApproveDeptId"
+			class="power.web.manage.plan.trainplan.registerAction"
+			method="getRepairApproveDeptId">
+		</action>
+
+		<!--月奖基数维护  -->
+		<action name="getMonthAward"
+			class="power.web.hr.salary.monthAwardAction"
+			method="getMonthAward">
+		</action>
+		<action name="saveMonthAward"
+			class="power.web.hr.salary.monthAwardAction"
+			method="saveMonthAward">
+		</action>
+
+		<action name="delMonthAward"
+			class="power.web.hr.salary.monthAwardAction"
+			method="delMonthAward">
+		</action>
+		<action name="getMonStandDays"
+			class="power.web.hr.salary.monthAwardAction"
+			method="getMonStandDays">
+		</action>
+		<action name="saveMonthAwardDays"
+			class="power.web.hr.salary.monthAwardAction"
+			method="saveMonthAwardDays">
+		</action>
+		<action name="delMonthAwardDays"
+			class="power.web.hr.salary.monthAwardAction"
+			method="delMonthAwardDays">
+		</action>
+
+
+		<!--部门计划编辑-->
+		<action name="getBpJPlanJobDepMain"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="getBpJPlanJobDepMain">
+		</action>
+		<action name="getBpJPlanJobDepDetail"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="getBpJPlanJobDepDetail">
+		</action>
+
+		<!--部门计划编辑审批 add by sychen 20100406-->
+		<action name="getBpJPlanJobDepMainApprove"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="getBpJPlanJobDepMainApprove">
+		</action>
+		<action name="getBpJPlanJobDepDetailApprove"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="getBpJPlanJobDepDetailApprove">
+		</action>
+		<action name="getBpJPlanJobDept"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="getBpJPlanJobDept">
+		</action>
+		<action name="getBpJPlanJobDeptMainId"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="getBpJPlanJobDeptMainId">
+		</action>
+
+		<action name="saveBpJPlanJobDep"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="saveBpJPlanJobDep">
+		</action>
+		<action name="workPlanCommit"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="workPlanCommit">
+		</action>
+		<action name="workPlanApprove"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="workPlanApprove">
+		</action>
+		<!-- 部门月度工作计划审批保存方法 add by sychen 20100409 -->
+		<action name="saveBpJPlanJobDepApprove"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="saveBpJPlanJobDepApprove">
+		</action>
+
+		<!-- 培训计划部门申请计划部门父部门为管理部门的部门 -->
+		<action name="getSessionEmployee"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="getSessionEmployee">
+		</action>
+
+		<!--部门计划整理上报-->
+		<action name="getBpJPlanJobDepMainList"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="getBpJPlanJobDepMainList">
+		</action>
+		<action name="getBpJPlanJobMain"
+			class="power.web.manage.plan.action.AllDeptWorkPlanAction"
+			method="getBpJPlanJobMain">
+		</action>
+		<action name="saveBpJPlanJob"
+			class="power.web.manage.plan.action.AllDeptWorkPlanAction"
+			method="saveBpJPlanJob">
+		</action>
+		<action name="workPlanGatherCommit"
+			class="power.web.manage.plan.action.AllDeptWorkPlanAction"
+			method="workPlanGatherCommit">
+		</action>
+		<action name="workPlanGatherApprove"
+			class="power.web.manage.plan.action.AllDeptWorkPlanAction"
+			method="workPlanGatherApprove">
+		</action>
+		<action name="updateMainreportTo"
+			class="power.web.manage.plan.action.AllDeptWorkPlanAction"
+			method="updateMainreportTo">
+		</action>
+		<!--部门月度计划 整理上报已读方法 add by sychen 20100408-->
+		<action name="updateIfRead"
+			class="power.web.manage.plan.action.AllDeptWorkPlanAction"
+			method="updateIfRead">
+		</action>
+		<!--部门月度计划完成情况 整理上报已读方法 add by sychen 20100409-->
+		<action name="updateFinishIfRead"
+			class="power.web.manage.plan.action.AllDeptWorkPlanAction"
+			method="updateFinishIfRead">
+		</action>
+
+		<action name="getBpPlanDeptShowAllList"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="getBpPlanDeptShowAllList">
+		</action>
+
+		<!--部门月度计划完成情况整理上报 整体展示 add by sychen 20100415-->
+		<action name="getBpPlanDeptCompleteShowAllList"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="getBpPlanDeptCompleteShowAllList">
+		</action>
+		<!--部门工作计划查询 add by sychen 20100426-->
+		<action name="getBpJPlanJobDepMainQuery"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="getBpJPlanJobDepMainQuery">
+		</action>
+		<!--部门工作计划审批  add by sychen 20100504-->
+		<action name="getBpJPlanJobDepMainCaller"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="getBpJPlanJobDepMainCaller">
+		</action>
+
+		<!--部门计划查询-->
+		<action name="queryBpJPlanJobDepDetail"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="queryBpJPlanJobDepDetail">
+		</action>
+		<!--部门计划完成率查询-->
+		<action name="getBpJPlanJobDepDetailStat"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="getBpJPlanJobDepDetailStat">
+		</action>
+
+		<action name="getBpPlanDeptModList"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="getBpPlanDeptModList">
+		</action>
+		<action name="getBpPlanStatusByDeptCode"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="getBpPlanStatusByDeptCode">
+		</action>
+		<!--部门计划完成情况填写 显示当前月份下责任人下多个主记录 add by sychen 20100505-->
+		<action name="getBpPlanStatusByChargeBy"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="getBpPlanStatusByChargeBy">
+		</action>
+
+		<action name="getPlanJobCompleteDetialList"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="getPlanJobCompleteDetialList">
+		</action>
+		<action name="saveDeptPlanComplete"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="saveDeptPlanComplete">
+		</action>
+		<action name="reportDeptPlanComplete"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="reportDeptPlanComplete">
+		</action>
+		<action name="deptPlanCompleteApprove"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="deptPlanCompleteApprove">
+		</action>
+
+
+		<!--厂部临时安排的工作计划编辑-->
+		<action name="addPlanNews"
+			class="power.web.manage.plan.action.PlanGuideNewAction"
+			method="addPlanNews">
+		</action>
+		<action name="updatePlanNews"
+			class="power.web.manage.plan.action.PlanGuideNewAction"
+			method="updatePlanNews">
+		</action>
+		<action name="deletePlanNews"
+			class="power.web.manage.plan.action.PlanGuideNewAction"
+			method="deletePlanNews">
+		</action>
+		<action name="getPlanNewsList"
+			class="power.web.manage.plan.action.PlanGuideNewAction"
+			method="getPlanNewsList">
+		</action>
+
+		<!--工作计划前言-->
+		<action name="getBeforeWorkPlanInfo"
+			class="power.web.manage.plan.action.BeforeWorkPlanAction"
+			method="getBeforeWorkPlanInfo">
+		</action>
+		<action name="addBeforeWorkPlan"
+			class="power.web.manage.plan.action.BeforeWorkPlanAction"
+			method="addBeforeWorkPlan">
+		</action>
+		<action name="updateBeforeWorkPlan"
+			class="power.web.manage.plan.action.BeforeWorkPlanAction"
+			method="updateBeforeWorkPlan">
+		</action>
+		<action name="deleteBeforeWorkPlan"
+			class="power.web.manage.plan.action.BeforeWorkPlanAction"
+			method="deleteBeforeWorkPlan">
+		</action>
+		<action name="defineBeforeWorkPlan"
+			class="power.web.manage.plan.action.BeforeWorkPlanAction"
+			method="defineBeforeWorkPlan">
+		</action>
+		<action name="editBeforeWorkPlan"
+			class="power.web.manage.plan.action.BeforeWorkPlanAction"
+			method="editBeforeWorkPlan">
+		</action>
+		<!--指导性计划编辑-->
+		<action name="getBpJPlanGuideDetail"
+			class="power.web.manage.plan.action.GuidePlanAction"
+			method="getBpJPlanGuideDetail">
+		</action>
+		<action name="getBpJPlanGuideMain"
+			class="power.web.manage.plan.action.GuidePlanAction"
+			method="getBpJPlanGuideMain">
+		</action>
+		<action name="saveBpJPlanGuide"
+			class="power.web.manage.plan.action.GuidePlanAction"
+			method="saveBpJPlanGuide">
+		</action>
+		<action name="guidePlanCommit"
+			class="power.web.manage.plan.action.GuidePlanAction"
+			method="guidePlanCommit">
+		</action>
+		<action name="guidePlanApprove"
+			class="power.web.manage.plan.action.GuidePlanAction"
+			method="guidePlanApprove">
+		</action>
+
+		<!--指导性计划完成情况-->
+		<action name="updateBpJPlanGuideDetail"
+			class="power.web.manage.plan.action.GuidePlanAction"
+			method="updateBpJPlanGuideDetail">
+		</action>
+		<!--经济指标录入-->
+		<action name="getPlanTopic"
+			class="power.web.manage.plan.action.MainItemInputAction"
+			method="getPlanTopic">
+		</action>
+
+		<action name="queryBpJPlanTopicItemList"
+			class="power.web.manage.plan.action.MainItemInputAction"
+			method="queryBpJPlanTopicItemList">
+		</action>
+
+		<action name="saveBpJPlanTopicAndItem"
+			class="power.web.manage.plan.action.MainItemInputAction"
+			method="saveBpJPlanTopicAndItem">
+		</action>
+		<action name="deleteAllRefer"
+			class="power.web.manage.plan.action.MainItemInputAction"
+			method="deleteAllRefer">
+		</action>
+
+		<!-- 培训计划 -->
+		<!-- 培训计划类别维护 -->
+		<action name="addTrainPlanType"
+			class="power.web.manage.plan.trainplan.TrainPlanAction"
+			method="addTrainPlanType">
+		</action>
+		<action name="delTrainPlanType"
+			class="power.web.manage.plan.trainplan.TrainPlanAction"
+			method="delTrainPlanType">
+		</action>
+		<action name="getTrainPlanList"
+			class="power.web.manage.plan.trainplan.TrainPlanAction"
+			method="getTrainPlanList">
+		</action>
+
+		<!-- 培训计划申请 -->
+		<action name="addTrainPlanApply"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="addTrainPlanApply">
+		</action>
+		<action name="delTrainPlanApply"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="delTrainPlanApply">
+		</action>
+		<action name="getTrainPlanApplyList"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="getTrainPlanApplyList">
+		</action>
+		<action name="getAllTypeList"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="getAllTypeList">
+		</action>
+		<action name="getPlanMainObj"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="getPlanMainObj">
+		</action>
+
+		<action name="getDeptTrainPlanQueryList"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="getDeptTrainPlanQueryList">
+		</action>
+		<action name="getManageDeptList"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="getManageDeptList">
+		</action>
+
+		<action name="getPlanGatherDesc"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="getPlanGatherDesc">
+		</action>
+		<action name="judgeDeptCanApprove"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="judgeDeptCanApprove">
+		</action>
+
+		<!--汇总getPlanTrainGather -->
+		<action name="getPlanTrainGather"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="getPlanTrainGather">
+		</action>
+		<!--汇总btn -->
+		<action name="trainPlanGather"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="trainPlanGather">
+		</action>
+
+		<!--汇总后查询btn -->
+		<action name="trainPlanGatherAfter"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="trainPlanGatherAfter">
+		</action>
+		<!--汇总查询List-->
+		<action name="getPlanGatherQueryList"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="getPlanGatherQueryList">
+		</action>
+		<action name="trainPlanGatherAprove"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="trainPlanGatherAprove">
+		</action>
+		<!-- 汇总修改保存 add by drdu 20100105 -->
+		<action name="updateDeptGatherRecord"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="updateDeptGatherRecord">
+		</action>
+
+		<!-- 培训计划、汇总上报、审批 -->
+		<action name="TrainPlanReport"
+			class="power.web.manage.plan.trainplan.TrainPlanSignAction"
+			method="TrainPlanReport">
+		</action>
+		<action name="TrainPlanGatherReport"
+			class="power.web.manage.plan.trainplan.TrainPlanSignAction"
+			method="TrainPlanGatherReport">
+		</action>
+		<action name="TrainPlanApprove"
+			class="power.web.manage.plan.trainplan.TrainPlanSignAction"
+			method="TrainPlanApprove">
+		</action>
+		<action name="TrainPlanGatherApprove"
+			class="power.web.manage.plan.trainplan.TrainPlanSignAction"
+			method="TrainPlanGatherApprove">
+		</action>
+
+		<!-- 培训计划回填 add by drdu 091210-->
+		<action name="findTrainPlanBackfillList"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="findTrainPlanBackfillList">
+		</action>
+		<action name="saveFinishNumber"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="saveFinishNumber">
+		</action>
+
+		<action name="TrainPlanBackReport"
+			class="power.web.manage.plan.trainplan.TrainPlanSignAction"
+			method="TrainPlanBackReport">
+		</action>
+
+		<action name="getPlanMainBackObj"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="getPlanMainBackObj">
+		</action>
+		<action name="TrainPlanBackApprove"
+			class="power.web.manage.plan.trainplan.TrainPlanSignAction"
+			method="TrainPlanBackApprove">
+		</action>
+		<action name="findTrainPlanBackGatherList"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="findTrainPlanBackGatherList">
+		</action>
+		<action name="updateBackGatherRecord"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="updateBackGatherRecord">
+		</action>
+		<action name="addSumApproveRecord"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="addSumApproveRecord">
+		</action>
+		<action name="getTrainingSumIdForAdd"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="getTrainingSumIdForAdd">
+		</action>
+		<action name="findTraingDept"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="findTraingDept">
+		</action>
+		<action name="findTraingDeptReturnSelectList"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="findTraingDeptReturnSelectList">
+		</action>
+		<action name="backGatherReturnSelectMethod"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="backGatherReturnSelectMethod">
+		</action>
+		<!-- add by liuyi 091215  -->
+		<action name="getCompleteDescription"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="getCompleteDescription">
+		</action>
+		<action name="getPlanBackGetherWo"
+			class="power.web.manage.plan.trainplan.TrainPlanApplyAction"
+			method="getPlanBackGetherWo">
+		</action>
+		<action name="TrainPlanBackGatherReport"
+			class="power.web.manage.plan.trainplan.TrainPlanSignAction"
+			method="TrainPlanBackGatherReport">
+		</action>
+		<action name="TrainPlanBackGatherApprove"
+			class="power.web.manage.plan.trainplan.TrainPlanSignAction"
+			method="TrainPlanBackGatherApprove">
+		</action>
+		<!-- 部门培训计划完成情况整理审批 -->
+		<action name="allDeptWorkFinishReport"
+			class="power.web.manage.plan.action.AllDeptWorkPlanAction"
+			method="allDeptWorkFinishReport">
+		</action>
+		<action name="allDeptWorkFinishApprove"
+			class="power.web.manage.plan.action.AllDeptWorkPlanAction"
+			method="allDeptWorkFinishApprove">
+		</action>
+		<action name="getPlanCompleteAllQuery"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="getPlanCompleteAllQuery">
+		</action>
+		<!-- 设置完成情况已读 -->
+		<action name="setDeptMainRead"
+			class="power.web.manage.plan.action.deptWorkPlanAction"
+			method="setDeptMainRead">
+		</action>
+		
+		<!-- 部门培训计划完成情况（新）add by sychen 20100624 -->
+		<action name="getPlanJobCompleteList"
+			class="power.web.manage.plan.action.BpJPlanCompleteAction"
+			method="getPlanJobCompleteList">
+		</action>
+		<action name="savePlanJobComplete"
+			class="power.web.manage.plan.action.BpJPlanCompleteAction"
+			method="savePlanJobComplete">
+		</action>
+		<action name="reportPlanJobComplete"
+			class="power.web.manage.plan.action.BpJPlanCompleteAction"
+			method="reportPlanJobComplete">
+		</action>
+		<action name="getPlanCompleteStatus"
+			class="power.web.manage.plan.action.BpJPlanCompleteAction"
+			method="getPlanCompleteStatus">
+		</action>
+		<action name="getPlanJobCompleteApproveList"
+			class="power.web.manage.plan.action.BpJPlanCompleteAction"
+			method="getPlanJobCompleteApproveList">
+		</action>
+		<action name="getPlanJobCompleteInfo"
+			class="power.web.manage.plan.action.BpJPlanCompleteAction"
+			method="getPlanJobCompleteInfo">
+		</action>
+		<action name="planJobCompleteApprove"
+			class="power.web.manage.plan.action.BpJPlanCompleteAction"
+			method="planJobCompleteApprove">
+		</action>
+		<action name="getPlanJobCompleteMainList"
+			class="power.web.manage.plan.action.BpJPlanCompleteAction"
+			method="getPlanJobCompleteMainList">
+		</action>
+		<action name="getPlanJobCompleteDetailList"
+			class="power.web.manage.plan.action.BpJPlanCompleteAction"
+			method="getPlanJobCompleteDetailList">
+		</action>
+		<action name="savePlanJobCompleteGather"
+			class="power.web.manage.plan.action.BpJPlanCompleteAction"
+			method="savePlanJobCompleteGather">
+		</action>
+		<action name="modifyFinishIfRead"
+			class="power.web.manage.plan.action.BpJPlanCompleteAction"
+			method="modifyFinishIfRead">
+		</action>
+		<action name="getPlanJobCompleteQuestList"
+			class="power.web.manage.plan.action.BpJPlanCompleteAction"
+			method="getPlanJobCompleteQuestList">
+		</action>
+		<action name="getPlanJobCompleteMaxPlanTime"
+			class="power.web.manage.plan.action.BpJPlanCompleteAction"
+			method="getPlanJobCompleteMaxPlanTime">
+		</action>
+		<!-- 部门培训计划完成情况（新）add by sychen 20100624 end -->
+		
+		<!-- 年度计划维护 -->
+		<action name="findYearPlan"
+			class="power.web.manage.plan.action.YearPlanAction"
+			method="findYearPlan">
+		</action>
+		<action name="addOrUpdateYearPlan"
+			class="power.web.manage.plan.action.YearPlanAction"
+			method="addOrUpdateYearPlan">
+		</action>
+		<action name="delYearPlan"
+			class="power.web.manage.plan.action.YearPlanAction"
+			method="delYearPlan">
+		</action>
+		<!-- 检修项目维护 -->
+		<action name="findRepairTreeList"
+			class="power.web.run.repair.action.RunRepairProjectAction"
+			method="findRepairTreeList">
+		</action>
+		<action name="getRepairTreeInfo"
+			class="power.web.run.repair.action.RunRepairProjectAction"
+			method="getRepairTreeInfo">
+		</action>
+		<action name="addAndUpdateRepairRecord"
+			class="power.web.run.repair.action.RunRepairProjectAction"
+			method="addAndUpdateRepairRecord">
+		</action>
+		<action name="deleteRepairMaintRecord"
+			class="power.web.run.repair.action.RunRepairProjectAction"
+			method="deleteRepairMaintRecord">
+		</action>
+
+		<!-- 检修计划类别维护 -->
+		<action name="getRepairType"
+			class="power.web.run.repair.RepairTypeAction"
+			method="getRepairType">
+		</action>
+		<action name="saveRepairType"
+			class="power.web.run.repair.RepairTypeAction"
+			method="saveRepairType">
+		</action>
+		<!-- 检修别任务单填写 -->
+		<action name="getRepairTask"
+			class="power.web.run.repair.RepairTaskAction"
+			method="getRepairTask">
+		</action>
+		<action name="getRepairTaskSelectList"
+			class="power.web.run.repair.RepairTaskAction"
+			method="getRepairTaskSelectList">
+		</action>
+		<action name="saveRepairTask"
+			class="power.web.run.repair.RepairTaskAction"
+			method="saveRepairTask">
+		</action>
+		<action name="delRepairTask"
+			class="power.web.run.repair.RepairTaskAction"
+			method="delRepairTask">
+		</action>
+
+		<!-- 检修项目填写 -->
+		<action name="saveRepairRecord"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="saveRepairRecord">
+		</action>
+		<action name="deleteRepairRecord"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="deleteRepairRecord">
+		</action>
+		<action name="findRepairRecordList"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="findRepairRecordList">
+		</action>
+		<action name="findRepairProInfoById"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="findRepairProInfoById">
+		</action>
+		<action name="reportRepairRecord"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="reportRepairRecord">
+		</action>
+		<action name="findSituation"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="findSituation">
+		</action>
+
+		<!-- 项目验收填写 ltong 20100523-->
+		<action name="getRepairItemList"
+			class="power.web.run.repair.RepairAcceptAction"
+			method="getRepairItemList">
+		</action>
+		<action name="getRepairAcceptList"
+			class="power.web.run.repair.RepairAcceptAction"
+			method="getRepairAcceptList">
+		</action>
+		<action name="saveRepairAcceptList"
+			class="power.web.run.repair.RepairAcceptAction"
+			method="saveRepairAcceptList">
+		</action>
+		<action name="deleteRepairAcceptList"
+			class="power.web.run.repair.RepairAcceptAction"
+			method="deleteRepairAcceptList">
+		</action>
+		<action name="reportRepairAcceptList"
+			class="power.web.run.repair.RepairAcceptAction"
+			method="reportRepairAcceptList">
+		</action>
+		<!-- 检修项目明细 -->
+		<action name="repairDetailList"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="repairDetailList">
+		</action>
+		<action name="saveOrUpdateRecord"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="saveOrUpdateRecord">
+		</action>
+		<action name="deleteRepairDetail"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="deleteRepairDetail">
+		</action>
+
+		<!-- 检修项目审批 -->
+		<action name="RepairRecordApprove"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="RepairRecordApprove">
+		</action>
+		<action name="RepairRecordLeaderApprove"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="RepairRecordLeaderApprove">
+		</action>
+		<action name="getRepairStatusMain"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="getRepairStatusMain">
+		</action>
+		
+		<action name="getRepairTastListApprove"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="getRepairTastListApprove">
+		</action>
+		<action name="getLeaderApproveInfo"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="getLeaderApproveInfo">
+		</action>
+		<action name="getLeaderApproveDetail"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="getLeaderApproveDetail">
+		</action>
+		<action name="selectApprovePage"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="selectApprovePage">
+		</action>
+
+		<!-- 检修项目查询 -->
+		<action name="getRepairMaxVersionMain"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="getRepairMaxVersionMain">
+		</action>
+		<action name="getRepairVerisonList"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="getRepairVerisonList">
+		</action>
+		<action name="getRepairQueryList"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="getRepairQueryList">
+		</action>
+
+		<!-- 检修项目验收审批 -->
+		<action name="repairAcceptApprove"
+			class="power.web.run.repair.RepairAcceptAction"
+			method="repairAcceptApprove">
+		</action>
+
+		<!-- 检修项目历史选择 -->
+		<action name="findHistoryInfo"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="findHistoryInfo">
+		</action>
+		<!-- 一级部门信息维护 -->
+		<action name="getLevelOneDept"
+			class="power.web.manage.plan.action.LevalOneDeptAction"
+			method="getLevelOneDept">
+		</action>
+		<action name="saveJobDept"
+			class="power.web.manage.plan.action.LevalOneDeptAction"
+			method="saveJobDept">
+		</action>
+		<!-- 检修项目专业选择 -->
+		<action name="getRepairSpecialityType"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="getRepairSpecialityType">
+		</action>
+		
+		
+		<!--专业对应的版本 -->
+		<action name="findVerisonListBySpecial"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="findVerisonListBySpecial">
+		</action>
+			<!--专业对应的最新版本 -->
+		<action name="findNewVersionBySpecial"
+			class="power.web.run.repair.RepairRegisterAction"
+			method="findNewVersionBySpecial">
+		</action>
+	</package>
+</struts>

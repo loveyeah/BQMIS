@@ -1,0 +1,1460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.1.v20080911 Build &lt;2.3.1.v20080922-1151></property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="applyId" id="859">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">3</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="applyCode" id="882">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="857">
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@192.168.32.3:1521:bqdb</property>
+            <property name="odaUser">power</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cG93ZXI=</encrypted-property>
+            <property name="odaJndiName">java:powererpDS</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="858">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">DEPTNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">APPLYNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">APPLYTIME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">PROTECTION_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">PROTECTION_REASON</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">MEASURES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">CLASSLEADERNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">EXECUTORNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">GUARDIANNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">EXECUTE_TIME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">MEMO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">TITLE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">PREASON</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">JXGSGGSP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">JXGSGGSPYJ</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">SBBGGSH</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">SBBGGSHYJ</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">ZZSP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">ZZSPYJ</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">ZGSP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">ZGSPYJ</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">ZZECFH</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">ZZECFHYJ</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">applyId</property>
+                    <property name="paramName">applyId</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">DEPTNAME</property>
+                    <property name="nativeName">DEPTNAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">APPLYNAME</property>
+                    <property name="nativeName">APPLYNAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">APPLYTIME</property>
+                    <property name="nativeName">APPLYTIME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">PROTECTION_NAME</property>
+                    <property name="nativeName">PROTECTION_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">PROTECTION_REASON</property>
+                    <property name="nativeName">PROTECTION_REASON</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">MEASURES</property>
+                    <property name="nativeName">MEASURES</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">CLASSLEADERNAME</property>
+                    <property name="nativeName">CLASSLEADERNAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">EXECUTORNAME</property>
+                    <property name="nativeName">EXECUTORNAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">GUARDIANNAME</property>
+                    <property name="nativeName">GUARDIANNAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">EXECUTE_TIME</property>
+                    <property name="nativeName">EXECUTE_TIME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">MEMO</property>
+                    <property name="nativeName">MEMO</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">TITLE</property>
+                    <property name="nativeName">TITLE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">PREASON</property>
+                    <property name="nativeName">PREASON</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">JXGSGGSP</property>
+                    <property name="nativeName">JXGSGGSP</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">JXGSGGSPYJ</property>
+                    <property name="nativeName">JXGSGGSPYJ</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">SBBGGSH</property>
+                    <property name="nativeName">SBBGGSH</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">SBBGGSHYJ</property>
+                    <property name="nativeName">SBBGGSHYJ</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">ZZSP</property>
+                    <property name="nativeName">ZZSP</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">ZZSPYJ</property>
+                    <property name="nativeName">ZZSPYJ</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">ZGSP</property>
+                    <property name="nativeName">ZGSP</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">ZGSPYJ</property>
+                    <property name="nativeName">ZGSPYJ</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">ZZECFH</property>
+                    <property name="nativeName">ZZECFH</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">ZZECFHYJ</property>
+                    <property name="nativeName">ZZECFHYJ</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select 
+(select a.dept_name from hr_c_dept a where a.dept_id=t.apply_dep)deptName,
+getworkername(t.apply_by)applyName,
+to_char(t.apply_time,'yyyy-mm-dd hh24:mi:ss') applyTime,
+t.protection_name,
+t.protection_reason,
+t.measures,
+getworkername(t.class_leader)classLeaderName,
+decode(t.class_leader,'','',getworkername(t.executor))executorName,
+getworkername(t.guardian)guardianName,
+to_char(t.execute_time,'yyyy-mm-dd hh24:mi:ss')execute_time,
+t.memo,
+decode(t.protection_type||t.in_out,'1I','设备继电保护及安全自动装置、调动自动化投入申请单',
+                         '2O','设备继电保护及安全自动装置、调动自动化退出申请单',
+                         '3I','热控保护投入申请单',
+                         '4O','热控保护退出申请单') as title,
+decode(t.protection_type||t.in_out,'1I','投入原因','3I','投入原因','退出原因') as pReason,
+( select getworkername(w.caller) from wf_j_historyoperation w where w.entry_id = t.workflow_no
+          AND w.opinion_time > 
+       (SELECT MAX(opinion_time)
+       FROM wf_j_historyoperation a
+        WHERE a.entry_id =  t.workflow_no
+       AND a.step_id = '2')
+       and (w.step_id ='4'or w.step_id ='11')) as jxgsggsp,
+ ( select w.opinion from wf_j_historyoperation w where w.entry_id = t.workflow_no
+          AND w.opinion_time > 
+       (SELECT MAX(opinion_time)
+       FROM wf_j_historyoperation a
+        WHERE a.entry_id =  t.workflow_no
+       AND a.step_id = '2')
+       and (w.step_id ='4'or w.step_id ='11')) as jxgsggspyj,
+( select getworkername(w.caller) from wf_j_historyoperation w where w.entry_id = t.workflow_no
+          AND w.opinion_time > 
+       (SELECT MAX(opinion_time)
+       FROM wf_j_historyoperation a
+        WHERE a.entry_id = t.workflow_no
+       AND a.step_id = '2')
+       and (w.step_id ='5'or w.step_id ='12')) as sbbggsh,
+( select w.opinion from wf_j_historyoperation w where w.entry_id = t.workflow_no
+          AND w.opinion_time > 
+       (SELECT MAX(opinion_time)
+       FROM wf_j_historyoperation a
+        WHERE a.entry_id = t.workflow_no
+       AND a.step_id = '2')
+       and (w.step_id ='5'or w.step_id ='12')) as sbbggshyj,
+ ( select getworkername(w.caller) from wf_j_historyoperation w where w.entry_id = t.workflow_no
+          AND w.opinion_time > 
+       (SELECT MAX(opinion_time)
+       FROM wf_j_historyoperation a
+        WHERE a.entry_id = t.workflow_no
+       AND a.step_id = '2')
+       and (w.step_id ='6'or w.step_id ='13')) as zzsp,
+( select w.opinion from wf_j_historyoperation w where w.entry_id = t.workflow_no
+          AND w.opinion_time > 
+       (SELECT MAX(opinion_time)
+       FROM wf_j_historyoperation a
+        WHERE a.entry_id = t.workflow_no
+       AND a.step_id = '2')
+       and (w.step_id ='6'or w.step_id ='13')) as zzspyj,      
+( select getworkername(w.caller) from wf_j_historyoperation w where w.entry_id = t.workflow_no
+          AND w.opinion_time > 
+       (SELECT MAX(opinion_time)
+       FROM wf_j_historyoperation a
+        WHERE a.entry_id = t.workflow_no
+       AND a.step_id = '2')
+       and w.step_id ='7') as zgsp,
+ ( select w.opinion from wf_j_historyoperation w where w.entry_id = t.workflow_no
+          AND w.opinion_time > 
+       (SELECT MAX(opinion_time)
+       FROM wf_j_historyoperation a
+        WHERE a.entry_id = t.workflow_no
+       AND a.step_id = '2')
+       and w.step_id ='7') as zgspyj,
+( select getworkername(w.caller) from wf_j_historyoperation w where w.entry_id = t.workflow_no
+          AND w.opinion_time > 
+       (SELECT MAX(opinion_time)
+       FROM wf_j_historyoperation a
+        WHERE a.entry_id = t.workflow_no
+       AND a.step_id = '2')
+       and (w.step_id ='8'or w.step_id ='14')) as zzecfh,
+ ( select w.opinion from wf_j_historyoperation w where w.entry_id = t.workflow_no
+          AND w.opinion_time > 
+       (SELECT MAX(opinion_time)
+       FROM wf_j_historyoperation a
+        WHERE a.entry_id = t.workflow_no
+       AND a.step_id = '2')
+       and (w.step_id ='8'or w.step_id ='14')) as zzecfhyj
+from PT_J_PROTECT_APPLY t
+where t.is_use='Y'
+and t.apply_id =?
+order by t.apply_id desc</property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="crosstab-cell" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="noteStyle" id="42">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">xx-large</property>
+            <property name="textAlign">center</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <page-header>
+                <grid id="6">
+                    <property name="width">100%</property>
+                    <column id="7"/>
+                    <row id="8">
+                        <cell id="9">
+                            <data id="881">
+                                <property name="fontSize">14pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="textAlign">center</property>
+                                <property name="dataSet">Data Set</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">TITLE</property>
+                                        <property name="displayName">TITLE</property>
+                                        <expression name="expression">dataSetRow["TITLE"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">TITLE</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="127">
+                        <cell id="128">
+                            <text id="755">
+                                <property name="fontFamily">"宋体"</property>
+                                <property name="fontSize">12pt</property>
+                                <property name="textAlign">right</property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[<VALUE-OF format="HTML">"编号："+params["applyCode"].value;</VALUE-OF>]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="756">
+            <property name="verticalAlign">middle</property>
+            <property name="width">100%</property>
+            <column id="757">
+                <property name="width">2cm</property>
+                <property name="textAlign">center</property>
+            </column>
+            <column id="758"/>
+            <column id="759"/>
+            <column id="760"/>
+            <column id="761"/>
+            <column id="762">
+                <property name="width">4.5cm</property>
+            </column>
+            <row id="763">
+                <property name="height">1cm</property>
+                <property name="fontFamily">"宋体"</property>
+                <property name="fontSize">12pt</property>
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="764">
+                    <property name="fontSize">x-large</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <label id="107">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">申请部门</text-property>
+                    </label>
+                </cell>
+                <cell id="765">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="textAlign">center</property>
+                    <data id="860">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">DEPTNAME</property>
+                                <property name="displayName">DEPTNAME</property>
+                                <expression name="expression">dataSetRow["DEPTNAME"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">DEPTNAME</property>
+                    </data>
+                </cell>
+                <cell id="766">
+                    <property name="fontSize">x-large</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <label id="108">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">申请人</text-property>
+                    </label>
+                </cell>
+                <cell id="767">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="textAlign">center</property>
+                    <data id="861">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">APPLYNAME</property>
+                                <property name="displayName">APPLYNAME</property>
+                                <expression name="expression">dataSetRow["APPLYNAME"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">APPLYNAME</property>
+                    </data>
+                </cell>
+                <cell id="768">
+                    <property name="fontSize">x-large</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <label id="109">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">申请时间</text-property>
+                    </label>
+                </cell>
+                <cell id="769">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="textAlign">center</property>
+                    <data id="862">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">APPLYTIME</property>
+                                <property name="displayName">APPLYTIME</property>
+                                <expression name="expression">dataSetRow["APPLYTIME"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">APPLYTIME</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="770">
+                <property name="height">1cm</property>
+                <property name="fontFamily">"宋体"</property>
+                <property name="fontSize">12pt</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="771">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <label id="110">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">保护名称</text-property>
+                    </label>
+                </cell>
+                <cell id="772">
+                    <property name="colSpan">5</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <data id="863">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">PROTECTION_NAME</property>
+                                <property name="displayName">PROTECTION_NAME</property>
+                                <expression name="expression">dataSetRow["PROTECTION_NAME"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">PROTECTION_NAME</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="777">
+                <property name="height">1cm</property>
+                <property name="fontFamily">"宋体"</property>
+                <property name="fontSize">12pt</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="778">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <data id="864">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">PREASON</property>
+                                <property name="displayName">PREASON</property>
+                                <expression name="expression">dataSetRow["PREASON"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">PREASON</property>
+                    </data>
+                </cell>
+                <cell id="779">
+                    <property name="colSpan">5</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <data id="865">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">PROTECTION_REASON</property>
+                                <property name="displayName">PROTECTION_REASON</property>
+                                <expression name="expression">dataSetRow["PROTECTION_REASON"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">PROTECTION_REASON</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="784">
+                <property name="height">2cm</property>
+                <property name="fontFamily">"宋体"</property>
+                <property name="fontSize">12pt</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="785">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <label id="112">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">安全、技术措施</text-property>
+                    </label>
+                </cell>
+                <cell id="786">
+                    <property name="colSpan">5</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <data id="866">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">MEASURES</property>
+                                <property name="displayName">MEASURES</property>
+                                <expression name="expression">dataSetRow["MEASURES"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">MEASURES</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="791">
+                <property name="height">1cm</property>
+                <property name="fontFamily">"宋体"</property>
+                <property name="fontSize">12pt</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="792">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <label id="113">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">检修公司高管复核</text-property>
+                    </label>
+                </cell>
+                <cell id="793">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <data id="868">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">JXGSGGSPYJ</property>
+                                <property name="displayName">JXGSGGSPYJ</property>
+                                <expression name="expression">dataSetRow["JXGSGGSPYJ"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">JXGSGGSPYJ</property>
+                    </data>
+                </cell>
+                <cell id="883">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="textAlign">center</property>
+                    <data id="867">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">JXGSGGSP</property>
+                                <property name="displayName">JXGSGGSP</property>
+                                <expression name="expression">dataSetRow["JXGSGGSP"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">JXGSGGSP</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="798">
+                <property name="height">1cm</property>
+                <property name="fontFamily">"宋体"</property>
+                <property name="fontSize">12pt</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="799">
+                    <property name="fontSize">x-large</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <label id="854">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">设备部高管审核</text-property>
+                    </label>
+                </cell>
+                <cell id="800">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <data id="870">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">SBBGGSHYJ</property>
+                                <property name="displayName">SBBGGSHYJ</property>
+                                <expression name="expression">dataSetRow["SBBGGSHYJ"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">SBBGGSHYJ</property>
+                    </data>
+                </cell>
+                <cell id="884">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="textAlign">center</property>
+                    <data id="869">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">SBBGGSH</property>
+                                <property name="displayName">SBBGGSH</property>
+                                <expression name="expression">dataSetRow["SBBGGSH"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">SBBGGSH</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="805">
+                <property name="height">1cm</property>
+                <property name="fontFamily">"宋体"</property>
+                <property name="fontSize">12pt</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="806">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <label id="847">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">当值值长</text-property>
+                    </label>
+                </cell>
+                <cell id="807">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <data id="872">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ZZSPYJ</property>
+                                <property name="displayName">ZZSPYJ</property>
+                                <expression name="expression">dataSetRow["ZZSPYJ"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ZZSPYJ</property>
+                    </data>
+                </cell>
+                <cell id="885">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="textAlign">center</property>
+                    <data id="871">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ZZSP</property>
+                                <property name="displayName">ZZSP</property>
+                                <expression name="expression">dataSetRow["ZZSP"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ZZSP</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="812">
+                <property name="height">1cm</property>
+                <property name="fontFamily">"宋体"</property>
+                <property name="fontSize">12pt</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="813">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <label id="201">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">总  工</text-property>
+                    </label>
+                </cell>
+                <cell id="814">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <data id="874">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ZGSPYJ</property>
+                                <property name="displayName">ZGSPYJ</property>
+                                <expression name="expression">dataSetRow["ZGSPYJ"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ZGSPYJ</property>
+                    </data>
+                </cell>
+                <cell id="886">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="textAlign">center</property>
+                    <data id="887">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ZGSP</property>
+                                <property name="displayName">ZGSP</property>
+                                <expression name="expression">dataSetRow["ZGSP"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ZGSP</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="819">
+                <property name="height">1cm</property>
+                <property name="fontFamily">"宋体"</property>
+                <property name="fontSize">12pt</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="820">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <label id="202">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">值长二次复核</text-property>
+                    </label>
+                </cell>
+                <cell id="821">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <data id="876">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ZZECFHYJ</property>
+                                <property name="displayName">ZZECFHYJ</property>
+                                <expression name="expression">dataSetRow["ZZECFHYJ"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ZZECFHYJ</property>
+                    </data>
+                </cell>
+                <cell id="888">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="textAlign">center</property>
+                    <data id="875">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ZZECFH</property>
+                                <property name="displayName">ZZECFH</property>
+                                <expression name="expression">dataSetRow["ZZECFH"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ZZECFH</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="826">
+                <property name="height">1cm</property>
+                <property name="fontFamily">"宋体"</property>
+                <property name="fontSize">12pt</property>
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="827">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">2</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <label id="848">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">班长</text-property>
+                    </label>
+                    <label id="889">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">(机组长)</text-property>
+                    </label>
+                </cell>
+                <cell id="828">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">2</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <data id="878">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">CLASSLEADERNAME</property>
+                                <property name="displayName">CLASSLEADERNAME</property>
+                                <expression name="expression">dataSetRow["CLASSLEADERNAME"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">CLASSLEADERNAME</property>
+                    </data>
+                </cell>
+                <cell id="829">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <label id="849">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">执行人</text-property>
+                    </label>
+                </cell>
+                <cell id="830">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <data id="890">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">EXECUTORNAME</property>
+                                <property name="displayName">EXECUTORNAME</property>
+                                <expression name="expression">dataSetRow["EXECUTORNAME"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">EXECUTORNAME</property>
+                    </data>
+                </cell>
+                <cell id="831">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">2</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <label id="851">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">退出时间</text-property>
+                    </label>
+                </cell>
+                <cell id="832">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">2</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <data id="877">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">EXECUTE_TIME</property>
+                                <property name="displayName">EXECUTE_TIME</property>
+                                <expression name="expression">dataSetRow["EXECUTE_TIME"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">EXECUTE_TIME</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="833">
+                <property name="height">1cm</property>
+                <property name="fontFamily">"宋体"</property>
+                <property name="fontSize">12pt</property>
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="836">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <label id="850">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">监护人</text-property>
+                    </label>
+                </cell>
+                <cell id="837">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <data id="879">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">GUARDIANNAME</property>
+                                <property name="displayName">GUARDIANNAME</property>
+                                <expression name="expression">dataSetRow["GUARDIANNAME"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">GUARDIANNAME</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="840">
+                <property name="height">2.8cm</property>
+                <property name="fontFamily">"宋体"</property>
+                <property name="fontSize">12pt</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="841">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <label id="120">
+                        <property name="textAlign">center</property>
+                        <text-property name="text">备注</text-property>
+                    </label>
+                </cell>
+                <cell id="842">
+                    <property name="colSpan">5</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <data id="880">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">MEMO</property>
+                                <property name="displayName">MEMO</property>
+                                <expression name="expression">dataSetRow["MEMO"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">MEMO</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

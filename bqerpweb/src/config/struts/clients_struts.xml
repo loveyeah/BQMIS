@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-validation.xml" />
+	<package name="clients" namespace="/clients"
+		extends="jfreechart-default">
+		<!-- 合作伙伴类型 -->
+		<action name="getClientsTypeList"
+			class="power.web.manage.client.action.ClientsTypeAction"
+			method="getClientsTypeList">
+		</action>
+		<action name="addClientsType"
+			class="power.web.manage.client.action.ClientsTypeAction"
+			method="addClientsType">
+		</action>
+		<action name="updateClientsType"
+			class="power.web.manage.client.action.ClientsTypeAction"
+			method="updateClientsType">
+		</action>
+		<action name="deleteClientsType"
+			class="power.web.manage.client.action.ClientsTypeAction"
+			method="deleteClientsType">
+		</action>
+
+		<!-- 合作伙伴性质 -->
+		<action name="getClientsCharacterList"
+			class="power.web.manage.client.action.ClientsCharacterAction"
+			method="getClientsCharacterList">
+		</action>
+		<action name="addCharacter"
+			class="power.web.manage.client.action.ClientsCharacterAction"
+			method="addCharacter">
+		</action>
+		<action name="updateCharacter"
+			class="power.web.manage.client.action.ClientsCharacterAction"
+			method="updateCharacter">
+		</action>
+		<action name="deleteCharacter"
+			class="power.web.manage.client.action.ClientsCharacterAction"
+			method="deleteCharacter">
+		</action>
+
+		<!-- 合作伙伴资质登记 -->
+		<action name="findClientsQualificationList"
+			class="power.web.manage.client.action.ClientsQualificationAction"
+			method="findClientsQualificationList">
+		</action>
+		<action name="addQualification"
+			class="power.web.manage.client.action.ClientsQualificationAction"
+			method="addQualification">
+		</action>
+		<action name="updateQualification"
+			class="power.web.manage.client.action.ClientsQualificationAction"
+			method="updateQualification">
+		</action>
+		<action name="findQualificationById"
+			class="power.web.manage.client.action.ClientsQualificationAction"
+			method="findQualificationById">
+		</action>
+		<action name="deleteQualification"
+			class="power.web.manage.client.action.ClientsQualificationAction"
+			method="deleteQualification">
+		</action>
+		<!-- 合作伙伴重要性信息 -->
+		<action name="getClientsImportanceList"
+			class="power.web.manage.client.action.ClientsImportancerAction"
+			method="getClientsImportanceList">
+		</action>
+		<action name="addClientsImportanceInfo"
+			class="power.web.manage.client.action.ClientsImportancerAction"
+			method="addClientsImportanceInfo">
+		</action>
+		<action name="updateClientsImportanceInfo"
+			class="power.web.manage.client.action.ClientsImportancerAction"
+			method="updateClientsImportanceInfo">
+		</action>
+		<action name="deleteClientsImportanceInfo"
+			class="power.web.manage.client.action.ClientsImportancerAction"
+			method="deleteClientsImportanceInfo">
+		</action>
+
+		<!-- 合作伙伴行业字典信息 -->
+		<action name="getClientsTradeList"
+			class="power.web.manage.client.action.ClientsTradeAction"
+			method="getClientsTradeList">
+		</action>
+		<action name="addClientsTradeInfo"
+			class="power.web.manage.client.action.ClientsTradeAction"
+			method="addClientsTradeInfo">
+		</action>
+
+		<action name="updateClientsTrade"
+			class="power.web.manage.client.action.ClientsTradeAction"
+			method="updateClientsTrade">
+		</action>
+
+		<action name="deleteClientsTrade"
+			class="power.web.manage.client.action.ClientsTradeAction"
+			method="deleteClientsTrade">
+		</action>
+    <!-- 查询一条合作伙伴信息 -->
+	<action name="findClientInfoById"
+			class="power.web.manage.client.action.ClientsInfoAction"
+			method="findClientInfoById">
+		</action>
+		<!-- 保存合作伙伴信息 -->
+		<action name="saveClientsInfo"
+			class="power.web.manage.client.action.ClientsInfoAction"
+			method="saveClientsInfo">
+		</action>
+		<!-- 查询合作伙伴信息 -->
+		<action name="getClientsInfoList"
+			class="power.web.manage.client.action.ClientsInfoAction"
+			method="getClientsInfoList">
+		</action>
+		<!-- 修改合作伙伴信息 -->
+		<action name="updateClientsInfo"
+			class="power.web.manage.client.action.ClientsInfoAction"
+			method="updateClientsInfo">
+		</action>
+		<!-- 删除合作伙伴信息 -->
+		<action name="deleteClientsInfo"
+			class="power.web.manage.client.action.ClientsInfoAction"
+			method="deleteClientsInfo">
+		</action>
+
+		<!-- 保存合作伙伴联系人信息 -->
+		<action name="saveClientsContact"
+			class="power.web.manage.client.action.ClientsContactAction"
+			method="saveClientsContact">
+		</action>
+		<!-- 查询合作伙伴联系人信息 -->
+		<action name="getClientsContactList"
+			class="power.web.manage.client.action.ClientsContactAction"
+			method="getClientsContactList">
+		</action>
+		<!-- 修改合作伙伴联系人信息 -->
+		<action name="updateClientsContact"
+			class="power.web.manage.client.action.ClientsContactAction"
+			method="updateClientsContact">
+		</action>
+		<!-- 删除合作伙伴联系人信息 -->
+		<action name="daleteClientsContact"
+			class="power.web.manage.client.action.ClientsContactAction"
+			method="daleteClientsContact">
+		</action>
+
+<!-- 合作伙伴周期设置 -->
+	<action name="findClientIntervalList" class="power.web.manage.client.action.ClientIntervalAction" method="findClientIntervalList"></action>
+	<action name="addClientIntervalInfo" class="power.web.manage.client.action.ClientIntervalAction" method="addClientIntervalInfo"></action>
+	<action name="updateClientIntervalInfo" class="power.web.manage.client.action.ClientIntervalAction" method="updateClientIntervalInfo"></action>
+	<action name="deleteClientIntervalInfo" class="power.web.manage.client.action.ClientIntervalAction" method="deleteClientIntervalInfo"></action>
+	
+	<!-- 评价项目设置 -->
+	<action name="addConAppraiseItem" class="power.web.manage.client.action.ConAppraiseItemAction" method="addConAppraiseItem"></action>
+	<action name="updateConAppraiseItem" class="power.web.manage.client.action.ConAppraiseItemAction" method="updateConAppraiseItem"></action>
+	<action name="deleteConAppraiseItem" class="power.web.manage.client.action.ConAppraiseItemAction" method="deleteConAppraiseItem"></action>
+	<action name="findConAppraiseItemList" class="power.web.manage.client.action.ConAppraiseItemAction" method="findConAppraiseItemList"></action>
+	<action name="confirmConAppraiseItem" class="power.web.manage.client.action.ConAppraiseItemAction" method="confirmConAppraiseItem"></action>
+	<!-- 评价记录 -->
+	<action name="findAppraiseRecordList" class="power.web.manage.client.action.ClientAppraiseRecordAction" method="findAppraiseRecordList"></action>
+	<action name="saveAppraiseRecordInfo" class="power.web.manage.client.action.ClientAppraiseRecordAction" method="saveAppraiseRecordInfo"></action>
+	
+	<!-- 合作伙伴评价汇总 -->
+	<action name="findAppraiseList" class="power.web.manage.client.action.ClientAppraiseAction" method="findAppraiseList"></action>
+	<action name="updateAppraiseSummary" class="power.web.manage.client.action.ClientAppraiseAction" method="updateAppraiseSummary"></action>
+	<action name="findAppraiseGatherList" class="power.web.manage.client.action.ClientAppraiseAction" method="findAppraiseGatherList"></action>
+	</package>
+</struts>

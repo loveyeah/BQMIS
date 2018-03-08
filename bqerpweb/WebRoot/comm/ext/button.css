@@ -1,0 +1,289 @@
+.root {
+	background: red url(tool/person.gif) repeat-x 0 0 !important;
+}
+/*列表*/
+.list{
+	background-image: url(tool/icon_grid_menu.gif) !important;
+	
+	}
+/*新建*/
+.add {
+	background-image: url(tool/tool_add.gif) !important;
+}
+
+/*刷新*/ 
+.reflesh {
+	background-image: url(tool/tool_reload.gif) !important;
+}
+.confirm {
+	background-image: url(tool/s_checked.gif)
+		!important;
+}
+.personp {
+	background-image: url(tool/person.gif)
+		!important;
+}
+.filep {
+	background-image: url(tool/tool__csv.gif)
+		!important;
+}
+.rolep {
+	background-image: url(tool/page_goto.gif)
+		!important;
+}
+.insert {
+	background-image: url(tool/menu_icon_hidecol.gif)
+		!important;
+	
+	}
+/*上一步*/
+.priorStep{
+	background-image: url(tool/tool_upLoad.gif)
+		!important;
+}
+/*全不选*/
+.selectAllNot{
+	background-image: url(tool/s_unchecked.gif)
+		!important; 
+}
+
+/*下一步*/
+.nextStep{
+	background-image: url(tool/tool_export.gif)
+		!important;
+}
+
+/*pdf预览*/
+.pdfview {
+	background-image: url(tool/tool_pdf.gif)
+		!important;
+}
+/*接收*/
+.receive{
+	background-image: url(tool/s_checked.gif)
+		!important; 
+}
+/*填写*/
+.write{
+	background-image: url(tool/tool_approve.gif)
+		!important; 
+}
+/*修改*/
+.update {
+	background-image: url(tool/tool_update.gif) !important;
+}
+
+/*放弃取消*/
+.cancer {
+	background-image: url(tool/dialog_close_btn.gif) !important;
+}
+
+/*删除*/
+.delete {
+	background-image: url(tool/tool_del.gif) !important;
+}
+
+/*保存*/
+.save {
+	background-image: url(tool/tool_save.gif) !important;
+}
+
+/*查询*/
+.query {
+	background-image: url(tool/drop-search.gif) !important;
+}
+
+/*刷新*/
+.data_load {
+	background-image: url(tool/tool_reload.gif) !important;
+}
+
+/*上移*/
+.up {
+	background-image: url(tool/page_first.gif) !important;
+}
+
+/*锁定*/
+.locked {
+	background-image: url(tool/hmenu-lock.gif) !important;
+}
+
+/*解锁*/
+.unlocked {
+	background-image: url(tool/hmenu-unlock.gif) !important;
+}
+.function {
+	background-image: url(tool/hmenu-unlock.gif) !important;
+}
+/*后退*/
+.preview {
+	background-image: url(tool/page_prev.gif) !important;
+}
+/*图形展示*/
+.view {
+	background-image: url(tool/threeman.gif) !important;
+}
+
+.key{
+	background-image: url(tool/key.gif) !important;
+	}
+.home{
+	background-image: url(tool/home.gif) !important;
+	}
+.exit{
+	background-image: url(tool/exit.gif) !important;
+	}
+/*前进*/
+.next {
+	background-image: url(tool/page_next.gif) !important;
+}
+
+/*最后*/
+.last {
+	background-image: url(tool/page_last.gif) !important;
+}
+
+/*日历*/
+.calendar {
+	background-image: url(tool/calendar.gif) !important;
+}
+
+/*图表*/
+.item {
+	background-image: url(tool/tool_chart.gif) !important;
+}
+
+/*打印*/
+.print {
+	background-image: url(tool/tool_print.gif) !important;
+}
+
+/*行政管理追加 开始*/
+/*确认*/
+.ok {
+	background-image: url(tool/tool_ok.gif) !important;
+}
+
+/*上报*/
+.upcommit {
+	background-image: url(tool/tool_upCommit.gif) !important;
+}
+
+/*上传*/
+.upLoad {
+	background-image: url(tool/tool_upLoad.gif) !important;
+}
+
+/*发送*/
+.send {
+	background-image: url(tool/tool_send.gif) !important;
+}
+
+/*导出*/
+.export {
+	background-image: url(tool/tool_export.gif) !important;
+}
+
+/*审批*/
+.approve {
+	background-image: url(tool/tool_approve.gif) !important;
+}
+
+/*退回*/
+.untread {
+	background-image: url(tool/tool_untread.gif) !important;
+}
+
+/*详细*/
+.detail {
+	background-image: url(tool/tool_detail.gif) !important;
+}
+
+/*结束*/
+.stop {
+	background-image: url(tool/tool_stop.gif) !important;
+}
+/*行政管理追加 结束*/
+
+
+/* add by liuyi 090930 开始*/
+/*合同*/
+/*合同续签*/
+.contract_continue {
+	background-image: url(tool/tool_contractcontinue.gif) !important;
+}
+
+/*合同结束*/
+.contract_end {
+	background-image: url(tool/tool_contractend.gif) !important;
+}
+
+/*合同变更*/
+.contract_change {
+	background-image: url(tool/tool_contractchange.gif) !important;
+}
+
+/*人员安排*/
+.emp_arrange {
+	background-image: url(tool/tool_emparrange.gif) !important;
+}
+
+/*左移*/
+.left_move {
+	background-image: url(tool/tool_leftmove.gif) !important;
+}
+
+/*右移*/
+.right_move {
+	background-image: url(tool/tool_rightmove.gif) !important;
+}
+/*行复制*/
+.copy {
+    background-image: url(tool/tool_linecopy.gif) !important;
+}
+/*部门审核*/
+.dept_check {
+    background-image: url(tool/tool_deptcheck.gif) !important;
+}
+/*撤销前回审核*/
+.check_abolish {
+    background-image: url(tool/tool_checkabolish.gif) !important;
+}
+/*登记*/
+.register {
+    background-image: url(tool/tool_register.gif) !important;
+}
+/*考勤人员变更*/
+.person_change {
+    background-image: url(tool/tool_personchange.gif) !important;
+}
+/*考勤审核*/
+.attend_check {
+    background-image: url(tool/tool_attendcheck.gif) !important;
+}
+/*清除*/
+.clear {
+    background-image: url(tool/tool_clear.gif) !important;
+}
+/*审核记录查询*/
+.record_query {
+    background-image: url(tool/tool_recordquery.gif) !important;
+}
+/*审批查询*/
+.check_query {
+    background-image: url(tool/tool_checkquery.gif) !important;
+}
+/*销假*/
+.resume_leave {
+    background-image: url(tool/tool_resumeleave.gif) !important;
+}
+/* add by liuyi 090930 结束*/
+
+#loading {
+	position: absolute;
+	left: 45%;
+	top: 40%;
+	padding: 2px;
+	z-index: 20001;
+	height: auto;
+}

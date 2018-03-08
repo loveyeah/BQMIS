@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_5_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/bqerpcomm"/>
+	<classpathentry exported="true" kind="lib" path="/bqerp/lib/activation.jar"/>
+	<classpathentry exported="true" kind="lib" path="/bqerp/lib/bsh-2.0b4.jar"/>
+	<classpathentry exported="true" kind="lib" path="/bqerp/lib/commons-logging.jar"/>
+	<classpathentry exported="true" kind="lib" path="/bqerp/lib/dom4j-1.6.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/bqerp/lib/jaxen-1.1-beta-6.jar"/>
+	<classpathentry exported="true" kind="lib" path="/bqerp/lib/jsonplugin-0.25.jar"/>
+	<classpathentry exported="true" kind="lib" path="/bqerp/lib/mail.jar"/>
+	<classpathentry exported="true" kind="lib" path="/bqerp/lib/oscomm-1.0-dev-28Oct08.jar"/>
+	<classpathentry exported="true" kind="lib" path="/bqerp/lib/oscore-2.2.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="/bqerp/lib/osengineassistant-1.0-dev-08Nov08-c.jar"/>
+	<classpathentry exported="true" kind="lib" path="/bqerp/lib/osworkflow-2.8.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="/bqerp/lib/osworkflowext-1.0-dev_11Nov08.jar"/>
+	<classpathentry exported="true" kind="lib" path="/bqerp/lib/powererpcomm.jar"/>
+	<classpathentry exported="true" kind="lib" path="/bqerp/lib/propertyset-1.4.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jboss_client"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>

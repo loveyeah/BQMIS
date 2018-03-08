@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enterprise-project
+  version="1.0.0"
+  name="cjapp"
+  id="myeclipse.1237780351448"
+  j2ee-spec="5.0"
+  archive="cjapp.ear">
+  <project-modules>
+    <project-module
+      type="WEB"
+      name="cjweb"
+      id="myeclipse.1237780350146"
+      context-root="/cjweb"
+      j2ee-spec="5.0"
+      archive="cjweb.war">
+      <attributes>
+        <attribute name="webrootdir" value="WebRoot" />
+      </attributes>
+    </project-module>
+    <project-module
+      type="EJB"
+      name="cjejb"
+      id="myeclipse.1237780351291"
+      j2ee-spec="5.0"
+      archive="cjejb.jar" />
+  </project-modules>
+</enterprise-project>
+
